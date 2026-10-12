@@ -47,7 +47,9 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: verify
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    # Pushes to main deploy automatically; a manual dispatch re-deploys the
+    # current main without needing a throwaway commit.
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     permissions:
       contents: read
