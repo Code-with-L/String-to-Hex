@@ -158,7 +158,13 @@ try {
     const keys = await caches.keys();
     const shellKey = keys.find(k => k.includes('shell'));
     const shell = await caches.open(shellKey);
-    const urls = (await shell.keys()).map(r => new URL(r.url).pathname);
+    const base = new URL('.', location.href).pathname.replace(/\\/$/, '');
+    // Report paths relative to the deployment root, so a site served from a
+    // sub-path (GitHub Pages project sites) compares the same as one at "/".
+    const urls = (await shell.keys())
+      .map(r => new URL(r.url).pathname)
+      .map(p => (p.startsWith(base) ? p.slice(base.length) : p) || '/')
+      .sort();
     return { scope: reg.scope, active: !!reg.active, caches: keys, count: urls.length, urls };
   })()`);
   check(sw.active, `service worker active, scope ${sw.scope}`);
