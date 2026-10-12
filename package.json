@@ -1,0 +1,29 @@
+{
+  "name": "hexkit",
+  "version": "1.0.0",
+  "description": "String to hex, binary and every base converter — plus unit converters and calculators. Offline-first installable PWA.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Code-with-L/String-to-Hex.git" },
+  "homepage": "https://code-with-l.github.io/String-to-Hex/",
+  "bugs": { "url": "https://github.com/Code-with-L/String-to-Hex/issues" },
+  "keywords": [
+    "string-to-hex", "hex-to-string", "ascii-to-hex", "hex", "binary", "octal",
+    "base64", "converter", "calculator", "pwa", "offline", "vanilla-js"
+  ],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test \"tests/*.test.js\"",
+    "test:browser": "node scripts/verify-browser.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "check": "npm run test && node scripts/validate.mjs",
+    "verify": "npm run check && npm run test:browser",
+    "serve": "node scripts/serve.mjs"
+  },
+  "files": ["index.html", "css", "js", "icons", "sw.js", "manifest.webmanifest"],
+  "browserslist": ["defaults", "not dead", "not op_mini all"],
+  "devDependencies": {}
+}
