@@ -149,7 +149,11 @@ test('unit index lists every family, and every family lists its pairs', () => {
 });
 
 test('ASCII, base and about pages render', () => {
-  assertTree(VIEWS.viewAscii(), 'ascii');
+  const ascii = assertTree(VIEWS.viewAscii(), 'ascii');
+  // the 0-127 table must be populated on first paint, not only after typing
+  const bodyRows = ascii.filter((e) => e.tagName === 'TR' && e.parentNode?.tagName === 'TBODY');
+  assert.ok(bodyRows.length >= 100, `ASCII table rendered only ${bodyRows.length} rows`);
+
   assertTree(VIEWS.viewBase(), 'base');
   assertTree(VIEWS.viewAbout(), 'about');
   const nf = assertTree(VIEWS.notFound(), '404');

@@ -620,6 +620,7 @@ export function viewAscii() {
     )));
   };
   filter.addEventListener('input', debounce(draw, 140));
+  draw();   // render the full table immediately, not only on first keystroke
 
   const sample = el('textarea', { class: 'textarea', placeholder: 'Type text to see each character broken down…', rows: 3 });
   const tableBox = el('div');
