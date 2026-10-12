@@ -1,0 +1,46 @@
+{
+  "id": "/",
+  "name": "HexKit — Converters & Calculators",
+  "short_name": "HexKit",
+  "description": "Convert text to hex, binary, decimal, octal and Base64. Unit converters, physics formulas and statistics calculators. Works offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0a0c12",
+  "theme_color": "#0a0c12",
+  "categories": ["developer", "utilities", "productivity", "education"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Text to hex",
+      "short_name": "To hex",
+      "description": "Paste text, get hexadecimal bytes",
+      "url": "./index.html#/convert?from=text&to=hex",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Hex to text",
+      "short_name": "To text",
+      "description": "Decode hexadecimal back to text",
+      "url": "./index.html#/convert?from=hex&to=text",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "All calculators",
+      "short_name": "Calculators",
+      "description": "Browse every tool",
+      "url": "./index.html#/tools",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
