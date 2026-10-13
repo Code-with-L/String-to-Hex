@@ -1,0 +1,234 @@
+/**
+ * Hand-drawn SVG assets.
+ *
+ * The reference site drew its circuit symbols as 383 loose GIF files. These are
+ * redrawn as clean, themeable, resolution-independent SVG so they inherit
+ * `currentColor` and stay crisp at any zoom.
+ */
+
+const svg = (paths, { viewBox = '0 0 120 60', label = '' } = {}) => {
+  const node = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  node.setAttribute('viewBox', viewBox);
+  node.setAttribute('fill', 'none');
+  node.setAttribute('stroke', 'currentColor');
+  node.setAttribute('stroke-width', '2');
+  node.setAttribute('stroke-linecap', 'round');
+  node.setAttribute('stroke-linejoin', 'round');
+  node.setAttribute('role', 'img');
+  if (label) { node.setAttribute('aria-label', label); }
+  node.innerHTML = paths;
+  return node;
+};
+
+/* ── circuit symbols (IEC/ANSI hybrid, as on the reference pages) ─────── */
+
+export const SYMBOLS = {
+  resistor: {
+    label: 'Resistor',
+    note: 'IEC box',
+    svg: svg('<path d="M6 30h16v-16h36v32h36V30h20"/>'),
+  },
+  resistorUs: {
+    label: 'Resistor (ANSI)',
+    note: 'zig-zag',
+    svg: svg('<path d="M6 30h14l6-12 10 24 10-24 10 24 10-24 10 24 8-12h20"/>'),
+  },
+  capacitor: {
+    label: 'Capacitor',
+    note: 'two plates',
+    svg: svg('<path d="M6 30h48M66 30h48M48 16v28M66 16v28"/>'),
+  },
+  capacitorPol: {
+    label: 'Polarised capacitor',
+    note: 'curved plate',
+    svg: svg('<path d="M6 30h48M72 30h42M48 16v28M66 20a16 16 0 0 1 0 20"/>'),
+  },
+  inductor: {
+    label: 'Inductor',
+    note: 'coil',
+    svg: svg('<path d="M6 30h14a9 9 0 0 1 18 0 9 9 0 0 1 18 0 9 9 0 0 1 18 0 9 9 0 0 1 18 0h22"/>'),
+  },
+  inductorCore: {
+    label: 'Inductor with core',
+    note: 'coil over iron',
+    svg: svg('<path d="M6 34h12a9 9 0 0 1 18 0 9 9 0 0 1 18 0 9 9 0 0 1 18 0 9 9 0 0 1 18 0h20M24 16v10M72 16v10"/>'),
+  },
+  diode: {
+    label: 'Diode',
+    note: 'triangle to bar',
+    svg: svg('<path d="M6 30h42M48 16l28 14-28 14zM76 16v28M76 30h38"/>'),
+  },
+  zener: {
+    label: 'Zener diode',
+    note: 'bent cathode bar',
+    svg: svg('<path d="M6 30h42M48 16l28 14-28 14zM76 14v32M82 20h-6M82 40h-6M82 20h24v20H82"/>'),
+  },
+  led: {
+    label: 'LED',
+    note: 'diode + arrows',
+    svg: svg('<path d="M6 30h38M44 18l22 12-22 12zM66 18v24M66 30h48M74 10l8-6M86 14l8-6M78 18l8-6M90 22l8-6"/>'),
+  },
+  photodiode: {
+    label: 'Photodiode',
+    note: 'incoming arrows',
+    svg: svg('<path d="M6 30h40M46 18l22 12-22 12zM68 18v24M68 30h46M78 8l8 6M90 4l8 6M82 16l8 6"/>'),
+  },
+  transistorNpn: {
+    label: 'NPN transistor',
+    note: 'arrow out',
+    svg: svg('<path d="M40 12v36M40 24h18M40 38h18M58 24l14-10M58 24v14M72 24l-10 8 10 8M72 24h14M72 38h16"/>'),
+  },
+  transistorPnp: {
+    label: 'PNP transistor',
+    note: 'arrow in',
+    svg: svg('<path d="M40 12v36M40 24h18M40 38h18M58 24l14-10M58 24v14M72 24l10-8-10-8M72 24h14M72 38h16"/>'),
+  },
+  fet: {
+    label: 'MOSFET',
+    note: 'insulated gate',
+    svg: svg('<path d="M34 14v32M34 24h14M34 36h14M48 16v10M48 34v10M62 20v24M62 20h20M62 44h20M62 32h20"/>'),
+  },
+  switch: {
+    label: 'Switch (SPST)',
+    note: 'open contact',
+    svg: svg('<path d="M6 34h30M48 34h30M30 34L52 16"/>'),
+  },
+  switchSpst: {
+    label: 'Switch, normally open',
+    note: 'open blade',
+    svg: svg('<path d="M6 34h28M56 34h28M30 34L52 14"/><circle cx="30" cy="34" r="3.5" fill="currentColor" stroke="none"/><circle cx="56" cy="34" r="3.5" fill="currentColor" stroke="none"/>'),
+  },
+  ground: {
+    label: 'Ground',
+    note: 'three bars',
+    svg: svg('<path d="M60 10v28M38 38h44M44 46h32M50 54h20"/>'),
+  },
+  groundEarth: {
+    label: 'Protective earth',
+    note: 'hatched earth',
+    svg: svg('<path d="M60 10v30M40 40h40M46 46l-6 8M56 46l-6 8M66 46l-6 8M76 46l-6 8"/>'),
+  },
+  battery: {
+    label: 'Battery cell',
+    note: 'long/short plate',
+    svg: svg('<path d="M6 30h44M50 18v24M62 10v40M62 30h52"/>'),
+  },
+  dcSource: {
+    label: 'DC voltage source',
+    note: 'circle with +−',
+    svg: svg('<circle cx="60" cy="30" r="20"/><path d="M6 30h40M74 30h40M52 24h16M52 34h16M60 20v-8M60 40v8"/>'),
+  },
+  acSource: {
+    label: 'AC source',
+    note: 'sine in circle',
+    svg: svg('<circle cx="60" cy="30" r="20"/><path d="M6 30h40M74 30h40M50 30c3-10 7-10 10 0s7 10 10 0"/>'),
+  },
+  lamp: {
+    label: 'Lamp',
+    note: 'bulb',
+    svg: svg('<path d="M6 46h34M80 46h34"/><circle cx="60" cy="30" r="20"/><path d="M50 44h20M52 50h16M56 56h8M52 20l16 20M68 20L52 40"/>'),
+  },
+  fuse: {
+    label: 'Fuse',
+    note: 'cartridge',
+    svg: svg('<path d="M6 30h30M42 18v24M78 18v24M84 30h30M42 30h36"/>'),
+  },
+  wire: {
+    label: 'Wire / conductor',
+    note: 'conductor',
+    svg: svg('<path d="M6 30h108"/>'),
+  },
+  resistorPot: {
+    label: 'Potentiometer',
+    note: 'resistor + wiper',
+    svg: svg('<path d="M6 30h12v-14h28v28h28V30h12M40 44l20-26"/>'),
+  },
+  relayCoil: {
+    label: 'Relay coil',
+    note: 'inductive coil',
+    svg: svg('<path d="M6 30h14a8 8 0 0 1 16 0 8 8 0 0 1 16 0 8 8 0 0 1 16 0h26M62 46h22M62 40h22"/>'),
+  },
+};
+
+/* ── UI glyphs ────────────────────────────────────────────────────────── */
+
+const ICONS = {
+  bolt: 'M13 2 4 14h6l-1 8 9-12h-6l1-8z',
+  sigma: 'M18 4H6l6 8-6 8h12M6 4h12',
+  hash: 'M4 9h16M4 15h16M10 3 8 21M16 3l-2 18',
+  palette: 'M12 3a9 9 0 1 0 0 18h1.5a1.5 1.5 0 0 0 0-3H12a2 2 0 0 1 0-4h3a6 6 0 0 0 0-12z',
+  code: 'm8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16',
+  chart: 'M4 20V10m5 10V4m5 16v-7m5 7V7',
+  heart: 'M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9z',
+  clock: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 4v5l3 2',
+  cable: 'M4 8h6v8H4zM14 8h6v8h-6zM10 12h4M8 8v8M16 8v8',
+  grid: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z',
+  book: 'M4 5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 0-2 2zm15 0h1v16h-1',
+  search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm5 12 5 5',
+  swap: 'M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4m4 4H7',
+  copy: 'M8 8h12v12H8zM4 16V4h12',
+  download: 'M12 4v11m-4-4 4 4 4-4M4 19h16',
+  upload: 'M12 20V9m-4 4 4-4 4 4M4 5h16',
+  check: 'm4 13 5 5L20 7',
+  chevron: 'm9 5 7 7-7 7',
+  info: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 5v.5M12 11v6',
+  warn: 'M12 4 2 20h20L12 4zm0 6v5m0 3v.5',
+  gear: 'M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm8 3a8 8 0 0 0-.2-1.8l2-1.5-2-3.4-2.3 1a8 8 0 0 0-3-1.8L14 2h-4l-.5 2.5a8 8 0 0 0-3 1.8l-2.3-1-2 3.4 2 1.5a8 8 0 0 0 0 3.6l-2 1.5 2 3.4 2.3-1a8 8 0 0 0 3 1.8L10 22h4l.5-2.5a8 8 0 0 0 3-1.8l2.3 1 2-3.4-2-1.5c.13-.6.2-1.2.2-1.8z',
+  calc: 'M6 3h12v18H6zM9 7h6M9 11h1m4 0h1M9 15h1m4 0h1',
+  ruler: 'M3 17 17 3l4 4L7 21zM7 11l2 2m2-6 2 2m2-6 2 2',
+  layers: 'm12 3 9 5-9 5-9-5 9-5zm9 9-9 5-9-5m18 5-9 5-9-5',
+  wifi: 'M3 9a15 15 0 0 1 18 0M6 13a10 10 0 0 1 12 0M9 16.5a5 5 0 0 1 6 0M12 20v.5',
+  mobile: 'M8 3h8v18H8zM11 18h2',
+  desktop: 'M3 5h18v11H3zM9 20h6M12 16v4',
+  terminal: 'M4 5h16v14H4zM7 9l3 3-3 3m6 0h4',
+  sun: 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v3m0 16v3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M1 12h3m16 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1',
+  moon: 'M20 14A9 9 0 0 1 10 4a9 9 0 1 0 10 10z',
+};
+
+export function icon(name, { size = 18, cls = '' } = {}) {
+  const d = ICONS[name] ?? ICONS.info;
+  const node = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  node.setAttribute('viewBox', '0 0 24 24');
+  node.setAttribute('width', size);
+  node.setAttribute('height', size);
+  node.setAttribute('fill', 'none');
+  node.setAttribute('stroke', 'currentColor');
+  node.setAttribute('stroke-width', '1.8');
+  node.setAttribute('stroke-linecap', 'round');
+  node.setAttribute('stroke-linejoin', 'round');
+  node.setAttribute('aria-hidden', 'true');
+  if (cls) node.setAttribute('class', cls);
+  node.innerHTML = `<path d="${d}"/>`;
+  return node;
+}
+
+export const ICON_NAMES = Object.keys(ICONS);
+export const SYMBOL_NAMES = Object.keys(SYMBOLS);
+
+/** Group metadata for the symbols reference page. */
+export const SYMBOL_GROUPS = [
+  {
+    id: 'resistive',
+    title: 'Resistive & control',
+    blurb: 'Elements that limit or divide current.',
+    keys: ['resistor', 'resistorUs', 'resistorPot', 'fuse', 'lamp', 'switch', 'switchSpst'],
+  },
+  {
+    id: 'reactive',
+    title: 'Energy storage',
+    blurb: 'Elements that store charge or magnetic field.',
+    keys: ['capacitor', 'capacitorPol', 'inductor', 'inductorCore', 'relayCoil'],
+  },
+  {
+    id: 'semiconductor',
+    title: 'Semiconductors',
+    blurb: 'One-way and controlled conduction.',
+    keys: ['diode', 'zener', 'led', 'photodiode', 'transistorNpn', 'transistorPnp', 'fet'],
+  },
+  {
+    id: 'sources',
+    title: 'Sources & returns',
+    blurb: 'Where voltage comes from, and where it goes.',
+    keys: ['dcSource', 'acSource', 'battery', 'ground', 'groundEarth', 'wire'],
+  },
+];

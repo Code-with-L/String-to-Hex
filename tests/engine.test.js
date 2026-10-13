@@ -566,6 +566,81 @@ test('general tools', () => {
   assert.equal(run('custom-convert', { x: 5, expr: 'x * 2.54' }).values.v, '12.7');
 });
 
+test('Kirchhoff: collects terms and solves for a single unknown', () => {
+  // 12 V source feeding 1 kΩ + 470 Ω: I = 12 / (1000 + 470) = 0.08163 A
+  const sym = run('kirchhoff', { items: '+12\n-I*1000\n-I*470', mode: 'auto' });
+  assert.equal(sym.error, undefined);
+  assert.equal(sym.values.solved, 'I');
+  close(Number(sym.values.solution), 12 / 1470, 1e-6);   // output is rounded to 8 significant digits
+
+  // k suffix on a numeric coefficient
+  const k = run('kirchhoff', { items: '+12\n-I*1k\n-I*470', mode: 'auto' });
+  close(Number(k.values.solution), 12 / 1470, 1e-6);
+
+  // two unknowns → reports the collapsed equation rather than guessing
+  const two = run('kirchhoff', { items: '+V1\n-I*470\n+V2', mode: 'auto' });
+  assert.equal(two.values.unknownCount, '3');
+  assert.match(two.values.solution, /—/);
+
+  // all numeric: check the balance
+  const balanced = run('kirchhoff', { items: '-12\n+8.211111\n+3.788889', mode: 'auto' });
+  assert.equal(balanced.values.balance, 'balanced');
+  // 12 − 8.21 − 3.00 = 0.79, so the loop is not yet solved
+  assert.equal(run('kirchhoff', { items: '+12\n-8.21\n-3.00', mode: 'auto' }).values.balance, 'not balanced');
+  assert.match(run('kirchhoff', { items: '' }).error, /at least one/);
+});
+
+test("Coulomb's law: k·q₁q₂/r²", () => {
+  const K = 8.9875517923e9;
+  // 1 C and 1 C at 1 m
+  const r1 = run('coulomb', { q1: '1', q2: '1', r: '1' });
+  assert.equal(Number(r1.values.f).toExponential(6), (K).toExponential(6));
+  assert.equal(r1.values.dir, 'repel');
+  // opposite signs attract
+  assert.equal(run('coulomb', { q1: '1', q2: '-1', r: '1' }).values.dir, 'attract');
+  // doubling distance quarters the force
+  const near = Number(run('coulomb', { q1: '1', q2: '1', r: '1' }).values.f);
+  const far = Number(run('coulomb', { q1: '1', q2: '1', r: '2' }).values.f);
+  close(near / far, 4, 1e-6);
+  // electron charge pair
+  const e = 1.602176565e-19;
+  const elec = run('coulomb', { q1: String(e), q2: String(e), r: '1e-10' });
+  assert.ok(Number(elec.values.f) > 0);
+  assert.match(run('coulomb', { q1: '1', q2: '1', r: '0' }).error, /greater than zero/);
+});
+
+test('power efficiency', () => {
+  close(val('power-efficiency', { out: '90', in: '100' }, 'eta'), 90);
+  close(val('power-efficiency', { out: '90', in: '100' }, 'loss'), 10);
+  assert.equal(run('power-efficiency', { out: '90', in: '100' }).values.class, 'excellent');
+  assert.equal(run('power-efficiency', { out: '10', in: '100' }).values.class, 'poor');
+  assert.match(run('power-efficiency', { out: '10', in: '0' }).error, /cannot be zero/);
+});
+
+test('decibel: absolute and ratio conversions', () => {
+  // 0 dBm = 1 mW
+  assert.equal(Number(run('decibel', { v: '0', from: 'dbm' }).values.watts), 0.001);
+  // 30 dBm = 1 W
+  assert.equal(Number(run('decibel', { v: '30', from: 'dbm' }).values.watts), 1);
+  // 10 dB = ×10 power
+  assert.equal(Number(run('decibel', { v: '10', from: 'ratio' }).values.watts), 10);
+  // dBW = dBm − 30
+  close(Number(run('decibel', { v: '30', from: 'dbm' }).values.dbw), 0, 1e-6);
+  // amplitude ratio uses 20·log10
+  close(Number(run('decibel', { v: '10', from: 'amp' }).values.db), 20, 1e-6);
+  assert.match(run('decibel', { v: '0', from: 'ratio' }).values.dbm, /−∞/);
+});
+
+test('scientific calculator evaluates with precedence', () => {
+  const r = run('scientific-calc', { display: 'sin(45) + 2^8' });
+  assert.equal(r.error, undefined);
+  close(Number(r.values.value), Math.sin(45) + 256, 1e-9);
+  assert.equal(run('scientific-calc', { display: '2 + 3 * 4' }).values.value, 14);
+  assert.equal(run('scientific-calc', { display: 'sqrt(144)' }).values.value, 12);
+  assert.match(run('scientific-calc', { display: 'alert(1)' }).error, /Unknown name/);
+  assert.match(run('scientific-calc', { display: '' }).error, /Enter an expression/);
+});
+
 test('every tool declares inputs, a group and returns a result for its seed', () => {
   const ids = new Set();
   for (const tool of TOOLS) {
@@ -618,6 +693,11 @@ test('every declared output id exists in the returned values', () => {
     password: { len: '16', lower: '1' }, batch: { values: '1 2 4', factor: '2.5' },
     'date-diff': { a: '2020-01-01', b: '2024-06-15' }, age: { dob: '2000-01-01' },
     'world-clock': { zones: 'UTC,Asia/Tokyo' },
+    kirchhoff: { items: '+12\n-8.21\n-3.79', mode: 'auto' },
+    coulomb: { q1: '1', q2: '1', r: '1' },
+    'power-efficiency': { out: '90', in: '100' },
+    decibel: { v: '30', from: 'dbm' },
+    'scientific-calc': { display: '2 + 3 * 4' },
   };
 
   for (const tool of TOOLS) {

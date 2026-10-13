@@ -1120,6 +1120,7 @@ const COLOR = {
   group: 'color',
   blurb: 'RGB ⇄ HEX ⇄ HSL ⇄ HSV ⇄ CMYK — type into any field.',
   keywords: 'color colour rgb hex hsl hsv cmyk picker',
+  reference: null,
   inputs: [
     { id: 'hex', label: 'HEX', type: 'text', placeholder: '#3B82F6' },
     { id: 'r', label: 'R', type: 'number', min: 0, max: 255 },
@@ -1864,6 +1865,270 @@ const TIMESERIES = {
   },
 };
 
+/* ── circuit laws (added) ──────────────────────────────────────────────── */
+
+const KIRCHHOFF = {
+  id: 'kirchhoff',
+  title: "Kirchhoff's laws (KVL / KCL)",
+  group: 'electrical',
+  blurb: 'Write the loop or node as one term per line. With a single unknown, it solves for you.',
+  keywords: 'kirchhoff kvl kcl node loop mesh current law voltage law equation',
+  reference: 'kirchhoff-laws',
+  inputs: [
+    { id: 'items', label: 'Terms — one per line', type: 'text', placeholder: '+V1\n-I*R1\n-I*R2\n+V2' },
+    { id: 'mode', label: 'Law', type: 'select', options: [['auto', 'Both — solve whatever unknown is present'], ['v', 'KVL — voltage loop'], ['i', 'KCL — current node']] },
+  ],
+  compute: ({ items, mode }) => {
+    const lines = String(items || '').split(/[\n,;]+/).map((s) => s.trim()).filter(Boolean);
+    if (!lines.length) return { error: 'Enter at least one term, one per line.' };
+
+    const SCALES = { k: 1e3, K: 1e3, M: 1e6, m: 1e-3, µ: 1e-6, u: 1e-6 };
+    const NUMERIC = /^[\d.]+(?:[eE][+-]?\d+)?[kKmMµu]?$/;
+    const isSymbol = (t) => /^[A-Za-z_][A-Za-z0-9_]*$/.test(t);
+
+    const numeric = [];
+    const symbolic = new Map();
+    const rows = [];
+
+    for (const line of lines) {
+      const body = line.replace(/^([+-])\s*/, '').trim();
+      const sign = line.trim().startsWith('-') ? -1 : 1;
+      // No trailing-unit parsing here on purpose: a bare "3.2k" must be read as
+      // 3 200, not as "3.2" with a unit of "k".
+      const parts = body.split('*').map((p) => p.trim()).filter(Boolean);
+      if (!parts.length || parts.length > 2) {
+        return { error: `Cannot read "${line}". Use forms like "+12", "-3.2k", "+V2", "-I*470" or "-470*I".` };
+      }
+
+      let coeff = null, symbol = null;
+      for (const p of parts) {
+        if (coeff === null && NUMERIC.test(p)) {
+          const scaled = /[kKmMµu]$/.test(p) ? SCALES[p.slice(-1)] : 1;
+          coeff = Number(scaled === 1 ? p : p.slice(0, -1)) * scaled;
+        } else if (symbol === null && isSymbol(p)) symbol = p;
+        else return { error: `Cannot read "${line}". Numbers may carry a k/M/m/µ suffix; symbols are letters and digits.` };
+      }
+      if (coeff !== null && !Number.isFinite(coeff)) return { error: `"${line}" has an unreadable number.` };
+
+      if (!symbol) {
+        const term = sign * (coeff ?? 0);
+        numeric.push({ term });
+        rows.push({ raw: line, term, kind: 'number', unit: '' });
+      } else {
+        const c = sign * (coeff === null ? 1 : coeff);
+        symbolic.set(symbol, (symbolic.get(symbol) ?? 0) + c);
+        rows.push({ raw: line, kind: 'symbol', symbol, coeff: c });
+      }
+    }
+    void mode;
+
+    const constant = numeric.reduce((a, r) => a + r.term, 0);
+    const unknowns = [...symbolic.entries()];
+    const trace = [
+      ...rows.map((r) => (r.kind === 'number'
+        ? `  ${r.term >= 0 ? '+' : '−'} ${Math.abs(g(r.term, 8))}${r.unit ? ' ' + r.unit : ''}`
+        : `  ${r.coeff >= 0 ? '+' : '−'} ${Math.abs(g(r.coeff, 8))}·${r.symbol}`)),
+      '',
+      `  constant term = ${g(constant, 8)}`,
+      ...unknowns.map(([s, c]) => `  coefficient of ${s} = ${g(c, 8)}`),
+    ].join('\n');
+
+    const values = {
+      constant: g(constant, 8),
+      unknownCount: String(unknowns.length),
+      equation: unknowns.length
+        ? `${unknowns.map(([s, c]) => `${c < 0 ? '−' : '+'}${Math.abs(g(c, 8))}${s}`).join(' ')} ${constant < 0 ? '−' : '+'} ${Math.abs(g(constant, 8))} = 0`
+        : `${g(constant, 8)} = 0`,
+      solution: '—',
+      solved: 'none',
+      balance: unknowns.length ? 'not yet solved' : 'balanced',
+      terms: String(rows.length),
+      trace,
+    };
+    const outputs = [
+      { id: 'constant', label: 'Constant term', unit: '' },
+      { id: 'unknownCount', label: 'Distinct unknowns', unit: '' },
+      { id: 'equation', label: 'Collapsed equation', unit: '' },
+      { id: 'solution', label: 'Solved value', unit: '' },
+    ];
+    const steps = [trace];
+
+    if (unknowns.length === 0) {
+      values.balance = Math.abs(constant) < 1e-9 ? 'balanced' : 'not balanced';
+      steps.push(Math.abs(constant) < 1e-9
+        ? 'No unknowns left and the sum is zero — the values you entered satisfy the law.'
+        : `No unknowns left and the sum is ${g(constant, 8)}, not zero.`);
+    } else if (unknowns.length === 1) {
+      const [sym, c] = unknowns[0];
+      const value = -constant / c;
+      values.solution = g(value, 8);
+      values.solved = sym;
+      steps.push(`One unknown (${sym}), so: ${sym} = −(${g(constant, 8)}) ÷ (${g(c, 8)}) = ${g(value, 8)}`);
+    } else {
+      steps.push(`${unknowns.length} unknowns (${unknowns.map(([s]) => s).join(', ')}) — solve them together, or supply numeric values for all but one.`);
+    }
+
+    return { values, steps, outputs };
+  },
+};
+
+const COULOMB = {
+  id: 'coulomb',
+  title: "Coulomb's law",
+  group: 'electrical',
+  blurb: 'Electrostatic force between two point charges: F = k·q₁q₂/r².',
+  keywords: 'coulomb law electrostatic force charge distance square',
+  reference: 'coulombs-law',
+  inputs: [
+    { id: 'q1', label: 'Charge 1', unit: 'C', step: 'any' },
+    { id: 'q2', label: 'Charge 2', unit: 'C', step: 'any' },
+    { id: 'r', label: 'Distance', unit: 'm', step: 'any' },
+  ],
+  compute: ({ q1, q2, r }) => {
+    const Q1 = n(q1), Q2 = n(q2), R = n(r);
+    if (!R) return { error: 'Distance must be greater than zero.' };
+    const K = 8.9875517923e9;
+    const F = K * Q1 * Q2 / (R * R);
+    const elementary = Math.abs(Q1 * Q2) > 0 ? (Math.abs(Q1 * Q2) / 1.602176565e-19) : 0;
+    return {
+      values: {
+        f: Math.abs(F) < 1e-4 && F !== 0 ? F.toExponential(6) : g(F, 8),
+        dir: Q1 * Q2 > 0 ? 'repel' : Q1 * Q2 < 0 ? 'attract' : 'no force',
+        fNano: g(F * 1e9, 6),
+        potential: g(K * Q1 / R, 8),
+        electrons: elementary > 1e12 ? elementary.toExponential(4) : g(elementary, 4),
+        q1: String(Q1), q2: String(Q2), r: String(R),
+      },
+      steps: [
+        `k = 8.9875517923 × 10⁹ N·m²/C²`,
+        `F = k·q₁·q₂ ÷ r² = (${K}) × (${g(Q1, 8)}) × (${g(Q2, 8)}) ÷ (${g(R, 8)})²`,
+        `= ${Math.abs(F) < 1e-4 && F !== 0 ? F.toExponential(6) : g(F, 8)} N`,
+        `product q₁q₂ ${Q1 * Q2 > 0 ? '> 0 → like charges repel' : '< 0 → unlike charges attract'}`,
+        `V at charge 1's position from charge 2: V = k·q₂/r = ${g(K * Q2 / R, 8)} V`,
+      ],
+      outputs: [
+        { id: 'f', label: 'Electrostatic force', unit: 'N' },
+        { id: 'dir', label: 'Direction', unit: '' },
+        { id: 'fNano', label: 'Force', unit: 'nN' },
+        { id: 'potential', label: 'Potential from q₂', unit: 'V' },
+        { id: 'electrons', label: 'Excess electrons (q₂)', unit: '' },
+      ],
+    };
+  },
+};
+
+const EFFICIENCY = {
+  id: 'power-efficiency',
+  title: 'Power efficiency',
+  group: 'electrical',
+  blurb: 'Useful output as a share of input — the rest becomes heat, sound and motion.',
+  keywords: 'efficiency loss heat η power',
+  inputs: [
+    { id: 'out', label: 'Useful output power', unit: 'W', step: 'any' },
+    { id: 'in', label: 'Input power', unit: 'W', step: 'any' },
+  ],
+  compute: ({ out, in: inp }) => {
+    const O = n(out), I = n(inp);
+    if (I === 0) return { error: 'Input power cannot be zero.' };
+    const eta = O / I * 100;
+    const loss = I - O;
+    return {
+      values: {
+        eta: g(eta, 4),
+        loss: g(loss, 8),
+        ratio: I !== 0 ? g(O / I, 6) : '—',
+        headroom: g(I - O, 8),
+        class: eta >= 90 ? 'excellent' : eta >= 75 ? 'good' : eta >= 50 ? 'fair' : eta > 0 ? 'poor' : 'none',
+        inverse: eta > 0 ? g(100 / eta, 4) : '—',
+      },
+      steps: [
+        `η = P_out ÷ P_in × 100 = ${g(O, 8)} ÷ ${g(I, 8)} × 100 = ${g(eta, 4)} %`,
+        `loss = P_in − P_out = ${g(loss, 8)} W`,
+        eta > 0 ? `you would need ${g(100 / eta, 4)} W of input for every 100 W of output` : 'no output — nothing to invert',
+      ],
+      outputs: [
+        { id: 'eta', label: 'Efficiency', unit: '%' },
+        { id: 'loss', label: 'Power lost', unit: 'W' },
+        { id: 'ratio', label: 'Output ÷ input', unit: '' },
+        { id: 'class', label: 'Rating', unit: '' },
+      ],
+    };
+  },
+};
+
+const DECIBEL = {
+  id: 'decibel',
+  title: 'Decibel (dB)',
+  group: 'electrical',
+  blurb: 'Logarithmic ratios: power uses 10·log₁₀, amplitude uses 20·log₁₀.',
+  keywords: 'decibel db gain ratio logarithm sound level',
+  inputs: [
+    { id: 'v', label: 'Value', step: 'any' },
+    { id: 'from', label: 'From', type: 'select', options: [
+      ['dbm', 'dBm (absolute, 1 mW)'], ['dbw', 'dBW (absolute, 1 W)'], ['dbfs', 'dBFS (digital full scale)'],
+      ['ratio', 'Power ratio (×)'], ['amp', 'Amplitude ratio (×)'], ['spl', 'dB SPL (sound pressure)'],
+    ] },
+    { id: 'to', label: 'Also show', type: 'checkbox' },
+  ],
+  compute: ({ v, from }) => {
+    const x = n(v);
+    const L = (a) => g(10 * Math.log10(a), 4);
+    let db, watts, amp, note;
+    if (from === 'dbm') { watts = Math.pow(10, (x - 30) / 10); db = x; amp = Math.sqrt(watts / 1e-3); note = `P(W) = 10^((dBm − 30)/10)`; }
+    else if (from === 'dbw') { watts = Math.pow(10, x / 10); db = x; amp = Math.sqrt(watts); note = `P(W) = 10^(dBW/10)`; }
+    else if (from === 'dbfs') { watts = Math.pow(10, (x - 30) / 10) * 1e-3; db = x; amp = Math.pow(10, x / 20); note = '0 dBFS is the maximum representable digital level.'; }
+    else if (from === 'ratio') { watts = x; db = 10 * Math.log10(x); amp = Math.sqrt(x); note = 'dB = 10 · log₁₀(power ratio)'; }
+    else if (from === 'amp') { amp = x; watts = x * x; db = 20 * Math.log10(x); note = 'dB = 20 · log₁₀(amplitude ratio)'; }
+    else { db = x; watts = Math.pow(10, x / 10) * 1e-3; amp = Math.pow(10, x / 20); note = 'dB SPL — sound pressure level, reference 20 µPa.'; }
+    const out = {
+      db: Number.isFinite(db) ? g(db, 4) : '−∞',
+      dbm: watts > 0 ? L(watts * 1000) : '−∞',
+      dbw: watts > 0 ? L(watts) : '−∞',
+      watts: watts !== 0 ? (Math.abs(watts) < 1e-3 || Math.abs(watts) >= 1e6 ? watts.toExponential(6) : g(watts, 6)) : '0',
+      milli: g(watts * 1000, 6),
+      amp: amp > 0 ? g(amp, 6) : '0',
+      note,
+    };
+    return {
+      values: out,
+      steps: [
+        note,
+        `= ${Number.isFinite(db) ? g(db, 4) : '−∞'} dB`,
+        watts > 0 ? `equivalently ${out.watts} W` : 'a zero ratio is −∞ dB',
+      ],
+      outputs: [
+        { id: 'dbm', label: 'Power', unit: 'dBm' },
+        { id: 'dbw', label: 'Power', unit: 'dBW' },
+        { id: 'watts', label: 'Power', unit: 'W' },
+        { id: 'milli', label: 'Power', unit: 'mW' },
+        { id: 'amp', label: 'Amplitude ratio', unit: '×' },
+      ],
+    };
+  },
+};
+
+const SCIENTIFIC = {
+  id: 'scientific-calc',
+  title: 'Scientific calculator',
+  group: 'math',
+  blurb: 'Full keypad with precedence, functions, memory and history.',
+  keywords: 'scientific calculator keypad sin cos tan log exp degree',
+  reference: null,
+  inputs: [{ id: 'display', label: 'Expression', type: 'text', placeholder: 'sin(45) + 2^8' }],
+  compute: ({ display }) => {
+    const s = String(display || '').trim();
+    if (!s) return { error: 'Enter an expression, or tap the keypad.' };
+    try {
+      const value = evalExpr(s);
+      return {
+        values: { value: Number(value.toPrecision(15)), hex: floatToHex(value), deg: g(Math.atan2(value, 1) * 180 / Math.PI, 6) },
+        steps: [`${s}`, `= ${Number(value.toPrecision(15))}`],
+        outputs: [{ id: 'value', label: 'Result', unit: '' }],
+      };
+    } catch (e) { return { error: e.message }; }
+  },
+};
+
 /* ── general ─────────────────────────────────────────────────────────────── */
 
 /**
@@ -2128,9 +2393,10 @@ const BATCH = {
 };
 
 export const TOOLS = [
-  OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, EV, ENERGY_BILL, PHOTOMETRY,
+  OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, DECIBEL, EV, EFFICIENCY, ENERGY_BILL,
+  PHOTOMETRY, KIRCHHOFF, COULOMB,
   STDDEV, WEIGHTED_AVG, QUADRATIC, ROOTS, FACTORIAL, PERCENT, PERCENT_ERROR, GCF_LCM, FRACTION,
-  DECIMAL_FRACTION, RATIO, DIVMOD, SCI_NOTATION, PYTHAGOREAN, CONVOLUTION, LOG_CALC, EXP_GROWTH, TRIG,
+  DECIMAL_FRACTION, RATIO, DIVMOD, SCI_NOTATION, SCIENTIFIC, PYTHAGOREAN, CONVOLUTION, LOG_CALC, EXP_GROWTH, TRIG,
   COLOR, RADIX_CALC, ROMAN, WORDING,
   CASE_CONV, URL_TOOL, COUNTERS, HASH_TOOL,
   MORTGAGE, COMPOUND, SIMPLE_INT, VAT, DISCOUNT, GPA, GRADE_CALC,
