@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Probability Distributions — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/probability-distributions/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/probability-distributions/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Probability Distributions — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/probability-distributions/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Probability Distributions — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 72 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/probability-distributions/#article",
+      "headline": "Probability Distributions",
+      "description": "What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.",
+      "articleSection": "Statistics",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/probability-distributions/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/probability-distributions/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Probability Distributions",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/probability-distributions/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Probability Distributions</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Statistics</span>
+      <h1>Probability Distributions</h1>
+      <p>What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A probability distribution describes how probability is spread over the possible values of a random variable. The cumulative distribution function F(x) is the probability that the variable falls at or below x.</p>
+    <div class="formula"><span class="eq">Continuous:  F(x) = ∫₋∞ˣ f(u) du
+Discrete:    F(x) = Σₖ≤ₓ P(X = k)</span></div>
+    <h2>Discrete distributions</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Distribution</th><th>Symbol</th><th>Mean</th><th>Variance</th></tr></thead>
+      <tbody>
+        <tr><td>Binomial</td><td>X ~ Bin(n, p)</td><td>n·p</td><td>n·p(1 − p)</td></tr>
+        <tr><td>Poisson</td><td>X ~ Poisson(λ)</td><td>λ</td><td>λ</td></tr>
+        <tr><td>Uniform</td><td>X ~ U(a, b)</td><td>(a+b)/2</td><td>(b−a)²/12</td></tr>
+        <tr><td>Geometric</td><td>X ~ Geom(p)</td><td>1/p</td><td>(1 − p)/p²</td></tr>
+        <tr><td>Hypergeometric</td><td>X ~ HG(N, K, n)</td><td>nK/N</td><td>n·(K/N)·(1−K/N)·(N−n)/(N−1)</td></tr>
+        <tr><td>Bernoulli</td><td>X ~ Bern(p)</td><td>p</td><td>p(1 − p)</td></tr>
+      </tbody>
+    </table></div>
+    <h2>Continuous distributions</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Distribution</th><th>Symbol</th><th>Mean</th><th>Variance</th></tr></thead>
+      <tbody>
+        <tr><td>Normal</td><td>X ~ N(μ, σ²)</td><td>μ</td><td>σ²</td></tr>
+        <tr><td>Uniform</td><td>X ~ U(a, b)</td><td>(a+b)/2</td><td>(b−a)²/12</td></tr>
+        <tr><td>Exponential</td><td>X ~ exp(λ)</td><td>1/λ</td><td>1/λ²</td></tr>
+        <tr><td>Gamma</td><td>X ~ gamma(c, λ)</td><td>c/λ</td><td>c/λ²</td></tr>
+        <tr><td>Chi-squared</td><td>X ~ χ²(k)</td><td>k</td><td>2k</td></tr>
+        <tr><td>Student’s t</td><td>X ~ t(k)</td><td>0</td><td>k/(k−2), k &gt; 2</td></tr>
+      </tbody>
+    </table></div>
+    <h2>Continuous vs discrete</h2>
+    <ul>
+      <li>Discrete — the variable takes countable values. Described by a probability mass function P(X = k).</li>
+      <li>Continuous — the variable takes a range of values. Described by a probability density function f(x).</li>
+      <li>For continuous variables, the probability of any exact point is zero — only intervals carry non-zero probability.</li>
+      <li>The z-table on the tables page is the N(0, 1) CDF at every 0.01 step from 0 to 3.99.</li>
+    </ul>
+    <h2>What to memorise</h2>
+    <ul>
+      <li>Normal: symmetric, two parameters (μ, σ²). 68 % within 1σ, 95 % within 1.96σ, 99.7 % within 3σ.</li>
+      <li>Poisson: for counts of rare events. Mean = variance.</li>
+      <li>Binomial: for the number of successes in n independent trials.</li>
+      <li>Exponential: for time until the next event from a memoryless process.</li>
+    </ul>
+    <div class="callout"><div><strong>Note</strong> The standard normal CDF Φ(z) is exactly the table on the tables page. 1.96σ either side covers 95 % of outcomes — the usual rule of thumb.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/stddev/">Put it into practice → Mean, variance &amp; standard deviation</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/probability-distributions";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

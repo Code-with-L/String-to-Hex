@@ -819,6 +819,50 @@ export const ARTICLES = {
     ],
   },
 
+  'probability-distributions': {
+    title: 'Probability Distributions',
+    kicker: 'Statistics',
+    summary: 'What a distribution is, discrete versus continuous, and the ones worth memorising — binomial, Poisson, normal, uniform.',
+    tool: 'stddev',
+    blocks: [
+      { k: 'definition', t: 'A probability distribution describes how probability is spread over the possible values of a random variable. The cumulative distribution function F(x) is the probability that the variable falls at or below x.' },
+      { k: 'formula', eq: 'Continuous:  F(x) = ∫₋∞ˣ f(u) du\nDiscrete:    F(x) = Σₖ≤ₓ P(X = k)' },
+      { k: 'h3', t: 'Discrete distributions' },
+      { k: 'table', head: ['Distribution', 'Symbol', 'Mean', 'Variance'], rows: [
+        ['Binomial', 'X ~ Bin(n, p)', 'n·p', 'n·p(1 − p)'],
+        ['Poisson', 'X ~ Poisson(λ)', 'λ', 'λ'],
+        ['Uniform', 'X ~ U(a, b)', '(a+b)/2', '(b−a)²/12'],
+        ['Geometric', 'X ~ Geom(p)', '1/p', '(1 − p)/p²'],
+        ['Hypergeometric', 'X ~ HG(N, K, n)', 'nK/N', 'n·(K/N)·(1−K/N)·(N−n)/(N−1)'],
+        ['Bernoulli', 'X ~ Bern(p)', 'p', 'p(1 − p)'],
+      ] },
+      { k: 'h3', t: 'Continuous distributions' },
+      { k: 'table', head: ['Distribution', 'Symbol', 'Mean', 'Variance'], rows: [
+        ['Normal', 'X ~ N(μ, σ²)', 'μ', 'σ²'],
+        ['Uniform', 'X ~ U(a, b)', '(a+b)/2', '(b−a)²/12'],
+        ['Exponential', 'X ~ exp(λ)', '1/λ', '1/λ²'],
+        ['Gamma', 'X ~ gamma(c, λ)', 'c/λ', 'c/λ²'],
+        ['Chi-squared', 'X ~ χ²(k)', 'k', '2k'],
+        ['Student’s t', 'X ~ t(k)', '0', 'k/(k−2), k > 2'],
+      ] },
+      { k: 'h3', t: 'Continuous vs discrete' },
+      { k: 'list', items: [
+        'Discrete — the variable takes countable values. Described by a probability mass function P(X = k).',
+        'Continuous — the variable takes a range of values. Described by a probability density function f(x).',
+        'For continuous variables, the probability of any exact point is zero — only intervals carry non-zero probability.',
+        'The z-table on the tables page is the N(0, 1) CDF at every 0.01 step from 0 to 3.99.',
+      ] },
+      { k: 'h3', t: 'What to memorise' },
+      { k: 'list', items: [
+        'Normal: symmetric, two parameters (μ, σ²). 68 % within 1σ, 95 % within 1.96σ, 99.7 % within 3σ.',
+        'Poisson: for counts of rare events. Mean = variance.',
+        'Binomial: for the number of successes in n independent trials.',
+        'Exponential: for time until the next event from a memoryless process.',
+      ] },
+      { k: 'callout', icon: 'info', t: 'The standard normal CDF Φ(z) is exactly the table on the tables page. 1.96σ either side covers 95 % of outcomes — the usual rule of thumb.' },
+    ],
+  },
+
   'electrical-units': {
     title: 'Electrical Units',
     kicker: 'Reference',
