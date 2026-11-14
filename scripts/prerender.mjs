@@ -724,6 +724,14 @@ ${TABLES.normalDist.rows.map(([z, cdf, pdf]) => {
 ${TABLES.awgCopper.rows.map(([awg, d, a, r]) => `          <tr><td class="mono" style="font-weight:600">${esc(awg)}</td><td class="mono">${esc(d)}</td><td class="mono">${esc(a)}</td><td class="mono" style="color:var(--data)">${esc(r)}</td></tr>`).join('\n')}
         </tbody>
       </table>
+      <h2>Resistor E-series (IEC 60063)</h2>
+      <p>Printed code = digits × 10^n Ω with n the count of trailing zeros; e.g. 102 = 1,000 Ω, 47R = 47 Ω.</p>
+      <div class="grid grid-5">
+${TABLES.eseries.series.map((s) => `        <div class="panel">
+          <h3 class="panel-title">${esc(s.label)}</h3>
+          <div class="chips">${s.values.map((v) => `<span class="chip mono">${v}</span>`).join('')}</div>
+        </div>`).join('\n')}
+      </div>
       <h2>Common electronic components</h2>
       <table>
         <thead><tr><th>Component</th><th>Symbol</th><th>Unit</th><th>What it does</th></tr></thead>

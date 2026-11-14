@@ -341,6 +341,11 @@ export function viewTables() {
   const add = TABLES.addition;
   const logs = TABLES.logarithms;
   const temps = TABLES.temperatures;
+  const eSeriesPanels = TABLES.eseries.series.map((s) =>
+    el('div', { class: 'panel' },
+      el('h3', { class: 'panel-title' }, s.label),
+      el('div', { class: 'chips' }, ...s.values.map((v) =>
+        el('span', { class: 'chip mono' }, String(v))))));
   const rom = TABLES.roman;
   const romSymbolRows = rom.symbols.map(([s, v, name]) =>
     el('tr', {}, el('td', { class: 'mono', style: 'font-weight:600' }, s), el('td', { class: 'mono' }, v), el('td', { style: 'color:var(--ink-faint)' }, name)));
@@ -460,6 +465,11 @@ export function viewTables() {
     el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, temps.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, temps.blurb)),
       el('div', { class: 'table-scroll' }, tableEl(['°C', '°F', 'Why it matters'], tempRows)),
+    ),
+
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.eseries.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.eseries.blurb)),
+      el('div', { class: 'grid grid-5' }, ...eSeriesPanels),
     ),
 
     el('section', { class: 'section' },

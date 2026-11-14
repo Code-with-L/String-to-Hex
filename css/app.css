@@ -219,6 +219,7 @@ main { padding: clamp(20px, 3.4vw, 40px) 0 72px; }
 .grid { display: grid; gap: 16px; }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
 .split { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 18px; }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
 
