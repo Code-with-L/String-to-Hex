@@ -860,3 +860,24 @@ test('TABLES: multiplication, addition, log and temperature data are internally 
   assert.equal(t.rows.find((r) => r[0] === '0')[1], '32');
   assert.equal(t.rows.find((r) => r[0] === '−40')[1], '−40');
 });
+
+test('TABLES: named and web-safe colours are well-formed', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  const hex = /^#([0-9a-f]{6})$/;
+  assert.equal(TABLES.webSafe.rows.length, 216, 'web-safe palette is exactly 216 colours');
+  for (const c of TABLES.webSafe.rows) assert.match(c, hex, 'valid web-safe hex');
+  assert.ok(TABLES.named.rows.length >= 30, 'at least 30 named colours');
+  for (const c of TABLES.named.rows) {
+    assert.match(c.hex, hex, 'named hex valid');
+    assert.match(c.rgb, /^\d+, \d+, \d+$/, 'rgb components valid');
+    assert.match(c.hsl, /^\d+°, \d+%, \d+%$/, 'hsl valid');
+    const [r, g, b] = c.rgb.split(',').map(Number);
+    assert.ok(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255);
+  }
+  // every named entry's computed hex matches its rgb
+  for (const c of TABLES.named.rows.slice(0, 5)) {
+    const n = parseInt(c.hex.slice(1), 16);
+    const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    assert.equal(c.rgb, r + ', ' + g + ', ' + b);
+  }
+});

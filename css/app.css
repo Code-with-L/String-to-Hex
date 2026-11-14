@@ -763,3 +763,10 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
 .mul-table th { color: var(--signal); background: var(--panel-2); }
 .mul-table tbody tr:hover td, .mul-table tbody tr:hover th { background: var(--panel-2); }
 .mul-table tbody th { color: var(--ink-dim); }
+
+/* ── colour tables ────────────────────────────────────────────────────── */
+.swatch-inline { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:-2px; margin-right:7px; border: 1px solid var(--line-2); }
+.web-safe-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; }
+.web-safe-cell { aspect-ratio: 1 / 1; display: flex; align-items: flex-end; justify-content: center; padding: 2px; border-radius: 1px; font-family: var(--mono); font-size: 8px; color: #888; }
+.web-safe-cell span { background: rgba(0,0,0,0.5); color: #fff; padding: 1px 2px; border-radius: 2px; font-size: 7px; letter-spacing: .5px; }
+@media (max-width: 480px) { .web-safe-grid { grid-template-columns: repeat(6, 1fr); } }

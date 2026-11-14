@@ -874,6 +874,54 @@ export const ARTICLE_SLUGS = Object.keys(ARTICLES);
 
 /* ── reference tables ──────────────────────────────────────────────────── */
 
+/* ── named colours and the web-safe palette ──────────────────────────────── */
+
+const hexToRgb = (hex) => {
+  const n = parseInt(hex.replace('#', ''), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+};
+
+const rgbToHsl = (r, g, b) => {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const d = max - min;
+  if (d === 0) return [0, 0, Math.round(l * 100)];
+  const s = d / (1 - Math.abs(2 * l - 1));
+  let h;
+  if (max === r) h = ((g - b) / d) % 6;
+  else if (max === g) h = (b - r) / d + 2;
+  else h = (r - g) / d + 4;
+  h = Math.round(h * 60);
+  if (h < 0) h += 360;
+  return [h, Math.round((s || 0) * 100), Math.round(l * 100)];
+};
+
+const NAMED_COLOURS = [
+  ['black', '000000'], ['white', 'ffffff'], ['silver', 'c0c0c0'], ['gray', '808080'],
+  ['maroon', '800000'], ['red', 'ff0000'], ['crimson', 'dc143c'], ['tomato', 'ff6347'],
+  ['orangered', 'ff4500'], ['orange', 'ffa500'], ['gold', 'ffd700'], ['yellow', 'ffff00'],
+  ['khaki', 'f0e68c'], ['olive', '808000'], ['lime', '00ff00'], ['limegreen', '32cd32'],
+  ['forestgreen', '228b57'], ['seagreen', '2e8b57'], ['green', '008000'], ['teal', '008080'],
+  ['aquamarine', '7fffd4'], ['cyan', '00ffff'], ['aqua', '00ffff'], ['deepskyblue', '00bfff'],
+  ['dodgerblue', '1e90ff'], ['skyblue', '87ceeb'], ['steelblue', '4682b4'], ['royalblue', '4169e1'],
+  ['blue', '0000ff'], ['darkblue', '00008b'], ['midnightblue', '191970'], ['navy', '000080'],
+  ['slateblue', '6a5acd'], ['indigo', '4b0082'], ['violet', 'ee82ee'], ['orchid', 'da70d6'],
+  ['magenta', 'ff00ff'], ['fuchsia', 'ff00ff'], ['plum', 'dda0dd'], ['lavender', 'e6e6fa'],
+  ['slategray', '708090'], ['aliceblue', 'f0f8ff'], ['ivory', 'fffff0'],
+];
+
+const namedRgbHsl = ([name, hex]) => {
+  const [r, g, b] = hexToRgb(hex);
+  const [h, s, l] = rgbToHsl(r, g, b);
+  return { name, hex: `#${hex}`, rgb: `${r}, ${g}, ${b}`, hsl: `${h}°, ${s}%, ${l}%` };
+};
+
+// The 216 web-safe colours: each channel picks from {00, 33, 66, 99, CC, FF}.
+const WEB_SAFE_CHANNELS = ['00', '33', '66', '99', 'cc', 'ff'];
+const WEB_SAFE = WEB_SAFE_CHANNELS.flatMap((r) =>
+  WEB_SAFE_CHANNELS.flatMap((g) => WEB_SAFE_CHANNELS.map((b) => `#${r}${g}${b}`)));
+
 export const TABLES = {
   resistors: {
     title: 'Resistor colour code',
@@ -1000,6 +1048,18 @@ export const TABLES = {
       ['300', '572', 'Hot water on a 600 °C element'],
       ['500', '932', 'Wood ignition temperature'],
     ],
+  },
+
+  named: {
+    title: 'Named colours',
+    blurb: 'The CSS named colours — hex, RGB and HSL for every entry.',
+    rows: NAMED_COLOURS.map(namedRgbHsl),
+  },
+
+  webSafe: {
+    title: 'Web-safe palette',
+    blurb: '216 colours every channel can render — the old 6×6×6 palette, safe to use today.',
+    rows: WEB_SAFE,
   },
 };
 

@@ -334,8 +334,36 @@ export function viewSymbols() {
 
 /* ── reference tables ───────────────────────────────────────────────────── */
 
+/** Build tables from precomputed bindings — layout stays shallow and easy to read. */
 export function viewTables() {
   const R = TABLES.resistors;
+  const mul = TABLES.multiplication;
+  const add = TABLES.addition;
+  const logs = TABLES.logarithms;
+  const temps = TABLES.temperatures;
+
+  const mulHead = Array.from({ length: mul.size }, (_, i) => el('th', { class: 'mono' }, String(i + 1)));
+  const mulRows = mul.rows.map((row, i) =>
+    el('tr', {}, el('th', { class: 'mono' }, String(i + 1)),
+      ...row.map((v) => el('td', { class: 'mono' }, String(v)))));
+  const addHead = Array.from({ length: add.size + 1 }, (_, i) => el('th', { class: 'mono' }, String(i)));
+  const addRows = add.rows.map((row, i) =>
+    el('tr', {}, el('th', { class: 'mono' }, String(i)),
+      ...row.map((v) => el('td', { class: 'mono' }, String(v)))));
+  const logRows = logs.rows.map(([x, l10, le]) =>
+    el('tr', {}, el('td', { class: 'mono' }, x), el('td', { class: 'mono' }, l10), el('td', { class: 'mono' }, le)));
+  const tempRows = temps.rows.map((r) =>
+    el('tr', {}, el('td', { class: 'mono' }, r[0]), el('td', { class: 'mono', style: 'color:var(--data)' }, r[1]), el('td', { style: 'color:var(--ink-faint)' }, r[2])));
+  const namedRows = TABLES.named.rows.map((r) =>
+    el('tr', {},
+      el('td', {}, el('span', { class: 'swatch-inline', style: 'background:' + r.hex }), ' ', r.name),
+      el('td', { class: 'mono' }, r.hex),
+      el('td', { class: 'mono' }, r.rgb),
+      el('td', { class: 'mono' }, r.hsl)));
+  const webSafeCells = TABLES.webSafe.rows.map((hex) =>
+    el('div', { class: 'web-safe-cell', style: 'background:' + hex, title: hex },
+      el('span', {}, hex.slice(1).toUpperCase())));
+
   const swatch = (hex) => el('span', {
     style: `display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:7px;border:1px solid var(--line-2);background:${hex || 'var(--panel-3)'}`,
   });
@@ -360,77 +388,62 @@ export function viewTables() {
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.multiplication.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.multiplication.blurb)),
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.conductivity.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.conductivity.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(['Material', 'Resistivity (Ω·m)', 'Note'],
+        TABLES.conductivity.rows.map((r) => el('tr', {}, el('td', { style: 'font-weight:600' }, r[0]), el('td', { class: 'mono' }, r[1]), el('td', { style: 'color:var(--ink-faint)' }, r[2]))))),
+    ),
+
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, mul.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, mul.blurb)),
       el('div', { class: 'table-scroll' }, el('table', { class: 'mul-table' },
-        el('thead', {}, el('tr', {}, el('th', {}, '×'),
-          ...Array.from({ length: TABLES.multiplication.size }, (_, i) => el('th', { class: 'mono' }, String(i + 1))))),
-        el('tbody', {}, ...TABLES.multiplication.rows.map((row, i) => el('tr', {},
-          el('th', { class: 'mono' }, String(i + 1)),
-          ...row.map((v) => el('td', { class: 'mono' }, String(v)))))))),
+        el('thead', {}, el('tr', {}, el('th', {}, '×'), ...mulHead)),
+        el('tbody', {}, ...mulRows))),
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.addition.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.addition.blurb)),
+      el('div', { class: 'section-head' }, el('h2', {}, add.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, add.blurb)),
       el('div', { class: 'table-scroll' }, el('table', { class: 'mul-table' },
-        el('thead', {}, el('tr', {}, el('th', {}, '+'),
-          ...Array.from({ length: TABLES.addition.size + 1 }, (_, i) => el('th', { class: 'mono' }, String(i))))),
-        el('tbody', {}, ...TABLES.addition.rows.map((row, i) => el('tr', {},
-          el('th', { class: 'mono' }, String(i)),
-          ...row.map((v) => el('td', { class: 'mono' }, String(v)))))))),
+        el('thead', {}, el('tr', {}, el('th', {}, '+'), ...addHead)),
+        el('tbody', {}, ...addRows))),
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.conductivity.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.conductivity.blurb)),
-      el('div', { class: 'table-scroll' }, el('table', {},
-        el('thead', {}, el('tr', {}, el('th', {}, 'Material'), el('th', {}, 'Resistivity (Ω·m)'), el('th', {}, 'Note'))),
-        el('tbody', {}, ...TABLES.conductivity.rows.map((r) => el('tr', {},
-          el('td', { style: 'font-weight:600' }, r[0]),
-          el('td', { class: 'mono' }, r[1]),
-          el('td', { style: 'color:var(--ink-faint)' }, r[2])))))),
+      el('div', { class: 'section-head' }, el('h2', {}, logs.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, logs.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(['x', 'log₁₀(x)', 'ln(x)'], logRows)),
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.logarithms.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.logarithms.blurb)),
-      el('div', { class: 'table-scroll' }, el('table', {},
-        el('thead', {}, el('tr', {}, el('th', {}, 'x'), el('th', {}, 'log₁₀(x)'), el('th', {}, 'ln(x)'))),
-        el('tbody', {}, ...TABLES.logarithms.rows.map(([x, l10, le]) => el('tr', {},
-          el('td', { class: 'mono' }, x),
-          el('td', { class: 'mono' }, l10),
-          el('td', { class: 'mono' }, le)))))),
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.named.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.named.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(['Colour', 'Hex', 'RGB', 'HSL'], namedRows)),
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.temperatures.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.temperatures.blurb)),
-      el('div', { class: 'table-scroll' }, el('table', {},
-        el('thead', {}, el('tr', {},
-          el('th', {}, '°C'), el('th', {}, '°F'), el('th', {}, 'Why it matters'))),
-        el('tbody', {}, ...TABLES.temperatures.rows.map((r) => el('tr', {},
-          el('td', { class: 'mono' }, r[0]),
-          el('td', { class: 'mono', style: 'color:var(--data)' }, r[1]),
-          el('td', { style: 'color:var(--ink-faint)' }, r[2])))))),
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.webSafe.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.webSafe.blurb)),
+      el('div', { class: 'web-safe-grid' }, ...webSafeCells),
     ),
 
     el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, TABLES.wireCurrent.title),
-        el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.wireCurrent.blurb)),
-      el('div', { class: 'table-scroll' }, el('table', {},
-        el('thead', {}, el('tr', {},
-          el('th', {}, 'Cross-section'), el('th', {}, 'AWG'), el('th', {}, 'Capacity'), el('th', {}, 'Typical use'))),
-        el('tbody', {}, ...TABLES.wireCurrent.rows.map((r) => el('tr', {},
-          el('td', { class: 'mono' }, r[0]),
-          el('td', { class: 'mono' }, r[1]),
-          el('td', { class: 'mono', style: 'color:var(--data)' }, r[2]),
-          el('td', { style: 'color:var(--ink-faint)' }, r[3])))))),
+      el('div', { class: 'section-head' }, el('h2', {}, temps.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, temps.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(['°C', '°F', 'Why it matters'], tempRows)),
+    ),
+
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.wireCurrent.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.wireCurrent.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(['Cross-section', 'AWG', 'Capacity', 'Typical use'],
+        TABLES.wireCurrent.rows.map((r) => el('tr', {}, el('td', { class: 'mono' }, r[0]), el('td', { class: 'mono' }, r[1]), el('td', { class: 'mono', style: 'color:var(--data)' }, r[2]), el('td', { style: 'color:var(--ink-faint)' }, r[3]))))),
     ),
   );
+
   node.pageTitle = 'Reference tables — HexKit';
-  node.pageDescription = 'Resistor colour code, material resistivity and wire current capacity tables.';
+  node.pageDescription = 'Multiplication, addition, logarithm, temperature, resistor colour code, named CSS colours and the 216-colour web-safe palette.';
   return node;
+}
+
+/** Shared table shell used by every table section in the view. */
+function tableEl(headers, rows) {
+  return el('table', {},
+    el('thead', {}, el('tr', {}, ...headers.map((h) => el('th', {}, h)))),
+    el('tbody', {}, ...rows));
 }
 
 function bandTable(title, rows, swatch) {

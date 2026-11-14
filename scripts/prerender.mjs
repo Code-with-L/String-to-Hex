@@ -584,10 +584,10 @@ PAGES.push({
 PAGES.push({
   path: '/tables/index.html',
   hash: '/tables',
-  title: `Multiplication, addition, log, temperature &amp; resistor tables | ${SITE}`,
-  description: 'The tables that keep getting scrolled past: multiplication and addition tables, logarithm tables (log₁₀ and ln), °C↔°F reference, resistor colour bands, material resistivity and wire current capacity.',
+  title: `Multiplication, log, named colours &amp; resistor tables | ${SITE}`,
+  description: 'Multiplication and addition tables, logarithm tables, °C↔°F reference, the full 216-colour web-safe palette, named CSS colours with hex/RGB/HSL, resistor colour code and wire current capacity.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, addition, logarithms, temperature, resistor', description: 'Multiplication, addition, logarithm and temperature tables alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logarithms, named colours, web-safe palette, temperature, resistor', description: 'Multiplication, addition, logarithm, °C↔°F, named CSS colours and the 216-colour web-safe palette, alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -658,6 +658,17 @@ ${TABLES.logarithms.rows.map(([x, l10, le]) => `          <tr><td class="mono">$
 ${TABLES.temperatures.rows.map((r) => `          <tr><td class="mono">${esc(r[0])}</td><td class="mono">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('\n')}
         </tbody>
       </table>
+      <h2>Named colours — hex, RGB and HSL</h2>
+      <table>
+        <thead><tr><th>Colour</th><th>Hex</th><th>RGB</th><th>HSL</th></tr></thead>
+        <tbody>
+${TABLES.named.rows.map((r) => `          <tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:7px;border:1px solid var(--line-2);background:${esc(r.hex)}"></span>${esc(r.name)}</td><td class="mono">${esc(r.hex)}</td><td class="mono">${esc(r.rgb)}</td><td class="mono">${esc(r.hsl)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Web-safe palette (216 colours)</h2>
+      <div class="web-safe-grid">
+${TABLES.webSafe.rows.map((hex) => `        <div class="web-safe-cell" style="background:${esc(hex)}" title="${esc(hex)}"><span>${esc(hex.slice(1).toUpperCase())}</span></div>`).join('\n')}
+      </div>
       <h2>Common electronic components</h2>
       <table>
         <thead><tr><th>Component</th><th>Symbol</th><th>Unit</th><th>What it does</th></tr></thead>
