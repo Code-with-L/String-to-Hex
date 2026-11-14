@@ -585,9 +585,11 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
   transition: border-color 0.16s, transform 0.16s;
 }
 .symbol-card:hover { border-color: var(--signal); transform: translateY(-2px); }
-.symbol-card svg { width: 100%; height: 62px; color: var(--signal); overflow: visible; }
+.symbol-card svg, .symbol-card .symbol-img { width: 100%; height: 62px; color: var(--signal); overflow: visible; object-fit: contain; }
 .symbol-card b { font-size: 13.5px; font-weight: 650; }
 .symbol-card small { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); letter-spacing: 0.06em; }
+.symbol-attrib { margin-top: 18px; font-size: 13px; color: var(--ink-dim); }
+.symbol-attrib a { color: var(--signal); }
 
 /* ── byte strip (hero visual) ────────────────────────────────────────── */
 

@@ -35,6 +35,7 @@ import { TOOLS, TOOL_BY_ID, GROUPS } from '../js/data/tools.js';
 import { FAMILIES, FAMILY_IDS } from '../js/data/units.js';
 import { FORMATS, ENCODINGS } from '../js/data/formats.js';
 import { ARTICLES, GLOSSARY, GLOSSARY_GROUPS, TABLES, COMPONENTS } from '../js/data/reference.js';
+import { SYMBOLS, SYMBOL_GROUPS } from '../js/data/symbols.js';
 import { ASCII_128 } from '../js/data/ascii.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -540,70 +541,31 @@ PAGES.push({
   path: '/symbols/index.html',
   hash: '/symbols',
   title: `Electrical circuit symbols — SVG reference | ${SITE}`,
-  description: 'Resistor, capacitor, inductor, diode, transistor, ground, switch and more, drawn to the IEC/ANSI convention with each symbol explained.',
+  description: `${Object.keys(SYMBOLS).length} electrical circuit symbols sourced from Wikimedia Commons (IEC/ANSI), with per-file attribution and licenses.`,
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/symbols#article`, headline: 'Electrical circuit symbols', description: 'A reference of circuit symbols drawn to the IEC/ANSI convention.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/symbols#article`, headline: 'Electrical circuit symbols', description: 'A reference of circuit symbols sourced from Wikimedia Commons, drawn to IEC/ANSI conventions.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Circuit symbols' }])}
     <header class="page-head">
       <h1>Circuit symbols</h1>
-      <p>Each symbol below is drawn from the IEC/ANSI convention, so it reads the way a schematic on the bench would.</p>
+      <p>${Object.keys(SYMBOLS).length} circuit symbols sourced as SVG files from Wikimedia Commons (IEC/ANSI conventions). No symbols are hand-drawn in this app.</p>
     </header>
-    <section class="panel prose">
-      <h2>Resistive and control elements</h2>
-      <ul>
-        <li><strong>Resistor (IEC box):</strong> a rectangle. (ANSI zig-zag) a sawtooth. Both mean the same thing.</li>
-        <li><strong>Potentiometer:</strong> a resistor with an arrow meeting it partway along — an adjustable divider.</li>
-        <li><strong>Trimmer:</strong> small factory-set pot for fine calibration; set once, never touched again.</li>
-        <li><strong>Thermistor:</strong> resistor with strong temperature dependence; used in thermometers, inrush limiters and fan controllers.</li>
-        <li><strong>DIP switch:</strong> a bank of tiny switches in one dual-in-line package — set once at configuration time, not a daily switch.</li>
-        <li><strong>Solder bridge:</strong> a deliberate solder dot across two pads — a zero-cost 0 Ω jumper for board variant selection.</li>
-        <li><strong>Fuse:</strong> a straight conductor inside a rectangle. It melts open above its rating.</li>
-        <li><strong>Switch (SPST):</strong> a hinged blade disconnecting a single path.</li>
-        <li><strong>SPDT (changeover):</strong> one common terminal, two throw positions — flip it to choose which path receives the current.</li>
-        <li><strong>Pushbutton (NO):</strong> momentary — closes only while pressed; the classic front-panel button.</li>
-        <li><strong>Pushbutton (NC):</strong> momentary normally-closed — opens only while pressed; usually the stop button on a machine.</li>
-        <li><strong>SPDT relay:</strong> electromagnetically-operated changeover contacts; used for interlocking and safety circuits.</li>
-      </ul>
-      <h2>Energy storage</h2>
-      <ul>
-        <li><strong>Capacitor:</strong> two parallel plates. A curved second plate marks a polarised part, which must not be reversed.</li>
-        <li><strong>Inductor:</strong> a coil. Parallel bars through it indicate a ferrite or iron core.</li>
-      </ul>
-      <h2>Semiconductors</h2>
-      <ul>
-        <li><strong>Diode:</strong> a triangle pointing at a bar. Current flows toward the bar only.</li>
-        <li><strong>Zener:</strong> the same, with a bent cathode bar — it conducts in reverse at a defined voltage.</li>
-        <li><strong>LED:</strong> a diode with arrows leaving it.</li>
-        <li><strong>Transistor:</strong> a base bar with emitter and collector legs; the arrow direction distinguishes NPN from PNP.</li>
-        <li><strong>Thyristor (SCR):</strong> a four-layer device that latches on until the current falls below its holding threshold.</li>
-        <li><strong>Bridge rectifier:</strong> four diodes in a diamond circuit converting AC to pulsating DC.</li>
-      </ul>
-      <h2>Active and operational</h2>
-      <ul>
-        <li><strong>Operational amplifier:</strong> a triangle with two inputs and a gain factor; inverting and non-inverting operation is set by the feedback network.</li>
-        <li><strong>Optocoupler:</strong> a LED plus photodiode sealed in one package; signals cross, currents and voltages do not.</li>
-      </ul>
-      <h2>Sources and returns</h2>
-      <ul>
-        <li><strong>Transformer:</strong> two coupled coils sharing a core — used to step voltage and to provide isolation. Iron or ferrite bar means an iron-core inductor or power transformer.</li>
-        <li><strong>Crystal oscillator:</strong> a vibrating piezo element used as the frequency reference in clocks and radios.</li>
-        <li><strong>Battery cell:</strong> one long plate and one short — long is positive.</li>
-        <li><strong>Ground:</strong> three bars of decreasing width. A fourth, hatched symbol is protective earth.</li>
-      </ul>
-      <h2>Instruments &amp; transducers</h2>
-      <ul>
-        <li><strong>Ammeter (A):</strong> a circle with “A”, connected in series to measure current (low internal resistance).</li>
-        <li><strong>Voltmeter (V):</strong> connected in parallel across a component to measure potential difference (high internal resistance).</li>
-        <li><strong>Ohmmeter (Ω):</strong> measures resistance with its own test source — the circuit under test must be de-energised.</li>
-        <li><strong>Wattmeter (W):</strong> measures electrical power, sensing voltage and current together.</li>
-        <li><strong>Buzzer:</strong> converts electrical energy into an audible alert tone.</li>
-        <li><strong>Speaker:</strong> drives a cone from an electrical audio signal to produce sound.</li>
-        <li><strong>Microphone:</strong> converts sound pressure into an electrical signal.</li>
-        <li><strong>Antenna:</strong> radiates or receives electromagnetic waves for wireless links.</li>
-        <li><strong>Motor (M):</strong> converts electrical energy into mechanical motion.</li>
-        <li><strong>Generator (G):</strong> converts mechanical motion into electrical energy.</li>
-      </ul>
+${SYMBOL_GROUPS.map((grp) => `    <section class="section">
+      <div class="section-head"><h2>${esc(grp.title)}</h2><span style="color:var(--ink-faint);font-size:14px">${esc(grp.blurb)}</span></div>
+      <div class="symbol-grid">
+${grp.keys.map((k) => { const s = SYMBOLS[k]; if(!s) return ''; return `        <div class="symbol-card"><img class="symbol-img" src="${up}assets/symbols/${esc(s.file)}" alt="${esc(s.label)}" loading="lazy"><b>${esc(s.label)}</b><small>${esc(s.note||'')}</small></div>`; }).join('\n')}
+      </div>
+    </section>`).join('\n')}
+    <section class="section symbol-attrib">
+      <div class="section-head"><h2>Symbol credits &amp; licenses</h2></div>
+      <p>Symbol artwork is downloaded from <a href="https://commons.wikimedia.org/wiki/Category:SVG_electrical_symbols">Wikimedia Commons (SVG electrical symbols)</a>. Each file keeps its original author and license.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Symbol</th><th>Source file</th><th>Author</th><th>License</th></tr></thead>
+        <tbody>
+${Object.entries(SYMBOLS).map(([k,s]) => `          <tr><td>${esc(s.label)}</td><td><a href="${attr(s.licenseUrl)}">${esc(s.source)}</a></td><td>${esc(s.author||'—')}</td><td>${esc(s.license||'—')}</td></tr>`).join('\n')}
+        </tbody>
+      </table></div>
+      <p>Full attribution is also provided in <a href="${up}SYMBOLS.md">SYMBOLS.md</a>.</p>
     </section>
     <p style="margin-top:22px"><a href="${up}#/symbols">See the interactive symbol browser →</a></p>`,
 });

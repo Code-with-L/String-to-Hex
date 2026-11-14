@@ -37,7 +37,9 @@ export function renderBlocks(blocks) {
             el('thead', {}, el('tr', {}, ...b.head.map((h) => el('th', {}, h)))),
             el('tbody', {}, ...b.rows.map((r) => el('tr', {}, ...r.map((c) => el('td', {}, String(c))))))));
       case 'symbols-grid':
-        return symbolGrid(b.groups);
+        return symbolGrid(b.groups); // groups should be SYMBOL_GROUPS with keys referencing SYMBOLS
+      case 'symbols-credits':
+        return el('p', { class: 'symbol-attrib' }, 'Symbol artwork sourced from Wikimedia Commons; see SYMBOLS.md for per-file attribution and licenses.');
       default:
         return null;
     }
@@ -311,9 +313,13 @@ export function viewSymbols() {
     el('section', { class: 'page-head' },
       el('span', { class: 'hero-eyebrow' }, 'Reference'),
       el('h1', {}, 'Circuit symbols'),
-      el('p', {}, `${Object.keys(SYMBOLS).length} symbols as scalable vector graphics. Every one is drawn from the IEC/ANSI convention so it reads the way a schematic on the bench would.`),
+      el('p', {}, `${Object.keys(SYMBOLS).length} circuit symbols sourced as SVG files from Wikimedia Commons (IEC/ANSI conventions). No symbols are hand-drawn in this app.`),
     ),
     symbolGrid(SYMBOL_GROUPS),
+    el('section', { class: 'section symbol-attrib' },
+      el('div', { class: 'section-head' }, el('h2', {}, 'Symbol credits & licenses')),
+      el('p', {}, 'Symbol artwork is downloaded from Wikimedia Commons. Each symbol retains its original author and license; see ', el('a', { href: 'SYMBOLS.md' }, 'SYMBOLS.md'), ' for the full per-file attribution list.'),
+    ),
     el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, 'Components')),
       el('div', { class: 'table-scroll' }, el('table', {},

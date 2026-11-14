@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3654"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   width="38.009129"
+   height="17.997076"
+   version="1.0"
+   sodipodi:docbase="/home/momesana/projects/svgs/circuits"
+   sodipodi:docname="Capacitor_Symbol_alternative.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata3659">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3657" />
+  <sodipodi:namedview
+     inkscape:window-height="949"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="15.556349"
+     inkscape:cx="25.372926"
+     inkscape:cy="19.37385"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:current-layer="svg3654"
+     showgrid="false" />
+  <path
+     d="M 21.993773,17.503384 L 21.993773,0.48732001"
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:0.97464001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path17480" />
+  <path
+     d="M 16.629982,8.989142 L 0.50581998,8.989142"
+     style="opacity:1;fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.01163995px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path17482" />
+  <path
+     d="M 21.728658,8.977761 C 22.480285,8.977761 37.512815,8.977761 37.512815,8.977761"
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:0.99262798px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path17484" />
+  <path
+     d="M 17.008229,17.509756 L 17.008229,0.49369201"
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:0.97464001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path4638" />
+</svg>
