@@ -452,6 +452,12 @@ export function viewTables() {
     ),
 
     el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.awgCopper.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.awgCopper.blurb)),
+      el('div', { class: 'table-scroll' }, tableEl(TABLES.awgCopper.columns,
+        TABLES.awgCopper.rows.map((r) => el('tr', {}, el('td', { class: 'mono', style: 'font-weight:600' }, r[0]), el('td', { class: 'mono' }, r[1]), el('td', { class: 'mono' }, r[2]), el('td', { class: 'mono', style: 'color:var(--data)' }, r[3]))))),
+    ),
+
+    el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, temps.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, temps.blurb)),
       el('div', { class: 'table-scroll' }, tableEl(['°C', '°F', 'Why it matters'], tempRows)),
     ),
@@ -476,7 +482,7 @@ export function viewTables() {
   );
 
   node.pageTitle = 'Reference tables — HexKit';
-  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours, the 216-colour web-safe palette, the Windows ALT codes and the standard-normal z-table.';
+  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours, the 216-colour web-safe palette, the Windows ALT codes, the standard-normal z-table and the AWG copper wire chart.';
   return node;
 }
 

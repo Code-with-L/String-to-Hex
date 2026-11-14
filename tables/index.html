@@ -52,8 +52,8 @@
     {
       "@type": "TechArticle",
       "@id": "https://code-with-l.github.io/String-to-Hex/tables#article",
-      "headline": "Reference tables — multiplication, logs, roman numerals, alt codes, z-scores, colours, temperature, resistor",
-      "description": "Multiplication, addition, logarithm, roman-numeral, Windows ALT code and standard-normal z-table, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.",
+      "headline": "Reference tables — multiplication, logs, roman numerals, alt codes, z-scores, AWG copper wire, colours, temperature, resistor",
+      "description": "Multiplication, addition, logarithm, roman-numeral, Windows ALT, standard-normal z-table and AWG copper wire tables, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.",
       "inLanguage": "en",
       "isAccessibleForFree": true,
       "author": {
@@ -1240,6 +1240,33 @@
           </tbody>
         </table>
       </div>
+      <h2>Copper wire — AWG (diameter, area, resistance)</h2>
+      <p>Computed with d = 0.127 × 92^((36−n)/39) mm and ρ(Cu, 20 °C) = 1.68×10⁻⁸ Ω·m — matches published AWG tables.</p>
+      <table>
+        <thead><tr><th>AWG</th><th>Diameter (mm)</th><th>Area (mm²)</th><th>Resistance (Ω/km)</th></tr></thead>
+        <tbody>
+          <tr><td class="mono" style="font-weight:600">4/0</td><td class="mono">11.684</td><td class="mono">107.2193</td><td class="mono" style="color:var(--data)">0.157</td></tr>
+          <tr><td class="mono" style="font-weight:600">3/0</td><td class="mono">10.405</td><td class="mono">85.0288</td><td class="mono" style="color:var(--data)">0.198</td></tr>
+          <tr><td class="mono" style="font-weight:600">2/0</td><td class="mono">9.266</td><td class="mono">67.4309</td><td class="mono" style="color:var(--data)">0.249</td></tr>
+          <tr><td class="mono" style="font-weight:600">1/0</td><td class="mono">8.251</td><td class="mono">53.4751</td><td class="mono" style="color:var(--data)">0.314</td></tr>
+          <tr><td class="mono" style="font-weight:600">1</td><td class="mono">7.348</td><td class="mono">42.4077</td><td class="mono" style="color:var(--data)">0.396</td></tr>
+          <tr><td class="mono" style="font-weight:600">2</td><td class="mono">6.544</td><td class="mono">33.6308</td><td class="mono" style="color:var(--data)">0.500</td></tr>
+          <tr><td class="mono" style="font-weight:600">3</td><td class="mono">5.827</td><td class="mono">26.6705</td><td class="mono" style="color:var(--data)">0.630</td></tr>
+          <tr><td class="mono" style="font-weight:600">4</td><td class="mono">5.189</td><td class="mono">21.1506</td><td class="mono" style="color:var(--data)">0.794</td></tr>
+          <tr><td class="mono" style="font-weight:600">5</td><td class="mono">4.621</td><td class="mono">16.7732</td><td class="mono" style="color:var(--data)">1.002</td></tr>
+          <tr><td class="mono" style="font-weight:600">6</td><td class="mono">4.115</td><td class="mono">13.3018</td><td class="mono" style="color:var(--data)">1.263</td></tr>
+          <tr><td class="mono" style="font-weight:600">8</td><td class="mono">3.264</td><td class="mono">8.3656</td><td class="mono" style="color:var(--data)">2.008</td></tr>
+          <tr><td class="mono" style="font-weight:600">10</td><td class="mono">2.588</td><td class="mono">5.2612</td><td class="mono" style="color:var(--data)">3.193</td></tr>
+          <tr><td class="mono" style="font-weight:600">12</td><td class="mono">2.053</td><td class="mono">3.3088</td><td class="mono" style="color:var(--data)">5.077</td></tr>
+          <tr><td class="mono" style="font-weight:600">14</td><td class="mono">1.628</td><td class="mono">2.0809</td><td class="mono" style="color:var(--data)">8.073</td></tr>
+          <tr><td class="mono" style="font-weight:600">16</td><td class="mono">1.291</td><td class="mono">1.3087</td><td class="mono" style="color:var(--data)">12.837</td></tr>
+          <tr><td class="mono" style="font-weight:600">18</td><td class="mono">1.024</td><td class="mono">0.8230</td><td class="mono" style="color:var(--data)">20.412</td></tr>
+          <tr><td class="mono" style="font-weight:600">20</td><td class="mono">0.812</td><td class="mono">0.5176</td><td class="mono" style="color:var(--data)">32.456</td></tr>
+          <tr><td class="mono" style="font-weight:600">22</td><td class="mono">0.644</td><td class="mono">0.3255</td><td class="mono" style="color:var(--data)">51.608</td></tr>
+          <tr><td class="mono" style="font-weight:600">24</td><td class="mono">0.511</td><td class="mono">0.2047</td><td class="mono" style="color:var(--data)">82.059</td></tr>
+          <tr><td class="mono" style="font-weight:600">26</td><td class="mono">0.405</td><td class="mono">0.1288</td><td class="mono" style="color:var(--data)">130.479</td></tr>
+        </tbody>
+      </table>
       <h2>Common electronic components</h2>
       <table>
         <thead><tr><th>Component</th><th>Symbol</th><th>Unit</th><th>What it does</th></tr></thead>

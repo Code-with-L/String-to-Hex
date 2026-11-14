@@ -1253,6 +1253,25 @@ export const TABLES = {
     ],
   },
 
+  awgCopper: (() => {
+    /* d(in) = 0.005 · 92^((36 − n)/39); resistivity of copper at 20 °C = 1.68e-8 Ω·m.
+       AWG numbering: 4/0 = −3, 3/0 = −2, 2/0 = −1, 1 = 0. */
+    const gauges = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26];
+    const label = (g) => (g < 0 ? ['4/0', '3/0', '2/0'][g + 3] : g === 0 ? '1/0' : String(g));
+    const rho = 1.68e-8;
+    const rows = gauges.map((n) => {
+      const dMm = 0.127 * Math.pow(92, (36 - n) / 39);
+      const areaMm2 = Math.PI * dMm * dMm / 4;
+      return [label(n), dMm.toFixed(3), areaMm2.toFixed(4), (rho * 1000 / (areaMm2 * 1e-6)).toFixed(3)];
+    });
+    return {
+      title: 'Copper wire — AWG',
+      blurb: 'Diameter, cross-section and resistance per kilometre calculated with d = 0.127·92^((36−n)/39) mm and ρ(Cu) = 1.68×10⁻⁸ Ω·m.',
+      columns: ['AWG', 'Diameter (mm)', 'Area (mm²)', 'Resistance Ω/km'],
+      rows,
+    };
+  })(),
+
   /**
    * Reference math tables, mirroring the reference site's multiplication,
    * addition, log and temperature charts. Rows are generated once at import

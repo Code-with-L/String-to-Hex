@@ -957,3 +957,22 @@ test('aqueous concentration: mg/L, molarity, ppm and density correction', () => 
   assert.ok(run('aqueous', { mode: 'mola2ppm', molarity: '1', molarMass: '' }).error);
 });
 
+
+test('TABLES: AWG copper chart has correct diameters and resistances', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  assert.equal(TABLES.awgCopper.rows.length, 20);
+  const get = (awg) => TABLES.awgCopper.rows.find((r) => r[0] === awg);
+  assert.ok(Math.abs(Number(get('4/0')[1]) - 11.684) < 0.001, '4/0 diameter is 11.684 mm');
+  assert.ok(Math.abs(Number(get('14')[1]) - 1.628) < 0.001, '14 AWG diameter is 1.628 mm');
+  assert.ok(Math.abs(Number(get('12')[1]) - 2.053) < 0.001, '12 AWG diameter is 2.053 mm');
+  assert.ok(Math.abs(Number(get('18')[1]) - 1.024) < 0.001, '18 AWG diameter is 1.024 mm');
+  assert.ok(Number(get('4/0')[3]) < Number(get('14')[3]), 'resistance increases as gauge number grows (conductor gets thinner)');
+  // rho * L / A for 14 AWG at 20°C should be close to 8.28 Ω/km
+  assert.ok(Math.abs(Number(get('14')[3]) - 8.07) < 0.1, '14 AWG resistance ≈ 8.07 Ω/km');
+});
+
+test('TABLES: normalDist table is present and consistent', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  assert.equal(TABLES.normalDist.rows.length, 400);
+});
+

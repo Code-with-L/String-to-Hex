@@ -597,7 +597,7 @@ PAGES.push({
   title: `Roman numerals, logs, alt codes &amp; colours tables | ${SITE}`,
   description: 'Multiplication, addition, logarithm and roman-numeral tables, Windows ALT codes, °C↔°F chart, named CSS colours, the 216-colour web-safe palette and resistor colour codes.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, alt codes, z-scores, colours, temperature, resistor', description: 'Multiplication, addition, logarithm, roman-numeral, Windows ALT code and standard-normal z-table, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, alt codes, z-scores, AWG copper wire, colours, temperature, resistor', description: 'Multiplication, addition, logarithm, roman-numeral, Windows ALT, standard-normal z-table and AWG copper wire tables, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -714,6 +714,14 @@ ${TABLES.normalDist.rows.map(([z, cdf, pdf]) => {
           </tbody>
         </table>
       </div>
+      <h2>Copper wire — AWG (diameter, area, resistance)</h2>
+      <p>Computed with d = 0.127 × 92^((36−n)/39) mm and ρ(Cu, 20 °C) = 1.68×10⁻⁸ Ω·m — matches published AWG tables.</p>
+      <table>
+        <thead><tr><th>AWG</th><th>Diameter (mm)</th><th>Area (mm²)</th><th>Resistance (Ω/km)</th></tr></thead>
+        <tbody>
+${TABLES.awgCopper.rows.map(([awg, d, a, r]) => `          <tr><td class="mono" style="font-weight:600">${esc(awg)}</td><td class="mono">${esc(d)}</td><td class="mono">${esc(a)}</td><td class="mono" style="color:var(--data)">${esc(r)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
       <h2>Common electronic components</h2>
       <table>
         <thead><tr><th>Component</th><th>Symbol</th><th>Unit</th><th>What it does</th></tr></thead>
