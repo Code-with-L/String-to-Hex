@@ -5,7 +5,7 @@
  *  · versioned cache, old caches pruned on activate
  */
 
-const VERSION = 'hexkit-v1';
+const VERSION = 'hexkit-v2';
 const SHELL = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 
@@ -13,6 +13,8 @@ const PRECACHE = [
   './',
   './index.html',
   './manifest.webmanifest',
+  './sitemap.xml',
+  './robots.txt',
   './css/app.css',
   './js/app.js',
   './js/core/convert.js',
@@ -20,14 +22,20 @@ const PRECACHE = [
   './js/data/tools.js',
   './js/data/formats.js',
   './js/data/ascii.js',
+  './js/data/reference.js',
   './js/ui/dom.js',
   './js/ui/router.js',
   './js/ui/views.js',
+  './js/ui/content.js',
+  './js/ui/tools.js',
+  './js/ui/seo.js',
+  './js/ui/icons.js',
   './icons/icon.svg',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
   './icons/icon-180.png',
+  './icons/og.png',
 ];
 
 self.addEventListener('install', (event) => {
@@ -58,14 +66,25 @@ self.addEventListener('fetch', (event) => {
   // the single-page app still boots offline.
   if (request.mode === 'navigate') {
     event.respondWith((async () => {
+      const cache = await caches.open(SHELL);
       try {
         const fresh = await fetch(request);
-        const cache = await caches.open(SHELL);
-        cache.put('./index.html', fresh.clone());
+        // Cache under the requested URL too, so a prerendered page such as
+        // /tool/ohms-law/ is available offline at its own address rather than
+        // silently falling back to the home page.
+        if (fresh && fresh.status === 200) {
+          cache.put(request, fresh.clone());
+          if (new URL(request.url).pathname.endsWith('/')) {
+            cache.put(new URL('index.html', request.url).href, fresh.clone());
+          }
+        }
         return fresh;
       } catch {
-        const cache = await caches.open(SHELL);
-        return (await cache.match('./index.html')) ?? (await cache.match('./')) ?? Response.error();
+        return (await cache.match(request))
+          ?? (await cache.match(new URL(request.url).pathname.endsWith('/') ? new URL('index.html', request.url).href : request.url))
+          ?? (await cache.match('./index.html'))
+          ?? (await cache.match('./'))
+          ?? Response.error();
       }
     })());
     return;

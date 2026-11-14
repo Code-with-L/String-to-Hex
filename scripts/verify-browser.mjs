@@ -170,9 +170,80 @@ try {
   check(sw.active, `service worker active, scope ${sw.scope}`);
   check(sw.caches.some((c) => c.includes('shell')), `precache created: ${sw.caches.join(', ')}`);
   const required = ['/index.html', '/css/app.css', '/js/app.js', '/js/ui/views.js',
-    '/js/data/tools.js', '/manifest.webmanifest', '/icons/icon-192.png'];
+    '/js/ui/content.js', '/js/ui/icons.js', '/js/ui/seo.js',
+    '/js/data/tools.js', '/js/data/reference.js', '/manifest.webmanifest', '/icons/icon-192.png'];
   const missing = required.filter((p) => !sw.urls.includes(p));
   check(missing.length === 0, `shell precached (${sw.count} entries)${missing.length ? ` — missing ${missing.join(', ')}` : ''}`);
+
+  /* 3b ── new views render ---------------------------------------------- */
+  console.log('\nViews');
+  for (const [route, expect] of [
+    ['#/learn', 'Formulas'],
+    ['#/read/ohms-law', 'Ohm'],
+    ['#/glossary', 'Glossary'],
+    ['#/symbols', 'Circuit symbols'],
+    ['#/tables', 'tables'],
+    ['#/notepad', 'notepad'],
+    ['#/html-editor', 'HTML'],
+  ]) {
+    await evaluate(cdp, `location.hash = ${JSON.stringify(route)}`);
+    await sleep(280);
+    const h1 = await evaluate(cdp, "document.querySelector('#view h1')?.textContent ?? ''");
+    check(h1.length > 0 && h1.toLowerCase().includes(expect.toLowerCase()),
+      `${route} renders "${h1.slice(0, 44)}"`);
+  }
+
+  // The hero must be the redesigned one, not the older quick-convert panel.
+  await evaluate(cdp, "location.hash = '#/'");
+  await sleep(280);
+  const hero = await evaluate(cdp, `(() => ({
+    hero: !!document.querySelector('#view .hero-panel'),
+    stats: document.querySelectorAll('#view .hero-stat').length,
+    title: document.querySelector('title')?.textContent ?? '',
+  }))()`);
+  check(hero.hero, 'home shows the redesigned hero panel');
+  check(hero.stats === 4, `home shows ${hero.stats} hero stats`);
+  check(hero.title.includes('HexKit'), `document.title is set: "${hero.title.slice(0, 40)}"`);
+
+  const meta = await evaluate(cdp, `(() => {
+    const q = (s) => document.querySelector(s)?.getAttribute('content') ?? null;
+    return {
+      description: q('meta[name="description"]'),
+      canonical: document.querySelector('link[rel="canonical"]')?.href ?? null,
+      ogTitle: q('meta[property="og:title"]'),
+      jsonld: document.querySelectorAll('script[type="application/ld+json"]').length,
+    };
+  })()`);
+  check(Boolean(meta.description), 'meta description is set at runtime');
+  check(Boolean(meta.canonical), `canonical is ${meta.canonical}`);
+  check(Boolean(meta.ogTitle), 'og:title uses a property attribute');
+  check(meta.jsonld >= 1, `${meta.jsonld} JSON-LD block(s) present`);
+
+  /* 3c ── prerendered static pages boot the right route ------------------ */
+  for (const [path, expect] of [
+    ['tool/ohms-law/', '#/tool/ohms-law'],
+    ['read/ohms-law/', '#/read/ohms-law'],
+    ['glossary/voltage/', '#/glossary/voltage'],
+    ['units/length/', '#/units/length'],
+    ['tools/', '#/tools'],
+  ]) {
+    await goto(cdp, new URL(path, URL_BASE).href);
+    await sleep(900);
+    const state = await evaluate(cdp, `(() => ({
+      hash: location.hash,
+      h1: document.querySelector('#view h1')?.textContent ?? '',
+      // The static copy must be replaced by the interactive view, proving the
+      // generated shell is a real app shell rather than a dead page. The tool
+      // view also appends its example values to the hash, so compare the path.
+      path: location.hash.split('?')[0],
+      hydrated: !document.querySelector('#view .prerendered'),
+    }))()`);
+    check(state.path === expect, `${path} sets ${state.hash}`);
+    check(state.h1.length > 0, `${path} renders "${state.h1.slice(0, 36)}"`);
+    check(state.hydrated, `${path} hydrates into the interactive view`);
+  }
+  await goto(cdp, URL_BASE);
+  await sleep(600);
 
   /* 4 ── offline --------------------------------------------------------- */
   await cdp.send('Network.emulateNetworkConditions', {
@@ -203,11 +274,26 @@ try {
     await cdp.send('Emulation.setDeviceMetricsOverride', {
       width: w, height: h, deviceScaleFactor: 1, mobile: w < 700,
     });
-    for (const route of ['#/convert?from=text&to=hex', '#/tools', '#/tool/ohms-law', '#/ascii', '#/units/length']) {
+    for (const route of ['#/convert?from=text&to=hex', '#/tools', '#/tool/ohms-law', '#/ascii',
+      '#/units/length', '#/learn', '#/read/ohms-law', '#/symbols', '#/notepad', '#/html-editor']) {
       await evaluate(cdp, `location.hash = ${JSON.stringify(route)}`);
       await sleep(320);
       const overflow = await evaluate(cdp, `document.documentElement.scrollWidth - window.innerWidth`);
       check(overflow <= 1, `${w}×${h} ${route}: no horizontal overflow (${overflow}px)`);
+    }
+  }
+
+  // The prerendered URLs are separate documents with their own markup, so they
+  // need their own pass rather than being assumed to match the hash routes.
+  for (const [w, h] of [[320, 720], [390, 844], [1440, 900]]) {
+    await cdp.send('Emulation.setDeviceMetricsOverride', {
+      width: w, height: h, deviceScaleFactor: 1, mobile: w < 700,
+    });
+    for (const path of ['tool/kirchhoff/', 'read/ohms-law/', 'glossary/voltage/', 'units/length/', 'tools/']) {
+      await goto(cdp, new URL(path, URL_BASE).href);
+      await sleep(500);
+      const overflow = await evaluate(cdp, `document.documentElement.scrollWidth - window.innerWidth`);
+      check(overflow <= 1, `${w}×${h} /${path}: no horizontal overflow (${overflow}px)`);
     }
   }
   await cdp.send('Emulation.clearDeviceMetricsOverride');

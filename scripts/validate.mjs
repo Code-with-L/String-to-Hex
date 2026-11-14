@@ -31,8 +31,11 @@ const required = [
   'index.html', 'sw.js', 'manifest.webmanifest', 'css/app.css',
   'js/app.js', 'js/core/convert.js',
   'js/data/units.js', 'js/data/tools.js', 'js/data/formats.js', 'js/data/ascii.js',
+  'js/data/reference.js',
   'js/ui/dom.js', 'js/ui/router.js', 'js/ui/views.js',
+  'js/ui/content.js', 'js/ui/tools.js', 'js/ui/seo.js', 'js/ui/icons.js',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/icon-180.png',
+  'icons/og.png', 'sitemap.xml', 'robots.txt',
   'README.md', 'LICENSE', 'package.json',
 ];
 for (const f of required) check(await exists(f), f);
@@ -81,13 +84,62 @@ check(html.includes('Skip to content'), 'has a skip link (accessibility)');
 for (const id of ['view', 'themeToggle', 'installBtn', 'siteNav', 'toastHost', 'filePicker']) {
   check(html.includes(`id="${id}"`), `has #${id}`);
 }
+check(html.includes('application/ld+json'), 'ships structured data');
+check(html.includes('rel="canonical"'), 'declares a canonical URL');
+check(html.includes('og:image'), 'has an Open Graph image');
+
+// The home page must carry real content, not just a loading skeleton, or a
+// crawler without JavaScript sees an empty document.
+const homeText = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+check(homeText.length > 1500, `index.html carries static copy (${homeText.length} chars of text)`);
+check(html.includes('id="view"'), 'static copy lives inside #view so app.js can replace it');
+
+/* ── prerendered pages ──────────────────────────────────────────────────── */
+console.log('\nStatic pages');
+const sitemap = await read('sitemap.xml');
+const robots = await read('robots.txt');
+check(robots.includes('Sitemap:'), 'robots.txt points at the sitemap');
+check(sitemap.includes('<loc>'), 'sitemap.xml has entries');
+const urlCount = (sitemap.match(/<loc>/g) ?? []).length;
+check(urlCount >= 100, `sitemap lists ${urlCount} URLs`);
+
+const staticRoutes = [
+  ['tool/ohms-law/index.html', '#/tool/ohms-law'],
+  ['read/ohms-law/index.html', '#/read/ohms-law'],
+  ['glossary/voltage/index.html', '#/glossary/voltage'],
+  ['units/length/index.html', '#/units/length'],
+  ['tools/index.html', '#/tools'],
+  ['learn/index.html', '#/learn'],
+  ['ascii/index.html', '#/ascii'],
+];
+for (const [rel, expectedHash] of staticRoutes) {
+  if (!await exists(rel)) { bad(`missing ${rel} — run npm run prerender`); continue; }
+  const page = await read(rel);
+  const label = rel.replace('/index.html', '');
+  check(page.includes(expectedHash), `${label}: boots the matching route`);
+  check(page.includes('id="view"'), `${label}: static markup sits in #view`);
+  check(page.includes('id="themeToggle"') && page.includes('id="toastHost"'),
+    `${label}: shell has the elements the app queries`);
+  check(page.includes('application/ld+json'), `${label}: ships structured data`);
+  check(page.includes('rel="canonical"'), `${label}: declares a canonical URL`);
+  // A root-absolute asset path 404s under a GitHub Pages project sub-path.
+  const depth = rel.split('/').length - 1;
+  const up = '../'.repeat(depth);
+  check(page.includes(`href="${up}css/app.css"`), `${label}: links CSS relatively`);
+  check(page.includes(`src="${up}js/app.js"`), `${label}: loads the app relatively`);
+  check(!/href="\/css\//.test(page), `${label}: no root-absolute asset links`);
+}
 
 /* ── syntax ─────────────────────────────────────────────────────────────── */
 console.log('\nSyntax');
 const allJs = [
   'js/app.js', 'js/core/convert.js', 'js/data/units.js', 'js/data/tools.js',
-  'js/data/formats.js', 'js/data/ascii.js', 'js/ui/dom.js', 'js/ui/router.js', 'js/ui/views.js',
-  'sw.js', 'scripts/serve.mjs', 'scripts/validate.mjs', 'scripts/make-icons.mjs',
+  'js/data/formats.js', 'js/data/ascii.js', 'js/data/reference.js',
+  'js/ui/dom.js', 'js/ui/router.js', 'js/ui/views.js',
+  'js/ui/icons.js', 'js/ui/content.js', 'js/ui/tools.js', 'js/ui/seo.js',
+  'sw.js',
+  'scripts/serve.mjs', 'scripts/validate.mjs', 'scripts/make-icons.mjs',
+  'scripts/run-tests.mjs', 'scripts/verify-browser.mjs', 'scripts/prerender.mjs',
   'tests/engine.test.js', 'tests/views.test.js', 'tests/dom-shim.js',
 ];
 for (const f of allJs) {
@@ -142,7 +194,9 @@ const stripNoise = (code) => code
 
 const sources = [
   'js/app.js', 'js/core/convert.js', 'js/data/units.js', 'js/data/tools.js',
-  'js/data/formats.js', 'js/data/ascii.js', 'js/ui/dom.js', 'js/ui/router.js', 'js/ui/views.js',
+  'js/data/formats.js', 'js/data/ascii.js', 'js/data/reference.js',
+  'js/ui/dom.js', 'js/ui/router.js', 'js/ui/views.js',
+  'js/ui/content.js', 'js/ui/tools.js', 'js/ui/seo.js', 'js/ui/icons.js',
 ];
 for (const src of sources) {
   const code = stripNoise(await read(src));

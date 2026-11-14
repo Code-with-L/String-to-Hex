@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Text to hex, binary, decimal, octal &amp; Base64 | HexKit</title>
+<meta name="description" content="Convert text to any base and back. 42 character encodings, live conversion, works offline.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/convert/">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/convert/">
+<link rel="stylesheet" href="../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Text to hex, binary, decimal, octal &amp; Base64 | HexKit">
+<meta property="og:description" content="Convert text to any base and back. 42 character encodings, live conversion, works offline.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/convert/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text to hex, binary, decimal, octal &amp; Base64 | HexKit">
+<meta name="twitter:description" content="Convert text to any base and back. 42 character encodings, live conversion, works offline.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://code-with-l.github.io/String-to-Hex/convert/#app",
+      "name": "Text to hex, binary, decimal, octal & Base64 | HexKit",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "url": "https://code-with-l.github.io/String-to-Hex/convert/",
+      "description": "Convert text to any base and back. 42 character encodings, live conversion, works offline.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../#/convert">Converter</a>
+      <a href="../#/tools">Calculators</a>
+      <a href="../#/units">Units</a>
+      <a href="../#/learn">Reference</a>
+      <a href="../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Home</a>
+  <span aria-hidden="true">/</span>
+  <span>Text to hex, binary, decimal, octal &amp; Base64 | HexKit</span>
+</nav>
+    <header class="page-head">
+      <h1>Text to hex, binary, decimal, octal &amp; Base64 | HexKit</h1>
+      <p>Convert text to any base and back. 42 character encodings, live conversion, works offline.</p>
+    </header>
+    <section class="panel prose">
+      <p>Enable JavaScript to use this page, or <a href="../#/convert">open the interactive version</a>.</p>
+    </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/convert";</script>
+<script type="module" src="../js/app.js"></script>
+</body>
+</html>

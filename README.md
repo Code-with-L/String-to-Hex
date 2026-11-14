@@ -3,7 +3,7 @@
 # HexKit
 
 **String → Hex, and every base in between.**
-Plus 50+ unit converters and calculators that work offline, on any screen, and install as an app.
+Plus 60 calculators, 24 unit families, an electrical reference library and a full ASCII table — offline-first, on any screen, and installable as an app.
 
 [![Tests](https://github.com/Code-with-L/String-to-Hex/actions/workflows/tests.yml/badge.svg)](https://github.com/Code-with-L/String-to-Hex/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -40,10 +40,12 @@ the first load.
 | **Byte inspector** | Hex dump with offset, hex and ASCII columns |
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
-| **55 calculators** | Ohm's law, voltage divider, three-phase power, AWG, statistics, quadratic roots, mortgage, GPA, colour, photometry, hashing, passwords and more |
+| **60 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, Bessel's functions, statistics, quadratic roots, decibels, mortgage, GPA, colour, photometry, hashing, passwords and more |
+| **Reference library** | 10 formula articles, 44 glossary terms, 25 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
+| **Static SEO pages** | 150+ real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |
-| **Zero dependencies** | No framework, no bundler, no CDN — 9 hand-written ES modules |
+| **Zero dependencies** | No framework, no bundler, no CDN — vanilla ES modules throughout |
 
 ## Quick start
 
@@ -57,24 +59,55 @@ There is no build step. `npm start` only runs a static file server, which is nee
 service workers do not register from `file://` URLs.
 
 ```bash
-npm test           # 62 tests: engine values + view rendering
+npm test           # 71 tests: engine values + view rendering
 npm run check      # tests + project validation (manifest, SW, data, syntax)
-npm run verify     # everything, plus a real headless-Chrome pass
+npm run build      # regenerate icons + sitemap + 150 prerendered pages
+npm run verify     # build + everything, plus a real headless-Chrome pass
 npm run icons      # regenerate the PNG icon set from icons/icon.svg
 ```
 
 `npm run verify` drives Chrome over the DevTools Protocol and asserts that the page
 boots without console errors, converts `"Plant trees"` to the reference hex, registers a
 service worker that precaches the shell, **still converts with the network switched off**,
-and has no horizontal overflow at 320, 390, 768, 1024, 1440 and 2560 px.
+hydrates every prerendered page (`tool/…`, `read/…`, …) into the interactive view, and has no
+horizontal overflow at 320, 390, 768, 1024, 1440 and 2560 px — for both the hash routes and the
+static URLs.
+
+## Search engine visibility
+
+The app is hash-routed, so a crawler that does not run JavaScript would normally only see
+`index.html`. `npm run build` fixes that: `scripts/prerender.mjs` writes a real static HTML page
+for every route straight into the site root, e.g.
+
+```
+/tool/ohms-law/index.html      the calculator with its working shown inline
+/read/ohms-law/index.html      the article's full text, indexable
+/glossary/voltage/index.html   one page per glossary term
+/units/length/index.html       every ordered pair in the family
+```
+
+Each page carries a unique `<title>`, meta description, canonical URL, Open Graph tags and
+JSON-LD, plus the content itself as real HTML. The same file doubles as a working app shell —
+the static markup sits inside `#view`, and `js/app.js` replaces it on boot — so a crawler that
+*does* run JavaScript gets the full app rather than a mismatch. The home page is deliberately
+hand-authored in `index.html` to keep the app shell and the static home copy in one file.
+
+CI regenerates these pages and fails if they drift out of date.
 
 ## Deploying
 
 The repository is a static site — any static host works.
 
-**GitHub Pages** — Settings → Pages → Deploy from a branch → `main` / root.
+```bash
+npm run build      # regenerate sitemap + all prerendered pages
+```
 
-**Netlify / Vercel / Cloudflare Pages** — build command: *(none)*, publish directory: `/`.
+**GitHub Pages** — pushing to `main` deploys automatically via
+`.github/workflows/tests.yml`, which runs the test suite, validates the project, regenerates the
+static pages and publishes the repository root. You can also deploy manually:
+Settings → Pages → Deploy from a branch → `main` / root.
+
+**Netlify / Vercel / Cloudflare Pages** — build command: `npm run build`, publish directory: `/`.
 
 Remember that a service worker needs `https://` (or `localhost`). On plain `http://` it will
 silently decline to register and the app still works — it just will not install.
@@ -91,24 +124,34 @@ Once installed it launches in its own window, honours the manifest shortcuts
 ## Project layout
 
 ```
-index.html               app shell
+index.html               app shell + static, indexable home copy
 manifest.webmanifest     PWA manifest
 sw.js                    service worker (precache + runtime cache)
 css/app.css              design system: tokens, layout, components
+<tool/read/glossary/units/…>/index.html   prerendered pages, one per route
+sitemap.xml              generated sitemap for the prerendered URLs
+robots.txt               points crawlers at the sitemap
 js/
   app.js                 bootstrap: theme, routing, PWA install, shortcuts
   core/convert.js        unit conversion engine (linear + affine)
   data/units.js          unit families and their reference factors
-  data/tools.js          50+ calculators, one pure function each
+  data/tools.js          60 calculators, one pure function each
   data/formats.js        text ⇄ bytes ⇄ hex/bin/dec/oct/base64, checksums
   data/ascii.js          ASCII tables and per-character breakdown
+  data/reference.js      articles, glossary entries, symbols, tables
   ui/dom.js              DOM helpers, formatting, storage
   ui/router.js           hash router
-  ui/views.js            every page view
+  ui/views.js            converter, tools, units, ASCII, base, about views
+  ui/content.js          hero, articles, glossary, symbols, tables
+  ui/tools.js            notepad, HTML editor/viewer, HTML entities
+  ui/seo.js              runtime metadata and JSON-LD
+  ui/icons.js            SVG circuit-symbol and UI icon library
 scripts/
   serve.mjs              zero-dependency dev server
-  validate.mjs           manifest / SW / data / syntax integrity checks
+  prerender.mjs          static SEO pages, sitemap and robots.txt
+  make-og.mjs            Open Graph image generator (1200×630)
   make-icons.mjs         pure-Node PNG icon generator
+  validate.mjs           manifest / SW / data / syntax integrity checks
   verify-browser.mjs     headless-Chrome pass (offline, layout, console)
 tests/
   engine.test.js         engine values asserted against the reference

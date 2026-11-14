@@ -35,82 +35,12 @@ function encodeChar(char) {
 }
 let currentEncoding = 'utf-8';
 
-/* ── home ───────────────────────────────────────────────────────────────── */
-
-export function viewHome() {
-  const featured = ['ohms-law', 'quadratic', 'stddev', 'mortgage', 'radix-calc', 'color-convert'];
-  return frag(
-    el('section', { class: 'page-head' },
-      el('h1', {}, 'String to hex, and every other base — instantly'),
-      el('p', {}, 'Paste text and read the bytes. Swap to hex, binary, decimal, octal or Base64. '
-        + 'Unit converters, physics formulas and statistics calculators run in the same tab, work offline, and install like a native app.'),
-    ),
-    el('section', { class: 'panel', style: 'margin-bottom:18px' },
-      el('h2', { class: 'panel-title' }, 'Quick convert'),
-      quickConvertPanel(),
-    ),
-    el('section', { class: 'grid grid-2' },
-      ...featured.map((id) => toolCard(TOOL_BY_ID[id])).filter(Boolean),
-      el('a', { class: 'tool-card', href: '#/tools' },
-        el('h3', {}, `${TOOLS.length} calculators`),
-        el('p', {}, 'Electrical, financial, statistical, colour, text and general tools — all offline.'),
-      ),
-    ),
-    el('section', { class: 'panel', style: 'margin-top:18px' },
-      el('h2', { class: 'panel-title' }, 'Unit families'),
-      el('div', { class: 'chips' },
-        ...FAMILY_IDS.map((id) => el('a', { class: 'chip', href: `#/units/${id}` },
-          el('b', {}, FAMILIES[id].title), `${Object.keys(FAMILIES[id].units).length} units`)),
-      ),
-    ),
-  );
-}
+/* ── cards ───────────────────────────────────────────────────────────────── */
 
 const toolCard = (tool) => tool && el('a', { class: 'tool-card', href: `#/tool/${tool.id}` },
   el('h3', {}, tool.title),
   el('p', {}, tool.blurb ?? ''),
 );
-
-/* ── quick convert widget (used on home) ─────────────────────────────────── */
-
-function quickConvertPanel() {
-  const input = el('textarea', { class: 'textarea', placeholder: 'Type or paste anything…', spellcheck: 'false', id: 'qc-in' });
-  const output = el('textarea', { class: 'textarea', readonly: '', spellcheck: 'false', id: 'qc-out' });
-  const sel = el('select', { class: 'select', id: 'qc-fmt' },
-    ...FORMATS.filter((f) => f.id !== 'text').map((f) => el('option', { value: f.id }, f.label)));
-  const enc = el('select', { class: 'select', id: 'qc-enc' },
-    ...ENCODINGS.slice(0, 6).map((e) => el('option', { value: e.id, selected: e.id === 'utf-8' }, e.label)));
-
-  const run = () => {
-    const text = input.value;
-    if (!text) { output.value = ''; return; }
-    try { output.value = convertFormat('text', sel.value, text, { encoding: enc.value, delimiter: ' ' }); }
-    catch (e) { output.value = `⚠ ${e.message}`; }
-  };
-  [input, sel, enc].forEach((n) => n.addEventListener('input', run));
-  sel.addEventListener('change', run);
-
-  return frag(
-    el('div', { class: 'panes' },
-      el('div', { class: 'pane' },
-        el('div', { class: 'pane-head' }, el('span', { class: 'pane-title' }, 'Text input')),
-        input),
-      el('div', { class: 'swap-col' }, el('span', { style: 'color:var(--faint);font-size:13px' }, '→')),
-      el('div', { class: 'pane pane-output' },
-        el('div', { class: 'pane-head' },
-          el('span', { class: 'pane-title' }, 'Output'),
-          btn('Copy', async () => toast(await copyText(output.value) ? 'Copied' : 'Copy failed', { size: 'btn-sm' })),
-        ),
-        output),
-    ),
-    el('div', { class: 'inline-fieldset', style: 'margin-top:14px' },
-      el('div', { class: 'field' }, el('span', { class: 'field-label' }, 'Output format'), sel),
-      el('div', { class: 'field' }, el('span', { class: 'field-label' }, 'Encoding'), enc),
-      el('div', { class: 'field' }, el('span', { class: 'field-label' }, ''),
-        btn('Open full converter', () => navigate(`/convert?from=text&to=${sel.value}`), { variant: 'btn-primary' })),
-    ),
-  );
-}
 
 /* ── converter ──────────────────────────────────────────────────────────── */
 

@@ -2,7 +2,7 @@
   "id": "/",
   "name": "HexKit — Converters & Calculators",
   "short_name": "HexKit",
-  "description": "Convert text to hex, binary, decimal, octal and Base64. Unit converters, physics formulas and statistics calculators. Works offline.",
+  "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families, electrical formula reference and ASCII table. Works offline.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -40,6 +40,13 @@
       "short_name": "Calculators",
       "description": "Browse every tool",
       "url": "./index.html#/tools",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Reference library",
+      "short_name": "Reference",
+      "description": "Formulas, glossary and circuit symbols",
+      "url": "./index.html#/learn",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ]

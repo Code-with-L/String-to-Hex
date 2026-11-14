@@ -3,11 +3,17 @@
 import { $, mount, toast, loadState, saveState } from './ui/dom.js';
 import { startRouter, onRoute, navigate, currentRoute } from './ui/router.js';
 import {
-  viewHome, viewConvert, viewTool, viewTools, viewUnits, viewAscii, viewBase, viewAbout, notFound,
+  viewConvert, viewTool, viewTools, viewUnits, viewAscii, viewBase, viewAbout, notFound,
 } from './ui/views.js';
+import {
+  viewHome, viewLearn, viewArticle, viewGlossary, viewGlossaryEntry, viewSymbols, viewTables,
+} from './ui/content.js';
+import { viewNotepad, viewHtmlEditor, viewEntities } from './ui/tools.js';
 import { FORMATS } from './data/formats.js';
 import { TOOLS, TOOL_BY_ID } from './data/tools.js';
-import { FAMILIES } from './data/units.js';
+import { FAMILIES, FAMILY_IDS } from './data/units.js';
+import { ARTICLES, GLOSSARY } from './data/reference.js';
+import { setMeta } from './ui/seo.js';
 
 const state = loadState();
 const view = $('#view');
@@ -110,6 +116,31 @@ function render(route) {
     case 'base':
       node = viewBase();
       break;
+    case 'learn':
+      node = viewLearn();
+      break;
+    case 'read':
+      node = viewArticle(route.segments[1]);
+      break;
+    case 'glossary':
+      node = route.segments[1] ? viewGlossaryEntry(route.segments[1]) : viewGlossary();
+      break;
+    case 'symbols':
+      node = viewSymbols();
+      break;
+    case 'tables':
+    case 'resistor-colours':
+      node = viewTables();
+      break;
+    case 'notepad':
+      node = viewNotepad();
+      break;
+    case 'html-editor':
+      node = viewHtmlEditor();
+      break;
+    case 'entities':
+      node = viewEntities();
+      break;
     case 'about':
       node = viewAbout();
       break;
@@ -129,7 +160,7 @@ function render(route) {
   }
 
   mount(view, node);
-  document.title = titleFor(route);
+  updateMeta(route, node);
   for (const a of siteNav.querySelectorAll('a')) {
     const href = a.getAttribute('href').slice(1);
     const active = href === route.path || (head && href.startsWith(`#/${head}`));
@@ -149,8 +180,30 @@ function titleFor(route) {
   if (head === 'units') return `${FAMILIES[sub]?.title ?? 'Units'} converters — ${base}`;
   if (head === 'ascii') return `ASCII table & byte breakdown — ${base}`;
   if (head === 'base') return `Number bases — ${base}`;
+  if (head === 'learn') return `Formulas, terms and symbols — ${base}`;
+  if (head === 'read') return `${ARTICLES[sub]?.title ?? 'Reference'} — ${base}`;
+  if (head === 'glossary') return `Glossary — ${base}`;
+  if (head === 'symbols') return `Circuit symbols — ${base}`;
+  if (head === 'tables') return `Reference tables — ${base}`;
+  if (head === 'notepad') return `Online notepad — ${base}`;
+  if (head === 'html-editor') return `HTML editor & viewer — ${base}`;
+  if (head === 'entities') return `HTML entities & colour codes — ${base}`;
   if (head === 'about') return `About — ${base}`;
   return base;
+}
+
+const updateMeta = (route, node) => setMeta({
+  route,
+  title: node.pageTitle ?? titleFor(route),
+  description: node.pageDescription ?? defaultDescription(route),
+});
+
+function defaultDescription(route) {
+  const [head, sub] = route.segments;
+  if (head === 'tool') return `${TOOL_BY_ID[sub]?.blurb ?? ''} Free offline calculator by HexKit.`;
+  if (head === 'units') return `Convert every pair of ${(FAMILIES[sub]?.title ?? 'unit').toLowerCase()} with exact reference factors.`;
+  if (head === 'convert') return 'Convert text to hex, binary, decimal, octal or Base64 in your browser. 42 encodings, live conversion, works offline.';
+  return `HexKit: string-to-hex and base conversion, ${TOOLS.length} calculators, ${FAMILY_IDS.length} unit families and a reference library. Offline-first, no sign-up, nothing uploaded.`;
 }
 
 onRoute(render);
@@ -177,7 +230,11 @@ addEventListener('keydown', (e) => {
 
 if ('serviceWorker' in navigator) {
   addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch((err) => console.warn('[sw]', err.message));
+    // Resolved against the module URL, not the document: a prerendered page at
+    // /tool/ohms-law/ must still register the worker at the site root.
+    const sw = new URL('../sw.js', import.meta.url);
+    navigator.serviceWorker.register(sw, { scope: new URL('../', import.meta.url) })
+      .catch((err) => console.warn('[sw]', err.message));
   });
 }
 

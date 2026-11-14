@@ -44,6 +44,19 @@ jobs:
       - name: Project validation
         run: node scripts/validate.mjs
 
+      - name: Static pages are up to date
+        run: |
+          node scripts/make-og.mjs
+          node scripts/prerender.mjs
+          CHANGED="$(git status --porcelain --untracked-files=all -- \
+            read tool glossary units learn tools symbols tables ascii \
+            notepad html-editor entities convert about sitemap.xml robots.txt icons/og.png)"
+          if [ -n "$CHANGED" ]; then
+            echo "::error::generated files are out of date — run 'npm run build' and commit the result"
+            echo "$CHANGED"
+            exit 1
+          fi
+
   deploy:
     name: Deploy to GitHub Pages
     needs: verify
@@ -61,6 +74,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # The hash-routed app is also published as real static pages so crawlers
+      # get indexable HTML at /tool/…, /read/… and /units/….
+      - name: Build static pages
+        run: npm run build
 
       - uses: actions/configure-pages@v5
         with:

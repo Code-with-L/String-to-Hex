@@ -30,6 +30,9 @@ class Node {
     this.checked = false;
     this.type = '';
     this.files = [];
+    // Views write through .style.color after a debounced render; without this
+    // the shim throws asynchronously, long after the assertion that caused it.
+    this.style = {};
   }
   get firstChild() { return this.children[0] ?? null; }
   get textContent() {
@@ -109,6 +112,13 @@ export function installDOM() {
     head: new Node('head'),
     body: new Node('body'),
     createElement: (t) => new Node(t),
+    // SVG elements live in a different namespace in a real browser, and the
+    // icon library builds its circuit symbols with this call at import time.
+    createElementNS: (ns, t) => {
+      const node = new Node(t);
+      node.namespaceURI = ns;
+      return node;
+    },
     createTextNode: (t) => new TextNode(t),
     createDocumentFragment: () => new Fragment(),
     querySelector: (s) => (s.startsWith('#') ? doc.body.querySelector(s) : null),

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Number Bases and Radix — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Why positional notation works, and why binary, octal and hexadecimal are the natural companions of each other.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/number-bases/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/number-bases/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Number Bases and Radix — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Why positional notation works, and why binary, octal and hexadecimal are the natural companions of each other.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/number-bases/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Number Bases and Radix — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Why positional notation works, and why binary, octal and hexadecimal are the natural companions of each other.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/number-bases/#article",
+      "headline": "Number Bases and Radix",
+      "description": "Why positional notation works, and why binary, octal and hexadecimal are the natural companions of each other.",
+      "articleSection": "Computing",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/number-bases/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/number-bases/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Number Bases and Radix",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/number-bases/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Number Bases and Radix</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Computing</span>
+      <h1>Number Bases and Radix</h1>
+      <p>Why positional notation works, and why binary, octal and hexadecimal are the natural companions of each other.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A positional numeral system represents a number as a sum of digits multiplied by powers of the base. The base is the number of distinct digits available, counting from zero.</p>
+    <div class="formula"><span class="eq">value = Σ dᵢ · bⁱ</span>
+      <span class="note">dᵢ is the digit at position i, b the base. The rightmost digit is position 0.</span></div>
+    <h2>Why hexadecimal exists</h2>
+    <p>Base 16 is exactly 2⁴. That is the whole reason hex is used to display binary: one hex digit is precisely four bits, so a byte is always two hex digits with nothing left over.</p>
+    <div class="formula"><span class="eq">1 hex digit = 4 bits = ½ byte
+Binary:  01001000 01101001
+Hex:      48        69</span></div>
+    <p>Octal, 8 = 2³, is the same idea for three-bit groups and was common on 12- and 18-bit machines.</p>
+    <h2>Converting by hand</h2>
+    <p>From any base to base 10, multiply-accumulate left to right. From base 10 to any other base, divide repeatedly and read the remainders upwards.</p>
+    <div class="formula"><span class="eq">255₁₀ → 11111111₂ → FF₁₆ → 377₈</span></div>
+    <h2>Why exact integers matter</h2>
+    <p>JavaScript numbers are 64-bit floating point, which holds integers exactly only to 2⁵³. Above that, ordinary arithmetic silently rounds. A base calculator built on BigInt has no such limit, which is why this one uses BigInt throughout.</p>
+    <div class="callout"><div><strong>Note</strong> In this app every base operation runs on BigInt, so 2⁵³, 2⁶⁴ and beyond are computed exactly rather than approximately.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/radix-calc/">Put it into practice → Base calculator</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/number-bases";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

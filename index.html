@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>HexKit — String to Hex, Binary &amp; Every Base Converter</title>
-<meta name="description" content="Convert text to hex, binary, decimal, octal and Base64 in one place. Offline-capable, installable, and works on every screen size.">
+<title>HexKit — Calculators, Converters &amp; Formula Reference</title>
+<meta name="description" content="Convert text to hex, binary, decimal, octal and Base64 in one place, plus 60 calculators, 24 unit families, an ASCII table and an electrical formula reference. Offline-first and free.">
 <meta name="theme-color" content="#0a0c12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
 <meta name="color-scheme" content="dark light">
 <meta name="format-detection" content="telephone=no">
 
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -20,12 +21,94 @@
 <meta name="msapplication-TileColor" content="#0a0c12">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="HexKit — String to Hex &amp; Base Converter">
-<meta property="og:description" content="Text ⇄ Hex ⇄ Binary ⇄ Decimal ⇄ Octal ⇄ Base64, plus every unit converter and calculator. Works offline.">
-<meta property="og:image" content="icons/icon-512.png">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="HexKit — Calculators, Converters &amp; Formula Reference">
+<meta property="og:description" content="Text ⇄ Hex ⇄ Binary ⇄ Decimal ⇄ Octal ⇄ Base64, plus every unit converter and engineering calculator. Works offline.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HexKit — Calculators, Converters &amp; Formula Reference">
+<meta name="twitter:description" content="Text ⇄ Hex ⇄ Binary ⇄ Decimal ⇄ Octal ⇄ Base64, plus every unit converter and engineering calculator. Works offline.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
 
 <link rel="stylesheet" href="css/app.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex/",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex/",
+      "description": "String to hex and every other base, unit converters, calculators and an electrical formula reference. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://code-with-l.github.io/String-to-Hex/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#app",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript, ES modules and BigInt",
+      "description": "String to hex and every other base, plus unit converters, engineering calculators and a formula reference.",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Text, hex, binary, decimal, octal and Base64 — 36 ordered format pairs",
+        "60 calculators and engineering formulas",
+        "24 unit families with 202 units",
+        "42 character encodings",
+        "Works fully offline and installs as an app",
+        "No account, no upload, no tracking"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert text to hex?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Take each character, find its code point and rewrite that number in base 16. For example \"A\" is decimal 65, which is 4 × 16¹ + 1 × 16⁰, so it becomes 41. Join the hex pairs with a delimiter — \"Plant trees\" becomes 50 6C 61 6E 74 20 74 72 65 65 73." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert hex back to text?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Strip anything that is not a hex digit, pair the remaining digits into bytes, convert each byte to decimal, then look up the character. The converter accepts 0x prefixes, commas, colons and quoted strings as well as plain spaced bytes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the site upload my text?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Every conversion happens inside your browser tab. You can confirm it by switching off your network mid-conversion — the app keeps working." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my emoji become four hex bytes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "UTF-8 encodes astral code points, anything above U+FFFF, in four bytes. Every emoji is an astral character, so each one produces four bytes rather than the two a UTF-16 string view suggests." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it without an internet connection?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The whole app is precached by a service worker on first visit, so it loads and runs with no network afterwards. It also installs to your home screen and launches in its own window." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -44,18 +127,165 @@
       <a href="#/convert">Converter</a>
       <a href="#/tools">Calculators</a>
       <a href="#/units">Units</a>
-      <a href="#/ascii">ASCII</a>
-      <a href="#/base">Bases</a>
+      <a href="#/learn">Reference</a>
+      <a href="#/notepad">Notepad</a>
       <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
       <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
     </nav>
   </div>
 </header>
 
+<!-- The content below is the real home page: it is indexable as static HTML and
+     is replaced in place by js/ui/content.js when the app boots, so the two
+     renderings always show the same thing. -->
 <main id="main" class="wrap" tabindex="-1">
   <div id="view" aria-live="polite">
-    <div class="skeleton" style="height:38px;width:min(520px,80%);margin:28px 0"></div>
-    <div class="skeleton" style="height:200px;margin-top:16px"></div>
+    <section class="hero">
+      <div>
+        <span class="hero-eyebrow">Offline-first · Zero dependencies</span>
+        <h1>String to hex, <em>and every other base</em> — instantly</h1>
+        <p>Paste text and read the bytes. Swap to hex, binary, decimal, octal or Base64 across all 36 ordered
+           pairs, with 42 character encodings. Then 60 calculators, 24 unit families and a reference
+           library that actually teaches you.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#/convert?from=text&amp;to=hex">Open the converter</a>
+          <a class="btn btn-lg" href="#/tools">Browse calculators</a>
+          <a class="btn btn-lg" href="#/learn">Read the formulas</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-head">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span style="margin-left:6px">hexkit · converter</span>
+        </div>
+        <div class="hero-panel-body">
+          <div class="hero-io">
+            <span class="hero-io-label">input — text</span>
+            <div class="hero-io-value">Plant trees</div>
+          </div>
+          <div class="hero-io">
+            <span class="hero-io-label">output — hexadecimal</span>
+            <div class="hero-io-value out">50 6C 61 6E 74 20 74 72 65 65 73</div>
+          </div>
+          <div class="byte-strip">
+            <span class="byte"><i>50</i><u>P</u></span><span class="byte"><i>6C</i><u>l</u></span><span class="byte"><i>61</i><u>a</u></span><span class="byte"><i>6E</i><u>n</u></span><span class="byte"><i>74</i><u>t</u></span><span class="byte"><i>20</i><u>·</u></span><span class="byte"><i>74</i><u>t</u></span><span class="byte"><i>72</i><u>r</u></span><span class="byte"><i>65</i><u>e</u></span><span class="byte"><i>65</i><u>e</u></span><span class="byte"><i>73</i><u>s</u></span>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>36</b><span>format pairs</span></div>
+          <div class="hero-stat"><b>60</b><span>calculators</span></div>
+          <div class="hero-stat"><b>202</b><span>units</span></div>
+          <div class="hero-stat"><b>42</b><span>encodings</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Start here</h2>
+        <a href="#/tools" style="font-size:14px">All 60 calculators →</a>
+      </div>
+      <div class="grid grid-2">
+        <a class="tool-card" href="#/tool/ohms-law">
+          <h3>Ohm's law solver</h3>
+          <p>Enter any two of V, I, R or P and the other two are solved at once.</p>
+        </a>
+        <a class="tool-card" href="#/tool/kirchhoff">
+          <h3>Kirchhoff's laws (KVL / KCL)</h3>
+          <p>Write the loop or node as one term per line. With a single unknown, it solves for you.</p>
+        </a>
+        <a class="tool-card" href="#/tool/quadratic">
+          <h3>Quadratic equation solver</h3>
+          <p>ax² + bx + c = 0 — x = (−b ± √(b² − 4ac)) ÷ 2a</p>
+        </a>
+        <a class="tool-card" href="#/tool/stddev">
+          <h3>Mean, variance &amp; standard deviation</h3>
+          <p>Population divides by n, sample by n − 1. Numbers may be separated by spaces or commas.</p>
+        </a>
+        <a class="tool-card" href="#/tool/wire-gauge">
+          <h3>Wire gauge (AWG / SWG)</h3>
+          <p>d(in) = 0.005 · 92^((36 − n)/39) — the logarithmic AWG scale.</p>
+        </a>
+        <a class="tool-card" href="#/tool/color-convert">
+          <h3>Colour converter</h3>
+          <p>RGB ⇄ HEX ⇄ HSL ⇄ HSV ⇄ CMYK — type into any field.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Reference library</h2>
+        <a href="#/learn" style="font-size:14px">Everything →</a>
+      </div>
+      <div class="rail-list">
+        <a class="rail-row" href="#/read/electrical-voltage">
+          <span class="n">01</span>
+          <span><b>Electrical Voltage</b><small>What voltage is, why a water analogy works, and every relationship that follows from it.</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="rail-row" href="#/read/electrical-current">
+          <span class="n">02</span>
+          <span><b>Electrical Current</b><small>Charge in motion, how much of it flows, and what limits it.</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="rail-row" href="#/read/electrical-resistance">
+          <span class="n">03</span>
+          <span><b>Electrical Resistance</b><small>Why a material resists, and how to predict it before you build it.</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="rail-row" href="#/read/ohms-law">
+          <span class="n">04</span>
+          <span><b>Ohm's Law</b><small>Voltage, current and resistance — and why the triangle works.</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="rail-row" href="#/read/kirchhoff-laws">
+          <span class="n">05</span>
+          <span><b>Kirchhoff's Laws</b><small>Why charge cannot appear from nowhere, and what that means for a loop.</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="rail-row" href="#/read/power-factor">
+          <span class="n">06</span>
+          <span><b>Power Factor</b><small>The part of your bill you pay for and do not use.</small></span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Unit families</h2>
+        <a href="#/units" style="font-size:14px">All 24 families →</a>
+      </div>
+      <div class="chips">
+        <a class="chip" href="#/units/length"><b>Length</b><span class="chip-count">14</span></a>
+        <a class="chip" href="#/units/mass"><b>Mass</b><span class="chip-count">12</span></a>
+        <a class="chip" href="#/units/temperature"><b>Temperature</b><span class="chip-count">4</span></a>
+        <a class="chip" href="#/units/voltage"><b>Voltage</b><span class="chip-count">6</span></a>
+        <a class="chip" href="#/units/current"><b>Current</b><span class="chip-count">4</span></a>
+        <a class="chip" href="#/units/resistance"><b>Resistance</b><span class="chip-count">5</span></a>
+        <a class="chip" href="#/units/energy"><b>Energy</b><span class="chip-count">17</span></a>
+        <a class="chip" href="#/units/power"><b>Power</b><span class="chip-count">13</span></a>
+        <a class="chip" href="#/units/data"><b>Data</b><span class="chip-count">12</span></a>
+      </div>
+    </section>
+
+    <noscript>
+      <section class="section">
+        <div class="panel prose">
+          <h2>JavaScript is switched off</h2>
+          <p>HexKit converts and calculates entirely in your browser, so it needs JavaScript enabled.
+             The reference pages below are plain HTML and read fine without it:</p>
+          <ul>
+            <li><a href="learn/">Formulas, terms and symbols</a></li>
+            <li><a href="ascii/">The full ASCII table, 0–127</a></li>
+            <li><a href="tables/">Resistor colour code and wire gauge tables</a></li>
+            <li><a href="units/">Every unit family</a></li>
+            <li><a href="glossary/">Electrical and computing glossary</a></li>
+          </ul>
+        </div>
+      </section>
+    </noscript>
   </div>
 </main>
 
@@ -76,28 +306,30 @@
         <h4>Calculators</h4>
         <ul>
           <li><a href="#/tool/ohms-law">Ohm's law</a></li>
+          <li><a href="#/tool/kirchhoff">Kirchhoff's laws</a></li>
           <li><a href="#/tool/quadratic">Quadratic roots</a></li>
-          <li><a href="#/tool/mortgage">Mortgage</a></li>
           <li><a href="#/tool/stddev">Standard deviation</a></li>
-          <li><a href="#/tools">All tools</a></li>
+          <li><a href="tools/">All 60 tools</a></li>
         </ul>
       </div>
       <div>
         <h4>Reference</h4>
         <ul>
+          <li><a href="learn/">Formula library</a></li>
           <li><a href="#/units">Unit families</a></li>
-          <li><a href="#/ascii">ASCII table</a></li>
-          <li><a href="#/base">Base calculator</a></li>
-          <li><a href="#/units/length">Length table</a></li>
+          <li><a href="ascii/">ASCII table</a></li>
+          <li><a href="#/symbols">Circuit symbols</a></li>
+          <li><a href="glossary/">Glossary</a></li>
         </ul>
       </div>
       <div>
-        <h4>About</h4>
+        <h4>Tools</h4>
         <ul>
-          <li><a href="#/about">What this is</a></li>
-          <li><a href="https://github.com/Code-with-L/String-to-Hex" rel="noopener">Source code</a></li>
-          <li><a href="#/about#privacy">Privacy</a></li>
-          <li><a href="#/about#install">Install</a></li>
+          <li><a href="#/notepad">Online notepad</a></li>
+          <li><a href="#/html-editor">HTML editor &amp; viewer</a></li>
+          <li><a href="#/entities">HTML entities</a></li>
+          <li><a href="#/base">Number base calculator</a></li>
+          <li><a href="about/">About this site</a></li>
         </ul>
       </div>
     </div>

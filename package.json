@@ -19,11 +19,14 @@
     "test": "node scripts/run-tests.mjs",
     "test:browser": "node scripts/verify-browser.mjs",
     "icons": "node scripts/make-icons.mjs",
+    "og": "node scripts/make-og.mjs",
+    "prerender": "node scripts/prerender.mjs",
+    "build": "node scripts/make-og.mjs && node scripts/prerender.mjs",
     "check": "npm run test && node scripts/validate.mjs",
-    "verify": "npm run check && npm run test:browser",
+    "verify": "npm run build && npm run check && npm run test:browser",
     "serve": "node scripts/serve.mjs"
   },
-  "files": ["index.html", "css", "js", "icons", "sw.js", "manifest.webmanifest"],
+  "files": ["index.html", "css", "js", "icons", "sw.js", "manifest.webmanifest", "sitemap.xml", "robots.txt"],
   "browserslist": ["defaults", "not dead", "not op_mini all"],
   "devDependencies": {}
 }

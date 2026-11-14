@@ -13,6 +13,9 @@ installDOM();
 const { TOOLS } = await import('../js/data/tools.js');
 const { FAMILIES } = await import('../js/data/units.js');
 const VIEWS = await import('../js/ui/views.js');
+const CONTENT = await import('../js/ui/content.js');
+const TOOLVIEWS = await import('../js/ui/tools.js');
+const { ARTICLES, GLOSSARY } = await import('../js/data/reference.js');
 const { FORMATS } = await import('../js/data/formats.js');
 
 const route = (path = '/', query = {}) => ({
@@ -35,11 +38,53 @@ const assertTree = (node, label) => {
   return elements;
 };
 
-test('home view renders with featured tools', () => {
-  const els = assertTree(VIEWS.viewHome(), 'home');
+test('home view renders the hero, featured tools and unit families', () => {
+  const els = assertTree(CONTENT.viewHome(), 'home');
   const text = els.map((e) => e.textContent).join(' ');
   assert.match(text, /String to hex/);
-  assert.ok(els.some((e) => e.tagName === 'TEXTAREA'), 'home has a quick-convert textarea');
+  assert.match(text, new RegExp(String(TOOLS.length)), 'home states the calculator count');
+  assert.ok(els.some((e) => e.tagName === 'A' && /#\/tool\//.test(e.getAttribute?.('href') ?? '')),
+    'home links to calculators');
+});
+
+test('every reference page renders', () => {
+  assertTree(CONTENT.viewLearn(), 'learn');
+  for (const slug of Object.keys(ARTICLES)) {
+    const els = assertTree(CONTENT.viewArticle(slug), `read/${slug}`);
+    assert.match(els.map((e) => e.textContent).join(' '), /.+/, `read/${slug}: has text`);
+  }
+  assertTree(CONTENT.viewGlossary(), 'glossary');
+  for (const key of Object.keys(GLOSSARY)) {
+    assertTree(CONTENT.viewGlossaryEntry(key), `glossary/${key}`);
+  }
+  assertTree(CONTENT.viewSymbols(), 'symbols');
+  assertTree(CONTENT.viewTables(), 'tables');
+});
+
+test('a missing article or glossary entry falls back instead of throwing', () => {
+  assertTree(CONTENT.viewArticle('no-such-article'), 'missing article');
+  assertTree(CONTENT.viewGlossaryEntry('no-such-term'), 'missing glossary entry');
+});
+
+test('notepad, HTML editor and entities render', () => {
+  assertTree(TOOLVIEWS.viewNotepad(), 'notepad');
+  assertTree(TOOLVIEWS.viewHtmlEditor(), 'html-editor');
+  assertTree(TOOLVIEWS.viewEntities(), 'entities');
+});
+
+test('HTML preview blocks scripts and network fetches', () => {
+  const els = assertTree(TOOLVIEWS.viewHtmlEditor(), 'html-editor');
+  const frame = els.find((e) => e.tagName === 'IFRAME');
+  assert.ok(frame, 'preview is an iframe');
+  assert.equal(frame.getAttribute('sandbox'), 'allow-same-origin',
+    'scripts are disabled in the preview');
+
+  const srcdoc = TOOLVIEWS.previewSrcdoc('<head><title>x</title></head><body>hi</body>');
+  assert.match(srcdoc, /Content-Security-Policy/,
+    'preview carries a CSP so styles and images cannot be fetched');
+  assert.match(srcdoc, /default-src 'none'/);
+  // Markup without a <head> must still be hardened rather than passed through.
+  assert.match(TOOLVIEWS.previewSrcdoc('<p>bare</p>'), /default-src 'none'/);
 });
 
 test('converter renders for every ordered format pair', () => {

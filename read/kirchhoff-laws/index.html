@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kirchhoff&#39;s Laws — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="KVL and KCL — the two conservation rules that make any multi-loop circuit solvable by hand.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Kirchhoff&#39;s Laws — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="KVL and KCL — the two conservation rules that make any multi-loop circuit solvable by hand.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kirchhoff&#39;s Laws — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="KVL and KCL — the two conservation rules that make any multi-loop circuit solvable by hand.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/#article",
+      "headline": "Kirchhoff's Laws",
+      "description": "KVL and KCL — the two conservation rules that make any multi-loop circuit solvable by hand.",
+      "articleSection": "Circuit laws",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kirchhoff's Laws",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Kirchhoff&#39;s Laws</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Circuit laws</span>
+      <h1>Kirchhoff&#39;s Laws</h1>
+      <p>KVL and KCL — the two conservation rules that make any multi-loop circuit solvable by hand.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">Kirchhoff&#39;s voltage law (KVL) states that the sum of voltage drops around any closed loop is zero. Kirchhoff&#39;s current law (KCL) states that the sum of currents at any node is zero.</p>
+    <p>Neither law invents physics; both are restatements of energy and charge conservation. KVL follows from the fact that a charge cannot accumulate energy as it goes round a loop; KCL follows from the fact that charge cannot pile up at a junction.</p>
+    <h2>Kirchhoff&#39;s voltage law</h2>
+    <div class="formula"><span class="eq">Σ V_k = 0</span>
+      <span class="note">Algebraic sum around a closed loop. Rises positive, drops negative.</span></div>
+    <p>Pick any closed path through the circuit, including through sources where you traverse from − to + and gain voltage. Write an equation. Repeat for every independent loop. The result is a system of simultaneous equations.</p>
+    <h2>Kirchhoff&#39;s current law</h2>
+    <div class="formula"><span class="eq">Σ I_k = 0</span>
+      <span class="note">Algebraic sum at a node. Currents entering are positive, leaving negative.</span></div>
+    <p>Draw a boundary around any node or junction. Everything the boundary encloses is either a component or a wire, neither of which stores charge, so the current crossing the boundary must sum to zero.</p>
+    <h2>Solving a network</h2>
+    <ul>
+      <li>Label every current and every voltage in the diagram.</li>
+      <li>Apply KCL at each node except one — the last is implied by the others.</li>
+      <li>Apply KVL around each independent loop; the number of independent loops is branches minus nodes plus one.</li>
+      <li>Solve the simultaneous equations, then check the answer against a law you did not use.</li>
+    </ul>
+    <div class="callout"><div><strong>Note</strong> The most common mistake is a sign error: traversing a source from + to − loses voltage, and traversing a resistor in the assumed current direction loses IR. Sketch the assumed directions before writing equations.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/kirchhoff/">Put it into practice → Kirchhoff&#39;s laws (KVL / KCL)</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/kirchhoff-laws";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

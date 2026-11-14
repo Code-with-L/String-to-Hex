@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wire Gauge (AWG &amp; SWG) — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Why American Wire Gauge numbers get smaller as wires get thicker, and what the numbers actually mean.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Wire Gauge (AWG &amp; SWG) — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Why American Wire Gauge numbers get smaller as wires get thicker, and what the numbers actually mean.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wire Gauge (AWG &amp; SWG) — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Why American Wire Gauge numbers get smaller as wires get thicker, and what the numbers actually mean.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/#article",
+      "headline": "Wire Gauge (AWG & SWG)",
+      "description": "Why American Wire Gauge numbers get smaller as wires get thicker, and what the numbers actually mean.",
+      "articleSection": "Conductors",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wire Gauge (AWG & SWG)",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Wire Gauge (AWG &amp; SWG)</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Conductors</span>
+      <h1>Wire Gauge (AWG &amp; SWG)</h1>
+      <p>Why American Wire Gauge numbers get smaller as wires get thicker, and what the numbers actually mean.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">AWG is a logarithmic scale: each step in gauge number is a fixed percentage change in diameter, and therefore a fixed ratio change in cross-sectional area and resistance.</p>
+    <div class="formula"><span class="eq">d(in) = 0.005 · 92^((36 − n)/39)</span>
+      <span class="note">d in inches, n the AWG number. d(mm) = 0.127 · 92^((36 − n)/39).</span></div>
+    <p>The counter-intuitive direction is worth internalising: 14 AWG is thicker and carries more current than 18 AWG, because 18 is the higher number. A wire 40 AWG above a given gauge is roughly half the diameter.</p>
+    <h2>Working out area</h2>
+    <div class="formula"><span class="eq">A = π/4 · d²</span>
+      <span class="note">Cross-section in in² from inches, or mm² from millimetres.</span></div>
+    <h2>Working backwards from a diameter</h2>
+    <div class="formula"><span class="eq">n = 36 − 39 · log₉₂(d / 0.005)</span></div>
+    <h2>British Standard Wire Gauge</h2>
+    <p>SWG is an older, non-logarithmic series defined by a table of diameters. Where AWG skips some numbers at the fine end, SWG does not — which is why &quot;5/0&quot; means 0.040 in in SWG but 0.0459 in in AWG.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Gauge</th><th>AWG diameter (in)</th><th>Area (mm²)</th></tr></thead>
+      <tbody>
+        <tr><td>18 AWG</td><td>0.0159</td><td>0.823</td></tr>
+        <tr><td>16 AWG</td><td>0.0201</td><td>1.31</td></tr>
+        <tr><td>14 AWG</td><td>0.0323</td><td>2.08</td></tr>
+        <tr><td>12 AWG</td><td>0.0408</td><td>3.31</td></tr>
+        <tr><td>10 AWG</td><td>0.0519</td><td>5.26</td></tr>
+        <tr><td>8 AWG</td><td>0.0650</td><td>8.37</td></tr>
+        <tr><td>6 AWG</td><td>0.0812</td><td>13.3</td></tr>
+        <tr><td>4 AWG</td><td>0.102</td><td>20.9</td></tr>
+        <tr><td>2 AWG</td><td>0.128</td><td>33.1</td></tr>
+        <tr><td>1/0 AWG</td><td>0.149</td><td>44.6</td></tr>
+        <tr><td>2/0 AWG</td><td>0.185</td><td>67.4</td></tr>
+        <tr><td>4/0 AWG</td><td>0.235</td><td>107</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><div><strong>Note</strong> The AWG numbers say nothing about current capacity. That depends on insulation, installation method, ambient temperature and local code — and it is the reason two identical wires can have very different safe ratings.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/wire-gauge/">Put it into practice → Wire gauge (AWG / SWG)</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/wire-gauge-awg";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

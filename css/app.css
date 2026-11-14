@@ -525,6 +525,11 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
 .prose strong { color: var(--ink); font-weight: 650; }
 .prose a { color: var(--signal); }
 
+/* Prerendered pages wrap their static markup in this element. It only needs to
+   read as ordinary content; app.js replaces the whole subtree on boot. */
+.prerendered { padding: 26px 0 10px; }
+.prerendered > *:first-child { margin-top: 0; }
+
 /* Serif for definitions — gives the reference material a textbook voice. */
 .definition {
   font-family: var(--serif);
@@ -539,17 +544,22 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
   border: 1px solid var(--line); border-radius: var(--radius-sm);
   padding: 16px 18px; margin: 16px 0; overflow-x: auto; text-align: center;
 }
-.formula .eq { display: block; font-size: 21px; }
+/* Formulas are authored with newlines to group related terms; pre-line keeps
+   those line breaks instead of collapsing them into one run-on line. */
+.formula .eq { display: block; font-size: 21px; white-space: pre-line; }
 .formula .note {
   display: block; margin-top: 8px;
   font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint);
 }
 
-.symbols { list-style: none; margin: 0 0 16px; padding: 0; }
+.symbols { list-style: none; margin: 0 0 16px; padding: 0; overflow-x: auto; }
 .symbols li {
-  display: grid; grid-template-columns: 78px 1fr; gap: 12px; align-items: baseline;
-  padding: 7px 0; border-bottom: 1px dashed var(--line); margin: 0;
+  /* max-content lets a formula such as "P = V² / R" size to itself instead of
+     wrapping mid-expression inside a fixed label column. */
+  display: grid; grid-template-columns: minmax(78px, max-content) 1fr; gap: 12px;
+  align-items: baseline; padding: 7px 0; border-bottom: 1px dashed var(--line); margin: 0;
 }
+.symbols li b { white-space: nowrap; }
 .symbols li:last-child { border-bottom: none; }
 .symbols b { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--signal); font-weight: 600; }
 .symbols span { color: var(--ink-dim); font-size: 14px; }

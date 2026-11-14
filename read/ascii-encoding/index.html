@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASCII and Character Encoding — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="From seven bits to Unicode, and why &quot;a character&quot; is not a fixed number of bytes.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="ASCII and Character Encoding — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="From seven bits to Unicode, and why &quot;a character&quot; is not a fixed number of bytes.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASCII and Character Encoding — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="From seven bits to Unicode, and why &quot;a character&quot; is not a fixed number of bytes.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/#article",
+      "headline": "ASCII and Character Encoding",
+      "description": "From seven bits to Unicode, and why \"a character\" is not a fixed number of bytes.",
+      "articleSection": "Computing",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ASCII and Character Encoding",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>ASCII and Character Encoding</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Computing</span>
+      <h1>ASCII and Character Encoding</h1>
+      <p>From seven bits to Unicode, and why &quot;a character&quot; is not a fixed number of bytes.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">ASCII is a 7-bit character encoding assigning codes 0–127 to control characters, space, and printable English.</p>
+    <p>Seven bits was chosen so that a 7-bit code would also carry a parity bit in an 8-bit byte, which mattered when teleprinters were the reference. 128 characters was a deliberate economy.</p>
+    <h2>Position is what gives the number meaning</h2>
+    <div class="formula"><span class="eq">’A’ = 65 = 4·16¹ + 1·16⁰ = 41₁₆</span>
+      <span class="note">Four sixteen-times, plus one. The decimal code is the same quantity written differently.</span></div>
+    <h2>The variable-width problem</h2>
+    <p>ASCII cannot represent &quot;é&quot;, &quot;€&quot; or &quot;中&quot;. A single-byte extended encoding such as Windows-1252 can add 128 more characters but only those 128, and which 128 differs per alphabet. That is why legacy encodings are so confusing.</p>
+    <p>Unicode solves the coverage problem by assigning a code point to every character in every script. UTF-8 then encodes those code points in one to four bytes, chosen so that ASCII characters still cost exactly one byte.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Character</th><th>Code point</th><th>UTF-8 bytes</th><th>Hex</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>U+0041</td><td>1</td><td>41</td></tr>
+        <tr><td>é</td><td>U+00E9</td><td>2</td><td>C3 A9</td></tr>
+        <tr><td>€</td><td>U+20AC</td><td>3</td><td>E2 82 AC</td></tr>
+        <tr><td>→</td><td>U+2192</td><td>3</td><td>E2 86 92</td></tr>
+        <tr><td>中</td><td>U+4E2D</td><td>3</td><td>E4 B8 AD</td></tr>
+        <tr><td>😀</td><td>U+1F600</td><td>4</td><td>F0 9F 98 80</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><div><strong>Note</strong> JavaScript strings are sequences of UTF-16 code units, not bytes. A character outside the Basic Multilingual Plane — every emoji, for instance — occupies two of them. Encoding such a string to bytes therefore produces four bytes, not two. This is the single most common source of confusion when converting text to hex.</div></div>
+    <h2>Which encoding should you use</h2>
+    <ul>
+      <li>UTF-8 for anything on the web, in files, or in a database — it is the only sane default today.</li>
+      <li>UTF-16 only when a system or protocol mandates it, such as the Windows registry or Java’s char streams.</li>
+      <li>A legacy code page only when reading historical data that is known to be in that encoding.</li>
+    </ul>
+    </div>
+    
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/ascii-encoding";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Power Factor and Three-Phase Power — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Why a power factor below 1 wastes current, and how three-phase systems change the arithmetic.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/power-factor/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/power-factor/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Power Factor and Three-Phase Power — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Why a power factor below 1 wastes current, and how three-phase systems change the arithmetic.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/power-factor/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Power Factor and Three-Phase Power — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Why a power factor below 1 wastes current, and how three-phase systems change the arithmetic.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/power-factor/#article",
+      "headline": "Power Factor and Three-Phase Power",
+      "description": "Why a power factor below 1 wastes current, and how three-phase systems change the arithmetic.",
+      "articleSection": "AC power",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/power-factor/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/power-factor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Power Factor and Three-Phase Power",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/power-factor/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Power Factor and Three-Phase Power</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">AC power</span>
+      <h1>Power Factor and Three-Phase Power</h1>
+      <p>Why a power factor below 1 wastes current, and how three-phase systems change the arithmetic.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">Power factor is the ratio of real power to apparent power. It measures how closely current and voltage stay in phase.</p>
+    <div class="formula"><span class="eq">PF = kW / kVA</span>
+      <span class="note">PF = cos φ, where φ is the phase angle between voltage and current.</span></div>
+    <ul class="symbols">
+      <li><b>kW</b><span>real (useful) power</span></li>
+      <li><b>kVA</b><span>apparent power</span></li>
+      <li><b>kvar</b><span>reactive power</span></li>
+      <li><b>φ</b><span>phase angle</span></li>
+    </ul>
+    <p>A purely resistive load draws current exactly in step with voltage, giving PF = 1. Motors, transformers and fluorescent lighting are inductive: their current lags, PF drops, and the supply carries current that does no useful work.</p>
+    <h2>The power triangle</h2>
+    <div class="formula"><span class="eq">kVA² = kW² + kvar²</span></div>
+    <p>The three quantities form a right-angled triangle with kVA as the hypotenuse, which is why a low power factor means a large kVA for a given kW.</p>
+    <h2>Three-phase</h2>
+    <p>Three-phase systems do more work per ampere than single-phase, which is why industry uses them. The conversion factor depends on how the load is connected.</p>
+    <div class="formula"><span class="eq">Single phase:       kVA = V · A / 1000
+Three-phase star:   kVA = √3 · V · A / 1000
+Three-phase delta:  kVA = 3 · V · A / 1000</span></div>
+    <p>In star connection the line current equals the phase current and the line voltage is √3 times the phase voltage. In delta the line voltage equals the phase voltage and the line current is √3 times the phase current.</p>
+    <div class="callout"><div><strong>Note</strong> Utilities bill for kWh but charge penalties on low power factor, because the extra current heats the distribution network for no benefit. Correction is normally done with capacitor banks, which supply the reactive current locally.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/power-factor/">Put it into practice → Power factor &amp; three-phase kVA</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/power-factor";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>
