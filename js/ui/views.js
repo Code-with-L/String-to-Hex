@@ -364,6 +364,8 @@ export function viewTool(route) {
     complex: { z1: '3+4i', z2: '1-2i', op: 'mul' },
     'right-triangle': { mode: 'legs', a: '3', b: '4' },
     antilog: { base: '10', exponent: '3' },
+    'ppm': { kind: 'ppm', value: '1000' },
+    'aqueous': { mode: 'mg2ppm', mgPerL: '100', ppm: '100', molarity: '0.005', molarMass: '100', temp: '25' },
     'current-power': { mode: 'a2w', v: '230', a: '10', watts: '2300', va: '2300', pf: '1', system: '1', wh: '2000', hours: '4' },
     stddev: { data: '2 4 4 4 5 5 7 9', mode: 'pop' },
     'weighted-average': { data: '80:1, 90:2, 70:3' },

@@ -797,6 +797,43 @@ export const ARTICLES = {
     ],
   },
 
+  'parts-per-million': {
+    title: 'Parts Per Million',
+    kicker: 'Measurement',
+    summary: 'What ppm means, how it relates to percent, permil, ppb and ppt, and why Co₂ is measured in it.',
+    tool: 'ppm',
+    blocks: [
+      { k: 'definition', t: 'A part-per-million is exactly what it says: one part in a million, so 1 ppm = 1e-6. It is the purest way to write very small fractions without scientific notation.' },
+      { k: 'h3', t: 'The ppm family in one line' },
+      { k: 'formula', eq: '1 ratio = 1 % = 10 ‰ = 10,000 ppm = 10,000,000 ppb = 10,000,000,000 ppt' },
+      { k: 'h3', t: 'ppm by mass (ppmw) and by volume (ppmv)' },
+      { k: 'list', items: [
+        'ppmw — the ratio of weights: mg/L of water roughly equal ppm (for dilute solutions at 4 °C).',
+        'ppmv — the ratio of volumes: for gases, "ppm of CO₂" means parts per million by volume (µmol/mol).',
+        'For air, ppmv ≈ ppmv in dry air at standard pressure. At altitude the absolute number of molecules changes, but ratio does not.',
+      ] },
+      { k: 'table', head: ['Ratio', 'Parts'], rows: [
+        ['1%', '10,000 ppm'],
+        ['0.1 ppm', '100 ppb'],
+        ['1 ppm CO₂', '1 µmol/mol'],
+        ['420 ppm CO₂ in air', '≈ 0.042%'],
+        ['1 g/L in water', '≈ 1,000 ppm'],
+      ] },
+      { k: 'h3', t: 'ppm and molarity (aqueous solutions)' },
+      { k: 'p', t: 'Molarity is moles per litre. To convert to ppm in water you almost always need the solute’s molar mass and the density of water at the actual temperature — cold water is denser, so the same molarity is a smaller ppm.' },
+      { k: 'formula', eq: 'mg/L = 1000 × M × MM\nppm ≈ mg/L  (1 mg/L = 1 ppm at 25 °C)' },
+      { k: 'h3', t: 'Frequency stability' },
+      { k: 'p', t: 'A quartz crystal specified to 10 ppm is off by at most 10 parts per million — that is 36 seconds over a year, or better than your phone’s clock. It is also how tolerances are often quoted for voltage references and resistors ("0.1 % = 1,000 ppm").' },
+      { k: 'h3', t: 'ppm, ppb and ppt' },
+      { k: 'list', items: [
+        'ppb = 1,000 ppm — water with 0.1 ppm arsenic is 100 ppb.',
+        'ppt = 1,000 ppb — used for CO₂ seawater, mercury, contamination.',
+        'A 0.001% leakage = 10 ppm; a 1 bp = 100 ppm.',
+      ] },
+      { k: 'callout', icon: 'info', t: 'Calculators on this site use the same convention as the reference page: ratio = 1, and every other notation is a multiple of that ratio.' },
+    ],
+  },
+
   'number-bases': {
     title: 'Number Bases and Radix',
     kicker: 'Computing',

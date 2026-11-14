@@ -1059,6 +1059,127 @@ const ANTILOG = {
 
 const parseList = (s) => String(s || '').split(/[\s,;]+/).map(Number).filter((x) => Number.isFinite(x));
 
+/**
+ * The ppm → permil → percent → ratio → ppm → ppb → ppt conversions from the
+ * reference’s ppm page, collapsed into one tool. Every entry field accepts
+ * any of the units and the others are recomputed alongside it.
+ */
+const PPM = {
+  id: 'ppm',
+  title: 'Parts per million converter',
+  group: 'math',
+  blurb: 'ratio, %, ‰, ppm, ppb and ppt — type any one, the rest recompute.',
+  keywords: 'ppm ppb ppt permil percent ratio concentration',
+  inputs: [
+    { id: 'kind', label: 'Type any one', type: 'select', options: [['ratio', 'ratio (0–1)'], ['percent', 'percent (%)'], ['permil', 'permil (‰)'], ['ppm', 'ppm'], ['ppb', 'ppb'], ['ppt', 'ppt']] },
+    { id: 'value', label: 'Value', step: 'any', placeholder: '0.004' },
+  ],
+  compute: ({ kind, value }) => {
+    const v = n(value);
+    const ratio = kind === 'ratio' ? v : kind === 'percent' ? v / 100
+      : kind === 'permil' ? v / 1e3
+      : kind === 'ppm' ? v / 1e6
+      : kind === 'ppb' ? v / 1e9
+      : v / 1e12;
+    const percent = ratio * 100, permil = ratio * 1e3, ppm = ratio * 1e6, ppb = ratio * 1e9, ppt = ratio * 1e12;
+    return {
+      values: { ratio: g(ratio, 12), percent: g(percent, 12), permil: g(permil, 12), ppm: g(ppm, 12), ppb: g(ppb, 12), ppt: g(ppt, 12) },
+      steps: [
+        `${kind} = ${g(v, 12)} → ratio = ${g(ratio, 12)}`,
+        `ratio × 100 = ${g(percent, 12)} %`,
+        `ratio × 1,000 = ${g(permil, 12)} ‰`,
+        `ratio × 1,000,000 = ${g(ppm, 12)} ppm`,
+        `ratio × 1,000,000,000 = ${g(ppb, 12)} ppb`,
+        `ratio × 1,000,000,000,000 = ${g(ppt, 12)} ppt`,
+      ],
+      outputs: [
+        { id: 'ratio', label: 'Ratio', unit: '' },
+        { id: 'percent', label: 'Percent', unit: '%' },
+        { id: 'permil', label: 'Permil', unit: '‰' },
+        { id: 'ppm', label: 'ppm', unit: 'ppm' },
+        { id: 'ppb', label: 'ppb', unit: 'ppb' },
+        { id: 'ppt', label: 'ppt', unit: 'ppt' },
+      ],
+    };
+  },
+};
+
+/**
+ * Water density table — exact piecewise linear model from the reference page,
+ * clamped to 0–100 °C. Used to convert aqueous concentration (mg/L, molarity)
+ * to ppm for solutions whose density differs from 1000 kg/m³.
+ */
+const waterDensity = (t0) => {
+  let t = Number(t0);
+  if (!Number.isFinite(t)) t = 0;
+  if (t < 0) t = 0;
+  if (t > 100) t = 100;
+  if (t < 4) return 999.8395 + (999.972 - 999.8395) * t / 4;
+  if (t < 10) return 999.972 + (999.7026 - 999.972) * (t - 4) / 6;
+  if (t < 15) return 999.7026 + (999.1026 - 999.7026) * (t - 10) / 5;
+  if (t < 20) return 999.1026 + (998.2071 - 999.1026) * (t - 15) / 5;
+  if (t < 22) return 998.2071 + (997.7735 - 998.2071) * (t - 20) / 2;
+  if (t < 25) return 997.7735 + (997.0479 - 997.7735) * (t - 22) / 3;
+  if (t < 30) return 997.0479 + (995.6502 - 997.0479) * (t - 25) / 5;
+  if (t < 40) return 995.6502 + (992.2 - 995.6502) * (t - 30) / 10;
+  if (t < 60) return 992.2 + (983.2 - 992.2) * (t - 40) / 20;
+  if (t < 80) return 983.2 + (971.8 - 983.2) * (t - 60) / 20;
+  return 971.8 + (958.4 - 971.8) * (t - 80) / 20;
+};
+
+/**
+ * Aqueous concentration — mg/L, molarity, molar mass and ppm (parts-per-million)
+ * in water, with the density of water at the given temperature. Mirrors the
+ * reference's mg/L ↔ ppm ↔ molarity converters.
+ */
+const AQUEOUS = {
+  id: 'aqueous',
+  title: 'Aqueous concentration',
+  group: 'math',
+  blurb: 'mg/L, molarity, molar mass and ppm in water — with density correction.',
+  keywords: 'aqueous concentration mg/l ppm molarity molar mass water',
+  inputs: [
+    { id: 'mode', label: 'Question', type: 'select', options: [
+      ['mg2ppm', 'mg/L → ppm (needs water temp)'],
+      ['ppm2mola', 'ppm → molarity (needs molar mass)'],
+      ['mola2ppm', 'molarity → ppm (needs molar mass + temp)'],
+      ['mg2mola', 'mg/L → molarity (needs molar mass)'],
+    ] },
+    { id: 'mgPerL', label: 'mg/L', step: 'any', placeholder: '100' },
+    { id: 'ppm', label: 'ppm', step: 'any', placeholder: '100' },
+    { id: 'molarity', label: 'Molarity (mol/L)', step: 'any', placeholder: '0.005' },
+    { id: 'molarMass', label: 'Molar mass (g/mol)', step: 'any', placeholder: '100' },
+    { id: 'temp', label: 'Water temperature (°C)', step: 'any', placeholder: '25' },
+  ],
+  compute: ({ mode, mgPerL, ppm, molarity, molarMass, temp }) => {
+    const MM = n(molarMass);
+    const T = n(temp, 25);
+    if (mode === 'mg2ppm') {
+      const d = waterDensity(T);
+      const p = 1000 * n(mgPerL) / d;
+      return { values: { ppm: g(p, 8), density: g(d, 4) }, steps: [`d(${g(T)}) = ${g(d, 4)} kg/m³`, `ppm = 1000 × mg/L ÷ d = 1000 × ${g(n(mgPerL))} ÷ ${g(d, 4)} = ${g(p, 8)}`], outputs: [{ id: 'ppm', label: 'ppm', unit: 'mg/L·ppm' }] };
+    }
+    if (mode === 'ppm2mola') {
+      if (!MM) return { error: 'Molar mass is required to convert ppm to molarity.' };
+      const mgL = n(ppm) * waterDensity(T) / 1000;
+      const mol = mgL / MM / 1000;
+      return { values: { molarity: g(mol, 10), mgL: g(mgL, 8) }, steps: [`mg/L = ${g(n(ppm))} × ${g(waterDensity(T), 4)} ÷ 1000 = ${g(mgL, 6)}`, `molarity = mg/L ÷ ${g(MM)} ÷ 1000 = ${g(mol, 6)} mol/L`], outputs: [{ id: 'molarity', label: 'Molarity', unit: 'mol/L' }, { id: 'mgL', label: 'Concentration', unit: 'mg/L' }] };
+    }
+    if (mode === 'mola2ppm') {
+      if (!MM) return { error: 'Molar mass is required.' };
+      const mgL = 1000 * n(molarity) * MM;
+      const p = 1000 * mgL / waterDensity(T);
+      return { values: { ppm: g(p, 8), mgL: g(mgL, 8) }, steps: [`mg/L = 1000 × M × MM = 1000 × ${g(n(molarity))} × ${g(MM)} = ${g(mgL, 8)}`, `ppm = 1000 × mg/L ÷ d(${g(T)}) = ${g(p, 8)}`], outputs: [{ id: 'ppm', label: 'ppm', unit: 'mg/L·ppm' }, { id: 'mgL', label: 'Concentration', unit: 'mg/L' }] };
+    }
+    if (mode === 'mg2mola') {
+      if (!MM) return { error: 'Molar mass is required.' };
+      const mol = n(mgPerL) / MM / 1000;
+      return { values: { molarity: g(mol, 10) }, steps: [`molarity = mg/L ÷ MM ÷ 1000 = ${g(n(mgPerL))} ÷ ${g(MM)} ÷ 1000 = ${g(mol, 6)} mol/L`], outputs: [{ id: 'molarity', label: 'Molarity', unit: 'mol/L' }] };
+    }
+    return { error: 'Unknown mode.' };
+  },
+};
+
 const STDDEV = {
   id: 'stddev',
   title: 'Mean, variance & standard deviation',
@@ -3093,6 +3214,7 @@ export const TOOLS = [
   COMPLEX, RIGHT_TRIANGLE, ANTILOG,
   STDDEV, WEIGHTED_AVG, QUADRATIC, ROOTS, FACTORIAL, PERCENT, PERCENT_ERROR, GCF_LCM, FRACTION,
   DECIMAL_FRACTION, RATIO, DIVMOD, SCI_NOTATION, SCIENTIFIC, PYTHAGOREAN, CONVOLUTION, LOG_CALC, EXP_GROWTH, TRIG,
+  PPM, AQUEOUS,
   COLOR, RADIX_CALC, ROMAN, WORDING,
   CASE_CONV, URL_TOOL, COUNTERS, HASH_TOOL,
   MORTGAGE, COMPOUND, SIMPLE_INT, VAT, DISCOUNT, GPA, GRADE_CALC, LETTER_GRADE,

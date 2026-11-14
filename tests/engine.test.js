@@ -708,6 +708,8 @@ test('every declared output id exists in the returned values', () => {
     complex: { z1: '3+4i', z2: '1-2i', op: 'mul' },
     'right-triangle': { mode: 'legs', a: '3', b: '4' },
     antilog: { base: '10', exponent: '3' },
+    'ppm': { kind: 'ppm', value: '1000' },
+    'aqueous': { mode: 'mg2ppm', mgPerL: '100', ppm: '100', molarity: '0.005', molarMass: '100', temp: '25' },
     'current-power': { mode: 'a2w', v: '230', a: '10', watts: '2300', va: '2300', pf: '1', system: '1', wh: '2000', hours: '4' },
   };
 
@@ -923,3 +925,35 @@ test('TABLES: standard normal z-table is complete and correctly ordered', async 
   }
   assert.equal(TABLES.normalDist.rows[399][0], '3.99');
 });
+
+test('ppm converter: ratio/percent/permil/ppm/ppb/ppt all round-trip', () => {
+  const r = run('ppm', { kind: 'ppm', value: '1000' });
+  assert.ok(!r.error);
+  close(Number(r.values.ratio), 0.001, 1e-13);
+  close(Number(r.values.percent), 0.1, 1e-13);
+  close(Number(r.values.permil), 1, 1e-13);
+  close(Number(r.values.ppm), 1000, 1e-9);
+  close(Number(r.values.ppb), 1e6, 1e3);
+  close(Number(r.values.ppt), 1e9, 1e6);
+  // Start from another anchor and expect the same.
+  const r2 = run('ppm', { kind: 'percent', value: '0.1' });
+  close(Number(r2.values.ppm), 1000, 1e-7);
+});
+
+test('aqueous concentration: mg/L, molarity, ppm and density correction', () => {
+  const r1 = run('aqueous', { mode: 'mg2ppm', mgPerL: '1000', temp: '25' });
+  assert.ok(!r1.error);
+  close(Number(r1.values.ppm), 1003, 0.005);
+  const r2 = run('aqueous', { mode: 'ppm2mola', ppm: '1000', molarMass: '100', temp: '25' });
+  assert.ok(!r2.error);
+  close(Number(r2.values.molarity), 0.01, 0.005);
+  const r3 = run('aqueous', { mode: 'mola2ppm', molarity: '0.01', molarMass: '100', temp: '25' });
+  assert.ok(!r3.error);
+  close(Number(r3.values.mgL), 1000, 1);
+  close(Number(r3.values.ppm), 1003, 0.01);
+  const r4 = run('aqueous', { mode: 'mg2mola', mgPerL: '1000', molarMass: '100' });
+  assert.ok(!r4.error);
+  close(Number(r4.values.molarity), 0.01, 1e-6);
+  assert.ok(run('aqueous', { mode: 'mola2ppm', molarity: '1', molarMass: '' }).error);
+});
+
