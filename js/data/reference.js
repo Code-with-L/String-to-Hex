@@ -2054,6 +2054,8 @@ export const COMPONENTS = [
   { name: 'Solder bridge', sym: 'JP', unit: '0 Ω', does: 'A deliberate solder dot joining two pads — a zero-cost jumper for variant selection. Remove it with solder wick to change configuration.', tool: null },
   { name: 'Jumper', sym: 'JP', unit: '0 Ω', does: 'A removable link across adjacent pins on a header, configuring the board.', tool: null },
   { name: 'Potentiometer', sym: 'RV', unit: 'ohm (Ω)', does: 'A variable divider — a resistor with an adjustable tap.', tool: null },
+  { name: 'Trimmer resistor', sym: 'RV', unit: 'ohm (Ω)', does: 'Small preset resistor set once at factory or service time.', tool: null },
+  { name: 'Thermistor', sym: 'RT', unit: 'resistance varies', does: 'Resistor whose resistance changes with temperature — used for sensing and inrush protection.', tool: null },
   { name: 'Relay coil', sym: '—', unit: '—', does: 'Electromagnet that mechanically switches a separate contact set.', tool: null },
   { name: 'Lamp', sym: '—', unit: '—', does: 'Converts electrical energy to light and heat.', tool: null },
   { name: 'Thyristor (SCR)', sym: 'T', unit: '—', does: 'Latching semiconductor — stays on until the current drops below a threshold.', tool: null },

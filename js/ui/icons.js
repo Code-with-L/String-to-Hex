@@ -143,6 +143,16 @@ export const SYMBOLS = {
     note: 'resistor + wiper',
     svg: svg('<path d="M6 30h12v-14h28v28h28V30h12M40 44l20-26"/>'),
   },
+  trimmer: {
+    label: 'Trimmer resistor',
+    note: 'preset, small',
+    svg: svg('<path d="M6 30h10v-14h28v28h28V30h16"/><path d="M40 14l8 8M44 12v6M36 20l8-8"/>'),
+  },
+  thermistor: {
+    label: 'Thermistor',
+    note: 'resistor vs temperature',
+    svg: svg('<path d="M6 30h10v-14h44v28h28V30h16"/><path d="M36 12v4M36 44v4M44 12v4M44 44v4"/><path d="M28 48l16-36"/>'),
+  },
   dipSwitch: {
     label: 'DIP switch',
     note: 'multi-pole package',
@@ -251,7 +261,7 @@ export const SYMBOL_GROUPS = [
     id: 'resistive',
     title: 'Resistive & control',
     blurb: 'Elements that limit or divide current.',
-    keys: ['resistor', 'resistorUs', 'resistorPot', 'fuse', 'lamp', 'switch', 'switchSpst', 'dipSwitch', 'solderBridge'],
+    keys: ['resistor', 'resistorUs', 'resistorPot', 'trimmer', 'thermistor', 'fuse', 'lamp', 'switch', 'switchSpst', 'dipSwitch', 'solderBridge'],
   },
   {
     id: 'reactive',

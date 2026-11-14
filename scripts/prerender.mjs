@@ -554,6 +554,8 @@ PAGES.push({
       <ul>
         <li><strong>Resistor (IEC box):</strong> a rectangle. (ANSI zig-zag) a sawtooth. Both mean the same thing.</li>
         <li><strong>Potentiometer:</strong> a resistor with an arrow meeting it partway along — an adjustable divider.</li>
+        <li><strong>Trimmer:</strong> small factory-set pot for fine calibration; set once, never touched again.</li>
+        <li><strong>Thermistor:</strong> resistor with strong temperature dependence; used in thermometers, inrush limiters and fan controllers.</li>
         <li><strong>DIP switch:</strong> a bank of tiny switches in one dual-in-line package — set once at configuration time, not a daily switch.</li>
         <li><strong>Solder bridge:</strong> a deliberate solder dot across two pads — a zero-cost 0 Ω jumper for board variant selection.</li>
         <li><strong>Fuse:</strong> a straight conductor inside a rectangle. It melts open above its rating.</li>
