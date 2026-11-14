@@ -218,6 +218,56 @@ export const SYMBOLS = {
     note: 'four-diode diamond',
     svg: svg('<path d="M40 12h40l16 20-16 20H40l-16-20z"/><path d="M60 26v10M56 30h8"/><path d="M10 20h24M10 40h24M76 30h24M50 12v-6M50 52v6"/>'),
   },
+  ammeter: {
+    label: 'Ammeter',
+    note: 'series current meter',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M54 38l6-16 6 16M56 33h8"/>'),
+  },
+  voltmeter: {
+    label: 'Voltmeter',
+    note: 'parallel voltage meter',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M54 22l6 16 6-16"/>'),
+  },
+  ohmmeter: {
+    label: 'Ohmmeter',
+    note: 'resistance meter',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M52 24v4a8 6 0 1 0 16 0v-4M60 34v4"/>'),
+  },
+  wattmeter: {
+    label: 'Wattmeter',
+    note: 'power meter',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M50 22l4 16 6-10 6 10 4-16"/>'),
+  },
+  buzzer: {
+    label: 'Buzzer',
+    note: 'audible alert',
+    svg: svg('<path d="M6 30h26"/><path d="M32 14v32a16 16 0 0 0 0-32z"/><path d="M54 22h10M54 30h14M54 38h10"/>'),
+  },
+  speaker: {
+    label: 'Speaker',
+    note: 'sound output',
+    svg: svg('<path d="M6 30h18"/><rect x="24" y="20" width="12" height="20"/><path d="M36 20l18-10v40L36 40z"/><path d="M60 22c4 4 4 12 0 16M66 18c6 6 6 18 0 24"/>'),
+  },
+  microphone: {
+    label: 'Microphone',
+    note: 'sound input',
+    svg: svg('<path d="M60 6v8"/><rect x="50" y="14" width="20" height="22" rx="10"/><path d="M44 26v6a16 16 0 0 0 32 0v-6"/><path d="M60 48v6M46 54h28"/><path d="M6 30h38M76 30h38"/>'),
+  },
+  antenna: {
+    label: 'Antenna',
+    note: 'radiating element',
+    svg: svg('<path d="M60 54V18"/><path d="M60 18L40 6M60 18l20-12M60 18l-10-8M60 18l10-8"/><path d="M6 54h108"/>'),
+  },
+  motor: {
+    label: 'Motor',
+    note: 'electromechanical drive',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M52 38V22l8 10 8-10v16"/>'),
+  },
+  generator: {
+    label: 'Generator',
+    note: 'mechanical to electrical',
+    svg: svg('<circle cx="60" cy="30" r="16"/><path d="M6 30h38M76 30h38"/><path d="M66 22h-8a6 6 0 0 0 0 12h4a4 4 0 0 0 0-8h-8"/>'),
+  },
 };
 
 /* ── UI glyphs ────────────────────────────────────────────────────────── */
@@ -300,5 +350,11 @@ export const SYMBOL_GROUPS = [
     title: 'Sources, returns & bits',
     blurb: 'Where voltage comes from, where it goes, and the passive bits in between.',
     keys: ['dcSource', 'acSource', 'battery', 'ground', 'groundEarth', 'wire', 'crystal'],
+  },
+  {
+    id: 'instruments',
+    title: 'Instruments & transducers',
+    blurb: 'Meters that measure, and parts that turn electricity into motion, sound or signals (and back).',
+    keys: ['ammeter', 'voltmeter', 'ohmmeter', 'wattmeter', 'buzzer', 'speaker', 'microphone', 'antenna', 'motor', 'generator'],
   },
 ];

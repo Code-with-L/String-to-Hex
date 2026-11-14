@@ -588,9 +588,21 @@ PAGES.push({
       <ul>
         <li><strong>Transformer:</strong> two coupled coils sharing a core — used to step voltage and to provide isolation. Iron or ferrite bar means an iron-core inductor or power transformer.</li>
         <li><strong>Crystal oscillator:</strong> a vibrating piezo element used as the frequency reference in clocks and radios.</li>
-      <ul>
         <li><strong>Battery cell:</strong> one long plate and one short — long is positive.</li>
         <li><strong>Ground:</strong> three bars of decreasing width. A fourth, hatched symbol is protective earth.</li>
+      </ul>
+      <h2>Instruments &amp; transducers</h2>
+      <ul>
+        <li><strong>Ammeter (A):</strong> a circle with “A”, connected in series to measure current (low internal resistance).</li>
+        <li><strong>Voltmeter (V):</strong> connected in parallel across a component to measure potential difference (high internal resistance).</li>
+        <li><strong>Ohmmeter (Ω):</strong> measures resistance with its own test source — the circuit under test must be de-energised.</li>
+        <li><strong>Wattmeter (W):</strong> measures electrical power, sensing voltage and current together.</li>
+        <li><strong>Buzzer:</strong> converts electrical energy into an audible alert tone.</li>
+        <li><strong>Speaker:</strong> drives a cone from an electrical audio signal to produce sound.</li>
+        <li><strong>Microphone:</strong> converts sound pressure into an electrical signal.</li>
+        <li><strong>Antenna:</strong> radiates or receives electromagnetic waves for wireless links.</li>
+        <li><strong>Motor (M):</strong> converts electrical energy into mechanical motion.</li>
+        <li><strong>Generator (G):</strong> converts mechanical motion into electrical energy.</li>
       </ul>
     </section>
     <p style="margin-top:22px"><a href="${up}#/symbols">See the interactive symbol browser →</a></p>`,
