@@ -115,6 +115,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/led-resistor/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/pcb-trace/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/pcb-resistance/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/capacitor-code/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/current-power/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>

@@ -710,6 +710,10 @@ test('every declared output id exists in the returned values', () => {
     antilog: { base: '10', exponent: '3' },
     'ppm': { kind: 'ppm', value: '1000' },
     'aqueous': { mode: 'mg2ppm', mgPerL: '100', ppm: '100', molarity: '0.005', molarMass: '100', temp: '25' },
+    'led-resistor': { mode: 'manual', voltage: '5', vf: '2.0', current: '20' },
+    'pcb-trace': { current: '2', deltaT: '10', copper: '1', layer: 'ext', length: '50' },
+    'pcb-resistance': { length: '50', width: '0.5', copper: '1', temp: '20' },
+    'capacitor-code': { code: '104' },
     'current-power': { mode: 'a2w', v: '230', a: '10', watts: '2300', va: '2300', pf: '1', system: '1', wh: '2000', hours: '4' },
   };
 
@@ -974,5 +978,44 @@ test('TABLES: AWG copper chart has correct diameters and resistances', async () 
 test('TABLES: normalDist table is present and consistent', async () => {
   const { TABLES } = await import('../js/data/reference.js');
   assert.equal(TABLES.normalDist.rows.length, 400);
+});
+
+test('LED series resistor: hand-verified values (Vs=5, Vf=2, I=20 mA → 150 Ω)', () => {
+  close(val('led-resistor', { mode: 'manual', voltage: '5', vf: '2', current: '20' }, 'r'), 150);
+  close(val('led-resistor', { mode: 'manual', voltage: '5', vf: '2', current: '20' }, 'watts'), 0.06);
+  close(val('led-resistor', { mode: 'manual', voltage: '5', vf: '2', current: '20' }, 'e24'), 150);
+  // non-exact result rounds up to the next E24 value at or above (I = 18 mA → 166.7 Ω)
+  close(val('led-resistor', { mode: 'manual', voltage: '5', vf: '2', current: '18' }, 'e24'), 180);
+  close(val('led-resistor', { mode: 'manual', voltage: '5', vf: '3', current: '20' }, 'e24'), 100);
+  // supply below forward voltage is rejected
+  assert.ok(run('led-resistor', { mode: 'manual', voltage: '2', vf: '3', current: '20' }).error);
+});
+
+test('PCB trace width (IPC-2221): 2 A, ΔT 10 °C, 1 oz external ≈ 0.78 mm', () => {
+  const ext = run('pcb-trace', { current: '2', deltaT: '10', copper: '1', layer: 'ext' });
+  assert.ok(Math.abs(Number(ext.values.widthMm) - 0.782) < 0.05, `external width ≈ 0.78 mm, got ${ext.values.widthMm}`);
+  const internal = run('pcb-trace', { current: '2', deltaT: '10', copper: '1', layer: 'int' });
+  assert.ok(Number(internal.values.widthMm) > Number(ext.values.widthMm), 'internal trace must be wider than external');
+  // cross-section from mil²: 42.44 mil² × 0.00064516 ≈ 0.0274 mm²
+  assert.ok(Math.abs(Number(ext.values.areaMm2) - 0.0274) < 0.002, `area ≈ 0.0274 mm², got ${ext.values.areaMm2}`);
+});
+
+test('PCB track resistance: 50 mm × 0.5 mm, 1 oz copper at 20 °C ≈ 0.048 Ω', () => {
+  close(val('pcb-resistance', { length: '50', width: '0.5', copper: '1', temp: '20' }, 'resist'), 0.048);
+  close(val('pcb-resistance', { length: '50', width: '0.5', copper: '1', temp: '20' }, 'areaMm2'), 0.0175);
+  // hot copper resists more than cold copper
+  const hot = Number(run('pcb-resistance', { length: '50', width: '0.5', copper: '1', temp: '75' }).values.resist);
+  const cold = Number(run('pcb-resistance', { length: '50', width: '0.5', copper: '1', temp: '0' }).values.resist);
+  assert.ok(hot > 0.048 && cold < 0.048, 'resistance must rise with temperature');
+});
+
+test('Capacitor code decoder: 104 → 100 nF, 472J → 4700 pF ±5 %', () => {
+  close(val('capacitor-code', { code: '104' }, 'pf'), 100000);
+  assert.equal(run('capacitor-code', { code: '104' }).values.label, '100 nF');
+  close(val('capacitor-code', { code: '472J' }, 'pf'), 4700);
+  assert.equal(run('capacitor-code', { code: '472J' }).values.tolerance, '±5%');
+  close(val('capacitor-code', { code: '223' }, 'pf'), 22000);
+  assert.ok(run('capacitor-code', { code: 'XYZ' }).error);
+  assert.ok(run('capacitor-code', { code: '12' }).error);
 });
 

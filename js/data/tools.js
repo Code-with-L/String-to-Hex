@@ -1180,6 +1180,208 @@ const AQUEOUS = {
   },
 };
 
+/**
+ * LED series resistor: the single most common "just one resistor" in hobby
+ * electronics. Pick the LED colour (typical forward voltage used) or enter
+ * the values manually, and get the ballast resistor and its power rating.
+ */
+const LED_RESISTOR = {
+  id: 'led-resistor',
+  title: 'LED series resistor',
+  group: 'electrical',
+  blurb: 'Supply, forward voltage, forward current → series ballast resistor, power rating and E24 nearest value.',
+  keywords: 'led series resistor ballast forward voltage current',
+  inputs: [
+    { id: 'mode', label: 'Source type', type: 'select', options: [
+      ['manual', 'Enter Vf manually'],
+      ['color', 'Pick a colour'],
+    ] },
+    { id: 'voltage', label: 'Supply voltage (V)', step: 'any', placeholder: '5' },
+    { id: 'vf', label: 'Forward voltage (V)', step: 'any', placeholder: '2.0' },
+    { id: 'current', label: 'LED current (mA)', step: 'any', placeholder: '20' },
+    { id: 'vcolor', label: 'Colour', type: 'select', options: [
+      ['3.2', 'Blue (3.2 V)'], ['3.0', 'White (3.0 V)'], ['2.0', 'Red (2.0 V)'],
+      ['2.1', 'Orange (2.1 V)'], ['2.2', 'Yellow (2.2 V)'], ['2.0', 'Green (2.0 V)'],
+      ['3.3', 'UV (3.3 V)'],
+    ] },
+  ],
+  compute: ({ mode, voltage, vf, current, vcolor }) => {
+    const Vs = n(voltage), Vf = mode === 'color' ? n(vcolor, 2) : n(vf), I = n(current, 20);
+    if (!(Vs > 0)) return { error: 'Supply voltage must be greater than zero.' };
+    if (Vf <= 0) return { error: 'Forward voltage must be greater than zero.' };
+    if (!(I > 0)) return { error: 'Forward current must be greater than zero.' };
+    if (Vs <= Vf) return { error: 'Supply voltage must be greater than the LED forward voltage.' };
+    const r = ((Vs - Vf) * 1000) / I;          // Ω — I is in mA, so V × 1000 ÷ mA = Ω
+    const watts = ((Vs - Vf) * I) / 1000;       // W — I in mA × V is mW, ÷1000 → W
+    /* Preferred values normalised to [1, 10) — scale back by `decade`.
+       "Next higher" fits the hobbyist use-case: never under-limit the LED. */
+    const E24 = [1, 1.1, 1.3, 1.5, 1.6, 1.8, 2, 2.2, 2.4, 2.7, 3, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1];
+    const E96 = [1, 1.02, 1.05, 1.07, 1.1, 1.13, 1.15, 1.18, 1.21, 1.24, 1.27, 1.3, 1.33, 1.37, 1.4, 1.43, 1.47, 1.5, 1.54, 1.58, 1.62, 1.65, 1.69, 1.74, 1.78, 1.82, 1.87, 1.91, 1.96, 2, 2.05, 2.1, 2.15, 2.21, 2.26, 2.32, 2.37, 2.43, 2.49, 2.55, 2.61, 2.67, 2.74, 2.8, 2.87, 2.94, 3.01, 3.09, 3.16, 3.24, 3.32, 3.4, 3.48, 3.57, 3.65, 3.74, 3.83, 3.92, 4.02, 4.12, 4.22, 4.32, 4.42, 4.53, 4.64, 4.75, 4.87, 4.99, 5.11, 5.23, 5.36, 5.49, 5.62, 5.76, 5.9, 6.04, 6.19, 6.34, 6.49, 6.65, 6.81, 6.98, 7.15, 7.32, 7.5, 7.68, 7.87, 8.06, 8.25, 8.45, 8.66, 8.87, 9.09, 9.31, 9.53, 9.76];
+    const decade = Math.pow(10, Math.floor(Math.log10(r)));
+    const d = r / decade;
+    let best24 = 10, best96 = 10;               // no larger value in the decade → next decade's 1.0
+    for (const v of E24) if (v >= d) { best24 = v; break; }
+    for (const v of E96) if (v >= d) { best96 = v; break; }
+    const nearest = best24 * decade;
+    const nearestE96 = best96 * decade;
+    return {
+      values: { r: g(r, 4), watts: g(watts, 4), e24: g(nearest, 4), e96: g(nearestE96, 4) },
+      steps: [
+        `R = (Vs − Vf) × 1000 ÷ I(mA) = (${Vs} − ${Vf}) × 1000 ÷ ${I} = ${g(r, 4)} Ω`,
+        `Power P = (Vs − Vf) × I ÷ 1000 = (${Vs} − ${Vf}) × ${I} ÷ 1000 = ${g(watts, 4)} W → pick a resistor rated ≥ ${g(Math.max(watts * 2, 0.125), 3)} W (2× margin or standard 0.125 W)`,
+        `Nearest E24 (next higher) = ${g(nearest, 4)} Ω · nearest E96 = ${g(nearestE96, 4)} Ω`,
+      ],
+      outputs: [
+        { id: 'r', label: 'Resistor', unit: 'Ω' },
+        { id: 'watts', label: 'Power', unit: 'W' },
+        { id: 'e24', label: 'Nearest E24', unit: 'Ω' },
+        { id: 'e96', label: 'Nearest E96', unit: 'Ω' },
+      ],
+    };
+  },
+};
+
+/**
+ * PCB trace width — IPC-2221 external/internal conductor. Solves for the
+ * minimum conductor width for a target current and temperature rise above
+ * ambient. Includes resistance and voltage drop when length is entered.
+ */
+const PCB_TRACE = {
+  id: 'pcb-trace',
+  title: 'PCB trace width',
+  group: 'electrical',
+  blurb: 'IPC-2221 trace width for a given current, temperature rise and copper weight.',
+  keywords: 'pcb trace width ipc-2221 copper current',
+  inputs: [
+    { id: 'current', label: 'Continuous current (A)', step: 'any', placeholder: '2' },
+    { id: 'deltaT', label: 'Temperature rise (°C)', step: 'any', placeholder: '10' },
+    { id: 'copper', label: 'Copper weight (oz)', step: 'any', placeholder: '1' },
+    { id: 'layer', label: 'Layer', type: 'select', options: [['ext', 'External (outer) copper'], ['int', 'Internal (inner) copper']] },
+    { id: 'length', label: 'Length (mm) — for resistance drop', step: 'any', placeholder: '50' },
+  ],
+  compute: ({ current, deltaT, copper, layer, length }) => {
+    const I = n(current), dT = n(deltaT), oz = n(copper);
+    if (!(I > 0)) return { error: 'Current must be greater than zero.' };
+    if (!(dT > 0)) return { error: 'Temperature rise must be greater than zero.' };
+    if (!(oz > 0)) return { error: 'Copper weight must be greater than zero.' };
+    // IPC-2221: I = k · ΔT^b · A^c — solve for the required cross-section A (mil²)
+    const k = layer === 'int' ? 0.024 : 0.048;
+    const b = 0.44, c = 0.725;
+    const areaMil2 = Math.pow(I / (k * Math.pow(dT, b)), 1 / c);   // mil² — cross-section, not width
+    const thicknessMil = oz * 1.378;        // 1 oz copper ≈ 1.378 mil (34.8 µm)
+    const widthMils = areaMil2 / thicknessMil;
+    const widthMm = widthMils * 0.0254;
+    const areaMm2 = areaMil2 * 0.00064516;  // 1 mil² = 0.00064516 mm²
+    const thicknessUm = oz * 34.8;
+    const rho = 1.68e-8;                    // Cu resistivity at 20 °C, Ω·m
+    const resist = length ? (rho * n(length)) / 1000 / (areaMm2 * 1e-6) : null;
+    const drop = resist !== null ? I * resist : null;
+    return {
+      values: { widthMm: g(widthMm, 3), widthMils: g(widthMils, 2), areaMm2: g(areaMm2, 4), resist: resist !== null ? g(resist, 4) : '—', drop: drop !== null ? g(drop, 4) : '—', power: resist !== null ? g((drop) * I, 4) : '—' },
+      steps: [
+        `I = k · ΔT^b · A^c, k = ${k} (${layer === 'int' ? 'internal' : 'external'}), b = ${b}, c = ${c}`,
+        `A = (${I} ÷ (${k} × ${dT}^${b}))^(1/${c}) = ${g(areaMil2, 2)} mil²`,
+        `width = A ÷ thickness = ${g(areaMil2, 2)} ÷ (${g(oz, 3)} oz × 1.378 mil) = ${g(widthMils, 2)} mil = ${g(widthMm, 3)} mm`,
+        `cross-section = ${g(areaMm2, 4)} mm² (${g(thicknessUm, 1)} µm thick)`,
+        resist !== null ? `R = ρ × L ÷ A = ${g(resist, 4)} Ω for ${g(n(length))} mm at 20 °C` : 'Length not entered — no voltage drop computed',
+      ],
+      outputs: [
+        { id: 'widthMm', label: 'Width', unit: 'mm' },
+        { id: 'widthMils', label: 'Width', unit: 'mil' },
+        { id: 'areaMm2', label: 'Cross-section', unit: 'mm²' },
+        { id: 'resist', label: 'Resistance', unit: 'Ω' },
+        { id: 'drop', label: 'Voltage drop', unit: 'V' },
+        { id: 'power', label: 'Power dissipated', unit: 'W' },
+      ],
+    };
+  },
+};
+
+/** Multi-port of the same formula used in the PCB tool, for the reference article */
+const PCB_RESISTANCE = {
+  id: 'pcb-resistance',
+  title: 'PCB track resistance',
+  group: 'electrical',
+  blurb: 'Resistance of a copper PCB trace — depends on length, width, thickness and resistivity; works for any temperature.',
+  keywords: 'pcb track trace resistance copper',
+  inputs: [
+    { id: 'length', label: 'Length (mm)', step: 'any', placeholder: '50' },
+    { id: 'width', label: 'Width (mm)', step: 'any', placeholder: '0.5' },
+    { id: 'copper', label: 'Copper weight (oz)', step: 'any', placeholder: '1' },
+    { id: 'temp', label: 'Temperature (°C)', step: 'any', placeholder: '20' },
+  ],
+  compute: ({ length, width, copper, temp }) => {
+    const L = n(length), W = n(width), oz = n(copper), T = n(temp, 20);
+    if (!(L > 0) || !(W > 0) || !(oz > 0)) return { error: 'Length, width and copper weight must all be greater than zero.' };
+    const thicknessM = oz * 0.000035;
+    const areaM2 = W * 1e-3 * thicknessM;
+    const rho = 1.68e-8 * (1 + 0.00393 * (T - 20));  // Cu resistivity at 20 °C, α = 0.00393 / °C
+    const resist = rho * L / 1000 / areaM2;
+    return {
+      values: { resist: g(resist, 6), rho: g(rho, 12), areaMm2: g(areaM2 * 1e6, 4) },
+      steps: [
+        `thickness = ${g(oz, 3)} oz ≈ ${g(thicknessM * 1000, 1)} µm`,
+        `A = ${g(W, 4)} × ${g(thicknessM * 1000, 1)} µm = ${g(areaM2 * 1e6, 4)} mm²`,
+        `ρ(${g(T, 1)} °C) = 1.68×10⁻⁸ × (1 + 0.00393 × (${T} − 20)) = ${g(rho, 12)} Ω·m`,
+        `R = ρ × L ÷ A = ${g(resist, 6)} Ω`,
+      ],
+      outputs: [
+        { id: 'resist', label: 'Resistance', unit: 'Ω' },
+        { id: 'rho', label: 'Resistivity', unit: 'Ω·m' },
+        { id: 'areaMm2', label: 'Cross-section', unit: 'mm²' },
+      ],
+    };
+  },
+};
+
+/**
+ * Capacitor code decoder — the tiny resistor-like printed code on ceramic
+ * capacitors and elsewhere. Reads the three-digit (pF) and four-digit codes,
+ * prints pF/nF/μF. Mirrors our resistor tool.
+ */
+const CAPACITOR_CODE = {
+  id: 'capacitor-code',
+  title: 'Capacitor code decoder',
+  group: 'electrical',
+  blurb: 'Read the three- or four-digit EIA code printed on ceramic capacitors — like the resistor colour code for capacitors.',
+  keywords: 'capacitor code eia 3-digit 4-digit',
+  inputs: [{ id: 'code', label: 'Printed code', type: 'text', placeholder: '104, 472J, 223' }],
+  compute: ({ code }) => {
+    const s = String(code ?? '').toUpperCase().trim().replace(/[\s\-_]/g, '');
+    if (!s) return { error: 'Enter the printed code — e.g. 104 or 472J.' };
+    // Tolerance-letter suffix such as J (±5%), K (±10%), M (±20%) are common
+    const m = /^(\d+)([JKM])?$/.exec(s);
+    if (!m) return { error: 'That does not look like a 3- or 4-digit capacitance code.' };
+    const digits = m[1];
+    if (digits.length < 3 || digits.length > 4) return { error: 'Codes are 3 or 4 digits; got ' + digits.length + '.' };
+    const sig = digits.slice(0, -1);       // meaningful digits (everything but the last)
+    const exp = Number(digits.slice(-1));  // last digit is the decades exponent
+    // value in pF = sig × 10^exp
+    const pf = Number(sig) * Math.pow(10, exp);
+    if (!Number.isFinite(pf)) return { error: 'Code produced an infinite value.' };
+    const tol = { J: '5', K: '10', M: '20' }[m[2] ?? ''] ?? '';
+    let label = '';
+    if (pf < 1000) label = `${g(pf, 6)} pF`;
+    else if (pf < 1e6) label = `${g(pf / 1000, 4)} nF`;
+    else label = `${g(pf / 1e6, 4)} µF`;
+    return {
+      values: { code: s, pf: g(pf, 6), label, tolerance: tol ? `±${tol}%` : 'not specified' },
+      steps: [
+        `digits = ${sig}, exponent = ${exp}`,
+        `pF = ${sig} × 10^${exp} = ${g(pf, 6)} pF`,
+        `= ${g(pf / 1000, 6)} nF = ${g(pf / 1e6, 6)} µF`,
+        `printed code: ${s}${tol ? ' · tolerance ±' + tol + '% (' + m[2] + ')' : ''}`,
+      ],
+      outputs: [
+        { id: 'code', label: 'Code', unit: '' },
+        { id: 'pf', label: 'Capacitance', unit: 'pF' },
+        { id: 'label', label: 'In common units', unit: '' },
+        { id: 'tolerance', label: 'Tolerance', unit: '' },
+      ],
+    };
+  },
+};
+
 const STDDEV = {
   id: 'stddev',
   title: 'Mean, variance & standard deviation',
@@ -3208,7 +3410,7 @@ const BATCH = {
 export const TOOLS = [
   OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, DECIBEL, EV, EFFICIENCY, ENERGY_BILL,
   PHOTOMETRY, LIGHTING, KIRCHHOFF, COULOMB,
-  CAPACITOR, INDUCTOR, BATTERY,
+  CAPACITOR, INDUCTOR, BATTERY, LED_RESISTOR, PCB_TRACE, PCB_RESISTANCE, CAPACITOR_CODE,
   CURRENT_POWER,
   EFFECTIVE_RATE,
   COMPLEX, RIGHT_TRIANGLE, ANTILOG,
