@@ -341,6 +341,13 @@ export function viewTables() {
   const add = TABLES.addition;
   const logs = TABLES.logarithms;
   const temps = TABLES.temperatures;
+  const rom = TABLES.roman;
+  const romSymbolRows = rom.symbols.map(([s, v, name]) =>
+    el('tr', {}, el('td', { class: 'mono', style: 'font-weight:600' }, s), el('td', { class: 'mono' }, v), el('td', { style: 'color:var(--ink-faint)' }, name)));
+  const romCells = rom.chart.map(([n, roman]) =>
+    el('td', { class: 'mono rom-cell' }, el('b', {}, n), ' ', roman));
+  const romRows = Array.from({ length: 20 }, (_, r) =>
+    el('tr', {}, ...romCells.slice(r * 5, r * 5 + 5)));
 
   const mulHead = Array.from({ length: mul.size }, (_, i) => el('th', { class: 'mono' }, String(i + 1)));
   const mulRows = mul.rows.map((row, i) =>
@@ -408,6 +415,19 @@ export function viewTables() {
     ),
 
     el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, rom.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, rom.blurb)),
+      el('div', { class: 'grid grid-2' },
+        el('div', { class: 'panel' },
+          el('h3', { class: 'panel-title' }, 'Symbols'),
+          el('table', {}, el('tbody', {}, ...romSymbolRows))),
+        el('div', { class: 'panel' },
+          el('h3', { class: 'panel-title' }, 'The subtractive rules'),
+          el('p', {}, rom.subtractive))),
+      el('div', { class: 'table-scroll', style: 'margin-top:16px' }, el('table', { class: 'mul-table' },
+        el('tbody', {}, ...romRows))),
+    ),
+
+    el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, logs.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, logs.blurb)),
       el('div', { class: 'table-scroll' }, tableEl(['x', 'log₁₀(x)', 'ln(x)'], logRows)),
     ),
@@ -435,7 +455,7 @@ export function viewTables() {
   );
 
   node.pageTitle = 'Reference tables — HexKit';
-  node.pageDescription = 'Multiplication, addition, logarithm, temperature, resistor colour code, named CSS colours and the 216-colour web-safe palette.';
+  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours and the 216-colour web-safe palette.';
   return node;
 }
 

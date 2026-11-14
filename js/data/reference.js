@@ -1005,6 +1005,31 @@ export const TABLES = {
       Array.from({ length: 12 }, (_, j) => (i + 1) * (j + 1))),
   },
 
+  roman: {
+    title: 'Roman numerals',
+    blurb: 'I V X L C D M — the seven symbols, and the 1–100 chart.',
+    symbols: [
+      ['I', '1', 'one'],
+      ['V', '5', 'five'],
+      ['X', '10', 'ten'],
+      ['L', '50', 'fifty'],
+      ['C', '100', 'one hundred'],
+      ['D', '500', 'five hundred'],
+      ['M', '1,000', 'one thousand'],
+    ],
+    subtractive: 'IV = 4, IX = 9, XL = 40, XC = 90, CD = 400, CM = 900 — a smaller symbol before a larger one subtracts (never repeating before a larger symbol, e.g. IL is not 49, it is XLIX).',
+    chart: (() => {
+      const T = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+      const toRoman = (n) => {
+        let out = '';
+        let m = n;
+        for (const [val, sym] of T) while (m >= val) { out += sym; m -= val; }
+        return out;
+      };
+      return Array.from({ length: 100 }, (_, i) => [String(i + 1), toRoman(i + 1)]);
+    })(),
+  },
+
   addition: {
     title: 'Addition table',
     blurb: 'Sums from 0 to 12.',

@@ -584,10 +584,10 @@ PAGES.push({
 PAGES.push({
   path: '/tables/index.html',
   hash: '/tables',
-  title: `Multiplication, log, named colours &amp; resistor tables | ${SITE}`,
-  description: 'Multiplication and addition tables, logarithm tables, °C↔°F reference, the full 216-colour web-safe palette, named CSS colours with hex/RGB/HSL, resistor colour code and wire current capacity.',
+  title: `Multiplication, logs, roman numerals &amp; colours tables | ${SITE}`,
+  description: 'Multiplication and addition tables, logarithm tables, roman-numerals chart, °C↔°F reference, the 216-colour web-safe palette, named CSS colours, resistor colour code and wire current capacity.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logarithms, named colours, web-safe palette, temperature, resistor', description: 'Multiplication, addition, logarithm, °C↔°F, named CSS colours and the 216-colour web-safe palette, alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, colours, temperature, resistor', description: 'Multiplication, addition, logarithm and roman-numeral tables, °C↔°F chart, named CSS colours and the 216-colour web-safe palette, alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -649,6 +649,24 @@ ${TABLES.addition.rows.map((row, i) => `          <tr><th>${i}</th>${row.map((v)
         <thead><tr><th>x</th><th>log₁₀(x)</th><th>ln(x)</th></tr></thead>
         <tbody>
 ${TABLES.logarithms.rows.map(([x, l10, le]) => `          <tr><td class="mono">${esc(x)}</td><td class="mono">${esc(l10)}</td><td class="mono">${esc(le)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Roman numerals — I V X L C D M</h2>
+      <table>
+        <thead><tr><th>Symbol</th><th>Value</th><th>Name</th></tr></thead>
+        <tbody>
+${TABLES.roman.symbols.map(([s, v, name]) => `          <tr><td class="mono" style="font-weight:600">${esc(s)}</td><td class="mono">${esc(v)}</td><td>${esc(name)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <p>${esc(TABLES.roman.subtractive)}</p>
+      <table class="mul-table">
+        <thead><tr><th>1–10</th><th>11–20</th><th>21–30</th><th>31–40</th><th>41–50</th><th>51–60</th><th>61–70</th><th>71–80</th><th>81–90</th><th>91–100</th></tr></thead>
+        <tbody>
+${Array.from({ length: 10 }, (_, r) => `          <tr>${Array.from({ length: 10 }, (_, c) => {
+  const i = c * 10 + r;
+  const [n, roman] = TABLES.roman.chart[i];
+  return `<td class="mono">${esc(n)} <strong>${esc(roman)}</strong></td>`;
+}).join('')}</tr>`).join('\n')}
         </tbody>
       </table>
       <h2>Temperature conversion chart</h2>

@@ -881,3 +881,16 @@ test('TABLES: named and web-safe colours are well-formed', async () => {
     assert.equal(c.rgb, r + ', ' + g + ', ' + b);
   }
 });
+
+test('TABLES: roman symbols and 1–100 chart', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  assert.equal(TABLES.roman.chart.length, 100);
+  assert.equal(TABLES.roman.chart[0][1], 'I');
+  assert.equal(TABLES.roman.chart[8][1], 'IX');
+  assert.equal(TABLES.roman.chart[39][1], 'XL');
+  assert.equal(TABLES.roman.chart[19][1], 'XX');
+  assert.equal(TABLES.roman.chart[88][1], 'LXXXIX');
+  assert.equal(TABLES.roman.chart[98][1], 'XCIX');
+  assert.equal(TABLES.roman.chart[99][1], 'C');
+  assert.equal(TABLES.roman.symbols.length, 7);
+});
