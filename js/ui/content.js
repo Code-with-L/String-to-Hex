@@ -461,10 +461,22 @@ export function viewTables() {
       el('div', { class: 'table-scroll' }, tableEl(['Cross-section', 'AWG', 'Capacity', 'Typical use'],
         TABLES.wireCurrent.rows.map((r) => el('tr', {}, el('td', { class: 'mono' }, r[0]), el('td', { class: 'mono' }, r[1]), el('td', { class: 'mono', style: 'color:var(--data)' }, r[2]), el('td', { style: 'color:var(--ink-faint)' }, r[3]))))),
     ),
+
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.normalDist.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.normalDist.blurb)),
+      el('p', { style: 'margin:0 0 14px;color:var(--ink-dim);font-size:14px' },
+        'Φ(z) is the fraction of a bell curve to the left of z (0.5 = the median); φ(z) is the height of the curve at z. The interval 1.96σ on each side covers ', el('b', {}, '95%'), ' of outcomes — the usual rule of thumb.'),
+      el('div', { class: 'table-scroll z-table-scroll' }, tableEl(['z', 'Φ(z)', 'φ(z)'],
+        TABLES.normalDist.rows.map((r) => {
+          const z = parseFloat(r[0]);
+          const hot = Math.abs(z - 1.96) < 0.001 || Math.abs(z - 0.00) < 0.001;
+          return el('tr', { class: hot ? 'z-row-highlight' : '' }, el('td', { class: 'mono' }, r[0]), el('td', { class: 'mono' }, r[1]), el('td', { class: 'mono' }, r[2]));
+        }))),
+    ),
   );
 
   node.pageTitle = 'Reference tables — HexKit';
-  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours, the 216-colour web-safe palette and the Windows ALT codes.';
+  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours, the 216-colour web-safe palette, the Windows ALT codes and the standard-normal z-table.';
   return node;
 }
 

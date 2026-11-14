@@ -906,3 +906,20 @@ test('TABLES: alt codes table is correctly ordered and complete', async () => {
   assert.equal(TABLES.altCodes.rows[33][1], '!');
   assert.equal(TABLES.altCodes.rows[173][1], '¡');
 });
+
+test('TABLES: standard normal z-table is complete and correctly ordered', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  assert.equal(TABLES.normalDist.rows.length, 400);
+  assert.equal(TABLES.normalDist.rows[0][0], '0.00');
+  assert.equal(TABLES.normalDist.rows[0][1], '0.5000');
+  const p96 = TABLES.normalDist.rows.find((r) => r[0] === '1.96');
+  assert.equal(p96[1], '0.9750');
+  assert.equal(p96[2], '0.0584');
+  // Φ is monotonic non-decreasing in z
+  for (let i = 1; i < TABLES.normalDist.rows.length; i++) {
+    const prev = Number(TABLES.normalDist.rows[i - 1][1]);
+    const cur = Number(TABLES.normalDist.rows[i][1]);
+    assert.ok(cur >= prev, 'Φ(z) must not decrease');
+  }
+  assert.equal(TABLES.normalDist.rows[399][0], '3.99');
+});

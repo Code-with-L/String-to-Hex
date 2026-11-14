@@ -587,7 +587,7 @@ PAGES.push({
   title: `Roman numerals, logs, alt codes &amp; colours tables | ${SITE}`,
   description: 'Multiplication, addition, logarithm and roman-numeral tables, Windows ALT codes, °C↔°F chart, named CSS colours, the 216-colour web-safe palette and resistor colour codes.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, alt codes, colours, temperature, resistor', description: 'Multiplication, addition, logarithm, roman-numeral and Windows ALT code tables, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, alt codes, z-scores, colours, temperature, resistor', description: 'Multiplication, addition, logarithm, roman-numeral, Windows ALT code and standard-normal z-table, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -690,6 +690,19 @@ ${TABLES.webSafe.rows.map((hex) => `        <div class="web-safe-cell" style="ba
       <h2>Alt codes (Windows — ALT + keypad number)</h2>
       <div class="alt-grid">
 ${TABLES.altCodes.rows.map(([code, char]) => `        <div class="alt-cell" title="ALT ${esc(code)}"><span class="alt-char">${code === '32' ? '·' : esc(char === ' ' ? '·' : char)}</span><span class="alt-code">${esc(code)}</span></div>`).join('\n')}
+      </div>
+      <h2>Standard normal (z-score) table — z = 0.00 to 3.99</h2>
+      <p>Φ(z) is the fraction of the area of a bell curve to the left of z; φ(z) is the density at z. 1.96σ either side covers 95% of outcomes.</p>
+      <div class="table-scroll z-table-scroll">
+        <table>
+          <thead><tr><th>z</th><th>Φ(z)</th><th>φ(z)</th></tr></thead>
+          <tbody>
+${TABLES.normalDist.rows.map(([z, cdf, pdf]) => {
+            const hot = Math.abs(parseFloat(z) - 1.96) < 0.001 || Math.abs(parseFloat(z) - 0.00) < 0.001;
+            return `            <tr${hot ? ' class="z-row-highlight"' : ''}><td class="mono">${esc(z)}</td><td class="mono">${esc(cdf)}</td><td class="mono">${esc(pdf)}</td></tr>`;
+          }).join('\n')}
+          </tbody>
+        </table>
       </div>
       <h2>Common electronic components</h2>
       <table>

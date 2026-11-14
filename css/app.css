@@ -778,3 +778,9 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
 .alt-char { font-family: var(--serif); font-size: 13px; color: var(--ink); line-height: 1; }
 .alt-code { font-family: var(--mono); font-size: 7px; color: var(--ink-faint); line-height: 1; }
 @media (max-width: 480px) { .alt-grid { grid-template-columns: repeat(8, 1fr); } }
+
+/* z-table (standard normal) */
+.z-table-scroll { max-height: 420px; overflow: auto; }
+.z-table-scroll table { border-collapse: collapse; }
+.z-row-highlight td { background: rgba(255, 176, 32, 0.13); }
+.z-row-highlight .mono { color: var(--signal); font-weight: 600; }
