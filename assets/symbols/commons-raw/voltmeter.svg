@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="147" height="69" viewBox="0 0 147 69" role="img" aria-labelledby="title desc">
+  <title id="title">Volttimittari</title>
+  <desc id="desc">Vuoden 1993 lähdekuvan vektorijäljennös.</desc>
+  <rect width="147" height="69" fill="#fff"/>
+  <g fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M 11 34.15 H 52.97 M 97.43 34.15 H 136.3"/>
+    <path d="M 97.43 34.15 A 22.23 22.23 0 1 1 52.97 34.15 A 22.23 22.23 0 1 1 97.43 34.15 Z"/>
+    <path d="M 68.2 23.3 L 75.4 41.3 L 82.7 23.3" stroke-width="2.35"/>
+  </g>
+</svg>

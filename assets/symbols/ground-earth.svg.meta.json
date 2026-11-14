@@ -1,0 +1,76 @@
+{
+  "key": "groundEarth",
+  "title": "File:IEC 60417 - Ref-No 5019.svg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/IEC_60417_-_Ref-No_5019.svg",
+  "meta": {
+    "DateTime": {
+      "value": "2022-12-26 12:11:17",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "IEC 60417 - Ref-No 5019",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "CC-Zero|PD shape|SVG electrical symbols|Self-published work|Valid SVG created with Text Editor:Symbols|IEC 60417 symbols|Earthing symbols|Electric potential symbols",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Symbol 5019 from IEC 60417 - Title/Meaning: Protective earth; protective ground <br>\n<p>Function/description: To identify any terminal which is intended for connection to an external conductor for protection against electric shock in case of a fault, or the terminal of a protective earth (ground) electrode.<br>\nAdditional information: <br>\n</p>\n<ul><li>Title was editorially improved.;Class I; PE.;See also Class II and Class III per IEC 61140</li>\n<li>Published in: Supplement G, 1985;Supplement C, 1977</li></ul>",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2006-08-25",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "Own work using: <span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.iso.org/obp/graphics/grs/7bfb60e3-8041-4539-a956-84bdccaf2e77_200.png\">iso.org/obp/graphics/grs/7bfb60e3-8041-4539-a956-84bdccaf2e77 200.png</a></span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<b>Vectorization: </b> <a href=\"//commons.wikimedia.org/wiki/User:Mrmw\" title=\"User:Mrmw\">Mrmw</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "Public domain",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Public domain",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Copyrighted": {
+      "value": "False",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "pd",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  }
+}

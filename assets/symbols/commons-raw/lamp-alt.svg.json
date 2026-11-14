@@ -1,0 +1,75 @@
+{
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/AmpouleIncandescenceSymbole.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "meta": {
+    "DateTime": {
+      "value": "2017-11-30 12:07:53",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "AmpouleIncandescenceSymbole",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "SVG electrical symbols|Self-published work|PD-self|SVG physics|SVG simplified diagrams|Valid SVG created with Text Editor:Diagrams|Physics symbols",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Symbole de l'ampoule à incandescence",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "4 August 2007 (upload date)",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "Fait avec Inkscape",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/wiki/User:Xzapro4\" title=\"User:Xzapro4\">Xzapro4</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "Public domain",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Public domain",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Copyrighted": {
+      "value": "False",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "pd",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "title": "File:AmpouleIncandescenceSymbole.svg"
+}

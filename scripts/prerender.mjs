@@ -36,6 +36,7 @@ import { FAMILIES, FAMILY_IDS } from '../js/data/units.js';
 import { FORMATS, ENCODINGS } from '../js/data/formats.js';
 import { ARTICLES, GLOSSARY, GLOSSARY_GROUPS, TABLES, COMPONENTS } from '../js/data/reference.js';
 import { SYMBOLS, SYMBOL_GROUPS } from '../js/data/symbols.js';
+import { symbolMarkup } from '../js/ui/icons.js';
 import { ASCII_128 } from '../js/data/ascii.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -553,7 +554,7 @@ PAGES.push({
 ${SYMBOL_GROUPS.map((grp) => `    <section class="section">
       <div class="section-head"><h2>${esc(grp.title)}</h2><span style="color:var(--ink-faint);font-size:14px">${esc(grp.blurb)}</span></div>
       <div class="symbol-grid">
-${grp.keys.map((k) => { const s = SYMBOLS[k]; if(!s) return ''; return `        <div class="symbol-card"><img class="symbol-img" src="${up}assets/symbols/${esc(s.file)}" alt="${esc(s.label)}" loading="lazy"><b>${esc(s.label)}</b><small>${esc(s.note||'')}</small></div>`; }).join('\n')}
+${grp.keys.map((k) => { const s = SYMBOLS[k]; if(!s) return ''; return `        <div class="symbol-card">${symbolMarkup(k, up)}<b>${esc(s.label)}</b><small>${esc(s.note||'')}</small></div>`; }).join('\n')}
       </div>
     </section>`).join('\n')}
     <section class="section symbol-attrib">

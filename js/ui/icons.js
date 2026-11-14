@@ -7,29 +7,59 @@
  */
 
 import { SYMBOLS as SYMBOL_DATA, SYMBOL_GROUPS, SYMBOL_NAMES, SYMBOL_ASSET_BASE } from '../data/symbols.js';
+import { SYMBOL_INLINE } from '../data/symbol-inline.generated.js';
 
 export { SYMBOL_DATA as SYMBOL_META, SYMBOL_GROUPS, SYMBOL_NAMES };
 
-/* ── circuit symbols (Commons-sourced SVG files) ─────────────────────── */
+const SYMBOL_NS = 'http://www.w3.org/2000/svg';
+
+function createSymbolNode(k, s) {
+  const inl = SYMBOL_INLINE?.[k];
+  if (inl && inl.inner) {
+    const svg = document.createElementNS(SYMBOL_NS, 'svg');
+    svg.setAttribute('viewBox', inl.viewBox || '0 0 100 60');
+    svg.setAttribute('class', 'symbol-svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', s.label);
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.innerHTML = inl.inner;
+    return svg;
+  }
+  const img = document.createElement('img');
+  img.src = SYMBOL_ASSET_BASE + s.file;
+  img.alt = s.label;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.className = 'symbol-img';
+  img.setAttribute('role', 'img');
+  return img;
+}
+
+/* ── circuit symbols (inline Commons-sourced SVG geometry preferred) ── */
 
 export const SYMBOLS = Object.fromEntries(Object.entries(SYMBOL_DATA).map(([k, s]) => [k, {
   ...s,
-  // `svg` property kept for compatibility: an <img> element showing the asset.
-  get svg() {
-    const img = document.createElement('img');
-    img.src = SYMBOL_ASSET_BASE + s.file;
-    img.alt = s.label;
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.className = 'symbol-img';
-    img.setAttribute('role', 'img');
-    return img;
-  },
+  get svg() { return createSymbolNode(k, s); },
 }]));
 
 export function symbolAssetUrl(key, base = '') {
   const s = SYMBOL_DATA[key];
   return s ? `${base}${SYMBOL_ASSET_BASE}${s.file}` : '';
+}
+
+export function symbolMarkup(key, base = '') {
+  const s = SYMBOL_DATA[key];
+  if (!s) return '';
+  const inl = SYMBOL_INLINE?.[key];
+  if (inl && inl.inner) {
+    const vb = inl.viewBox || '0 0 100 60';
+    return `<svg class="symbol-svg" viewBox="${vb}" role="img" aria-label="${s.label}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inl.inner}</svg>`;
+  }
+  return `<img class="symbol-img" src="${base}${SYMBOL_ASSET_BASE}${s.file}" alt="${s.label}" loading="lazy">`;
 }
 
 /* ── UI glyphs ────────────────────────────────────────────────────────── */
