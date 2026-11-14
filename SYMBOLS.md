@@ -21,16 +21,16 @@ All circuit symbols in this project are SVG assets sourced from Wikimedia Common
 | transistorPnp | PNP transistor | `assets/symbols/pnp.svg` | [Wikimedia Commons: BJT PNP symbol.svg](https://commons.wikimedia.org/wiki/File:BJT_PNP_symbol.svg) | Omegatron | CC BY-SA 3.0 |
 | fet | MOSFET | `assets/symbols/fet-n.svg` | [Wikimedia Commons: IGFET N-Ch Enh (labelled/simplified)](https://commons.wikimedia.org/wiki/File:IGFET_N-Ch_Enh_Labelled.svg) | Wikimedia Commons contributors | CC BY-SA |
 | switch | Switch (SPST) | `assets/symbols/switch.svg` | [Wikimedia Commons: SPST-Switch.svg](https://commons.wikimedia.org/wiki/File:SPST-Switch.svg) | jjbeard | Public domain |
-| switchSpst | Switch, normally open | `assets/symbols/switch-spst.svg` | [Wikimedia Commons: SPST-Switch.svg](https://commons.wikimedia.org/wiki/File:SPST-Switch.svg) | jjbeard | Public domain |
+| switchSpst | Switch, normally open | `assets/symbols/switch-spst.svg` | [Wikimedia Commons: IEEE 315 Contacts, Switches, Contactors, and Relays Symbols (104).svg](https://commons.wikimedia.org/wiki/File%3AIEEE_315_Contacts%2C_Switches%2C_Contactors%2C_and_Relays_Symbols_(104).svg) | Michel Bakni | CC BY-SA 4.0 |
 | switchSpdt | SPDT (changeover) | `assets/symbols/switch-spdt.svg` | [Wikimedia Commons: SPDT-Switch.svg](https://commons.wikimedia.org/wiki/File:SPDT-Switch.svg) | jjbeard | Public domain |
 | pushbuttonNo | Pushbutton (NO) | `assets/symbols/pushbutton-no.svg` | [Wikimedia Commons: Push-to-make switch electronic symbol.svg](https://commons.wikimedia.org/wiki/File:Push-to-make_switch_electronic_symbol.svg) | Wikimedia Commons contributors | CC BY-SA |
 | pushbuttonNc | Pushbutton (NC) | `assets/symbols/pushbutton-nc.svg` | [Wikimedia Commons: Push-to-break switch electronic symbol.svg](https://commons.wikimedia.org/wiki/File:Push-to-break_switch_electronic_symbol.svg) | Wikimedia Commons contributors | CC BY-SA |
 | relaySpdt | Relay (SPDT) | `assets/symbols/relay-spdt.svg` | [Wikimedia Commons: relay symbol](https://commons.wikimedia.org/wiki/Category:Relay_symbols) | Wikimedia Commons contributors | CC BY-SA |
-| ground | Ground | `assets/symbols/ground.gif` | [Wikimedia Commons: Signal Ground.svg](https://commons.wikimedia.org/wiki/File:Signal_Ground.svg) | Omegatron | Public domain |
+| ground | Ground | `assets/symbols/ground.svg` | [Wikimedia Commons: IEC 60417 - Ref-No 5020.svg](https://commons.wikimedia.org/wiki/File%3AIEC_60417_-_Ref-No_5020.svg) | Vectorization: Mrmw | Public domain |
 | groundEarth | Protective earth | `assets/symbols/ground-earth.svg` | [Wikimedia Commons: IEC 60417 - Ref-No 5019.svg](https://commons.wikimedia.org/wiki/File:IEC_60417_-_Ref-No_5019.svg) | IEC / Wikimedia Commons contributors | see source |
 | battery | Battery cell | `assets/symbols/battery.svg` | [Wikimedia Commons: Battery symbol1.svg](https://commons.wikimedia.org/wiki/File:Battery_symbol1.svg) | jjbeard | Public domain |
 | dcSource | DC voltage source | `assets/symbols/dc-source.svg` | [Wikimedia Commons: Voltage Source (DC).svg](https://commons.wikimedia.org/wiki/File:Voltage_Source_(DC).svg) | Wikimedia Commons contributors | CC BY-SA / PD |
-| acSource | AC source | `assets/symbols/ac-source.gif` | [Wikimedia Commons: AC voltage source.svg](https://commons.wikimedia.org/wiki/File:AC_voltage_source.svg) | Omegatron | Public domain |
+| acSource | AC source | `assets/symbols/ac-source.svg` | [Wikimedia Commons: AC voltage source.svg](https://commons.wikimedia.org/wiki/File%3AAC_voltage_source.svg) | ErikBuer | CC BY-SA 4.0 |
 | lamp | Lamp / indicator | `assets/symbols/lamp.svg` | [Wikimedia Commons: Lamp symbol.svg](https://commons.wikimedia.org/wiki/File:Lamp_symbol.svg) | Omegatron | Public domain |
 | fuse | Fuse | `assets/symbols/fuse.svg` | [Wikimedia Commons: Fuse symbol.svg](https://commons.wikimedia.org/wiki/File:Fuse_symbol.svg) | Wikimedia Commons contributors | CC BY-SA / PD |
 | wire | Wire / conductor | `assets/symbols/wire.gif` | [Wikimedia Commons: conductor symbol](https://commons.wikimedia.org/wiki/Category:Electrical_conductor_symbols) | Wikimedia Commons contributors | CC BY-SA / PD |
@@ -53,7 +53,7 @@ All circuit symbols in this project are SVG assets sourced from Wikimedia Common
 | buzzer | Buzzer | `assets/symbols/buzzer.svg` | [Wikimedia Commons: Buzzer-IEC-Symbol.svg](https://commons.wikimedia.org/wiki/File:Buzzer-IEC-Symbol.svg) | Wikimedia Commons contributors | CC BY-SA |
 | speaker | Speaker | `assets/symbols/speaker.gif` | [Wikimedia Commons: Loudspeaker.svg](https://commons.wikimedia.org/wiki/File:Loudspeaker.svg) | Wikimedia Commons contributors | CC BY-SA / PD |
 | microphone | Microphone | `assets/symbols/microphone.gif` | [Wikimedia Commons: Mic-IEC-Symbol.svg](https://commons.wikimedia.org/wiki/File:Mic-IEC-Symbol.svg) | Wikimedia Commons contributors | CC BY-SA |
-| antenna | Antenna | `assets/symbols/antenna.gif` | [Wikimedia Commons: Antenna symbol.svg](https://commons.wikimedia.org/wiki/File:Antenna_symbol.svg) | Wikimedia Commons contributors | CC BY-SA / PD |
+| antenna | Antenna | `assets/symbols/antenna.svg` | [Wikimedia Commons: Antenna schematic symbol.svg](https://commons.wikimedia.org/wiki/File%3AAntenna_schematic_symbol.svg) | Chetvorno | CC0 |
 | motor | Motor | `assets/symbols/motor.gif` | [Wikimedia Commons: Motor Symbol.svg](https://commons.wikimedia.org/wiki/File:Motor_Symbol.svg) | Wikimedia Commons contributors | CC BY-SA / PD |
 | generator | Generator | `assets/symbols/generator.gif` | [Wikimedia Commons: Generator symbol.svg](https://commons.wikimedia.org/wiki/File:Generator_symbol.svg) | Wikimedia Commons contributors | CC BY-SA / PD |
 

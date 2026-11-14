@@ -1,0 +1,80 @@
+{
+  "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Antenna_schematic_symbol.svg",
+  "title": "File:Antenna schematic symbol.svg",
+  "meta": {
+    "DateTime": {
+      "value": "2020-01-05 18:51:12",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Antenna schematic symbol",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "CC-Zero|Self-published work|Antenna symbols",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Symbol used in electrical <a href=\"https://en.wikipedia.org/wiki/schematic_diagrams\" class=\"extiw\" title=\"w:schematic diagrams\">schematic diagrams</a> for a radio <a href=\"https://en.wikipedia.org/wiki/antenna_(radio)\" class=\"extiw\" title=\"w:antenna (radio)\">antenna</a>.",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2019-12-30",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Chetvorno&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Chetvorno (page does not exist)\">Chetvorno</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Zero, Public Domain Dedication",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  },
+  "pageid": 85439916
+}
