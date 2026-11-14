@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capacitor — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="How a capacitor stores charge, how reactance works, and how to combine caps in series and parallel.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/capacitor/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/capacitor/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Capacitor — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="How a capacitor stores charge, how reactance works, and how to combine caps in series and parallel.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/capacitor/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Capacitor — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="How a capacitor stores charge, how reactance works, and how to combine caps in series and parallel.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 70 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/capacitor/#article",
+      "headline": "Capacitor",
+      "description": "How a capacitor stores charge, how reactance works, and how to combine caps in series and parallel.",
+      "articleSection": "Components",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/capacitor/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/capacitor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Capacitor",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/capacitor/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Capacitor</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Components</span>
+      <h1>Capacitor</h1>
+      <p>How a capacitor stores charge, how reactance works, and how to combine caps in series and parallel.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A capacitor stores electric charge between two close conductors separated by an insulating dielectric material.</p>
+    <div class="formula"><span class="eq">C = Q ÷ V</span>
+      <span class="note">Q is charge in coulombs, V is voltage across the plates. C is capacitance in farads.</span></div>
+    <h2>Capacitance of a parallel-plate capacitor</h2>
+    <p>The capacitance of two parallel plates grows with plate area and shrinks with the distance between them. The constant ε₀ is the permittivity of free space.</p>
+    <div class="formula"><span class="eq">C = ε₀ · εᵣ · A ÷ d</span>
+      <span class="note">ε₀ ≈ 8.854×10⁻¹² F/m; εᵣ is the dielectric constant of the insulator (air 1, SiO₂ 3.9, mica ≈ 7).</span></div>
+    <h2>Capacitors in series and parallel</h2>
+    <div class="formula"><span class="eq">Series:    1 ÷ C_T = 1 ÷ C₁ + 1 ÷ C₂ + …
+Parallel:  C_T = C₁ + C₂ + …</span></div>
+    <p>Series capacitors all carry the same charge but see a fraction of the total voltage; parallel capacitors all see the same voltage but share the current.</p>
+    <h2>Reactance: why it blocks DC</h2>
+    <p>At zero or very low frequency a capacitor’s impedance is extremely high — it passes no DC after the initial charging spike. As frequency rises its opposition falls.</p>
+    <div class="formula"><span class="eq">X_C = 1 ÷ (2πfC)</span>
+      <span class="note">Impedance of a pure capacitor, in ohms.</span></div>
+    <ul class="symbols">
+      <li><b>f = 0 Hz</b><span>X_C → ∞ — a capacitor blocks DC entirely</span></li>
+      <li><b>f = 50 Hz, C = 100 µF</b><span>X_C ≈ 32 Ω</span></li>
+      <li><b>f = 1 kHz, C = 100 nF</b><span>X_C ≈ 1.6 kΩ</span></li>
+    </ul>
+    <h2>Energy stored in a charged capacitor</h2>
+    <div class="formula"><span class="eq">E = ½ · C · V²</span>
+      <span class="note">Energy is released as a destructive pulse when a shorted charged capacitor discharges — which is why large filter caps can explode under fault.</span></div>
+    <ul class="symbols">
+      <li><b>C = 10 µF, V = 25 V</b><span>E = 3.125 mJ</span></li>
+      <li><b>C = 470 µF, V = 400 V</b><span>E ≈ 37.6 J — dangerous</span></li>
+    </ul>
+    <div class="callout"><div><strong>Note</strong> Short a charged capacitor — or discharge it with a screwdriver — and the released energy decides whether the resulting flash is exciting or expensive. Always discharge through a resistor, not a short.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/capacitor/">Put it into practice → Capacitor calculator</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/capacitor";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>
