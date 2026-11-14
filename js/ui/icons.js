@@ -98,6 +98,26 @@ export const SYMBOLS = {
     note: 'open blade',
     svg: svg('<path d="M6 34h28M56 34h28M30 34L52 14"/><circle cx="30" cy="34" r="3.5" fill="currentColor" stroke="none"/><circle cx="56" cy="34" r="3.5" fill="currentColor" stroke="none"/>'),
   },
+  switchSpdt: {
+    label: 'SPDT (changeover)',
+    note: 'one common, two paths',
+    svg: svg('<path d="M10 14h18M10 34h30L54 16"/><circle cx="38" cy="34" r="3.2" fill="currentColor" stroke="none"/><circle cx="66" cy="14" r="3.2" fill="currentColor" stroke="none"/><circle cx="66" cy="34" r="3.2" fill="currentColor" stroke="none"/>'),
+  },
+  pushbuttonNo: {
+    label: 'Pushbutton (NO)',
+    note: 'momentary normally-open',
+    svg: svg('<path d="M6 24h40M54 24h40M54 32v-16M46 24v-14"/><circle cx="54" cy="50" r="3.2" fill="currentColor" stroke="none"/><path d="M54 44v10"/>'),
+  },
+  pushbuttonNc: {
+    label: 'Pushbutton (NC)',
+    note: 'momentary normally-closed',
+    svg: svg('<path d="M6 24h18v-14M82 24h42"/><circle cx="54" cy="24" r="3.2" fill="currentColor" stroke="none"/><circle cx="24" cy="24" r="3.2" fill="currentColor" stroke="none"/><path d="M54 16v-12M30 16h48M24 20v10M54 20v10"/>'),
+  },
+  relaySpdt: {
+    label: 'Relay (SPDT)',
+    note: 'changeover contacts',
+    svg: svg('<path d="M10 14h18M10 46h30L54 28"/><circle cx="54" cy="28" r="3.2" fill="currentColor" stroke="none"/><circle cx="66" cy="14" r="3.2" fill="currentColor" stroke="none"/><circle cx="66" cy="46" r="3.2" fill="currentColor" stroke="none"/><path d="M82 14l-8 12M82 46l-8-12"/>'),
+  },
   ground: {
     label: 'Ground',
     note: 'three bars',
@@ -261,7 +281,7 @@ export const SYMBOL_GROUPS = [
     id: 'resistive',
     title: 'Resistive & control',
     blurb: 'Elements that limit or divide current.',
-    keys: ['resistor', 'resistorUs', 'resistorPot', 'trimmer', 'thermistor', 'fuse', 'lamp', 'switch', 'switchSpst', 'dipSwitch', 'solderBridge'],
+    keys: ['resistor', 'resistorUs', 'resistorPot', 'trimmer', 'thermistor', 'fuse', 'lamp', 'switch', 'switchSpst', 'switchSpdt', 'pushbuttonNo', 'pushbuttonNc', 'dipSwitch', 'solderBridge', 'relaySpdt'],
   },
   {
     id: 'reactive',
