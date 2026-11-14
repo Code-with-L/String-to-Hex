@@ -1,14 +1,18 @@
 {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Wires_not_crossing.svg",
-  "title": "File:Wires not crossing.svg",
+  "title": "File:IEEE 315 Transmission Path Symbols (1).svg",
+  "pageid": 83575098,
+  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/IEEE_315_Transmission_Path_Symbols_%281%29.svg",
+  "mime": "image/svg+xml",
+  "width": 100,
+  "height": 100,
   "meta": {
     "DateTime": {
-      "value": "2025-05-18 14:14:27",
+      "value": "2019-11-01 17:55:37",
       "source": "mediawiki-metadata",
       "hidden": ""
     },
     "ObjectName": {
-      "value": "Wires not crossing",
+      "value": "IEEE 315 Transmission Path Symbols (1)",
       "source": "mediawiki-metadata"
     },
     "CommonsMetadataExtension": {
@@ -17,7 +21,7 @@
       "hidden": ""
     },
     "Categories": {
-      "value": "SVG electrical symbols|Self-published work|Vector images using elements from other vector images",
+      "value": "Self-published work|Valid SVG created with Inkscape:Diagrams|Works by Michel Bakni|Transmission Path Symbols",
       "source": "commons-categories",
       "hidden": ""
     },
@@ -27,19 +31,19 @@
       "hidden": ""
     },
     "ImageDescription": {
-      "value": "Pair of unconnected wires with a bridge",
+      "value": "* Guided path, general.\n<ul><li>Conductive path or conductor; wire.</li></ul>",
       "source": "commons-desc-page"
     },
     "DateTimeOriginal": {
-      "value": "2025-05-17",
+      "value": "2019-11-01",
       "source": "commons-desc-page"
     },
     "Credit": {
-      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "value": "<cite class=\"book\" style=\"font-style:normal\">(in English) (1993) <i> <a rel=\"nofollow\" class=\"external text\" href=\"https://ieeexplore.ieee.org/document/985670\">315-1975 - IEEE Standard American National Standard Canadian Standard Graphic Symbols for Electrical and Electronics Diagrams (Including Reference Designation Letters)</a></i>, IEEE, p. 39  <small><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">DOI</a></span>:  <a rel=\"nofollow\" class=\"external text\" href=\"https://dx.doi.org/10.1109/IEEESTD.1993.93397\">10.1109/IEEESTD.1993.93397</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/ISBN\" class=\"extiw\" title=\"en:ISBN\"><span lang=\"en\" dir=\"ltr\">ISBN</span></a></span>:  <a href=\"//commons.wikimedia.org/wiki/Special:BookSources/0738109479\" title=\"Special:BookSources/0738109479\">0738109479</a>. </small></cite>",
       "source": "commons-desc-page"
     },
     "Artist": {
-      "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Symbol_%26_Font_Hunter&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Symbol &amp; Font Hunter (page does not exist)\">Symbol &amp; Font Hunter</a>",
+      "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q81411358\" class=\"extiw\" title=\"d:Q81411358\"><span title=\"academic researcher in electronics engineering, a university professor in France, and activist in the Wikimedia movement\">Michel Bakni</span></a></bdi>",
       "source": "commons-desc-page"
     },
     "LicenseShortName": {
