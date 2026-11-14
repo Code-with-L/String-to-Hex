@@ -756,3 +756,10 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
 .key-op { background: var(--panel-3); color: var(--signal); }
 .key-eq { background: var(--signal); color: #14100a; font-size: 20px; font-weight: 700; border: 0; }
 .key-mode-active { border-color: var(--signal); color: var(--signal); }
+
+/* ── reference math tables ───────────────────────────────────────────────── */
+.mul-table { border-collapse: collapse; }
+.mul-table th, .mul-table td { padding: 6px 12px; text-align: center; border: 1px solid var(--line); font-size: 13px; }
+.mul-table th { color: var(--signal); background: var(--panel-2); }
+.mul-table tbody tr:hover td, .mul-table tbody tr:hover th { background: var(--panel-2); }
+.mul-table tbody th { color: var(--ink-dim); }

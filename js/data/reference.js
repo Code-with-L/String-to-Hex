@@ -839,6 +839,64 @@ export const TABLES = {
       ['25 mm²', '2 AWG', '≈ 89 A', 'Main feeders'],
     ],
   },
+
+  /**
+   * Reference math tables, mirroring the reference site's multiplication,
+   * addition, log and temperature charts. Rows are generated once at import
+   * time rather than pulled from the network at view-build time.
+   */
+  multiplication: {
+    title: 'Multiplication table',
+    blurb: '×1 through ×12 — hover highlights the row you are reading.',
+    size: 12,
+    rows: Array.from({ length: 12 }, (_, i) =>
+      Array.from({ length: 12 }, (_, j) => (i + 1) * (j + 1))),
+  },
+
+  addition: {
+    title: 'Addition table',
+    blurb: 'Sums from 0 to 12.',
+    size: 12,
+    rows: Array.from({ length: 13 }, (_, i) =>
+      Array.from({ length: 13 }, (_, j) => i + j)),
+  },
+
+  logarithms: {
+    title: 'Logarithm tables',
+    blurb: 'log₁₀(x) and ln(x) for x = 1 to 20 and the key powers of ten.',
+    rows: [
+      ...Array.from({ length: 20 }, (_, i) => i + 1),
+      25, 30, 40, 50, 75, 100, 1000, 10000,
+    ].map((x) => [String(x), Math.log10(x).toFixed(6), Math.log(x).toFixed(6)]),
+  },
+
+  temperatures: {
+    title: 'Temperature conversion chart',
+    blurb: '°C and °F for common bench-top values.',
+    rows: [
+      ['−273.15', '−460', 'Absolute zero'],
+      ['−100', '−148', 'Nowhere on Earth — ever'],
+      ['−40', '−40', '°C = °F — the two scales cross here'],
+      ['−20', '−4', 'Freezer interior'],
+      ['0', '32', 'Water freezes'],
+      ['10', '50', 'Cold room'],
+      ['20', '68', 'Comfortable office'],
+      ['25', '77', 'Warm room / IC junction nominal'],
+      ['30', '86', 'Room at 30 °C'],
+      ['37', '98.6', 'Human body temperature'],
+      ['40', '104', 'Very hot'],
+      ['50', '122', 'CPU hotspot'],
+      ['60', '140', 'Boiling hot beverage once brewed'],
+      ['70', '158', 'LED junction absolute max'],
+      ['80', '176', 'Solder reflow zone'],
+      ['100', '212', 'Water boils (sea level)'],
+      ['125', '257', 'Lead-free solder paste melt point'],
+      ['150', '302', 'PVC cable rating (typical)'],
+      ['200', '392', 'Old-school solder iron tip'],
+      ['300', '572', 'Hot water on a 600 °C element'],
+      ['500', '932', 'Wood ignition temperature'],
+    ],
+  },
 };
 
 /* ── component and symbol glossary used by the symbols page ────────────── */

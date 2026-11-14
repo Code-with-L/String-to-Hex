@@ -584,10 +584,10 @@ PAGES.push({
 PAGES.push({
   path: '/tables/index.html',
   hash: '/tables',
-  title: `Resistor colour code & wire gauge tables | ${SITE}`,
-  description: 'Resistor colour bands, multipliers and tolerances; material resistivity; and indicative wire current capacity — all in one reference.',
+  title: `Multiplication, addition, log, temperature &amp; resistor tables | ${SITE}`,
+  description: 'The tables that keep getting scrolled past: multiplication and addition tables, logarithm tables (log₁₀ and ln), °C↔°F reference, resistor colour bands, material resistivity and wire current capacity.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Electrical reference tables', description: 'Resistor colour code, resistivity and wire current capacity tables.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, addition, logarithms, temperature, resistor', description: 'Multiplication, addition, logarithm and temperature tables alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -628,6 +628,34 @@ ${TABLES.conductivity.rows.map((r) => `          <tr><td>${esc(r[0])}</td><td cl
         <thead><tr><th>Cross-section</th><th>AWG</th><th>Capacity</th><th>Typical use</th></tr></thead>
         <tbody>
 ${TABLES.wireCurrent.rows.map((r) => `          <tr><td class="mono">${esc(r[0])}</td><td class="mono">${esc(r[1])}</td><td class="mono">${esc(r[2])}</td><td>${esc(r[3])}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Multiplication table (×1 to ×12)</h2>
+      <table class="mul-table">
+        <thead><tr><th>×</th>${Array.from({ length: TABLES.multiplication.size }, (_, i) => `<th>${i + 1}</th>`).join('')}</tr></thead>
+        <tbody>
+${TABLES.multiplication.rows.map((row, i) => `          <tr><th>${i + 1}</th>${row.map((v) => `<td class="mono">${v}</td>`).join('')}</tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Addition table (0 to 12)</h2>
+      <table class="mul-table">
+        <thead><tr><th>+</th>${Array.from({ length: TABLES.addition.size + 1 }, (_, i) => `<th>${i}</th>`).join('')}</tr></thead>
+        <tbody>
+${TABLES.addition.rows.map((row, i) => `          <tr><th>${i}</th>${row.map((v) => `<td class="mono">${v}</td>`).join('')}</tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Logarithm tables</h2>
+      <table>
+        <thead><tr><th>x</th><th>log₁₀(x)</th><th>ln(x)</th></tr></thead>
+        <tbody>
+${TABLES.logarithms.rows.map(([x, l10, le]) => `          <tr><td class="mono">${esc(x)}</td><td class="mono">${esc(l10)}</td><td class="mono">${esc(le)}</td></tr>`).join('\n')}
+        </tbody>
+      </table>
+      <h2>Temperature conversion chart</h2>
+      <table>
+        <thead><tr><th>°C</th><th>°F</th><th>Why it matters</th></tr></thead>
+        <tbody>
+${TABLES.temperatures.rows.map((r) => `          <tr><td class="mono">${esc(r[0])}</td><td class="mono">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('\n')}
         </tbody>
       </table>
       <h2>Common electronic components</h2>

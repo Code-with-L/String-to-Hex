@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Resistor colour code &amp; wire gauge tables | HexKit</title>
-<meta name="description" content="Resistor colour bands, multipliers and tolerances; material resistivity; and indicative wire current capacity — all in one reference.">
+<title>Multiplication, addition, log, temperature &amp;amp; resistor tables | HexKit</title>
+<meta name="description" content="The tables that keep getting scrolled past: multiplication and addition tables, logarithm tables (log₁₀ and ln), °C↔°F reference, resistor colour bands, material resistivity and wire current capacity.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0a0b0c">
 <meta name="color-scheme" content="dark light">
@@ -17,15 +17,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HexKit">
-<meta property="og:title" content="Resistor colour code &amp; wire gauge tables | HexKit">
-<meta property="og:description" content="Resistor colour bands, multipliers and tolerances; material resistivity; and indicative wire current capacity — all in one reference.">
+<meta property="og:title" content="Multiplication, addition, log, temperature &amp;amp; resistor tables | HexKit">
+<meta property="og:description" content="The tables that keep getting scrolled past: multiplication and addition tables, logarithm tables (log₁₀ and ln), °C↔°F reference, resistor colour bands, material resistivity and wire current capacity.">
 <meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/tables/">
 <meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Resistor colour code &amp; wire gauge tables | HexKit">
-<meta name="twitter:description" content="Resistor colour bands, multipliers and tolerances; material resistivity; and indicative wire current capacity — all in one reference.">
+<meta name="twitter:title" content="Multiplication, addition, log, temperature &amp;amp; resistor tables | HexKit">
+<meta name="twitter:description" content="The tables that keep getting scrolled past: multiplication and addition tables, logarithm tables (log₁₀ and ln), °C↔°F reference, resistor colour bands, material resistivity and wire current capacity.">
 <meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
 <script type="application/ld+json">
 {
@@ -52,8 +52,8 @@
     {
       "@type": "TechArticle",
       "@id": "https://code-with-l.github.io/String-to-Hex/tables#article",
-      "headline": "Electrical reference tables",
-      "description": "Resistor colour code, resistivity and wire current capacity tables.",
+      "headline": "Reference tables — multiplication, addition, logarithms, temperature, resistor",
+      "description": "Multiplication, addition, logarithm and temperature tables alongside the resistor colour code, resistivity and wire current capacity.",
       "inLanguage": "en",
       "isAccessibleForFree": true,
       "author": {
@@ -175,6 +175,104 @@
           <tr><td class="mono">10 mm²</td><td class="mono">6 AWG</td><td class="mono">≈ 50 A</td><td>Sub-board feeders</td></tr>
           <tr><td class="mono">16 mm²</td><td class="mono">4 AWG</td><td class="mono">≈ 68 A</td><td>Three-phase supply</td></tr>
           <tr><td class="mono">25 mm²</td><td class="mono">2 AWG</td><td class="mono">≈ 89 A</td><td>Main feeders</td></tr>
+        </tbody>
+      </table>
+      <h2>Multiplication table (×1 to ×12)</h2>
+      <table class="mul-table">
+        <thead><tr><th>×</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead>
+        <tbody>
+          <tr><th>1</th><td class="mono">1</td><td class="mono">2</td><td class="mono">3</td><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td></tr>
+          <tr><th>2</th><td class="mono">2</td><td class="mono">4</td><td class="mono">6</td><td class="mono">8</td><td class="mono">10</td><td class="mono">12</td><td class="mono">14</td><td class="mono">16</td><td class="mono">18</td><td class="mono">20</td><td class="mono">22</td><td class="mono">24</td></tr>
+          <tr><th>3</th><td class="mono">3</td><td class="mono">6</td><td class="mono">9</td><td class="mono">12</td><td class="mono">15</td><td class="mono">18</td><td class="mono">21</td><td class="mono">24</td><td class="mono">27</td><td class="mono">30</td><td class="mono">33</td><td class="mono">36</td></tr>
+          <tr><th>4</th><td class="mono">4</td><td class="mono">8</td><td class="mono">12</td><td class="mono">16</td><td class="mono">20</td><td class="mono">24</td><td class="mono">28</td><td class="mono">32</td><td class="mono">36</td><td class="mono">40</td><td class="mono">44</td><td class="mono">48</td></tr>
+          <tr><th>5</th><td class="mono">5</td><td class="mono">10</td><td class="mono">15</td><td class="mono">20</td><td class="mono">25</td><td class="mono">30</td><td class="mono">35</td><td class="mono">40</td><td class="mono">45</td><td class="mono">50</td><td class="mono">55</td><td class="mono">60</td></tr>
+          <tr><th>6</th><td class="mono">6</td><td class="mono">12</td><td class="mono">18</td><td class="mono">24</td><td class="mono">30</td><td class="mono">36</td><td class="mono">42</td><td class="mono">48</td><td class="mono">54</td><td class="mono">60</td><td class="mono">66</td><td class="mono">72</td></tr>
+          <tr><th>7</th><td class="mono">7</td><td class="mono">14</td><td class="mono">21</td><td class="mono">28</td><td class="mono">35</td><td class="mono">42</td><td class="mono">49</td><td class="mono">56</td><td class="mono">63</td><td class="mono">70</td><td class="mono">77</td><td class="mono">84</td></tr>
+          <tr><th>8</th><td class="mono">8</td><td class="mono">16</td><td class="mono">24</td><td class="mono">32</td><td class="mono">40</td><td class="mono">48</td><td class="mono">56</td><td class="mono">64</td><td class="mono">72</td><td class="mono">80</td><td class="mono">88</td><td class="mono">96</td></tr>
+          <tr><th>9</th><td class="mono">9</td><td class="mono">18</td><td class="mono">27</td><td class="mono">36</td><td class="mono">45</td><td class="mono">54</td><td class="mono">63</td><td class="mono">72</td><td class="mono">81</td><td class="mono">90</td><td class="mono">99</td><td class="mono">108</td></tr>
+          <tr><th>10</th><td class="mono">10</td><td class="mono">20</td><td class="mono">30</td><td class="mono">40</td><td class="mono">50</td><td class="mono">60</td><td class="mono">70</td><td class="mono">80</td><td class="mono">90</td><td class="mono">100</td><td class="mono">110</td><td class="mono">120</td></tr>
+          <tr><th>11</th><td class="mono">11</td><td class="mono">22</td><td class="mono">33</td><td class="mono">44</td><td class="mono">55</td><td class="mono">66</td><td class="mono">77</td><td class="mono">88</td><td class="mono">99</td><td class="mono">110</td><td class="mono">121</td><td class="mono">132</td></tr>
+          <tr><th>12</th><td class="mono">12</td><td class="mono">24</td><td class="mono">36</td><td class="mono">48</td><td class="mono">60</td><td class="mono">72</td><td class="mono">84</td><td class="mono">96</td><td class="mono">108</td><td class="mono">120</td><td class="mono">132</td><td class="mono">144</td></tr>
+        </tbody>
+      </table>
+      <h2>Addition table (0 to 12)</h2>
+      <table class="mul-table">
+        <thead><tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead>
+        <tbody>
+          <tr><th>0</th><td class="mono">0</td><td class="mono">1</td><td class="mono">2</td><td class="mono">3</td><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td></tr>
+          <tr><th>1</th><td class="mono">1</td><td class="mono">2</td><td class="mono">3</td><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td></tr>
+          <tr><th>2</th><td class="mono">2</td><td class="mono">3</td><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td></tr>
+          <tr><th>3</th><td class="mono">3</td><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td></tr>
+          <tr><th>4</th><td class="mono">4</td><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td></tr>
+          <tr><th>5</th><td class="mono">5</td><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td></tr>
+          <tr><th>6</th><td class="mono">6</td><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td></tr>
+          <tr><th>7</th><td class="mono">7</td><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td></tr>
+          <tr><th>8</th><td class="mono">8</td><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td><td class="mono">20</td></tr>
+          <tr><th>9</th><td class="mono">9</td><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td><td class="mono">20</td><td class="mono">21</td></tr>
+          <tr><th>10</th><td class="mono">10</td><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td><td class="mono">20</td><td class="mono">21</td><td class="mono">22</td></tr>
+          <tr><th>11</th><td class="mono">11</td><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td><td class="mono">20</td><td class="mono">21</td><td class="mono">22</td><td class="mono">23</td></tr>
+          <tr><th>12</th><td class="mono">12</td><td class="mono">13</td><td class="mono">14</td><td class="mono">15</td><td class="mono">16</td><td class="mono">17</td><td class="mono">18</td><td class="mono">19</td><td class="mono">20</td><td class="mono">21</td><td class="mono">22</td><td class="mono">23</td><td class="mono">24</td></tr>
+        </tbody>
+      </table>
+      <h2>Logarithm tables</h2>
+      <table>
+        <thead><tr><th>x</th><th>log₁₀(x)</th><th>ln(x)</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">1</td><td class="mono">0.000000</td><td class="mono">0.000000</td></tr>
+          <tr><td class="mono">2</td><td class="mono">0.301030</td><td class="mono">0.693147</td></tr>
+          <tr><td class="mono">3</td><td class="mono">0.477121</td><td class="mono">1.098612</td></tr>
+          <tr><td class="mono">4</td><td class="mono">0.602060</td><td class="mono">1.386294</td></tr>
+          <tr><td class="mono">5</td><td class="mono">0.698970</td><td class="mono">1.609438</td></tr>
+          <tr><td class="mono">6</td><td class="mono">0.778151</td><td class="mono">1.791759</td></tr>
+          <tr><td class="mono">7</td><td class="mono">0.845098</td><td class="mono">1.945910</td></tr>
+          <tr><td class="mono">8</td><td class="mono">0.903090</td><td class="mono">2.079442</td></tr>
+          <tr><td class="mono">9</td><td class="mono">0.954243</td><td class="mono">2.197225</td></tr>
+          <tr><td class="mono">10</td><td class="mono">1.000000</td><td class="mono">2.302585</td></tr>
+          <tr><td class="mono">11</td><td class="mono">1.041393</td><td class="mono">2.397895</td></tr>
+          <tr><td class="mono">12</td><td class="mono">1.079181</td><td class="mono">2.484907</td></tr>
+          <tr><td class="mono">13</td><td class="mono">1.113943</td><td class="mono">2.564949</td></tr>
+          <tr><td class="mono">14</td><td class="mono">1.146128</td><td class="mono">2.639057</td></tr>
+          <tr><td class="mono">15</td><td class="mono">1.176091</td><td class="mono">2.708050</td></tr>
+          <tr><td class="mono">16</td><td class="mono">1.204120</td><td class="mono">2.772589</td></tr>
+          <tr><td class="mono">17</td><td class="mono">1.230449</td><td class="mono">2.833213</td></tr>
+          <tr><td class="mono">18</td><td class="mono">1.255273</td><td class="mono">2.890372</td></tr>
+          <tr><td class="mono">19</td><td class="mono">1.278754</td><td class="mono">2.944439</td></tr>
+          <tr><td class="mono">20</td><td class="mono">1.301030</td><td class="mono">2.995732</td></tr>
+          <tr><td class="mono">25</td><td class="mono">1.397940</td><td class="mono">3.218876</td></tr>
+          <tr><td class="mono">30</td><td class="mono">1.477121</td><td class="mono">3.401197</td></tr>
+          <tr><td class="mono">40</td><td class="mono">1.602060</td><td class="mono">3.688879</td></tr>
+          <tr><td class="mono">50</td><td class="mono">1.698970</td><td class="mono">3.912023</td></tr>
+          <tr><td class="mono">75</td><td class="mono">1.875061</td><td class="mono">4.317488</td></tr>
+          <tr><td class="mono">100</td><td class="mono">2.000000</td><td class="mono">4.605170</td></tr>
+          <tr><td class="mono">1000</td><td class="mono">3.000000</td><td class="mono">6.907755</td></tr>
+          <tr><td class="mono">10000</td><td class="mono">4.000000</td><td class="mono">9.210340</td></tr>
+        </tbody>
+      </table>
+      <h2>Temperature conversion chart</h2>
+      <table>
+        <thead><tr><th>°C</th><th>°F</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">−273.15</td><td class="mono">−460</td><td>Absolute zero</td></tr>
+          <tr><td class="mono">−100</td><td class="mono">−148</td><td>Nowhere on Earth — ever</td></tr>
+          <tr><td class="mono">−40</td><td class="mono">−40</td><td>°C = °F — the two scales cross here</td></tr>
+          <tr><td class="mono">−20</td><td class="mono">−4</td><td>Freezer interior</td></tr>
+          <tr><td class="mono">0</td><td class="mono">32</td><td>Water freezes</td></tr>
+          <tr><td class="mono">10</td><td class="mono">50</td><td>Cold room</td></tr>
+          <tr><td class="mono">20</td><td class="mono">68</td><td>Comfortable office</td></tr>
+          <tr><td class="mono">25</td><td class="mono">77</td><td>Warm room / IC junction nominal</td></tr>
+          <tr><td class="mono">30</td><td class="mono">86</td><td>Room at 30 °C</td></tr>
+          <tr><td class="mono">37</td><td class="mono">98.6</td><td>Human body temperature</td></tr>
+          <tr><td class="mono">40</td><td class="mono">104</td><td>Very hot</td></tr>
+          <tr><td class="mono">50</td><td class="mono">122</td><td>CPU hotspot</td></tr>
+          <tr><td class="mono">60</td><td class="mono">140</td><td>Boiling hot beverage once brewed</td></tr>
+          <tr><td class="mono">70</td><td class="mono">158</td><td>LED junction absolute max</td></tr>
+          <tr><td class="mono">80</td><td class="mono">176</td><td>Solder reflow zone</td></tr>
+          <tr><td class="mono">100</td><td class="mono">212</td><td>Water boils (sea level)</td></tr>
+          <tr><td class="mono">125</td><td class="mono">257</td><td>Lead-free solder paste melt point</td></tr>
+          <tr><td class="mono">150</td><td class="mono">302</td><td>PVC cable rating (typical)</td></tr>
+          <tr><td class="mono">200</td><td class="mono">392</td><td>Old-school solder iron tip</td></tr>
+          <tr><td class="mono">300</td><td class="mono">572</td><td>Hot water on a 600 °C element</td></tr>
+          <tr><td class="mono">500</td><td class="mono">932</td><td>Wood ignition temperature</td></tr>
         </tbody>
       </table>
       <h2>Common electronic components</h2>

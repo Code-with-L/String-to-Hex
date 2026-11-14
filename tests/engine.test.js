@@ -844,3 +844,19 @@ test('watt↔lumen conversions', () => {
   close(Number(run('photometry', { mode: 'lm2w', x: '800', efficacy: '100' }).values.w), 8, 1e-9);
 });
 
+
+test('TABLES: multiplication, addition, log and temperature data are internally consistent', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  const m = TABLES.multiplication;
+  assert.equal(m.rows[0][0], 1);
+  assert.equal(m.rows[11][11], 144);
+  const a = TABLES.addition;
+  assert.equal(a.rows[12][12], 24);
+  assert.equal(a.rows[0][0], 0);
+  const l = TABLES.logarithms;
+  assert.equal(l.rows.find((r) => r[0] === '1')[1], '0.000000');
+  assert.equal(l.rows.find((r) => r[0] === '1000')[1], '3.000000');
+  const t = TABLES.temperatures;
+  assert.equal(t.rows.find((r) => r[0] === '0')[1], '32');
+  assert.equal(t.rows.find((r) => r[0] === '−40')[1], '−40');
+});
