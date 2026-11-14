@@ -41,7 +41,7 @@ the first load.
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
 | **72 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, capacitor and inductor maths, battery capacity, effective interest, statistics, quadratic roots, complex numbers, decibels, mortgage, GPA, colour, photometry, room lighting, hashing, passwords and more |
-| **Reference library** | 25 formula articles (ohms-law, kirchhoff, parts-per-million…), 44 glossary terms, 33 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
+| **Reference library** | 25 formula articles (ohms-law, kirchhoff, probability distributions…), 44 glossary terms, 39 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge/E-series tables — every entry definition + intuition + worked formula |
 | **Static SEO pages** | 177 real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |

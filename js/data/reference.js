@@ -386,6 +386,14 @@ export const ARTICLES = {
         ['P = I² · R', 'useful when current and resistance are known'],
         ['P = V² / R', 'useful when voltage and resistance are known'],
       ] },
+      { k: 'h3', t: 'The formula wheel — all twelve rearrangements' },
+      { k: 'table', head: ['Apparent law', 'Solve for V', 'Solve for I', 'Solve for R', 'Solve for P'], rows: [
+        ['Ohm’s law (V = IR)', 'V = I · R', 'I = V ÷ R', 'R = V ÷ I', '—'],
+        ['Joule’s law (P = VI)', 'V = P ÷ I', 'I = P ÷ V', '—', 'P = V · I'],
+        ['Joule’s law (P = I²R)', '—', 'I = √(P ÷ R)', 'R = P ÷ I²', 'P = I² · R'],
+        ['Joule’s law (P = V²/R)', 'V = √(P · R)', '—', 'R = V² ÷ P', 'P = V² / R'],
+      ] },
+      { k: 'callout', icon: 'info', t: 'Pick the form whose variables you have. If the circuit shows both V and I, use P = V·I. If only V and R, use P = V²/R — and note that P rises with the square of V, not with V itself.' },
       { k: 'p', t: 'The choice of form is not cosmetic. For a fixed-resistance load, P = V²/R means power rises with the square of voltage — halving the supply quarters the power. That is why a 12 V lamp fitted to a 6 V supply does not merely dim, it barely lights.' },
       { k: 'h3', t: 'Where Ohm’s law stops applying' },
       { k: 'list', items: [
