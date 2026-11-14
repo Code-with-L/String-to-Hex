@@ -407,7 +407,7 @@ const PHOTOMETRY = {
   blurb: 'E = I / d², Φ = 2πI(1 − cos(θ/2)), E = Φ / A.',
   keywords: 'lux lumen candela illuminance light footcandle',
   inputs: [
-    { id: 'mode', label: 'Question', type: 'select', options: [['lux2cd', 'lux → candela (given distance)'], ['cd2lux', 'candela → lux (given distance)'], ['lm2cd', 'lumen → candela (given beam angle)'], ['cd2lm', 'candela → lumen (given beam angle)'], ['lm2lux', 'lumen → lux (given area)']] },
+    { id: 'mode', label: 'Question', type: 'select', options: [['lux2cd', 'lux → candela (given distance)'], ['cd2lux', 'candela → lux (given distance)'], ['lm2cd', 'lumen → candela (given beam angle)'], ['cd2lm', 'candela → lumen (given beam angle)'], ['lm2lux', 'lumen → lux (given area)'], ['lux2fc', 'lux → foot-candle'], ['fc2lux', 'foot-candle → lux']] },
     { id: 'x', label: 'Value', step: 'any' },
     { id: 'd', label: 'Distance (m) or area (m²)', step: 'any' },
     { id: 'theta', label: 'Beam angle (degrees)', step: 'any' },
@@ -433,6 +433,14 @@ const PHOTOMETRY = {
     if (mode === 'cd2lm') {
       if (!TH) return { error: 'Beam angle is required.' };
       return { values: { lm: X * factor, cd: X }, steps: [`Φ = 2πI(1 − cos(θ/2)) = 2π × ${g(X)} × ${g(factor, 8)} = ${g(X * factor)} lm`], outputs: [{ id: 'lm', label: 'Luminous flux', unit: 'lm' }] };
+    }
+    if (mode === 'lux2fc') {
+      const fc = X / 10.76391;
+      return { values: { fc: g(fc), lux: X }, steps: [`${g(X)} lx ÷ 10.76391 = ${g(fc)} fc`], outputs: [{ id: 'fc', label: 'Foot-candle', unit: 'fc' }] };
+    }
+    if (mode === 'fc2lux') {
+      const lux = X * 10.76391;
+      return { values: { lux: g(lux), fc: X }, steps: [`${g(X)} fc × 10.76391 = ${g(lux)} lx`], outputs: [{ id: 'lux', label: 'Illuminance', unit: 'lx' }] };
     }
     if (!D) return { error: 'Area is required.' };
     return { values: { lux: X / D, lm: X, area: D }, steps: [`E = Φ ÷ A = ${g(X)} ÷ ${g(D)} = ${g(X / D)} lx`], outputs: [{ id: 'lux', label: 'Illuminance', unit: 'lx' }] };
@@ -505,6 +513,427 @@ const LIGHTING = {
         { id: 'count', label: 'Fixtures', unit: '' },
         { id: 'delivered', label: 'Delivered', unit: '' },
         { id: 'watts', label: 'Total power', unit: 'W' },
+      ],
+    };
+  },
+};
+
+/**
+ * The capacitor math from the reference's component page: reactance, charge,
+ * stored energy, and series/parallel combination. Values are entered in µF and
+ * the result is returned in µF, µC, J, ohms and A as appropriate.
+ */
+const CAPACITOR = {
+  id: 'capacitor',
+  title: 'Capacitor calculator',
+  group: 'electrical',
+  blurb: 'Reactance, charge, energy, and series or parallel combination — the maths of the component pages.',
+  keywords: 'capacitor capacitance reactance Xc series parallel energy coulomb charge uf farad',
+  inputs: [
+    { id: 'mode', label: 'Question', type: 'select', options: [
+      ['reactance', 'Capacitive reactance — Xc = 1 / (2πfC)'],
+      ['charge', 'Capacitance from charge — C = Q / V'],
+      ['energy', 'Energy stored — E = ½CV²'],
+      ['series', 'Combine in series — 1/C_T = Σ 1/Cᵢ'],
+      ['parallel', 'Combine in parallel — C_T = Σ Cᵢ'],
+    ] },
+    { id: 'freq', label: 'Frequency (Hz)', step: 'any', placeholder: '50' },
+    { id: 'cap', label: 'Capacitance (µF)', step: 'any', placeholder: '10' },
+    { id: 'volt', label: 'Voltage (V)', step: 'any', placeholder: '12' },
+    { id: 'charge', label: 'Charge (µC)', step: 'any', placeholder: '100' },
+    { id: 'list', label: 'Capacitances to combine, µF separated by spaces', type: 'text', placeholder: '4.7 4.7 10' },
+  ],
+  compute: ({ mode, freq, cap, volt, charge, list }) => {
+    const uF = n(cap), V = n(volt), F = n(freq), Q = n(charge);
+    if (mode === 'reactance') {
+      if (!F) return { error: 'Frequency is required for reactance.' };
+      if (!uF) return { error: 'Capacitance is required.' };
+      const c = uF * 1e-6;
+      const xc = 1 / (2 * Math.PI * F * c);
+      return { values: { xc: g(xc) },
+        steps: [`X_C = 1 ÷ (2π × ${g(F)} Hz × ${uF} µF) = ${g(xc)} Ω`],
+        outputs: [{ id: 'xc', label: 'Reactance', unit: 'Ω' }] };
+    }
+    if (mode === 'charge') {
+      if (!V) return { error: 'Voltage is required.' };
+      if (!Q) return { error: 'Charge is required.' };
+      const c = Q / V;
+      return { values: { c: g(c) },
+        steps: [`C = Q ÷ V = ${g(Q)} µC ÷ ${g(V)} V = ${g(c)} µF`],
+        outputs: [{ id: 'c', label: 'Capacitance', unit: 'µF' }] };
+    }
+    if (mode === 'energy') {
+      if (!V) return { error: 'Voltage is required.' };
+      const e = 0.5 * uF * 1e-6 * V * V;
+      return { values: { e, j: g(e, 8), mj: g(e * 1e3, 4) + ' mJ' },
+        steps: [`E = ½ × C × V² = ½ × ${uF} µF × ${g(V)}² = ${g(e, 8)} J`],
+        outputs: [{ id: 'e', label: 'Energy', unit: 'J' }] };
+    }
+    const parts = parseList(list);
+    if (parts.length < 2) return { error: 'Enter at least two capacitances to combine, e.g. 4.7 4.7 10.' };
+    if (mode === 'series') {
+      const inv = parts.reduce((a, c) => a + 1 / c, 0);
+      const ct = 1 / inv;
+      return { values: { ct: g(ct), n: parts.length },
+        steps: [`1 ÷ C_T = ${parts.map((c) => `1/${c}`).join(' + ')} = ${g(inv, 8)}`, `C_T = 1 ÷ ${g(inv, 8)} = ${g(ct, 8)} µF`],
+        outputs: [{ id: 'ct', label: 'Total capacitance', unit: 'µF' }] };
+    }
+    const ct = parts.reduce((a, c) => a + c, 0);
+    return { values: { ct: g(ct), n: parts.length },
+      steps: [`C_T = ${parts.join(' + ')} = ${g(ct)} µF`],
+      outputs: [{ id: 'ct', label: 'Total capacitance', unit: 'µF' }] };
+  },
+};
+
+/**
+ * Inductor math mirroring the reference's inductor page: reactance, energy,
+ * series and parallel combination, and the V = L·dI/dt spike.
+ */
+const INDUCTOR = {
+  id: 'inductor',
+  title: 'Inductor calculator',
+  group: 'electrical',
+  blurb: 'Reactance, stored energy, series or parallel combination, and the voltage spike V = L·dI/dt.',
+  keywords: 'inductor inductance reactance XL series parallel energy voltage spike mh henry',
+  inputs: [
+    { id: 'mode', label: 'Question', type: 'select', options: [
+      ['reactance', 'Inductive reactance — XL = 2πfL'],
+      ['energy', 'Energy stored — E = ½LI²'],
+      ['voltage', 'Voltage spike — V = L × dI÷t'],
+      ['series', 'Combine in series — L_T = Σ Lᵢ'],
+      ['parallel', 'Combine in parallel — 1/L_T = Σ 1/Lᵢ'],
+    ] },
+    { id: 'freq', label: 'Frequency (Hz)', step: 'any', placeholder: '50' },
+    { id: 'ind', label: 'Inductance (mH)', step: 'any', placeholder: '10' },
+    { id: 'cur', label: 'Current (A)', step: 'any', placeholder: '2' },
+    { id: 'time', label: 'Seconds over which current changes (voltage spike)', step: 'any', placeholder: '0.001' },
+    { id: 'list', label: 'Inductances to combine, mH separated by spaces', type: 'text', placeholder: '4.7 4.7 10' },
+  ],
+  compute: ({ mode, freq, ind, cur, time, list }) => {
+    const mH = n(ind), I = n(cur), F = n(freq), t = n(time);
+    if (mode === 'reactance') {
+      if (!F) return { error: 'Frequency is required for reactance.' };
+      if (!mH) return { error: 'Inductance is required.' };
+      const xl = 2 * Math.PI * F * mH * 1e-3;
+      return { values: { xl: g(xl) },
+        steps: [`X_L = 2π × ${g(F)} Hz × ${mH} mH = ${g(xl)} Ω`],
+        outputs: [{ id: 'xl', label: 'Reactance', unit: 'Ω' }] };
+    }
+    if (mode === 'energy') {
+      if (!I) return { error: 'Current is required.' };
+      const e = 0.5 * mH * 1e-3 * I * I;
+      return { values: { e, j: g(e, 8), mj: g(e * 1e3, 4) + ' mJ' },
+        steps: [`E = ½ × L × I² = ½ × ${mH} mH × ${g(I)}² = ${g(e, 8)} J`],
+        outputs: [{ id: 'e', label: 'Energy', unit: 'J' }] };
+    }
+    if (mode === 'voltage') {
+      if (!t || t <= 0) return { error: 'Time must be greater than zero.' };
+      const v = mH * 1e-3 * (I / t);
+      return { values: { v: g(v), rate: g(I / t, 6) + ' A/s' },
+        steps: [`dI/dt = ${g(I)} A ÷ ${g(t)} s = ${g(I / t, 6)} A/s`, `V = L × dI/dt = ${mH} mH × ${g(I / t, 6)} = ${g(v)} V`],
+        outputs: [{ id: 'v', label: 'Voltage', unit: 'V' }] };
+    }
+    const parts = parseList(list);
+    if (parts.length < 2) return { error: 'Enter at least two inductances to combine.' };
+    if (mode === 'series') {
+      const lt = parts.reduce((a, l) => a + l, 0);
+      return { values: { lt: g(lt), n: parts.length },
+        steps: [`L_T = ${parts.join(' + ')} = ${g(lt)} mH`],
+        outputs: [{ id: 'lt', label: 'Total inductance', unit: 'mH' }] };
+    }
+    const inv = parts.reduce((a, l) => a + 1 / l, 0);
+    const lt = 1 / inv;
+    return { values: { lt: g(lt), n: parts.length },
+      steps: [`1 ÷ L_T = ${parts.map((l) => `1/${l}`).join(' + ')} = ${g(inv, 8)}`, `L_T = 1 ÷ ${g(inv, 8)} = ${g(lt, 8)} mH`],
+      outputs: [{ id: 'lt', label: 'Total inductance', unit: 'mH' }] };
+  },
+};
+
+/** Effective (annual) interest rate from a nominal rate and compounding frequency. */
+const EFFECTIVE_RATE = {
+  id: 'effective-rate',
+  title: 'Effective interest rate',
+  group: 'finance',
+  blurb: 'Nominal annual rate → effective annual rate (APY), plus the periodic rate and doubling time.',
+  keywords: 'effective interest rate nominal apy apr compound',
+  inputs: [
+    { id: 'nominal', label: 'Nominal annual rate (%)', step: 'any', placeholder: '12' },
+    { id: 'periods', label: 'Compounding periods per year', type: 'select', options: [
+      ['365', 'Daily (365)'], ['52', 'Weekly (52)'], ['12', 'Monthly (12)'],
+      ['4', 'Quarterly (4)'], ['2', 'Half-yearly (2)'], ['1', 'Annually (1)'],
+    ] },
+  ],
+  compute: ({ nominal, periods }) => {
+    const r = n(nominal);
+    const m = n(periods, 12);
+    if (m <= 0) return { error: 'Compounding frequency must be positive.' };
+    if (r === 0) return { error: 'Nominal rate cannot be zero.' };
+    const period = r / 100 / m;
+    const ear = (Math.pow(1 + period, m) - 1) * 100;
+    const doubleYears = Math.log(2) / Math.log(1 + period) / m;
+    return {
+      values: { ear: g(ear, 6), periodic: g(period * 100, 6), doubleYears: g(doubleYears, 3) },
+      steps: [
+        `period rate = ${g(r, 6)}% ÷ ${m} = ${g(period * 100, 6)}%`,
+        `EAR = (1 + ${g(period, 8)})^${m} − 1 = ${g(ear, 6)}%`,
+        `doubling time = ln 2 ÷ ln(1 + ${g(period, 8)}) ÷ ${m} ≈ ${g(doubleYears, 3)} years`,
+      ],
+      outputs: [
+        { id: 'ear', label: 'Effective rate (APY)', unit: '%' },
+        { id: 'periodic', label: 'Rate per period', unit: '%' },
+        { id: 'doubleYears', label: 'Doubling time', unit: 'yr' },
+      ],
+    };
+  },
+};
+
+/**
+ * Battery charge and runtime — the merged form of the reference's ah-to-mah,
+ * mah-to-wh, wh-to-mah, ah-to-coulomb and wh-to-watt pages.
+ */
+const BATTERY = {
+  id: 'battery',
+  title: 'Battery capacity',
+  group: 'electrical',
+  blurb: 'Ah, mAh, Wh, coulombs and runtime — every battery conversion in one place.',
+  keywords: 'battery capacity ah mah wh coulomb runtime discharge',
+  inputs: [
+    { id: 'mode', label: 'Question', type: 'select', options: [
+      ['ah2mah', 'Ah → mAh (×1000)'],
+      ['ah2coulomb', 'Ah → coulombs (×3600)'],
+      ['ah2wh', 'Wh from Ah — needs voltage'],
+      ['mah2wh', 'Wh from mAh — needs voltage'],
+      ['wh2mah', 'mAh from Wh — needs voltage'],
+      ['runtime', 'Runtime — Wh ÷ W, or Ah ÷ A'],
+    ] },
+    { id: 'cap', label: 'Capacity (Ah, or mAh for mode 3/5)', step: 'any', placeholder: '2.5' },
+    { id: 'wh', label: 'Energy (Wh), for modes 5/6', step: 'any', placeholder: '18' },
+    { id: 'volt', label: 'Voltage (V)', step: 'any', placeholder: '3.7' },
+    { id: 'watts', label: 'Load power (W), for runtime', step: 'any', placeholder: '5' },
+    { id: 'amps', label: 'Load current (A), for runtime (alternative)', step: 'any', placeholder: '0.5' },
+  ],
+  compute: ({ mode, cap, wh, volt, watts, amps }) => {
+    const C = n(cap), Wh = n(wh), V = n(volt), W = n(watts), A = n(amps);
+    if (mode === 'ah2mah') {
+      return { values: { mah: String(C * 1000) }, steps: [`${g(C)} Ah × 1000 = ${C * 1000} mAh`],
+        outputs: [{ id: 'mah', label: 'Capacity', unit: 'mAh' }] };
+    }
+    if (mode === 'ah2coulomb') {
+      const q = C * 3600;
+      return { values: { coulombs: g(q) }, steps: [`${g(C)} Ah × 3600 = ${g(q)} C`],
+        outputs: [{ id: 'coulombs', label: 'Charge', unit: 'C' }] };
+    }
+    if (mode === 'ah2wh') {
+      if (!V) return { error: 'Voltage is required.' };
+      const w = C * V;
+      return { values: { wh: g(w) }, steps: [`${g(C)} Ah × ${g(V)} V = ${g(w)} Wh`],
+        outputs: [{ id: 'wh', label: 'Energy', unit: 'Wh' }] };
+    }
+    if (mode === 'mah2wh') {
+      if (!V) return { error: 'Voltage is required.' };
+      const wh = (C / 1000) * V;
+      return { values: { wh: g(wh) }, steps: [`(${g(C)} mAh ÷ 1000) × ${g(V)} V = ${g(wh)} Wh`],
+        outputs: [{ id: 'wh', label: 'Energy', unit: 'Wh' }] };
+    }
+    if (mode === 'wh2mah') {
+      if (!V) return { error: 'Voltage is required.' };
+      const mah = (Wh / V) * 1000;
+      return { values: { mah: g(mah) }, steps: [`(${g(Wh)} Wh ÷ ${g(V)} V) × 1000 = ${g(mah)} mAh`],
+        outputs: [{ id: 'mah', label: 'Capacity', unit: 'mAh' }] };
+    }
+    if (mode === 'runtime') {
+      const byPower = W > 0 && Wh > 0;
+      const byCurrent = A > 0 && C > 0;
+      if (!byPower && !byCurrent) {
+        return { error: 'Enter energy (Wh) and load power (W), or capacity (Ah) and load current (A).' };
+      }
+      const hours = byPower ? Wh / W : C / A;
+      const mins = hours * 60;
+      const label = byPower ? 'Wh ÷ W' : 'Ah ÷ A';
+      return { values: { hours: g(hours, 4), mins: g(mins, 2), days: g(hours / 24, 3) },
+        steps: [`runtime = ${label} = ${g(hours, 4)} h ≈ ${g(mins, 2)} min`],
+        outputs: [{ id: 'hours', label: 'Runtime', unit: 'h' }, { id: 'mins', label: 'Minutes', unit: 'min' }] };
+    }
+    return { error: 'Pick a question.' };
+  },
+};
+
+/* ── complex numbers & triangles ─────────────────────────────────────────── */
+
+const parseComplex = (src) => {
+  const s = String(src || '').trim().toLowerCase().replace(/j/g, 'i').replace(/\s+/g, '');
+  if (!s) throw new Error('Enter a complex number such as 3+4i.');
+  // Split before every sign so each token is "3", "+4i", "-2", …
+  const parts = s.split(/(?=[+-])/).filter(Boolean);
+  let re = 0, im = 0;
+  for (const p of parts) {
+    if (p.endsWith('i')) {
+      const coef = p.slice(0, -1);
+      const v = coef === '' || coef === '+' ? 1 : coef === '-' ? -1 : Number(coef);
+      if (!Number.isFinite(v)) throw new Error(`Imaginary part "${p}" is not a number.`);
+      im += v;
+    } else {
+      const v = Number(p);
+      if (!Number.isFinite(v)) throw new Error(`Real part "${p}" is not a number.`);
+      re += v;
+    }
+  }
+  return { re, im };
+};
+
+/** Complex arithmetic with polar read-out, in the style of a real keypad. */
+const COMPLEX = {
+  id: 'complex',
+  title: 'Complex number calculator',
+  group: 'math',
+  blurb: 'Add, subtract, multiply and divide complex numbers — results in rectangular and polar form.',
+  keywords: 'complex imaginary real part polar rectangular phasor',
+  inputs: [
+    { id: 'z1', label: 'z₁', type: 'text', placeholder: '3+4i' },
+    { id: 'z2', label: 'z₂', type: 'text', placeholder: '1-2i' },
+    { id: 'op', label: 'Operation', type: 'select', options: [['add', 'z₁ + z₂'], ['sub', 'z₁ − z₂'], ['mul', 'z₁ × z₂'], ['div', 'z₁ ÷ z₂'], ['abs', '|z₁| (magnitude)']] },
+  ],
+  compute: ({ z1, z2, op }) => {
+    let a, b;
+    try {
+      a = parseComplex(z1);
+      if (op !== 'abs') b = parseComplex(z2);
+    } catch (e) { return { error: e.message }; }
+    if (op === 'abs') {
+      const mag = Math.hypot(a.re, a.im);
+      const deg = Math.atan2(a.im, a.re) * 180 / Math.PI;
+      const d = deg < 0 ? deg + 360 : deg;
+      return {
+        values: { rect: `${g(a.re)} ${a.im >= 0 ? '+' : '−'} ${g(Math.abs(a.im))}i`, mag: g(mag), deg: g(d), euler: `${g(mag)}∠${g(d)}°` },
+        steps: [`|z₁| = √(${g(a.re)}² + ${g(a.im)}²) = ${g(mag)}`, `arg(z₁) = atan(${g(a.im)} ÷ ${g(a.re)}) = ${g(d)}°`],
+        outputs: [{ id: 'mag', label: 'Magnitude', unit: '' }, { id: 'deg', label: 'Angle', unit: '°' }, { id: 'euler', label: 'Polar (Euler)', unit: '' }],
+      };
+    }
+    let r;
+    if (op === 'add') r = { re: a.re + b.re, im: a.im + b.im };
+    else if (op === 'sub') r = { re: a.re - b.re, im: a.im - b.im };
+    else if (op === 'mul') r = { re: a.re * b.re - a.im * b.im, im: a.re * b.im + a.im * b.re };
+    else {
+      const d = b.re * b.re + b.im * b.im;
+      if (d === 0) return { error: 'Division by zero — |z₂| = 0.' };
+      r = { re: (a.re * b.re + a.im * b.im) / d, im: (a.im * b.re - a.re * b.im) / d };
+    }
+    const mag = Math.hypot(r.re, r.im);
+    let deg = Math.atan2(r.im, r.re) * 180 / Math.PI;
+    if (deg < 0) deg += 360;
+    const rect = ({ re, im }) => {
+      if (Math.abs(im) < 1e-12) return `${g(re)}`;
+      return `${g(re)} ${im >= 0 ? '+' : '−'} ${g(Math.abs(im))}i`;
+    };
+    return {
+      values: { rect: rect(r), mag: g(mag), deg: g(deg), euler: `${g(mag)}∠${g(deg)}°` },
+      steps: [
+        `z₁ = ${g(a.re)} ${a.im >= 0 ? '+' : '−'} ${g(Math.abs(a.im))}i`,
+        `z₂ = ${g(b.re)} ${b.im >= 0 ? '+' : '−'} ${g(Math.abs(b.im))}i`,
+        `result = ${rect(r)} = ${g(mag)}∠${g(deg)}°`,
+      ],
+      outputs: [
+        { id: 'rect', label: 'Rectangular', unit: '' },
+        { id: 'mag', label: 'Magnitude', unit: '' },
+        { id: 'deg', label: 'Angle', unit: '°' },
+        { id: 'euler', label: 'Polar (Euler)', unit: '' },
+      ],
+    };
+  },
+};
+
+const solveTriangle = (a, b, c, angleA, step) => {
+  const angleB = 90 - angleA;
+  const area = (a * b) / 2;
+  const perim = a + b + c;
+  return {
+    values: { a: g(a), b: g(b), c: g(c), angleA: g(angleA, 3), angleB: g(angleB, 3), area: g(area, 3), perimeter: g(perim, 3) },
+    steps: [
+      step,
+      `c = √(a² + b²) = √(${g(a)}² + ${g(b)}²) = ${g(c)}`,
+      `A = atan(a ÷ b) = ${g(angleA, 3)}°`,
+      `B = 90° − A = ${g(angleB, 3)}°`,
+      `area = ½ × ${g(a)} × ${g(b)} = ${g(area, 3)}`,
+      `perimeter = ${g(a)} + ${g(b)} + ${g(c)} = ${g(perim, 3)}`,
+    ],
+    outputs: [
+      { id: 'a', label: 'Leg a', unit: '' }, { id: 'b', label: 'Leg b', unit: '' }, { id: 'c', label: 'Hypotenuse', unit: '' },
+      { id: 'angleA', label: 'Angle A', unit: '°' }, { id: 'angleB', label: 'Angle B', unit: '°' },
+      { id: 'area', label: 'Area', unit: '' }, { id: 'perimeter', label: 'Perimeter', unit: '' },
+    ],
+  };
+};
+
+/** Right triangle solver: given two of a, b, c, angle A, solves the rest. */
+const RIGHT_TRIANGLE = {
+  id: 'right-triangle',
+  title: 'Right triangle calculator',
+  group: 'math',
+  blurb: 'Solve a, b, c, both acute angles, area and perimeter from two knowns.',
+  keywords: 'triangle right triangle pythagorean angle hypotenuse leg area perimeter',
+  inputs: [
+    { id: 'mode', label: 'What do you know?', type: 'select', options: [
+      ['legs', 'Two legs — a, b'],
+      ['leg-hyp', 'One leg and hypotenuse — a, c'],
+      ['hyp-angle', 'Hypotenuse and one acute angle — c, A°'],
+      ['leg-angle', 'One leg and one acute angle — a, A°'],
+    ] },
+    { id: 'a', label: 'Leg a', step: 'any', placeholder: '3' },
+    { id: 'b', label: 'Leg b', step: 'any', placeholder: '4' },
+    { id: 'c', label: 'Hypotenuse c', step: 'any', placeholder: '5' },
+    { id: 'angle', label: 'Angle A (degrees)', step: 'any', placeholder: '37' },
+  ],
+  compute: ({ mode, a, b, c, angle }) => {
+    const A = n(a), B = n(b), C = n(c), ANG = n(angle);
+    if (mode === 'legs') {
+      if (!(A > 0) || !(B > 0)) return { error: 'Both legs must be greater than zero.' };
+      return solveTriangle(A, B, Math.hypot(A, B), Math.atan(A / B) * 180 / Math.PI, 'Given legs a and b');
+    }
+    if (mode === 'leg-hyp') {
+      if (!(A > 0) || !(C > 0)) return { error: 'The leg and the hypotenuse must be greater than zero.' };
+      if (C <= A) return { error: 'The hypotenuse must be longer than either leg.' };
+      const other = Math.sqrt(C * C - A * A);
+      return solveTriangle(A, other, C, Math.atan(A / other) * 180 / Math.PI, 'Given leg a and hypotenuse c');
+    }
+    if (mode === 'hyp-angle') {
+      if (!(C > 0)) return { error: 'Hypotenuse must be greater than zero.' };
+      if (!(ANG > 0) || !(ANG < 90)) return { error: 'Angle A must be between 0° and 90°.' };
+      const rad = ANG * Math.PI / 180;
+      return solveTriangle(C * Math.sin(rad), C * Math.cos(rad), C, ANG, 'Given hypotenuse c and angle A');
+    }
+    if (mode === 'leg-angle') {
+      if (!(A > 0)) return { error: 'Leg a must be greater than zero.' };
+      if (!(ANG > 0) || !(ANG < 90)) return { error: 'Angle A must be between 0° and 90°.' };
+      const rad = ANG * Math.PI / 180;
+      return solveTriangle(A, A / Math.tan(rad), A / Math.sin(rad), ANG, 'Given leg a and angle A');
+    }
+    return { error: 'Pick a question.' };
+  },
+};
+
+/** Anti-logarithm — evaluates b^x with a selectable base (10, e, 2, or any b). */
+const ANTILOG = {
+  id: 'antilog',
+  title: 'Anti-log calculator',
+  group: 'math',
+  blurb: 'x = b^y with a selectable base — the inverse of a logarithm.',
+  keywords: 'antilog inverse logarithm power',
+  inputs: [
+    { id: 'base', label: 'Base', type: 'select', options: [['10', '10 (common)'], ['e', 'e (natural)'], ['2', '2 (binary)'], ['custom', 'Any base…']] },
+    { id: 'exponent', label: 'Exponent (y)', step: 'any', placeholder: '3' },
+    { id: 'customBase', label: 'Base (custom)', step: 'any', placeholder: '7' },
+  ],
+  compute: ({ base, exponent, customBase }) => {
+    const y = n(exponent);
+    const chosen = base === 'e' ? Math.E : base === 'custom' ? n(customBase, 10) : n(base, 10);
+    if (chosen <= 0 || chosen === 1 || !Number.isFinite(chosen)) return { error: 'The base must be positive and not equal to 1.' };
+    const value = Math.pow(chosen, y);
+    return {
+      values: { value: g(value), base: chosen === Math.E ? 'e' : String(chosen) },
+      steps: [`${chosen === Math.E ? 'e' : chosen}^${g(y)} = ${g(value)}`],
+      outputs: [
+        { id: 'value', label: 'Anti-log', unit: '' },
+        { id: 'base', label: 'Base', unit: '' },
       ],
     };
   },
@@ -1676,6 +2105,50 @@ const DISCOUNT = {
   },
 };
 
+/* ── letter grades ───────────────────────────────────────────────────────── */
+
+const LETTER_GRADE = {
+  id: 'letter-grade',
+  title: 'Letter grade ↔ GPA',
+  group: 'finance',
+  blurb: 'Turn a letter grade into points, or a GPA into the nearest letter on your scale.',
+  keywords: 'letter grade gpa points scale a b c plus minus',
+  inputs: [
+    { id: 'direction', label: 'Question', type: 'select', options: [['letter2gpa', 'Letter → points'], ['gpa2letter', 'Points → letter']] },
+    { id: 'scale', label: 'Scale', type: 'select', options: [['us', 'US (A = 4.0)'], ['plus', 'US with ±'], ['intl', 'International (A = 4.33)']] },
+    { id: 'grade', label: 'Letter grade', type: 'select', options: [['A', 'A'], ['A+', 'A+'], ['A-', 'A−'], ['B+', 'B+'], ['B', 'B'], ['B-', 'B−'], ['C+', 'C+'], ['C', 'C'], ['C-', 'C−'], ['D+', 'D+'], ['D', 'D'], ['F', 'F']] },
+    { id: 'gpa', label: 'GPA (for points → letter)', step: 'any', placeholder: '3.4' },
+  ],
+  compute: ({ direction, scale, grade, gpa }) => {
+    const TABLE = scale === 'intl'
+      ? { A: 4.33, 'A+': 4.33, 'A-': 4.0, 'B+': 3.67, B: 3.5, 'B-': 3.33, 'C+': 3.0, C: 2.67, 'C-': 2.33, 'D+': 2.33, D: 2.0, F: 0 }
+      : scale === 'plus'
+        ? { A: 4, 'A+': 4, 'A-': 3.7, 'B+': 3.7, B: 3.3, 'B-': 3.0, 'C+': 3.0, C: 2.7, 'C-': 2.3, 'D+': 2.3, D: 2, F: 0 }
+        : { A: 4, 'A+': 4, 'A-': 4, B: 3, C: 2, D: 1, F: 0 };
+    if (direction === 'letter2gpa') {
+      const pts = TABLE[grade];
+      if (pts === undefined) return { error: `Unknown grade letter: ${grade}.` };
+      return {
+        values: { points: String(pts), grade },
+        steps: [`on the ${scale === 'intl' ? 'international' : 'US'} scale, ${grade} = ${pts} points`],
+        outputs: [{ id: 'points', label: 'Points', unit: '' }, { id: 'grade', label: 'Grade', unit: '' }],
+      };
+    }
+    const gVal = n(gpa);
+    if (gVal < 0 || gVal > 4.33) return { error: 'GPA must be between 0 and 4.33.' };
+    let best = null, bd = Infinity;
+    for (const [letter, pts] of Object.entries(TABLE)) {
+      const d = Math.abs(pts - gVal);
+      if (d < bd) { bd = d; best = letter; }
+    }
+    return {
+      values: { letter: best, gpa: g(gVal, 4) },
+      steps: [`nearest defined letter for ${g(gVal, 4)} is ${best} (${TABLE[best]} points)`],
+      outputs: [{ id: 'letter', label: 'Letter', unit: '' }, { id: 'gpa', label: 'Points', unit: '' }],
+    };
+  },
+};
+
 const GPA = {
   id: 'gpa',
   title: 'GPA calculator',
@@ -2498,11 +2971,14 @@ const BATCH = {
 export const TOOLS = [
   OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, DECIBEL, EV, EFFICIENCY, ENERGY_BILL,
   PHOTOMETRY, LIGHTING, KIRCHHOFF, COULOMB,
+  CAPACITOR, INDUCTOR, BATTERY,
+  EFFECTIVE_RATE,
+  COMPLEX, RIGHT_TRIANGLE, ANTILOG,
   STDDEV, WEIGHTED_AVG, QUADRATIC, ROOTS, FACTORIAL, PERCENT, PERCENT_ERROR, GCF_LCM, FRACTION,
   DECIMAL_FRACTION, RATIO, DIVMOD, SCI_NOTATION, SCIENTIFIC, PYTHAGOREAN, CONVOLUTION, LOG_CALC, EXP_GROWTH, TRIG,
   COLOR, RADIX_CALC, ROMAN, WORDING,
   CASE_CONV, URL_TOOL, COUNTERS, HASH_TOOL,
-  MORTGAGE, COMPOUND, SIMPLE_INT, VAT, DISCOUNT, GPA, GRADE_CALC,
+  MORTGAGE, COMPOUND, SIMPLE_INT, VAT, DISCOUNT, GPA, GRADE_CALC, LETTER_GRADE,
   BMI, DURATION, DATE_DIFF, AGE, WORLD_CLOCK, TIMESERIES,
   CUSTOM, RANDOM, PASSWORD, BATCH, CUSTOM_EXPR,
   WIRE_GAUGE, RESISTOR_BAND,

@@ -97,6 +97,48 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/capacitor/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/inductor/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/battery/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/effective-rate/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/complex/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/right-triangle/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/antilog/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/stddev/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -296,6 +338,12 @@
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/final-grade/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/letter-grade/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -637,6 +637,8 @@ test('scientific calculator evaluates with precedence', () => {
   close(Number(r.values.value), Math.sin(45) + 256, 1e-9);
   assert.equal(run('scientific-calc', { display: '2 + 3 * 4' }).values.value, 14);
   assert.equal(run('scientific-calc', { display: 'sqrt(144)' }).values.value, 12);
+  assert.equal(run('scientific-calc', { display: '5!' }).values.value, 120);
+  assert.equal(run('scientific-calc', { display: '3! + 2^3' }).values.value, 14);
   assert.match(run('scientific-calc', { display: 'alert(1)' }).error, /Unknown name/);
   assert.match(run('scientific-calc', { display: '' }).error, /Enter an expression/);
 });
@@ -686,7 +688,7 @@ test('every declared output id exists in the returned values', () => {
     compound: { p: '10000', r: '7', t: '10', n: '12', ap: '100' },
     'simple-interest': { p: '10000', r: '5', t: '3', unit: 'y' },
     vat: { amount: '100', rate: '20', mode: 'add' }, discount: { price: '200', rate: '25', tax: '0', mode: 'pct' },
-    gpa: { courses: 'A:3, B:4', scale: 'us' }, 'final-grade': { total: '420', possible: '500', weight: '30' },
+    gpa: { courses: 'A:3, B:4', scale: 'us' }, 'letter-grade': { direction: 'letter2gpa', grade: 'A-', gpa: '3.4', scale: 'plus' }, 'final-grade': { total: '420', possible: '500', weight: '30' },
     bmi: { w: '70', h: '175', sys: 'metric', age: '30' }, duration: { d: '1', h: '12' },
     'growth-decay': { x0: '100', r: '10', steps: '5' }, custom: { expr: 'sin(pi/4) * 2^10' },
     'custom-convert': { x: '5', expr: 'x * 2.54' }, random: { min: '1', max: '6', count: '5' },
@@ -698,6 +700,14 @@ test('every declared output id exists in the returned values', () => {
     'power-efficiency': { out: '90', in: '100' },
     decibel: { v: '30', from: 'dbm' },
     'scientific-calc': { display: '2 + 3 * 4' },
+    lighting: { length: '4.5', width: '3.5', type: 'living', lm: '800', efficacy: '100' },
+    capacitor: { mode: 'reactance', freq: '50', cap: '10' },
+    inductor: { mode: 'reactance', freq: '50', ind: '10' },
+    'effective-rate': { nominal: '12', periods: '12' },
+    battery: { mode: 'ah2wh', cap: '2.5', volt: '3.7', wh: '18', watts: '5', amps: '0.5' },
+    complex: { z1: '3+4i', z2: '1-2i', op: 'mul' },
+    'right-triangle': { mode: 'legs', a: '3', b: '4' },
+    antilog: { base: '10', exponent: '3' },
   };
 
   for (const tool of TOOLS) {
@@ -758,4 +768,58 @@ test('per-character analysis lines up with the byte stream', () => {
   assert.deepEqual(rows.map((r) => r.offset), [0, 1, 2]);
   assert.equal(analyse('é', (ch) => textToBytes(ch, 'utf-8'))[0].hex.join(' '), 'C3 A9');
   assert.equal(analyse('😀', (ch) => textToBytes(ch, 'utf-8'))[0].utf8Len, 4);
+});
+
+test('capacitor: reactance, charge, energy and combination', () => {
+  close(Number(run('capacitor', { mode: 'reactance', freq: '50', cap: '10' }).values.xc), 318.31, 1e-2);
+  close(Number(run('capacitor', { mode: 'charge', volt: '12', charge: '100' }).values.c), 8.333, 1e-3);
+  close(Number(run('capacitor', { mode: 'energy', cap: '10', volt: '12' }).values.e), 7.2e-4, 1e-7);
+  close(Number(run('capacitor', { mode: 'series', list: '4.7 4.7 10' }).values.ct), 1.9028, 1e-4);
+  close(Number(run('capacitor', { mode: 'parallel', list: '4.7 4.7 10' }).values.ct), 19.4, 1e-2);
+});
+
+test('inductor: reactance, energy, spike and combination', () => {
+  close(Number(run('inductor', { mode: 'reactance', freq: '50', ind: '10' }).values.xl), Math.PI, 1e-6);
+  close(Number(run('inductor', { mode: 'energy', ind: '10', cur: '2' }).values.e), 0.02, 1e-3);
+  close(Number(run('inductor', { mode: 'series', list: '4.7 4.7 10' }).values.lt), 19.4, 1e-2);
+  close(Number(run('inductor', { mode: 'parallel', list: '10 10' }).values.lt), 5, 1e-9);
+  close(Number(run('inductor', { mode: 'voltage', ind: '10', cur: '2', time: '0.001' }).values.v), 20, 1e-6);
+});
+
+test('effective interest rate vs known APY figures', () => {
+  close(Number(run('effective-rate', { nominal: '12', periods: '12' }).values.ear), 12.6825, 1e-3);
+  close(Number(run('effective-rate', { nominal: '10', periods: '1' }).values.ear), 10, 1e-9);
+  assert.ok(run('effective-rate', { nominal: '0', periods: '12' }).error);
+});
+
+test('battery capacity conversions', () => {
+  assert.equal(run('battery', { mode: 'ah2mah', cap: '2.5' }).values.mah, '2500');
+  close(Number(run('battery', { mode: 'ah2coulomb', cap: '2.5' }).values.coulombs), 9000, 1e-6);
+  close(Number(run('battery', { mode: 'ah2wh', cap: '2.5', volt: '3.7' }).values.wh), 9.25, 1e-9);
+  close(Number(run('battery', { mode: 'mah2wh', cap: '2500', volt: '3.7' }).values.wh), 9.25, 1e-9);
+  close(Number(run('battery', { mode: 'wh2mah', wh: '18', volt: '3.7' }).values.mah), 4864.86, 1e-2);
+  close(Number(run('battery', { mode: 'runtime', wh: '18', watts: '5' }).values.hours), 3.6, 1e-9);
+});
+
+test('complex numbers: arithmetic and polar form', () => {
+  assert.equal(run('complex', { z1: '3+4i', z2: '1-2i', op: 'mul' }).values.rect, '11 − 2i');
+  close(Number(run('complex', { z1: '3+4i', z2: '1-2i', op: 'mul' }).values.mag), Math.hypot(11, 2), 1e-5);
+  assert.equal(run('complex', { z1: '4', z2: '2', op: 'sub' }).values.rect, '2');
+  close(Number(run('complex', { z1: 'i', z2: '1+i', op: 'add' }).values.mag), Math.hypot(1, 2), 1e-5);
+  close(Number(run('complex', { z1: '3i', z2: '', op: 'abs' }).values.mag), 3, 1e-12);
+});
+
+test('right triangle solver: 3-4-5 and hypotenuse mode', () => {
+  const r = run('right-triangle', { mode: 'legs', a: '3', b: '4', c: '', angle: '' }).values;
+  assert.equal(r.c, '5');
+  close(Number(r.angleA), 36.8699, 1e-3);
+  assert.equal(String(r.area), '6');
+  close(Number(run('right-triangle', { mode: 'leg-hyp', a: '3', c: '5' }).values.b), 4, 1e-9);
+  close(Number(run('right-triangle', { mode: 'hyp-angle', c: '5', angle: '36.8698976' }).values.a), 3, 1e-3);
+});
+
+test('anti-log computes b^x for common bases', () => {
+  assert.equal(run('antilog', { base: '10', exponent: '3' }).values.value, '1000');
+  close(Number(run('antilog', { base: 'e', exponent: '1' }).values.value), Math.E, 1e-6);
+  close(Number(run('antilog', { base: '2', exponent: '10' }).values.value), 1024, 1e-9);
 });
