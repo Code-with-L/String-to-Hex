@@ -894,3 +894,15 @@ test('TABLES: roman symbols and 1–100 chart', async () => {
   assert.equal(TABLES.roman.chart[99][1], 'C');
   assert.equal(TABLES.roman.symbols.length, 7);
 });
+
+test('TABLES: alt codes table is correctly ordered and complete', async () => {
+  const { TABLES } = await import('../js/data/reference.js');
+  assert.equal(TABLES.altCodes.rows.length, 256);
+  assert.equal(TABLES.altCodes.rows[0][0], '0');
+  assert.equal(TABLES.altCodes.rows[65][1], 'A');
+  assert.equal(TABLES.altCodes.rows[97][1], 'a');
+  assert.equal(TABLES.altCodes.rows[1][1], '☺');
+  assert.equal(TABLES.altCodes.rows[2][1], '☻');
+  assert.equal(TABLES.altCodes.rows[33][1], '!');
+  assert.equal(TABLES.altCodes.rows[173][1], '¡');
+});

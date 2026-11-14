@@ -370,6 +370,10 @@ export function viewTables() {
   const webSafeCells = TABLES.webSafe.rows.map((hex) =>
     el('div', { class: 'web-safe-cell', style: 'background:' + hex, title: hex },
       el('span', {}, hex.slice(1).toUpperCase())));
+  const altCells = TABLES.altCodes.rows.map(([code, char]) =>
+    el('div', { class: 'alt-cell', title: 'ALT ' + code },
+      el('span', { class: 'alt-char' }, char === ' ' ? '·' : char),
+      el('span', { class: 'alt-code' }, code)));
 
   const swatch = (hex) => el('span', {
     style: `display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:7px;border:1px solid var(--line-2);background:${hex || 'var(--panel-3)'}`,
@@ -443,6 +447,11 @@ export function viewTables() {
     ),
 
     el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, TABLES.altCodes.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, TABLES.altCodes.blurb)),
+      el('div', { class: 'alt-grid' }, ...altCells),
+    ),
+
+    el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, temps.title), el('span', { style: 'color:var(--ink-faint);font-size:14px' }, temps.blurb)),
       el('div', { class: 'table-scroll' }, tableEl(['°C', '°F', 'Why it matters'], tempRows)),
     ),
@@ -455,7 +464,7 @@ export function viewTables() {
   );
 
   node.pageTitle = 'Reference tables — HexKit';
-  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours and the 216-colour web-safe palette.';
+  node.pageDescription = 'Multiplication, addition, logarithm, roman-numeral, temperature, resistor colour code, named CSS colours, the 216-colour web-safe palette and the Windows ALT codes.';
   return node;
 }
 

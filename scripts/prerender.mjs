@@ -584,10 +584,10 @@ PAGES.push({
 PAGES.push({
   path: '/tables/index.html',
   hash: '/tables',
-  title: `Multiplication, logs, roman numerals &amp; colours tables | ${SITE}`,
-  description: 'Multiplication and addition tables, logarithm tables, roman-numerals chart, °C↔°F reference, the 216-colour web-safe palette, named CSS colours, resistor colour code and wire current capacity.',
+  title: `Roman numerals, logs, alt codes &amp; colours tables | ${SITE}`,
+  description: 'Multiplication, addition, logarithm and roman-numeral tables, Windows ALT codes, °C↔°F chart, named CSS colours, the 216-colour web-safe palette and resistor colour codes.',
   jsonLd: graph([
-    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, colours, temperature, resistor', description: 'Multiplication, addition, logarithm and roman-numeral tables, °C↔°F chart, named CSS colours and the 216-colour web-safe palette, alongside the resistor colour code, resistivity and wire current capacity.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
+    { '@type': 'TechArticle', '@id': `${ORIGIN}/tables#article`, headline: 'Reference tables — multiplication, logs, roman numerals, alt codes, colours, temperature, resistor', description: 'Multiplication, addition, logarithm, roman-numeral and Windows ALT code tables, plus the named CSS colours, web-safe palette, °C↔°F chart and resistor colour code.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
   body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Tables' }])}
     <header class="page-head">
@@ -686,6 +686,10 @@ ${TABLES.named.rows.map((r) => `          <tr><td><span style="display:inline-bl
       <h2>Web-safe palette (216 colours)</h2>
       <div class="web-safe-grid">
 ${TABLES.webSafe.rows.map((hex) => `        <div class="web-safe-cell" style="background:${esc(hex)}" title="${esc(hex)}"><span>${esc(hex.slice(1).toUpperCase())}</span></div>`).join('\n')}
+      </div>
+      <h2>Alt codes (Windows — ALT + keypad number)</h2>
+      <div class="alt-grid">
+${TABLES.altCodes.rows.map(([code, char]) => `        <div class="alt-cell" title="ALT ${esc(code)}"><span class="alt-char">${code === '32' ? '·' : esc(char === ' ' ? '·' : char)}</span><span class="alt-code">${esc(code)}</span></div>`).join('\n')}
       </div>
       <h2>Common electronic components</h2>
       <table>

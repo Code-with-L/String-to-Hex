@@ -770,3 +770,11 @@ details.disclosure > .disclosure-body { padding: 0 15px 15px; }
 .web-safe-cell { aspect-ratio: 1 / 1; display: flex; align-items: flex-end; justify-content: center; padding: 2px; border-radius: 1px; font-family: var(--mono); font-size: 8px; color: #888; }
 .web-safe-cell span { background: rgba(0,0,0,0.5); color: #fff; padding: 1px 2px; border-radius: 2px; font-size: 7px; letter-spacing: .5px; }
 @media (max-width: 480px) { .web-safe-grid { grid-template-columns: repeat(6, 1fr); } }
+
+/* ── alt codes grid ────────────────────────────────────────────────────── */
+.alt-grid { display: grid; grid-template-columns: repeat(16, 1fr); gap: 2px; }
+.alt-cell { aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
+.alt-cell:hover { background: var(--panel-2); border-color: var(--signal); }
+.alt-char { font-family: var(--serif); font-size: 13px; color: var(--ink); line-height: 1; }
+.alt-code { font-family: var(--mono); font-size: 7px; color: var(--ink-faint); line-height: 1; }
+@media (max-width: 480px) { .alt-grid { grid-template-columns: repeat(8, 1fr); } }
