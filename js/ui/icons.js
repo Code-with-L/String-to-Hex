@@ -158,6 +158,36 @@ export const SYMBOLS = {
     note: 'inductive coil',
     svg: svg('<path d="M6 30h14a8 8 0 0 1 16 0 8 8 0 0 1 16 0 8 8 0 0 1 16 0h26M62 46h22M62 40h22"/>'),
   },
+  thyristor: {
+    label: 'Thyristor (SCR)',
+    note: 'latching switch',
+    svg: svg('<circle cx="60" cy="30" r="22"/><path d="M6 30h24M36 22v16l14-8-14-8M36 22h0"/><path d="M36 30h48"/><path d="M50 40v10"/>'),
+  },
+  opAmp: {
+    label: 'Operational amplifier',
+    note: 'triangle, two inputs',
+    svg: svg('<path d="M10 10v40L90 30z"/><path d="M10 20h20M10 40h20M90 30h24M30 18v8M30 36v8"/>'),
+  },
+  optocoupler: {
+    label: 'Optocoupler',
+    note: 'LED + photodiode isolation',
+    svg: svg('<path d="M6 30h22M28 22v16M28 22l10 8-10 8M18 14v4"/><path d="M46 14v28M46 18l12 8-12 8M46 28l0 8M58 18v4"/><path d="M58 10l4 4M58 42l4-4M46 24l-4-4M46 32l-4 4"/><path d="M90 30h24"/>'),
+  },
+  crystal: {
+    label: 'Crystal oscillator',
+    note: 'piezo element',
+    svg: svg('<path d="M6 30h18"/><rect x="24" y="14" width="20" height="32"/><rect x="52" y="14" width="20" height="32"/><path d="M72 30h42"/>'),
+  },
+  transformer: {
+    label: 'Transformer',
+    note: 'two coupled coils',
+    svg: svg('<path d="M6 30h10a8 8 0 0 1 16 0 8 8 0 0 1 16 0 8 8 0 0 1 16 0 8 8 0 0 1 16 0h20M50 22v16h40M50 38v-16h20M70 22v16"/>'),
+  },
+  bridgeRectifier: {
+    label: 'Bridge rectifier',
+    note: 'four-diode diamond',
+    svg: svg('<path d="M40 12h40l16 20-16 20H40l-16-20z"/><path d="M60 26v10M56 30h8"/><path d="M10 20h24M10 40h24M76 30h24M50 12v-6M50 52v6"/>'),
+  },
 };
 
 /* ── UI glyphs ────────────────────────────────────────────────────────── */
@@ -226,19 +256,19 @@ export const SYMBOL_GROUPS = [
   {
     id: 'reactive',
     title: 'Energy storage',
-    blurb: 'Elements that store charge or magnetic field.',
-    keys: ['capacitor', 'capacitorPol', 'inductor', 'inductorCore', 'relayCoil'],
+    blurb: 'Elements that store charge or magnetic field, and the transformer that transfers both.',
+    keys: ['capacitor', 'capacitorPol', 'inductor', 'inductorCore', 'relayCoil', 'transformer'],
   },
   {
     id: 'semiconductor',
-    title: 'Semiconductors',
-    blurb: 'One-way and controlled conduction.',
-    keys: ['diode', 'zener', 'led', 'photodiode', 'transistorNpn', 'transistorPnp', 'fet'],
+    title: 'Semiconductors & active',
+    blurb: 'One-way and controlled conduction, plus gain and switching.',
+    keys: ['diode', 'zener', 'led', 'photodiode', 'transistorNpn', 'transistorPnp', 'fet', 'thyristor', 'bridgeRectifier', 'opAmp', 'optocoupler'],
   },
   {
     id: 'sources',
-    title: 'Sources & returns',
-    blurb: 'Where voltage comes from, and where it goes.',
-    keys: ['dcSource', 'acSource', 'battery', 'ground', 'groundEarth', 'wire'],
+    title: 'Sources, returns & bits',
+    blurb: 'Where voltage comes from, where it goes, and the passive bits in between.',
+    keys: ['dcSource', 'acSource', 'battery', 'ground', 'groundEarth', 'wire', 'crystal'],
   },
 ];

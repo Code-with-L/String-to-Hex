@@ -41,7 +41,7 @@ the first load.
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
 | **72 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, capacitor and inductor maths, battery capacity, effective interest, statistics, quadratic roots, complex numbers, decibels, mortgage, GPA, colour, photometry, room lighting, hashing, passwords and more |
-| **Reference library** | 21 formula articles (ohms-law, kirchhoff, parts-per-million…), 44 glossary terms, 27 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
+| **Reference library** | 24 formula articles (ohms-law, kirchhoff, parts-per-million…), 44 glossary terms, 33 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
 | **Static SEO pages** | 172 real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |
@@ -61,7 +61,7 @@ service workers do not register from `file://` URLs.
 ```bash
 npm test           # 83 tests: engine values + view rendering
 npm run check      # tests + project validation (manifest, SW, data, syntax)
-npm run build      # regenerate icons + sitemap + 172 prerendered pages
+npm run build      # regenerate icons + sitemap + 176 prerendered pages
 npm run verify     # build + everything, plus a real headless-Chrome pass
 npm run icons      # regenerate the PNG icon set from icons/icon.svg
 ```

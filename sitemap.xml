@@ -541,6 +541,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/electronic-components/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/electrical-units/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/kilowatt-hour/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>

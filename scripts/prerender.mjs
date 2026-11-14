@@ -570,8 +570,18 @@ PAGES.push({
         <li><strong>Zener:</strong> the same, with a bent cathode bar — it conducts in reverse at a defined voltage.</li>
         <li><strong>LED:</strong> a diode with arrows leaving it.</li>
         <li><strong>Transistor:</strong> a base bar with emitter and collector legs; the arrow direction distinguishes NPN from PNP.</li>
+        <li><strong>Thyristor (SCR):</strong> a four-layer device that latches on until the current falls below its holding threshold.</li>
+        <li><strong>Bridge rectifier:</strong> four diodes in a diamond circuit converting AC to pulsating DC.</li>
+      </ul>
+      <h2>Active and operational</h2>
+      <ul>
+        <li><strong>Operational amplifier:</strong> a triangle with two inputs and a gain factor; inverting and non-inverting operation is set by the feedback network.</li>
+        <li><strong>Optocoupler:</strong> a LED plus photodiode sealed in one package; signals cross, currents and voltages do not.</li>
       </ul>
       <h2>Sources and returns</h2>
+      <ul>
+        <li><strong>Transformer:</strong> two coupled coils sharing a core — used to step voltage and to provide isolation. Iron or ferrite bar means an iron-core inductor or power transformer.</li>
+        <li><strong>Crystal oscillator:</strong> a vibrating piezo element used as the frequency reference in clocks and radios.</li>
       <ul>
         <li><strong>Battery cell:</strong> one long plate and one short — long is positive.</li>
         <li><strong>Ground:</strong> three bars of decreasing width. A fourth, hatched symbol is protective earth.</li>

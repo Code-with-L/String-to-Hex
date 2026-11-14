@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DC Circuit Rules — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="The handful of formulae every DC problem obeys — series and parallel combination, divider rule, KVL/KCL — in one place.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="DC Circuit Rules — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="The handful of formulae every DC problem obeys — series and parallel combination, divider rule, KVL/KCL — in one place.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DC Circuit Rules — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="The handful of formulae every DC problem obeys — series and parallel combination, divider rule, KVL/KCL — in one place.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 72 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/#article",
+      "headline": "DC Circuit Rules",
+      "description": "The handful of formulae every DC problem obeys — series and parallel combination, divider rule, KVL/KCL — in one place.",
+      "articleSection": "Fundamentals",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DC Circuit Rules",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>DC Circuit Rules</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Fundamentals</span>
+      <h1>DC Circuit Rules</h1>
+      <p>The handful of formulae every DC problem obeys — series and parallel combination, divider rule, KVL/KCL — in one place.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">DC circuit rules are the conservation laws and series/parallel identities that hold in every linear DC network: KVL, KCL, Ohm’s law, and the expressions for equivalent resistance/capacitance/inductance.</p>
+    <h2>Series circuit</h2>
+    <div class="formula"><span class="eq">V_T = V₁ + V₂ + V₃ + …
+I_T = I₁ = I₂ = I₃ = …
+R_T = R₁ + R₂ + R₃ + …
+1/C_T = 1/C₁ + 1/C₂ + 1/C₃ + …
+L_T = L₁ + L₂ + L₃ + …</span></div>
+    <h2>Parallel circuit</h2>
+    <div class="formula"><span class="eq">V_T = V₁ = V₂ = V₃ = …
+I_T = I₁ + I₂ + I₃ + …
+1/R_T = 1/R₁ + 1/R₂ + 1/R₃ + …
+C_T = C₁ + C₂ + C₃ + …
+1/L_T = 1/L₁ + 1/L₂ + 1/L₃ + …</span></div>
+    <h2>Voltage and current divider rules</h2>
+    <p>In a series string, the fraction of the total voltage that drops across Rᵢ is proportional to Rᵢ as a share of the total:</p>
+    <div class="formula"><span class="eq">Vᵢ = V_T · Rᵢ ÷ (R₁ + R₂ + R₃ + …)</span></div>
+    <p>In a parallel combination, the current through one branch is the share of the total current that the complementary resistances dictate:</p>
+    <div class="formula"><span class="eq">I₁ = I_T · (R₂ + R₃ + …) ÷ (R₁ + R₂ + R₃ + …)</span></div>
+    <h2>Kirchhoff’s laws</h2>
+    <ul class="symbols">
+      <li><b>KVL</b><span>The sum of voltage drops around a closed loop is zero: Σ Vᵢ = 0</span></li>
+      <li><b>KCL</b><span>The sum of currents at a node is zero: Σ Iᵢ = 0</span></li>
+    </ul>
+    <p>In practical terms: rises prove drops; if you traverse a battery from – to + you add a voltage, if you traverse a resistor in the direction of current you subtract it; outlets = inlets at every node.</p>
+    <h2>Capacitor and inductor energy</h2>
+    <div class="formula"><span class="eq">E_C = ½ · C · V²
+E_L = ½ · L · I²</span></div>
+    <h2>Permittivity and the plates</h2>
+    <div class="formula"><span class="eq">C = ε₀ · εᵣ · A ÷ d</span>
+      <span class="note">d is the separation between plates; A is the overlapping area.</span></div>
+    <div class="callout"><div><strong>Note</strong> These identities are the reason the triangle works. If you memorise just KVL, KCL and Ohm’s law, you can re-derive each row above when you need it.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/ohms-law/">Put it into practice → Ohm&#39;s law solver</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/dc-circuit-rules";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>
