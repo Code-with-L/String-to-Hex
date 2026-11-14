@@ -3,7 +3,7 @@
 # HexKit
 
 **String → Hex, and every base in between.**
-Plus 60 calculators, 24 unit families, an electrical reference library and a full ASCII table — offline-first, on any screen, and installable as an app.
+Plus 61 calculators, 24 unit families, an electrical reference library and a full ASCII table — offline-first, on any screen, and installable as an app.
 
 [![Tests](https://github.com/Code-with-L/String-to-Hex/actions/workflows/tests.yml/badge.svg)](https://github.com/Code-with-L/String-to-Hex/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -40,9 +40,9 @@ the first load.
 | **Byte inspector** | Hex dump with offset, hex and ASCII columns |
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
-| **60 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, Bessel's functions, statistics, quadratic roots, decibels, mortgage, GPA, colour, photometry, hashing, passwords and more |
-| **Reference library** | 10 formula articles, 44 glossary terms, 25 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
-| **Static SEO pages** | 150+ real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
+| **61 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, Bessel's functions, statistics, quadratic roots, decibels, mortgage, GPA, colour, photometry, hashing, passwords and more |
+| **Reference library** | 12 formula articles, 44 glossary terms, 27 hand-drawn SVG circuit symbols and the resistor-colour/wire-gauge tables — every entry definition + intuition + worked formula |
+| **Static SEO pages** | 153 real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |
 | **Zero dependencies** | No framework, no bundler, no CDN — vanilla ES modules throughout |
@@ -59,9 +59,9 @@ There is no build step. `npm start` only runs a static file server, which is nee
 service workers do not register from `file://` URLs.
 
 ```bash
-npm test           # 71 tests: engine values + view rendering
+npm test           # 73 tests: engine values + view rendering
 npm run check      # tests + project validation (manifest, SW, data, syntax)
-npm run build      # regenerate icons + sitemap + 150 prerendered pages
+npm run build      # regenerate icons + sitemap + 151 prerendered pages
 npm run verify     # build + everything, plus a real headless-Chrome pass
 npm run icons      # regenerate the PNG icon set from icons/icon.svg
 ```
@@ -135,7 +135,7 @@ js/
   app.js                 bootstrap: theme, routing, PWA install, shortcuts
   core/convert.js        unit conversion engine (linear + affine)
   data/units.js          unit families and their reference factors
-  data/tools.js          60 calculators, one pure function each
+  data/tools.js          61 calculators, one pure function each
   data/formats.js        text ⇄ bytes ⇄ hex/bin/dec/oct/base64, checksums
   data/ascii.js          ASCII tables and per-character breakdown
   data/reference.js      articles, glossary entries, symbols, tables

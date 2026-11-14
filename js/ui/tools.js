@@ -6,6 +6,7 @@
 
 import { el, frag, mount, download, toast, debounce, loadState, saveState } from './dom.js';
 import { icon } from './icons.js';
+import { evalExpr } from '../data/tools.js';
 
 const KEY = 'hexkit.tools.v1';
 const read = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? '{}'); } catch { return {}; } };
@@ -210,6 +211,173 @@ export function viewHtmlEditor() {
 }
 
 /* navigate without importing the router here (avoids a cycle) */
+/* ── scientific calculator ──────────────────────────────────────────────── */
+
+/**
+ * The scientific calculator is a real keypad, not a typed expression with a
+ * purse of extras. The keypad builds an expression string and hands it to the
+ * same BigInt-free recursive-descent parser the rest of the site uses, so
+ * there is a single definition of what an expression means.
+ */
+export function viewScientific() {
+  let expr = '';
+  let justEvaluated = false;
+  let memory = 0;
+  let trig = 'deg';
+  const history = [];
+
+  const display = el('input', {
+    class: 'input mono sci-display', type: 'text', spellcheck: 'false',
+    autocomplete: 'off', 'aria-label': 'Expression', placeholder: '0',
+  });
+  const memoryLive = () => (memory ? `M ${formatNumber(memory)}` : '');
+  const memoryEl = el('span', { class: 'sci-memory' }, memoryLive());
+  const modeEl = el('span', { class: 'sci-mode' }, 'DEG');
+  const histBox = el('div', { class: 'sci-history', 'aria-label': 'History' });
+
+  const render = () => {
+    display.value = expr;
+    memoryEl.textContent = memoryLive();
+    modeEl.textContent = trig.toUpperCase();
+    // Highlight the active DEG/RAD key instead of overwriting the labels.
+    for (const btn of keyGrid?.querySelectorAll('.key-mode') ?? []) {
+      btn.classList.toggle('key-mode-active', btn.textContent === trig.toUpperCase());
+    }
+  };
+  const renderHistory = () => {
+    mount(histBox, ...history.slice(0, 6).map((h) => {
+      const item = el('button', { type: 'button', class: 'sci-history-item', title: h.expr }, h.result);
+      item.append(el('span', { class: 'sci-history-expr' }, h.expr));
+      item.addEventListener('click', () => { expr = h.result; justEvaluated = true; render(); });
+      return item;
+    }));
+  };
+
+  const append = (frag) => {
+    // After an evaluation, a digit starts a fresh expression but an operator
+    // carries the result forward, which is how physical keypads behave.
+    if (justEvaluated) {
+      expr = /^[0-9.(]/.test(frag) ? '' : display.value;
+      justEvaluated = false;
+    }
+    expr += frag;
+    render();
+  };
+  const backspace = () => { if (!justEvaluated) { expr = expr.slice(0, -1); render(); } };
+  const clear = () => { expr = ''; justEvaluated = false; render(); };
+
+  const evaluate = () => {
+    if (!expr.trim()) return;
+    try {
+      const value = evalExpr(expr, { trig });
+      const shown = formatNumber(value);
+      history.unshift({ expr: expr.trim(), result: shown });
+      expr = shown;
+      justEvaluated = true;
+      render();
+      renderHistory();
+      toast(`= ${shown}`, 1400);
+    } catch (e) {
+      toast(`⚠ ${e.message ?? String(e)}`, 3200);
+    }
+  };
+
+  // Every row is exactly five keys so the grid never packs a key from one
+  // authored row into the cell of the next.
+  const KEY_ROWS = [
+    [{ t: 'sin(', ins: 'sin(', k: 'fn' }, { t: 'cos(', ins: 'cos(', k: 'fn' }, { t: 'tan(', ins: 'tan(', k: 'fn' },
+      { t: 'asin(', ins: 'asin(', k: 'fn' }, { t: 'acos(', ins: 'acos(', k: 'fn' }],
+    [{ t: 'atan(', ins: 'atan(', k: 'fn' }, { t: 'ln(', ins: 'ln(', k: 'fn' }, { t: 'log(', ins: 'log(', k: 'fn' },
+      { t: '√(', ins: 'sqrt(', k: 'fn' }, { t: '∛(', ins: 'cbrt(', k: 'fn' }],
+    [{ t: 'x²', ins: '^2', k: 'fn' }, { t: 'x³', ins: '^3', k: 'fn' }, { t: '1/', ins: '1/', k: 'fn' },
+      { t: 'e^x', ins: 'exp(', k: 'fn' }, { t: '10^x', ins: 'pow(10,', k: 'fn' }],
+    [{ t: 'π', ins: 'pi', k: 'fn' }, { t: 'e', ins: 'e', k: 'fn' }, { t: 'x!', ins: '!', k: 'fn' },
+      { t: 'MC', mem: 'clear', k: 'mem' }, { t: 'MR', mem: 'recall', k: 'mem' }],
+    [{ t: 'M+', mem: 'add', k: 'mem' }, { t: 'M−', mem: 'sub', k: 'mem' }, { t: 'MS', mem: 'store', k: 'mem' },
+      { t: 'DEG', mode: 'deg', k: 'mode' }, { t: 'RAD', mode: 'rad', k: 'mode' }],
+    [{ t: '7', k: 'digit' }, { t: '8', k: 'digit' }, { t: '9', k: 'digit' }, { t: '÷', ins: '/', k: 'op' },
+      { t: 'C', clear: true, k: 'op' }],
+    [{ t: '4', k: 'digit' }, { t: '5', k: 'digit' }, { t: '6', k: 'digit' }, { t: '×', ins: '*', k: 'op' },
+      { t: '⌫', backspace: true, k: 'op' }],
+    [{ t: '1', k: 'digit' }, { t: '2', k: 'digit' }, { t: '3', k: 'digit' }, { t: '−', ins: '-', k: 'op' },
+      { t: '^', ins: '^', k: 'op' }],
+    [{ t: '0', k: 'digit' }, { t: '.', k: 'digit' }, { t: '(', ins: '(', k: 'op' }, { t: '+', ins: '+', k: 'op' },
+      { t: ')', ins: ')', k: 'op' }],
+    [{ t: '=', equals: true, k: 'eq', span: 5 }],
+  ];
+
+  const keyGrid = el('div', { class: 'keypad' });
+  for (const row of KEY_ROWS) {
+    for (const key of row) {
+      const btn = el('button', {
+        type: 'button',
+        class: `key key-${key.k ?? 'digit'}`,
+        style: key.span ? `grid-column: span ${key.span}` : '',
+      }, key.t);
+      btn.addEventListener('click', () => {
+        if (key.equals) return evaluate();
+        if (key.clear) return clear();
+        if (key.backspace) return backspace();
+        if (key.span) return;
+        if (key.mem === 'clear') { memory = 0; render(); return; }
+        if (key.mem === 'recall') { append(String(memory)); return; }
+        if (key.mem === 'add') { memory += currentValue(); render(); toast(`M = ${formatNumber(memory)}`, 1200); return; }
+        if (key.mem === 'sub') { memory -= currentValue(); render(); toast(`M = ${formatNumber(memory)}`, 1200); return; }
+        if (key.mem === 'store') { memory = currentValue(); render(); toast('Stored to memory', 1200); return; }
+        if (key.mode) { trig = key.mode; render(); toast(`Trigonometric mode: ${trig.toUpperCase()}`); return; }
+        append(key.ins ?? key.t);
+      });
+      keyGrid.append(btn);
+    }
+  }
+
+  const currentValue = () => {
+    try { return evalExpr(display.value || '0', { trig }); } catch { return 0; }
+  };
+
+  display.addEventListener('input', () => {
+    if (display.value === '' || display.value === '0') { expr = ''; } else { expr = display.value; }
+    justEvaluated = false;
+  });
+  display.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); evaluate(); }
+    else if (e.key === 'Escape') { e.preventDefault(); clear(); }
+  });
+
+  const node = frag(
+    el('nav', { class: 'crumbs' },
+      el('a', { href: '#/' }, 'Home'), el('span', { 'aria-hidden': 'true' }, '/'),
+      el('a', { href: '#/tools' }, 'Calculators'), el('span', { 'aria-hidden': 'true' }, '/'),
+      el('span', {}, 'Scientific calculator')),
+    el('section', { class: 'page-head' },
+      el('span', { class: 'hero-eyebrow' }, 'Math'),
+      el('h1', {}, 'Scientific calculator'),
+      el('p', {}, 'Full keypad with precedence, functions, memory and history. Trigonometric mode defaults to degrees; toggle to radians with DEG/RAD.'),
+    ),
+    el('div', { class: 'panel sci-panel' },
+      el('div', { class: 'sci-top' }, memoryEl, modeEl),
+      display,
+      keyGrid,
+      el('p', { style: 'margin:12px 0 0;color:var(--ink-faint);font-size:13px' },
+        'Precedence: parentheses → power → × ÷ % → + −. Functions take one or two parenthesised arguments. History is kept for this session only.'),
+    ),
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, 'History')),
+      histBox,
+    ),
+  );
+  node.pageTitle = 'Scientific calculator — HexKit';
+  node.pageDescription = 'Free scientific calculator with a full keypad, precedence, functions, memory and history. Runs in your browser and works offline.';
+  return node;
+}
+
+function formatNumber(n) {
+  const v = Number(n);
+  if (!Number.isFinite(v)) return 'Invalid';
+  if (v !== 0 && (Math.abs(v) >= 1e12 || Math.abs(v) < 1e-8)) return v.toExponential(10);
+  return String(Number(v.toPrecision(13)));
+}
+
 function navigateView(path) { location.hash = path; }
 
 /* ── HTML entity / colour-code browser ──────────────────────────────────── */

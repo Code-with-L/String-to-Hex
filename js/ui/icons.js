@@ -143,6 +143,16 @@ export const SYMBOLS = {
     note: 'resistor + wiper',
     svg: svg('<path d="M6 30h12v-14h28v28h28V30h12M40 44l20-26"/>'),
   },
+  dipSwitch: {
+    label: 'DIP switch',
+    note: 'multi-pole package',
+    svg: svg('<rect x="22" y="12" width="76" height="36" rx="2"/><path d="M34 24v12M48 24v12M62 24v12M76 24v12M88 24v12"/><path d="M6 24h16M6 36h16M98 24h16M98 36h16M34 48v10M48 48v10M62 48v10M76 48v10M88 48v10"/>'),
+  },
+  solderBridge: {
+    label: 'Solder bridge',
+    note: '0 Ω jumper',
+    svg: svg('<path d="M4 20h14v20H4zM102 20h14v20h-14z"/><circle cx="24" cy="30" r="5" fill="currentColor" stroke="none"/><circle cx="96" cy="30" r="5" fill="currentColor" stroke="none"/><path d="M24 30h72" stroke-width="5"/>'),
+  },
   relayCoil: {
     label: 'Relay coil',
     note: 'inductive coil',
@@ -211,7 +221,7 @@ export const SYMBOL_GROUPS = [
     id: 'resistive',
     title: 'Resistive & control',
     blurb: 'Elements that limit or divide current.',
-    keys: ['resistor', 'resistorUs', 'resistorPot', 'fuse', 'lamp', 'switch', 'switchSpst'],
+    keys: ['resistor', 'resistorUs', 'resistorPot', 'fuse', 'lamp', 'switch', 'switchSpst', 'dipSwitch', 'solderBridge'],
   },
   {
     id: 'reactive',

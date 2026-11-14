@@ -205,6 +205,20 @@ try {
   check(hero.stats === 4, `home shows ${hero.stats} hero stats`);
   check(hero.title.includes('HexKit'), `document.title is set: "${hero.title.slice(0, 40)}"`);
 
+  /* 3b+ ── scientific keypad computes, not just renders -------------------- */
+  await evaluate(cdp, "location.hash = '#/tool/scientific-calc'");
+  await sleep(350);
+  const keypad = await evaluate(cdp, `(() => {
+    const press = (label) => {
+      const btn = [...document.querySelectorAll('.keypad .key')].find((b) => b.textContent === label);
+      if (!btn) throw new Error('key not found: ' + label);
+      btn.click();
+    };
+    ['5', '+', '3', 'x!', '='].forEach(press);
+    return document.querySelector('.sci-display')?.value ?? '';
+  })()`);
+  check(keypad === '11', `keypad 5+3! = ${keypad} (expected 11)`);
+
   const meta = await evaluate(cdp, `(() => {
     const q = (s) => document.querySelector(s)?.getAttribute('content') ?? null;
     return {

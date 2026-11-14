@@ -356,6 +356,7 @@ export function viewTool(route) {
     'voltage-drop': { awg: '10', len: 30, i: 20, v: 240 }, 'dbm': { v: 30, from: 'dbm' },
     ev: { v: 12, from: 'j' }, 'energy-bill': { w: 1500, h: 8, rate: 0.15 },
     photometry: { mode: 'cd2lux', x: 500, d: 2 },
+    lighting: { length: 4.5, width: 3.5, type: 'living', lm: 800, efficacy: 100 },
     stddev: { data: '2 4 4 4 5 5 7 9', mode: 'pop' },
     'weighted-average': { data: '80:1, 90:2, 70:3' },
     quadratic: { a: 1, b: -3, c: 2 }, root: { x: 16, k: 2 }, factorial: { n: 10, r: 3 },

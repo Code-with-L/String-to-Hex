@@ -72,6 +72,25 @@ test('notepad, HTML editor and entities render', () => {
   assertTree(TOOLVIEWS.viewEntities(), 'entities');
 });
 
+test('scientific keypad view renders with digits, functions and equals', () => {
+  const els = assertTree(TOOLVIEWS.viewScientific(), 'scientific-calc');
+  const buttons = els.filter((e) => e.tagName === 'BUTTON').map((e) => e.textContent);
+  for (const label of ['7', '=', 'sin(', 'cos(', 'tan(', 'asin(', '√(', 'π', '⌫', 'C']) {
+    assert.ok(buttons.includes(label), `has ${label} key`);
+  }
+  const display = els.find((e) => e.tagName === 'INPUT');
+  assert.equal(display.getAttribute('aria-label'), 'Expression');
+});
+
+test('evalExpr honours degree mode and postfix factorial', async () => {
+  const { evalExpr } = await import('../js/data/tools.js');
+  assert.ok(Math.abs(evalExpr('sin(30)', { trig: 'deg' }) - 0.5) < 1e-12);
+  assert.ok(Math.abs(evalExpr('asin(1)', { trig: 'deg' }) - 90) < 1e-9);
+  assert.equal(evalExpr('6!'), 720);
+  assert.equal(evalExpr('2 + 3!'), 8);
+  assert.equal(evalExpr('sin(30)'), Math.sin(30));
+});
+
 test('HTML preview blocks scripts and network fetches', () => {
   const els = assertTree(TOOLVIEWS.viewHtmlEditor(), 'html-editor');
   const frame = els.find((e) => e.tagName === 'IFRAME');

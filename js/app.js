@@ -8,7 +8,7 @@ import {
 import {
   viewHome, viewLearn, viewArticle, viewGlossary, viewGlossaryEntry, viewSymbols, viewTables,
 } from './ui/content.js';
-import { viewNotepad, viewHtmlEditor, viewEntities } from './ui/tools.js';
+import { viewNotepad, viewHtmlEditor, viewEntities, viewScientific } from './ui/tools.js';
 import { FORMATS } from './data/formats.js';
 import { TOOLS, TOOL_BY_ID } from './data/tools.js';
 import { FAMILIES, FAMILY_IDS } from './data/units.js';
@@ -105,7 +105,7 @@ function render(route) {
       node = viewTools(route);
       break;
     case 'tool':
-      node = viewTool(route);
+      node = route.segments[1] === 'scientific-calc' ? viewScientific() : viewTool(route);
       break;
     case 'units':
       node = viewUnits(route);

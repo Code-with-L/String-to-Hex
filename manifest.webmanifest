@@ -2,7 +2,7 @@
   "id": "/",
   "name": "HexKit — Converters & Calculators",
   "short_name": "HexKit",
-  "description": "Convert text to hex, binary, decimal, octal and Base64. 60 calculators, 24 unit families, electrical formula reference and ASCII table. Works offline.",
+  "description": "Convert text to hex, binary, decimal, octal and Base64. 61 calculators, 24 unit families, electrical formula reference and ASCII table. Works offline.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

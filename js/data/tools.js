@@ -439,6 +439,77 @@ const PHOTOMETRY = {
   },
 };
 
+/**
+ * Room lighting design. The honest formula behind "how many bulbs do I need"
+ * is a lumen method: required flux = target lux × area ÷ (utilisation factor ×
+ * maintenance factor). UF accounts for how much of the lumen output actually
+ * reaches the floor; MF accounts for dirt and lamp age over the maintenance
+ * cycle. Both default to typical mid-values rather than a promise of precision.
+ */
+const LIGHTING = {
+  id: 'lighting',
+  title: 'Room lighting calculator',
+  group: 'electrical',
+  blurb: 'Area, target lux, lumen method, fixture count and total wattage — for a real room.',
+  keywords: 'lighting room floor lamp fixture lumens lux led',
+  inputs: [
+    { id: 'length', label: 'Room length (m)', step: 'any', placeholder: '4.5' },
+    { id: 'width', label: 'Room width (m)', step: 'any', placeholder: '3.5' },
+    { id: 'type', label: 'Room type', type: 'select', options: [
+      ['bedroom', 'Bedroom — 120 lx'],
+      ['living', 'Living room — 200 lx'],
+      ['dining', 'Dining — 200 lx'],
+      ['hallway', 'Hallway / corridor — 100 lx'],
+      ['kitchen', 'Kitchen — 400 lx'],
+      ['bathroom', 'Bathroom — 250 lx'],
+      ['office', 'Office / study — 500 lx'],
+      ['workshop', 'Workshop — 600 lx'],
+      ['garage', 'Garage — 300 lx'],
+    ] },
+    { id: 'lm', label: 'Lumens per fixture (lm)', step: 'any', placeholder: '800' },
+    { id: 'efficacy', label: 'Efficacy (lm/W)', step: 'any', placeholder: '100' },
+  ],
+  compute: ({ length, width, type, lm, efficacy }) => {
+    const LUX = { bedroom: 120, living: 200, dining: 200, hallway: 100, kitchen: 400, bathroom: 250, office: 500, workshop: 600, garage: 300 };
+    const L = n(length), W = n(width);
+    const area = L * W;
+    if (!(area > 0)) return { error: 'Length and width must both be greater than zero.' };
+    const target = LUX[type] ?? 200;
+    const UF = 0.75, MF = 0.8;
+    const perFixture = n(lm, 800);
+    const req = (target * area) / (UF * MF);
+    const count = Math.max(1, Math.ceil(req / perFixture));
+    const delivered = (count * perFixture * UF * MF) / area;
+    const eff = n(efficacy, 100);
+    const watts = (count * perFixture) / eff;
+    return {
+      values: {
+        area: g(area, 2) + ' m²',
+        target,
+        required: Math.round(req),
+        count,
+        delivered: g(delivered, 0) + ' lx',
+        watts: g(watts, 1),
+      },
+      steps: [
+        `area = ${L} × ${W} = ${g(area, 2)} m²`,
+        `required flux = E × A ÷ (UF × MF) = ${target} × ${g(area, 2)} ÷ (0.75 × 0.8) = ${g(req, 0)} lm`,
+        `${count} fixture(s) × ${perFixture} lm = ${count * perFixture} lm`,
+        `delivered illuminance = ${count * perFixture} × 0.75 × 0.8 ÷ ${g(area, 2)} ≈ ${g(delivered, 0)} lx`,
+        `at ${eff} lm/W, total draw ≈ ${g(watts, 1)} W`,
+      ],
+      outputs: [
+        { id: 'area', label: 'Floor area', unit: '' },
+        { id: 'target', label: 'Target', unit: 'lx' },
+        { id: 'required', label: 'Required flux', unit: 'lm' },
+        { id: 'count', label: 'Fixtures', unit: '' },
+        { id: 'delivered', label: 'Delivered', unit: '' },
+        { id: 'watts', label: 'Total power', unit: 'W' },
+      ],
+    };
+  },
+};
+
 /* ── math & statistics ───────────────────────────────────────────────────── */
 
 const parseList = (s) => String(s || '').split(/[\s,;]+/).map(Number).filter((x) => Number.isFinite(x));
@@ -2135,7 +2206,7 @@ const SCIENTIFIC = {
  * Tokenised recursive-descent parser. No eval(), no Function(), no DOM access —
  * pasted input can never reach page globals.
  */
-export function evalExpr(src) {
+export function evalExpr(src, opts = {}) {
   let i = 0;
   const s = String(src).replace(/\s+/g, '').replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/π/g, 'pi');
   const CONST = { pi: Math.PI, PI: Math.PI, e: Math.E, tau: Math.PI * 2, inf: Infinity };
@@ -2146,6 +2217,18 @@ export function evalExpr(src) {
     exp: Math.exp, floor: Math.floor, ceil: Math.ceil, round: Math.round, sign: Math.sign,
     min: Math.min, max: Math.max, pow: Math.pow, hypot: Math.hypot, trunc: Math.trunc,
   };
+  // A keypad in degree mode wraps the trig functions rather than teaching the
+  // whole parser a unit system.
+  if (opts?.trig === 'deg') {
+    const D = Math.PI / 180;
+    FN.sin = (x) => Math.sin(x * D);
+    FN.cos = (x) => Math.cos(x * D);
+    FN.tan = (x) => Math.tan(x * D);
+    FN.asin = (x) => Math.asin(x) / D;
+    FN.acos = (x) => Math.acos(x) / D;
+    FN.atan = (x) => Math.atan(x) / D;
+    FN.atan2 = (y, x) => Math.atan2(y, x) / D;
+  }
   const eat = (t) => (s.startsWith(t, i) ? (i += t.length, true) : false);
   const num = () => {
     const m = /^(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?/i.exec(s.slice(i));
@@ -2171,8 +2254,28 @@ export function evalExpr(src) {
     if (eat('-')) return -primary();
     return num();
   }
+  const factorial = (n) => {
+    if (!Number.isFinite(n) || n < 0 || !Number.isInteger(n)) {
+      throw new Error('Factorial needs a whole non-negative number.');
+    }
+    if (n > 170) throw new Error('Overflow: 171! and above exceed double precision.');
+    let acc = 1;
+    for (let k = 2; k <= n; k++) acc *= k;
+    return acc;
+  };
+
+  function factorialOf(v) {
+    try { return factorial(v); }
+    catch (e) { throw new Error(e.message); }
+  }
+
+  function postfix() {
+    let v = primary();
+    while (eat('!')) v = factorialOf(v);
+    return v;
+  }
   function power() {
-    const base = primary();
+    const base = postfix();
     return eat('^') ? Math.pow(base, power()) : base;
   }
   function term() {
@@ -2394,7 +2497,7 @@ const BATCH = {
 
 export const TOOLS = [
   OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, DECIBEL, EV, EFFICIENCY, ENERGY_BILL,
-  PHOTOMETRY, KIRCHHOFF, COULOMB,
+  PHOTOMETRY, LIGHTING, KIRCHHOFF, COULOMB,
   STDDEV, WEIGHTED_AVG, QUADRATIC, ROOTS, FACTORIAL, PERCENT, PERCENT_ERROR, GCF_LCM, FRACTION,
   DECIMAL_FRACTION, RATIO, DIVMOD, SCI_NOTATION, SCIENTIFIC, PYTHAGOREAN, CONVOLUTION, LOG_CALC, EXP_GROWTH, TRIG,
   COLOR, RADIX_CALC, ROMAN, WORDING,
