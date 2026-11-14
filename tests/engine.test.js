@@ -708,6 +708,7 @@ test('every declared output id exists in the returned values', () => {
     complex: { z1: '3+4i', z2: '1-2i', op: 'mul' },
     'right-triangle': { mode: 'legs', a: '3', b: '4' },
     antilog: { base: '10', exponent: '3' },
+    'current-power': { mode: 'a2w', v: '230', a: '10', watts: '2300', va: '2300', pf: '1', system: '1', wh: '2000', hours: '4' },
   };
 
   for (const tool of TOOLS) {
@@ -823,3 +824,23 @@ test('anti-log computes b^x for common bases', () => {
   close(Number(run('antilog', { base: 'e', exponent: '1' }).values.value), Math.E, 1e-6);
   close(Number(run('antilog', { base: '2', exponent: '10' }).values.value), 1024, 1e-9);
 });
+
+test('current↔power: amps, watts, VA and energy over time', () => {
+  close(Number(run('current-power', { mode: 'a2w', v: '230', a: '10' }).values.p), 2300, 1e-9);
+  close(Number(run('current-power', { mode: 'a2w', v: '400', a: '10', system: '3y' }).values.p), Math.sqrt(3) * 400 * 10, 1e-6);
+  close(Number(run('current-power', { mode: 'w2a', v: '230', watts: '2300' }).values.amps), 10, 1e-9);
+  close(Number(run('current-power', { mode: 'va2a', v: '230', va: '2300' }).values.amps), 10, 1e-9);
+  close(Number(run('current-power', { mode: 'a2va', v: '230', a: '10' }).values.va), 2300, 1e-9);
+  close(Number(run('current-power', { mode: 'kwh2w', wh: '2000', hours: '4' }).values.p), 500, 1e-9);
+});
+
+test('parallel-plate capacitance', () => {
+  // air dielectric, 10 cm², 0.1 mm spacing → ~88.5 pF
+  close(Number(run('capacitor', { mode: 'plates', er: '1', area: '10', d: '0.1' }).values.pf), 88.54, 1e-1);
+});
+
+test('watt↔lumen conversions', () => {
+  close(Number(run('photometry', { mode: 'w2lm', x: '10', efficacy: '100' }).values.lm), 1000, 1e-9);
+  close(Number(run('photometry', { mode: 'lm2w', x: '800', efficacy: '100' }).values.w), 8, 1e-9);
+});
+

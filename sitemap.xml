@@ -115,6 +115,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/tool/current-power/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/effective-rate/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -476,6 +482,18 @@
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/exponent-rules/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/logarithms/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

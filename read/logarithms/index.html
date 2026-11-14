@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Logarithms — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="What a logarithm is, the three laws, change of base and why engineers think in decades.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/logarithms/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/logarithms/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="Logarithms — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="What a logarithm is, the three laws, change of base and why engineers think in decades.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/logarithms/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Logarithms — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="What a logarithm is, the three laws, change of base and why engineers think in decades.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 70 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/logarithms/#article",
+      "headline": "Logarithms",
+      "description": "What a logarithm is, the three laws, change of base and why engineers think in decades.",
+      "articleSection": "Algebra",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/logarithms/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/logarithms/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reference",
+          "item": "https://code-with-l.github.io/String-to-Hex/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Logarithms",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/logarithms/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
+      <a href="../../#/convert">Converter</a>
+      <a href="../../#/tools">Calculators</a>
+      <a href="../../#/units">Units</a>
+      <a href="../../#/learn">Reference</a>
+      <a href="../../#/notepad">Notepad</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../learn/">Reference</a>
+  <span aria-hidden="true">/</span>
+  <span>Logarithms</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Algebra</span>
+      <h1>Logarithms</h1>
+      <p>What a logarithm is, the three laws, change of base and why engineers think in decades.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A logarithm answers “to what power must the base be raised to give this number?” — log_b x = y means b^y = x.</p>
+    <div class="formula"><span class="eq">log_b x = y
+⇔ b^y = x</span></div>
+    <h2>The three laws</h2>
+    <ul class="symbols">
+      <li><b>log_b (x·y)</b><span>log_b x + log_b y  — product becomes sum</span></li>
+      <li><b>log_b (x ÷ y)</b><span>log_b x − log_b y  — quotient becomes difference</span></li>
+      <li><b>log_b (xⁿ)</b><span>n · log_b x  — power moves out front</span></li>
+      <li><b>log_b 1</b><span>0  — any base to the zero power is 1</span></li>
+      <li><b>log_b b</b><span>1  — the base to the first power is itself</span></li>
+    </ul>
+    <h2>Which base?</h2>
+    <p>log means base 10 (common) in most practical work; ln means base e ≈ 2.71828 (natural, from calculus); log₂ is binary (bits, entropy, complexity). Base 2 is what “bit” means: log₂ N tells how many binary decisions separate N possibilities from one.</p>
+    <div class="formula"><span class="eq">log₂ 256 = 8
+log₁₀ 1000 = 3
+ln 2 ≈ 0.693</span></div>
+    <h2>Change of base</h2>
+    <p>Any log can be rewritten in whichever base is convenient — usually to get e or 10 out of a base-2 or odd-base log.</p>
+    <div class="formula"><span class="eq">log₂ x = ln x ÷ ln 2 = log₁₀ x ÷ log₁₀ 2</span></div>
+    <h2>Decibels are logs</h2>
+    <p>A decibel is a ratio on a logarithmic scale: 3 dB doubles the power, 10 dB multiplies it by ten. That is why audio and radio engineers never multiply — they add dB.</p>
+    <div class="formula"><span class="eq">dB = 10 · log₁₀ (P₂ ÷ P₁)</span></div>
+    <div class="callout"><div><strong>Note</strong> Anti-log is the inverse of log: antilog_b y = b^y. The anti-log tool reverses this page’s formulas, and the log tool evaluates log_b x directly.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/log/">Put it into practice → Logarithm &amp; antilogarithm</a></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>location.hash = "#/read/logarithms";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

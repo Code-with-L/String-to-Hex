@@ -407,13 +407,14 @@ const PHOTOMETRY = {
   blurb: 'E = I / d², Φ = 2πI(1 − cos(θ/2)), E = Φ / A.',
   keywords: 'lux lumen candela illuminance light footcandle',
   inputs: [
-    { id: 'mode', label: 'Question', type: 'select', options: [['lux2cd', 'lux → candela (given distance)'], ['cd2lux', 'candela → lux (given distance)'], ['lm2cd', 'lumen → candela (given beam angle)'], ['cd2lm', 'candela → lumen (given beam angle)'], ['lm2lux', 'lumen → lux (given area)'], ['lux2fc', 'lux → foot-candle'], ['fc2lux', 'foot-candle → lux']] },
+    { id: 'mode', label: 'Question', type: 'select', options: [['lux2cd', 'lux → candela (given distance)'], ['cd2lux', 'candela → lux (given distance)'], ['lm2cd', 'lumen → candela (given beam angle)'], ['cd2lm', 'candela → lumen (given beam angle)'], ['lm2lux', 'lumen → lux (given area)'], ['w2lm', 'watts → lumens (with efficacy)'], ['lm2w', 'lumens → watts (with efficacy)'], ['lux2fc', 'lux → foot-candle'], ['fc2lux', 'foot-candle → lux']] },
     { id: 'x', label: 'Value', step: 'any' },
     { id: 'd', label: 'Distance (m) or area (m²)', step: 'any' },
     { id: 'theta', label: 'Beam angle (degrees)', step: 'any' },
+    { id: 'efficacy', label: 'Efficacy (lm/W) — for watt ↔ lumen', step: 'any', placeholder: '100' },
   ],
-  compute: ({ mode, x, d, theta }) => {
-    const X = n(x), D = n(d), TH = n(theta);
+  compute: ({ mode, x, d, theta, efficacy }) => {
+    const X = n(x), D = n(d), TH = n(theta), EFF = n(efficacy) || 100;
     const area = Math.PI * D * D / 4;
     if (mode === 'lux2cd') {
       if (!D) return { error: 'Distance is required.' };
@@ -433,6 +434,16 @@ const PHOTOMETRY = {
     if (mode === 'cd2lm') {
       if (!TH) return { error: 'Beam angle is required.' };
       return { values: { lm: X * factor, cd: X }, steps: [`Φ = 2πI(1 − cos(θ/2)) = 2π × ${g(X)} × ${g(factor, 8)} = ${g(X * factor)} lm`], outputs: [{ id: 'lm', label: 'Luminous flux', unit: 'lm' }] };
+    }
+    if (mode === 'w2lm') {
+      if (!EFF || EFF <= 0) return { error: 'Efficacy (lm/W) is required.' };
+      const lm = X * EFF;
+      return { values: { lm: g(lm), efficacy: EFF }, steps: [`Φ = P × η = ${g(X)} W × ${g(EFF)} lm/W = ${g(lm)} lm`], outputs: [{ id: 'lm', label: 'Luminous flux', unit: 'lm' }] };
+    }
+    if (mode === 'lm2w') {
+      if (!EFF || EFF <= 0) return { error: 'Efficacy (lm/W) is required.' };
+      const w = X / EFF;
+      return { values: { w: g(w), efficacy: EFF }, steps: [`P = Φ ÷ η = ${g(X)} lm ÷ ${g(EFF)} lm/W = ${g(w)} W`], outputs: [{ id: 'w', label: 'Power', unit: 'W' }] };
     }
     if (mode === 'lux2fc') {
       const fc = X / 10.76391;
@@ -534,6 +545,7 @@ const CAPACITOR = {
       ['reactance', 'Capacitive reactance — Xc = 1 / (2πfC)'],
       ['charge', 'Capacitance from charge — C = Q / V'],
       ['energy', 'Energy stored — E = ½CV²'],
+      ['plates', 'Plate capacitance — C = ε₀εᵣA ÷ d'],
       ['series', 'Combine in series — 1/C_T = Σ 1/Cᵢ'],
       ['parallel', 'Combine in parallel — C_T = Σ Cᵢ'],
     ] },
@@ -541,10 +553,13 @@ const CAPACITOR = {
     { id: 'cap', label: 'Capacitance (µF)', step: 'any', placeholder: '10' },
     { id: 'volt', label: 'Voltage (V)', step: 'any', placeholder: '12' },
     { id: 'charge', label: 'Charge (µC)', step: 'any', placeholder: '100' },
+    { id: 'er', label: 'Relative permittivity εᵣ (plates)', step: 'any', placeholder: '1 = air, 3.9 = SiO₂, 7.5 = mica' },
+    { id: 'area', label: 'Plate area (cm²)', step: 'any', placeholder: '10' },
+    { id: 'd', label: 'Plate spacing (mm)', step: 'any', placeholder: '0.1' },
     { id: 'list', label: 'Capacitances to combine, µF separated by spaces', type: 'text', placeholder: '4.7 4.7 10' },
   ],
-  compute: ({ mode, freq, cap, volt, charge, list }) => {
-    const uF = n(cap), V = n(volt), F = n(freq), Q = n(charge);
+  compute: ({ mode, freq, cap, volt, charge, er, area, d, list }) => {
+    const uF = n(cap), V = n(volt), F = n(freq), Q = n(charge), ER = n(er, 1), A = n(area), GAP = n(d);
     if (mode === 'reactance') {
       if (!F) return { error: 'Frequency is required for reactance.' };
       if (!uF) return { error: 'Capacitance is required.' };
@@ -561,6 +576,18 @@ const CAPACITOR = {
       return { values: { c: g(c) },
         steps: [`C = Q ÷ V = ${g(Q)} µC ÷ ${g(V)} V = ${g(c)} µF`],
         outputs: [{ id: 'c', label: 'Capacitance', unit: 'µF' }] };
+    }
+    if (mode === 'plates') {
+      if (!(A > 0) || !(GAP > 0)) return { error: 'Plate area (cm²) and spacing (mm) are required.' };
+      const E0 = 8.8541878128e-12;
+      const c = E0 * ER * (A * 1e-4) / (GAP * 1e-3);
+      const pf = c * 1e12;
+      return { values: { pf: g(pf), nf: g(pf / 1000, 4) + ' nF', uf: g(pf / 1e6, 4) + ' µF' },
+        steps: [
+          `C = ε₀ × εᵣ × A ÷ d = 8.854e-12 × ${g(ER, 4)} × ${A} cm² ÷ ${GAP} mm`,
+          `= ${g(c, 12)} F = ${g(pf)} pF`,
+        ],
+        outputs: [{ id: 'pf', label: 'Capacitance', unit: 'pF' }, { id: 'nf', label: 'In nF', unit: '' }, { id: 'uf', label: 'In µF', unit: '' }] };
     }
     if (mode === 'energy') {
       if (!V) return { error: 'Voltage is required.' };
@@ -753,6 +780,95 @@ const BATTERY = {
       return { values: { hours: g(hours, 4), mins: g(mins, 2), days: g(hours / 24, 3) },
         steps: [`runtime = ${label} = ${g(hours, 4)} h ≈ ${g(mins, 2)} min`],
         outputs: [{ id: 'hours', label: 'Runtime', unit: 'h' }, { id: 'mins', label: 'Minutes', unit: 'min' }] };
+    }
+    return { error: 'Pick a question.' };
+  },
+};
+
+/* ── current ↔ power ─────────────────────────────────────────────────────── */
+
+/**
+ * The reference publishes the amp/watt/VA family as a dozen near-identical
+ * one-off pages (amp-to-watt, watt-to-va, watt-volt-amp-calculator…). They are
+ * all one formula with the inputs permuted, so HexKit ships the permutation as
+ * one tool with a mode select — the same shape as the photometry tool.
+ */
+const CURRENT_POWER = {
+  id: 'current-power',
+  title: 'Current ↔ power (amps, watts, VA)',
+  group: 'electrical',
+  blurb: 'Amps, watts, VA and kWh↔W — with real power factor for AC systems.',
+  keywords: 'amps watts va volt-amp watt-volt-amp kva voltampere power current',
+  inputs: [
+    { id: 'mode', label: 'Question', type: 'select', options: [
+      ['a2w', 'Amps + voltage → watts (P = V·I·PF)'],
+      ['w2a', 'Watts + voltage → amps'],
+      ['a2va', 'Amps + voltage → apparent power (VA)'],
+      ['va2a', 'VA + voltage → amps'],
+      ['kwh2w', 'Energy & time → instantaneous power (P = E ÷ t)'],
+    ] },
+    { id: 'v', label: 'Voltage (V)', step: 'any', placeholder: '230' },
+    { id: 'a', label: 'Current (A)', step: 'any', placeholder: '10' },
+    { id: 'watts', label: 'Power (W)', step: 'any', placeholder: '2300' },
+    { id: 'va', label: 'Apparent power (VA)', step: 'any', placeholder: '2300' },
+    { id: 'pf', label: 'Power factor (1 for DC)', step: 'any', placeholder: '1' },
+    { id: 'system', label: 'System', type: 'select', options: [['1', 'Single phase'], ['3y', 'Three-phase Y (×√3)'], ['3d', 'Three-phase Δ (×3)']] },
+    { id: 'wh', label: 'Energy (Wh), for kwh2w', step: 'any', placeholder: '2000' },
+    { id: 'hours', label: 'Hours, for kwh2w', step: 'any', placeholder: '4' },
+  ],
+  compute: ({ mode, v, a, watts, va, pf, system, wh, hours }) => {
+    const V = n(v), I = n(a), W = n(watts), PF = (pf === '' || pf == null) ? 1 : n(pf);
+    const factor = system === '3y' ? SQRT3 : system === '3d' ? 3 : 1;
+    const systemLabel = system === '3y' ? 'star (×√3)' : system === '3d' ? 'delta (×3)' : 'single phase';
+    if (mode === 'a2w') {
+      if (!V || !I) return { error: 'Voltage and current are required.' };
+      if (PF <= 0 || PF > 1) return { error: 'Power factor must be between 0 and 1.' };
+      const p = V * I * PF * factor;
+      return {
+        values: { p: g(p), va: g(V * I * factor) },
+        steps: [`P = V × I × PF × ${systemLabel}`, `= ${g(V)} × ${g(I)} × ${g(PF, 4)} = ${g(p)} W`],
+        outputs: [{ id: 'p', label: 'Real power', unit: 'W' }, { id: 'va', label: 'Apparent power', unit: 'VA' }],
+      };
+    }
+    if (mode === 'w2a') {
+      if (!V || !W) return { error: 'Voltage and power are required.' };
+      if (PF <= 0 || PF > 1) return { error: 'Power factor must be between 0 and 1.' };
+      const amps = W / (V * PF * factor);
+      return {
+        values: { amps: g(amps), va: g(V * amps * factor) },
+        steps: [`I = P ÷ (V × PF) = ${g(W)} ÷ (${g(V)} × ${g(PF, 4)}) = ${g(amps)} A`, `VA = V × I × ${systemLabel} = ${g(V * amps * factor)} VA`],
+        outputs: [{ id: 'amps', label: 'Current', unit: 'A' }, { id: 'va', label: 'Apparent power', unit: 'VA' }],
+      };
+    }
+    if (mode === 'a2va') {
+      if (!V || !I) return { error: 'Voltage and current are required.' };
+      const va = V * I * factor;
+      return {
+        values: { va: g(va) },
+        steps: [`VA = V × I × ${systemLabel} = ${g(V)} × ${g(I)} × ${factor === 1 ? '' : g(factor, 4)} = ${g(va)} VA`],
+        outputs: [{ id: 'va', label: 'Apparent power', unit: 'VA' }],
+      };
+    }
+    if (mode === 'va2a') {
+      if (!V) return { error: 'Voltage is required.' };
+      const s = n(va);
+      if (!s) return { error: 'Apparent power (VA) is required.' };
+      const amps = s / (V * factor);
+      return {
+        values: { amps: g(amps) },
+        steps: [`I = S ÷ (V × ${factor === 1 ? '1' : g(factor, 4)}) = ${g(s)} ÷ (${g(V)} × ${factor === 1 ? '' : g(factor, 4)}) = ${g(amps)} A`],
+        outputs: [{ id: 'amps', label: 'Current', unit: 'A' }],
+      };
+    }
+    if (mode === 'kwh2w') {
+      const E = n(wh), H = n(hours);
+      if (!E || !H || H <= 0) return { error: 'Both energy (Wh) and hours (> 0) are required.' };
+      const p = E / H;
+      return {
+        values: { p: g(p), kw: g(p / 1000, 4) },
+        steps: [`P = E ÷ t = ${g(E)} Wh ÷ ${g(H)} h = ${g(p)} W`, `= ${g(p / 1000, 4)} kW`],
+        outputs: [{ id: 'p', label: 'Instantaneous power', unit: 'W' }],
+      };
     }
     return { error: 'Pick a question.' };
   },
@@ -2972,6 +3088,7 @@ export const TOOLS = [
   OHMS, DIVIDER, POWER_FACTOR, THREEPHASE, VOLTAGE_DROP, DBM, DECIBEL, EV, EFFICIENCY, ENERGY_BILL,
   PHOTOMETRY, LIGHTING, KIRCHHOFF, COULOMB,
   CAPACITOR, INDUCTOR, BATTERY,
+  CURRENT_POWER,
   EFFECTIVE_RATE,
   COMPLEX, RIGHT_TRIANGLE, ANTILOG,
   STDDEV, WEIGHTED_AVG, QUADRATIC, ROOTS, FACTORIAL, PERCENT, PERCENT_ERROR, GCF_LCM, FRACTION,
