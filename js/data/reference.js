@@ -1833,6 +1833,1934 @@ export const ARTICLES = {
     ],
   },
 
+  'kg-to-lbs': {
+    "title": "Kilograms to Pounds",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to lb.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and lb are units of mass/weight. 1 kg ≈ 2.20462 lb."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.20462262185"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204623 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.046226 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.462262 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 2.20462262185 to get lb."
+      }
+    ]
+  },
+  'lbs-to-kg': {
+    "title": "Pounds to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert lb to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "lb and kg are units of mass/weight. 1 lb = 0.45359237 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.453592 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.535924 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply lb by 0.45359237 to get kg."
+      }
+    ]
+  },
+  'kg-to-pound': {
+    "title": "Kilograms to Pounds",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to lb.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and lb are units of mass/weight. 1 kg ≈ 2.20462 lb."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.20462262185"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204623 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.046226 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.462262 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 2.20462262185 to get lb."
+      }
+    ]
+  },
+  'pound-to-kg': {
+    "title": "Pounds to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert lb to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "lb and kg are units of mass/weight. 1 lb = 0.45359237 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.453592 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.535924 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply lb by 0.45359237 to get kg."
+      }
+    ]
+  },
+  'grams-to-ounces': {
+    "title": "Grams to Ounces",
+    "kicker": "Weight conversion",
+    "summary": "Convert g to oz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "g and oz are units of mass/weight. 1 oz = 28.349523125 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = g × 0.03527396195"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.035274 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.35274 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 3.527396 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply g by 0.03527396195 to get oz."
+      }
+    ]
+  },
+  'ounces-to-grams': {
+    "title": "Ounces to Grams",
+    "kicker": "Weight conversion",
+    "summary": "Convert oz to g.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "oz and g are units of mass/weight. 1 oz = 28.349523125 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = oz × 28.349523125"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 28.349523 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 283.495231 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2834.952313 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply oz by 28.349523125 to get g."
+      }
+    ]
+  },
+  'gram-to-ounce': {
+    "title": "Grams to Ounces",
+    "kicker": "Weight conversion",
+    "summary": "Convert g to oz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "g and oz are units of mass/weight. 1 oz = 28.349523125 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = g × 0.03527396195"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.035274 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.35274 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 3.527396 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply g by 0.03527396195 to get oz."
+      }
+    ]
+  },
+  'kg-to-grams': {
+    "title": "Kilograms to Grams",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to g.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and g are units of mass/weight. 1 kg = 1000 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = kg × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 1000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 10000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 100000 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 1000 to get g."
+      }
+    ]
+  },
+  'grams-to-kg': {
+    "title": "Grams to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert g to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "g and kg are units of mass/weight. 1 kg = 1000 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = g × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.001 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.01 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 0.1 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply g by 0.001 to get kg."
+      }
+    ]
+  },
+  'lb-to-oz': {
+    "title": "Pounds to Ounces",
+    "kicker": "Weight conversion",
+    "summary": "Convert lb to oz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "lb and oz are units of mass/weight. 1 lb = 16 oz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = lb × 16"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 16 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 160 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 1600 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply lb by 16 to get oz."
+      }
+    ]
+  },
+  'oz-to-lb': {
+    "title": "Ounces to Pounds",
+    "kicker": "Weight conversion",
+    "summary": "Convert oz to lb.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "oz and lb are units of mass/weight. 1 lb = 16 oz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = oz × 0.0625"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 0.0625 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 0.625 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 6.25 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply oz by 0.0625 to get lb."
+      }
+    ]
+  },
+  'kg-to-oz': {
+    "title": "Kilograms to Ounces",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to oz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and oz are units of mass/weight. 1 kg ≈ 35.274 oz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = kg × 35.27396195"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 35.273962 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 352.73962 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 3527.396195 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 35.27396195 to get oz."
+      }
+    ]
+  },
+  'oz-to-kg': {
+    "title": "Ounces to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert oz to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "oz and kg are units of mass/weight. 1 oz = 28.349523125 g."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = oz × 0.028349523125"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 0.02835 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 0.283495 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2.834952 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply oz by 0.028349523125 to get kg."
+      }
+    ]
+  },
+  'stones-to-kg': {
+    "title": "Stones to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert st to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "st and kg are units of mass/weight. 1 stone = 6.35029318 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = st × 6.35029318"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 st = 6.350293 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 st = 63.502932 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 st = 635.029318 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply st by 6.35029318 to get kg."
+      }
+    ]
+  },
+  'kg-to-stones': {
+    "title": "Kilograms to Stones",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to st.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and st are units of mass/weight. 1 stone = 6.35029318 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "st = kg × 0.157473044418"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 0.157473 st"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 1.57473 st"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 15.747304 st"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 0.157473044418 to get st."
+      }
+    ]
+  },
+  'ton-to-kg': {
+    "title": "Tons to Kilograms",
+    "kicker": "Weight conversion",
+    "summary": "Convert ton to kg.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ton and kg are units of mass/weight. Using metric ton: 1 t = 1000 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = ton × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ton = 1000 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ton = 10000 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ton = 100000 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply ton by 1000 to get kg."
+      }
+    ]
+  },
+  'kg-to-ton': {
+    "title": "Kilograms to Tons",
+    "kicker": "Weight conversion",
+    "summary": "Convert kg to ton.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kg and ton are units of mass/weight. Using metric ton: 1 t = 1000 kg."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ton = kg × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 0.001 ton"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 0.01 ton"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 0.1 ton"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kg by 0.001 to get ton."
+      }
+    ]
+  },
+  'kw-to-hp': {
+    "title": "Kilowatts to Horsepower",
+    "kicker": "Power conversion",
+    "summary": "Convert kW to hp.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kW and hp are units of power. 1 kW ≈ 1.34102 mechanical horsepower."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089595"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.410221 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.102209 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kW by 1.341022089595 to get hp."
+      }
+    ]
+  },
+  'hp-to-kw': {
+    "title": "Horsepower to Kilowatts",
+    "kicker": "Power conversion",
+    "summary": "Convert hp to kW.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "hp and kW are units of power. 1 mechanical hp = 0.745699872 kW."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699871582"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.7457 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.456999 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.569987 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply hp by 0.745699871582 to get kW."
+      }
+    ]
+  },
+  'hp-to-watt': {
+    "title": "Horsepower to Watts",
+    "kicker": "Power conversion",
+    "summary": "Convert hp to W.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "hp and W are units of power. 1 mechanical hp = 745.699872 W."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = hp × 745.699871582"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 745.699872 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7456.998716 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74569.987158 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply hp by 745.699871582 to get W."
+      }
+    ]
+  },
+  'watt-to-hp': {
+    "title": "Watts to Horsepower",
+    "kicker": "Power conversion",
+    "summary": "Convert W to hp.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "W and hp are units of power. 1 mechanical hp = 745.699872 W."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = W × 0.00134102209"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 0.001341 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 0.01341 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 0.134102 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply W by 0.00134102209 to get hp."
+      }
+    ]
+  },
+  'kw-to-watt': {
+    "title": "Kilowatts to Watts",
+    "kicker": "Power conversion",
+    "summary": "Convert kW to W.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kW and W are units of power. 1 kW = 1000 W."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = kW × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 10000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 100000 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kW by 1000 to get W."
+      }
+    ]
+  },
+  'watt-to-kw': {
+    "title": "Watts to Kilowatts",
+    "kicker": "Power conversion",
+    "summary": "Convert W to kW.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "W and kW are units of power. 1 kW = 1000 W."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = W × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 0.001 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 0.01 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 0.1 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply W by 0.001 to get kW."
+      }
+    ]
+  },
+  'kw-to-bhp': {
+    "title": "Kilowatts to Brake Horsepower",
+    "kicker": "Power conversion",
+    "summary": "Convert kW to bhp.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kW and bhp are units of power. 1 kW ≈ 1.34102 bhp (mechanical)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "bhp = kW × 1.341022089595"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022 bhp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.410221 bhp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.102209 bhp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kW by 1.341022089595 to get bhp."
+      }
+    ]
+  },
+  'btuh-to-watt': {
+    "title": "BTU/h to Watts",
+    "kicker": "Power conversion",
+    "summary": "Convert BTU/h to W.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "BTU/h and W are units of power. 1 BTU/h ≈ 0.29307107 W."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = BTU/h × 0.29307107"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 BTU/h = 0.293071 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 BTU/h = 2.930711 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 BTU/h = 29.307107 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply BTU/h by 0.29307107 to get W."
+      }
+    ]
+  },
+  'watt-to-btuh': {
+    "title": "Watts to BTU/h",
+    "kicker": "Power conversion",
+    "summary": "Convert W to BTU/h.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "W and BTU/h are units of power. 1 W ≈ 3.41214 BTU/h."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "BTU/h = W × 3.412141633"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 3.412142 BTU/h"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 34.121416 BTU/h"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 341.214163 BTU/h"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply W by 3.412141633 to get BTU/h."
+      }
+    ]
+  },
+  'cm-to-inch': {
+    "title": "Centimeters to Inches",
+    "kicker": "Length conversion",
+    "summary": "Convert cm to in.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "cm and in are units of length. 1 inch = 2.54 cm."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.393700787402"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.393701 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937008 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.370079 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply cm by 0.393700787402 to get in."
+      }
+    ]
+  },
+  'inch-to-cm': {
+    "title": "Inches to Centimeters",
+    "kicker": "Length conversion",
+    "summary": "Convert in to cm.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "in and cm are units of length. 1 inch = 2.54 cm."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply in by 2.54 to get cm."
+      }
+    ]
+  },
+  'mm-to-inch': {
+    "title": "Millimeters to Inches",
+    "kicker": "Length conversion",
+    "summary": "Convert mm to in.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mm and in are units of length. 1 inch = 25.4 mm."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.393701 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937008 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply mm by 0.03937007874 to get in."
+      }
+    ]
+  },
+  'inch-to-mm': {
+    "title": "Inches to Millimeters",
+    "kicker": "Length conversion",
+    "summary": "Convert in to mm.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "in and mm are units of length. 1 inch = 25.4 mm."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply in by 25.4 to get mm."
+      }
+    ]
+  },
+  'km-to-mile': {
+    "title": "Kilometers to Miles",
+    "kicker": "Length conversion",
+    "summary": "Convert km to mi.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "km and mi are units of length. 1 mile = 1.609344 km."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.621371192237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.621371 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213712 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.137119 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply km by 0.621371192237 to get mi."
+      }
+    ]
+  },
+  'mile-to-km': {
+    "title": "Miles to Kilometers",
+    "kicker": "Length conversion",
+    "summary": "Convert mi to km.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mi and km are units of length. 1 mile = 1.609344 km."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply mi by 1.609344 to get km."
+      }
+    ]
+  },
+  'm-to-ft': {
+    "title": "Meters to Feet",
+    "kicker": "Length conversion",
+    "summary": "Convert m to ft.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "m and ft are units of length. 1 ft = 0.3048 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = m × 3.280839895013"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 3.28084 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 32.808399 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 328.08399 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply m by 3.280839895013 to get ft."
+      }
+    ]
+  },
+  'ft-to-m': {
+    "title": "Feet to Meters",
+    "kicker": "Length conversion",
+    "summary": "Convert ft to m.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ft and m are units of length. 1 ft = 0.3048 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = ft × 0.3048"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 0.3048 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 3.048 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 30.48 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply ft by 0.3048 to get m."
+      }
+    ]
+  },
+  'meter-to-feet': {
+    "title": "Meters to Feet",
+    "kicker": "Length conversion",
+    "summary": "Convert m to ft.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "m and ft are units of length. 1 ft = 0.3048 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = m × 3.280839895013"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 3.28084 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 32.808399 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 328.08399 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply m by 3.280839895013 to get ft."
+      }
+    ]
+  },
+  'feet-to-meter': {
+    "title": "Feet to Meters",
+    "kicker": "Length conversion",
+    "summary": "Convert ft to m.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ft and m are units of length. 1 ft = 0.3048 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = ft × 0.3048"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 0.3048 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 3.048 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 30.48 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply ft by 0.3048 to get m."
+      }
+    ]
+  },
+  'yard-to-meter': {
+    "title": "Yards to Meters",
+    "kicker": "Length conversion",
+    "summary": "Convert yd to m.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yd and m are units of length. 1 yd = 0.9144 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = yd × 0.9144"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 0.9144 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 9.144 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 91.44 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply yd by 0.9144 to get m."
+      }
+    ]
+  },
+  'meter-to-yard': {
+    "title": "Meters to Yards",
+    "kicker": "Length conversion",
+    "summary": "Convert m to yd.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "m and yd are units of length. 1 yd = 0.9144 m."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = m × 1.093613298338"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 1.093613 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 10.936133 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 109.36133 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply m by 1.093613298338 to get yd."
+      }
+    ]
+  },
+  'kj-to-joule': {
+    "title": "Kilojoules to Joules",
+    "kicker": "Energy conversion",
+    "summary": "Convert kJ to J.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kJ and J are units of energy/charge. 1 kJ = 1000 J."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 100000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kJ by 1000 to get J."
+      }
+    ]
+  },
+  'joule-to-kj': {
+    "title": "Joules to Kilojoules",
+    "kicker": "Energy conversion",
+    "summary": "Convert J to kJ.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "J and kJ are units of energy/charge. 1 kJ = 1000 J."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = J × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.001 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.01 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.1 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply J by 0.001 to get kJ."
+      }
+    ]
+  },
+  'kcal-to-cal': {
+    "title": "Kilocalories to Calories",
+    "kicker": "Energy conversion",
+    "summary": "Convert kcal to cal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kcal and cal are units of energy/charge. 1 kcal = 1000 cal."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = kcal × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 1000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 10000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kcal = 100000 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kcal by 1000 to get cal."
+      }
+    ]
+  },
+  'cal-to-kcal': {
+    "title": "Calories to Kilocalories",
+    "kicker": "Energy conversion",
+    "summary": "Convert cal to kcal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "cal and kcal are units of energy/charge. 1 kcal = 1000 cal."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = cal × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.001 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 0.01 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 0.1 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply cal by 0.001 to get kcal."
+      }
+    ]
+  },
+  'kcal-to-joule': {
+    "title": "Kilocalories to Joules",
+    "kicker": "Energy conversion",
+    "summary": "Convert kcal to J.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kcal and J are units of energy/charge. 1 kcal = 4184 J (thermochemical)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kcal × 4184"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 4184 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 41840 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kcal = 418400 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kcal by 4184 to get J."
+      }
+    ]
+  },
+  'joule-to-kcal': {
+    "title": "Joules to Kilocalories",
+    "kicker": "Energy conversion",
+    "summary": "Convert J to kcal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "J and kcal are units of energy/charge. 1 kcal = 4184 J (thermochemical)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = J × 0.000239005736"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.000239 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.00239 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.023901 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply J by 0.000239005736 to get kcal."
+      }
+    ]
+  },
+  'wh-to-mah': {
+    "title": "Watt-hours to Milliamp-hours",
+    "kicker": "Energy conversion",
+    "summary": "Convert Wh to mAh.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Wh and mAh relate through voltage. Requires voltage: mAh = (Wh × 1000) / V."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mAh = (Wh × 1000) / V"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10 Wh at 5 V = 2000 mAh"
+      },
+      {
+        "k": "formula",
+        "eq": "10 Wh at 3.7 V ≈ 2702.7 mAh"
+      },
+      {
+        "k": "formula",
+        "eq": "1 Wh at 12 V ≈ 83.333 mAh"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Requires voltage: mAh = (Wh × 1000) / V."
+      }
+    ]
+  },
+  'ah-to-mah': {
+    "title": "Amp-hours to Milliamp-hours",
+    "kicker": "Energy conversion",
+    "summary": "Convert Ah to mAh.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Ah and mAh are units of energy/charge. 1 Ah = 1000 mAh."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mAh = Ah × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 Ah = 1000 mAh"
+      },
+      {
+        "k": "formula",
+        "eq": "10 Ah = 10000 mAh"
+      },
+      {
+        "k": "formula",
+        "eq": "100 Ah = 100000 mAh"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply Ah by 1000 to get mAh."
+      }
+    ]
+  },
+  'mah-to-ah': {
+    "title": "Milliamp-hours to Amp-hours",
+    "kicker": "Energy conversion",
+    "summary": "Convert mAh to Ah.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mAh and Ah are units of energy/charge. 1 Ah = 1000 mAh."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Ah = mAh × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mAh = 0.001 Ah"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mAh = 0.01 Ah"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mAh = 0.1 Ah"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply mAh by 0.001 to get Ah."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
