@@ -5110,6 +5110,3041 @@ export const ARTICLES = {
     ]
   },
 
+  'cal-to-kj': {
+    "title": "thermochemical calorie to kilojoule",
+    "kicker": "Energy conversion",
+    "summary": "Convert thermochemical calorie (cal) to kilojoule (kJ).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and kilojoule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = cal × 0.004184"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.004184 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 0.04184 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 0.4184 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'celsius-to-fahrenheit': {
+    "title": "Celsius to Fahrenheit",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Celsius (°C) to Fahrenheit (°F).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Celsius and Fahrenheit are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°F = °C × 9/5 + 32"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °C = 33.8 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °C = 50 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °C = 212 °F"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'celsius-to-kelvin': {
+    "title": "Celsius to Kelvin",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Celsius (°C) to Kelvin (K).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Celsius and Kelvin are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "K = °C + 273.15"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °C = 274.15 K"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °C = 283.15 K"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °C = 373.15 K"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'cm-to-km': {
+    "title": "centimeter to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = cm × 0.00001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.00001 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.0001 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 0.001 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-meter': {
+    "title": "centimeter to meter",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to meter (m).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and meter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = cm × 0.01"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.01 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.1 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 1 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-mile': {
+    "title": "centimeter to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = cm × 0.000006213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.000006213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.00006213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 0.0006213711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-yard': {
+    "title": "centimeter to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = cm × 0.01093613298"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.01093613298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.1093613298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 1.093613298 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'degrees-to-radians': {
+    "title": "degree to radian",
+    "kicker": "Angle conversion",
+    "summary": "Convert degree (°) to radian (rad).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "degree and radian are units of angle."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "rad = ° × 0.01745329252"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ° = 0.01745329252 rad"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ° = 0.1745329252 rad"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ° = 1.745329252 rad"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the angle converter for other values."
+      }
+    ]
+  },
+  'ev-to-joule': {
+    "title": "electronvolt to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert electronvolt (eV) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "electronvolt and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = eV × 1.602176565e-19"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 eV = 1.602176565e-19 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 eV = 1.602176565e-18 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 eV = 1.602176565e-17 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'fahrenheit-to-celsius': {
+    "title": "Fahrenheit to Celsius",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Fahrenheit (°F) to Celsius (°C).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Fahrenheit and Celsius are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°C = (°F − 32) × 5/9"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °F = -17.22222222 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °F = -12.22222222 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °F = 37.77777778 °C"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'fahrenheit-to-kelvin': {
+    "title": "Fahrenheit to Kelvin",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Fahrenheit (°F) to Kelvin (K).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Fahrenheit and Kelvin are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "K = convert(°F)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °F = 255.9277778 K"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °F = 260.9277778 K"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °F = 310.9277778 K"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'feet-to-inch': {
+    "title": "foot to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = ft × 12"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 12 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 120 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 1200 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-km': {
+    "title": "foot to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = ft × 0.0003048"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 0.0003048 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 0.003048 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 0.03048 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-mile': {
+    "title": "foot to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = ft × 0.0001893939394"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 0.0001893939394 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 0.001893939394 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 0.01893939394 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-mm': {
+    "title": "foot to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = ft × 304.8"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 304.8 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 3048 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 30480 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-yard': {
+    "title": "foot to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = ft × 0.3333333333"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 0.3333333333 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 3.333333333 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 33.33333333 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'ghz-to-khz': {
+    "title": "gigahertz to kilohertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert gigahertz (GHz) to kilohertz (kHz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gigahertz and kilohertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kHz = GHz × 1000000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000000 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 GHz = 10000000 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 GHz = 100000000 kHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  'gram-to-kg': {
+    "title": "gram to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = g × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.001 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.01 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 0.1 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'gram-to-mg': {
+    "title": "gram to milligram",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to milligram (mg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and milligram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mg = g × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 1000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 10000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 100000 mg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'gram-to-pound': {
+    "title": "gram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = g × 0.002204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.002204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.02204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 0.2204622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'inch-to-km': {
+    "title": "inch to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = in × 0.0000254"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 0.0000254 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 0.000254 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 0.00254 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-meter': {
+    "title": "inch to meter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to meter (m).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and meter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = in × 0.0254"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 0.0254 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 0.254 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2.54 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mile': {
+    "title": "inch to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = in × 0.00001578282828"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 0.00001578282828 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 0.0001578282828 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 0.001578282828 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-yard': {
+    "title": "inch to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = in × 0.02777777778"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 0.02777777778 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 0.2777777778 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2.777777778 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'joule-to-ev': {
+    "title": "joule to electronvolt",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to electronvolt (eV).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and electronvolt are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "eV = J × 6241509343000000000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 6241509343000000000 eV"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 62415093430000000000 eV"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 624150934300000000000 eV"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kcal-to-kj': {
+    "title": "kilocalorie to kilojoule",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilocalorie (kcal) to kilojoule (kJ).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilocalorie and kilojoule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = kcal × 4.184"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 4.184 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 41.84 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kcal = 418.4 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kelvin-to-celsius': {
+    "title": "Kelvin to Celsius",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Kelvin (K) to Celsius (°C).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Kelvin and Celsius are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°C = K − 273.15"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 K = -272.15 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "10 K = -263.15 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "100 K = -173.15 °C"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'kelvin-to-fahrenheit': {
+    "title": "Kelvin to Fahrenheit",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Kelvin (K) to Fahrenheit (°F).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Kelvin and Fahrenheit are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°F = convert(K)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 K = -457.87 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "10 K = -441.67 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "100 K = -279.67 °F"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'kg-to-gram': {
+    "title": "kilogram to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = kg × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 1000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 10000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 100000 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-mg': {
+    "title": "kilogram to milligram",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to milligram (mg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and milligram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mg = kg × 1000000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 1000000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 10000000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 100000000 mg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-ounce': {
+    "title": "kilogram to ounce",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to ounce (oz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and ounce are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = kg × 35.27396584"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 35.27396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 352.7396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 3527.396584 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'khz-to-ghz': {
+    "title": "kilohertz to gigahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert kilohertz (kHz) to gigahertz (GHz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilohertz and gigahertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "GHz = kHz × 0.000001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kHz = 0.000001 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kHz = 0.00001 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kHz = 0.0001 GHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  'kj-to-cal': {
+    "title": "kilojoule to thermochemical calorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilojoule (kJ) to thermochemical calorie (cal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = kJ × 239.0057361"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 239.0057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 2390.057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 23900.57361 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kj-to-kcal': {
+    "title": "kilojoule to kilocalorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilojoule (kJ) to kilocalorie (kcal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and kilocalorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = kJ × 0.2390057361"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 0.2390057361 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 2.390057361 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 23.90057361 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'km-to-cm': {
+    "title": "kilometer to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = km × 100000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 100000 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 1000000 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 10000000 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-feet': {
+    "title": "kilometer to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = km × 3280.839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 3280.839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 32808.39895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 328083.9895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-inch': {
+    "title": "kilometer to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = km × 39370.07874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 39370.07874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 393700.7874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 3937007.874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-meter': {
+    "title": "kilometer to meter",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to meter (m).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and meter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = km × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 1000 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 10000 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 100000 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mm': {
+    "title": "kilometer to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = km × 1000000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 1000000 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 10000000 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 100000000 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-yard': {
+    "title": "kilometer to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = km × 1093.613298"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 1093.613298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 10936.13298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 109361.3298 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'meter-to-cm': {
+    "title": "meter to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = m × 100"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 100 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 1000 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 10000 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'meter-to-inch': {
+    "title": "meter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = m × 39.37007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 39.37007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 393.7007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 3937.007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'meter-to-km': {
+    "title": "meter to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = m × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 0.001 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 0.01 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 0.1 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'meter-to-mile': {
+    "title": "meter to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = m × 0.0006213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 0.0006213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 0.006213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 0.06213711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'meter-to-mm': {
+    "title": "meter to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = m × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 1000 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 10000 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 100000 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mg-to-gram': {
+    "title": "milligram to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert milligram (mg) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "milligram and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = mg × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mg = 0.001 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mg = 0.01 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mg = 0.1 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'mg-to-kg': {
+    "title": "milligram to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert milligram (mg) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "milligram and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = mg × 0.000001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mg = 0.000001 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mg = 0.00001 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mg = 0.0001 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'mile-to-cm': {
+    "title": "mile to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = mi × 160934.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 160934.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 1609344 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 16093440 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-feet': {
+    "title": "mile to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = mi × 5280"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 5280 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 52800 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 528000 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-inch': {
+    "title": "mile to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mi × 63360"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 63360 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 633600 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 6336000 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-meter': {
+    "title": "mile to meter",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to meter (m).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and meter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = mi × 1609.344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1609.344 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16093.44 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160934.4 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-mm': {
+    "title": "mile to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = mi × 1609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1609344 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16093440 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160934400 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-yard': {
+    "title": "mile to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = mi × 1760"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1760 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 17600 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 176000 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-feet': {
+    "title": "millimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = mm × 0.003280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.003280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 0.3280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-km': {
+    "title": "millimeter to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mm × 0.000001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.000001 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.00001 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 0.0001 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-meter': {
+    "title": "millimeter to meter",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to meter (m).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and meter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "m = mm × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.001 m"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.01 m"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 0.1 m"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-mile': {
+    "title": "millimeter to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = mm × 6.213711922e-7"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 6.213711922e-7 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.000006213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 0.00006213711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-yard': {
+    "title": "millimeter to yard",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to yard (yd).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and yard are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "yd = mm × 0.001093613298"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.001093613298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.01093613298 yd"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 0.1093613298 yd"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'ounce-to-gram': {
+    "title": "ounce to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = oz × 28.34952"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 28.34952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 283.4952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2834.952 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'ounce-to-kg': {
+    "title": "ounce to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = oz × 0.02834952"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 0.02834952 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 0.2834952 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2.834952 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'ounce-to-pound': {
+    "title": "ounce to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = oz × 0.06249999311"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 0.06249999311 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 0.6249999311 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 6.249999311 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-gram': {
+    "title": "pound to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = lb × 453.59237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 453.59237 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4535.9237 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45359.237 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-ounce': {
+    "title": "pound to ounce",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to ounce (oz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and ounce are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = lb × 16.00000176"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 16.00000176 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 160.0000176 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 1600.000176 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-stone': {
+    "title": "pound to stone",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to stone (st).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and stone are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "st = lb × 0.07142857143"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.07142857143 st"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 0.7142857143 st"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 7.142857143 st"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-ton': {
+    "title": "pound to metric ton",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to metric ton (t).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and metric ton are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "t = lb × 0.00045359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.00045359237 t"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 0.0045359237 t"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 0.045359237 t"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'radians-to-degrees': {
+    "title": "radian to degree",
+    "kicker": "Angle conversion",
+    "summary": "Convert radian (rad) to degree (°).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "radian and degree are units of angle."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "° = rad × 57.29577951"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 rad = 57.29577951 °"
+      },
+      {
+        "k": "formula",
+        "eq": "10 rad = 572.9577951 °"
+      },
+      {
+        "k": "formula",
+        "eq": "100 rad = 5729.577951 °"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the angle converter for other values."
+      }
+    ]
+  },
+  'stone-to-pound': {
+    "title": "stone to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert stone (st) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "stone and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = st × 14"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 st = 14 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 st = 140 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 st = 1400 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'ton-to-pound': {
+    "title": "metric ton to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert metric ton (t) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "metric ton and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = t × 2204.622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 t = 2204.622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 t = 22046.22622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 t = 220462.2622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'yard-to-cm': {
+    "title": "yard to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = yd × 91.44"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 91.44 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 914.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 9144 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'yard-to-feet': {
+    "title": "yard to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = yd × 3"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 3 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 30 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 300 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'yard-to-inch': {
+    "title": "yard to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = yd × 36"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 36 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 360 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 3600 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'yard-to-km': {
+    "title": "yard to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = yd × 0.0009144"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 0.0009144 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 0.009144 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 0.09144 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'yard-to-mile': {
+    "title": "yard to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = yd × 0.0005681818182"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 0.0005681818182 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 0.005681818182 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 0.05681818182 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'yard-to-mm': {
+    "title": "yard to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = yd × 914.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 914.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 9144 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 91440 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
