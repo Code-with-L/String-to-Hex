@@ -10,6 +10,15 @@ import { installDOM, toTree, walk } from './dom-shim.js';
 
 installDOM();
 
+// Some browser views start a clock interval when rendered. In Node that would
+// keep the test process alive forever, so let the shim's timers unwind.
+const nativeSetInterval = globalThis.setInterval;
+globalThis.setInterval = (...args) => {
+  const id = nativeSetInterval(...args);
+  id?.unref?.();
+  return id;
+};
+
 const { TOOLS } = await import('../js/data/tools.js');
 const { FAMILIES } = await import('../js/data/units.js');
 const VIEWS = await import('../js/ui/views.js');
@@ -231,4 +240,88 @@ test('the ASCII analyser feeds the converter byte inspector', () => {
   assert.ok(areas.length >= 1, 'ascii view has an analyser textarea');
   areas[0].value = 'Hi!';
   areas[0].dispatch('input', { target: areas[0] });
+});
+
+test('every internal link resolves to a route or record that exists', async () => {
+  const { GROUPS } = await import('../js/data/tools.js');
+  const TOOL_IDS = new Set(TOOLS.map((t) => t.id));
+  const GROUP_IDS = new Set(GROUPS.map((g) => g.id));
+  const WEB_SLUGS = CONTENT.WEB_TOOLS
+    .map((t) => t.href)
+    .filter((h) => h.startsWith('#/web-tools/'))
+    .map((h) => h.slice('#/web-tools/'.length));
+
+  const HEADS = new Set([
+    'convert', 'tools', 'calc', 'conversion', 'web-tools', 'math', 'electricity',
+    'tool', 'units', 'ascii', 'base', 'learn', 'read', 'glossary', 'symbols',
+    'tables', 'resistor-colours', 'notepad', 'html-editor', 'entities', 'about',
+  ]);
+
+  const nodes = [
+    ['home', CONTENT.viewHome()],
+    ['calc', CONTENT.viewCalc(route('/calc'))],
+    ['calc/math', CONTENT.viewCalc(route('/calc/math'))],
+    ['conversion', CONTENT.viewConversion()],
+    ['web-tools', CONTENT.viewWebTools(route('/web-tools'))],
+    ['learn', CONTENT.viewLearn()],
+    ['math', CONTENT.viewMathRef()],
+    ['electricity', CONTENT.viewElectricityRef()],
+    ['glossary', CONTENT.viewGlossary()],
+    ['symbols', CONTENT.viewSymbols()],
+    ['tables', CONTENT.viewTables()],
+    ['units', VIEWS.viewUnits(route('/units'))],
+    ['units/length', VIEWS.viewUnits(route('/units/length'))],
+    ['tools', VIEWS.viewTools(route('/tools'))],
+    ['ascii', VIEWS.viewAscii()],
+    ['base', VIEWS.viewBase()],
+    ['about', VIEWS.viewAbout()],
+    ['notepad', TOOLVIEWS.viewNotepad()],
+    ['html-editor', TOOLVIEWS.viewHtmlEditor()],
+    ['entities', TOOLVIEWS.viewEntities()],
+    ...WEB_SLUGS.map((slug) => [`web-tools/${slug}`, CONTENT.viewWebTools(route(`/web-tools/${slug}`))]),
+    ...Object.keys(ARTICLES).slice(0, 25).map((slug) => [`read/${slug}`, CONTENT.viewArticle(slug)]),
+    ...Object.keys(GLOSSARY).slice(0, 15).map((key) => [`glossary/${key}`, CONTENT.viewGlossaryEntry(key)]),
+    ...TOOLS.slice(0, 15).map((t) => [`tool/${t.id}`, VIEWS.viewTool(route(`/tool/${t.id}`))]),
+  ];
+
+  const bad = [];
+  for (const [label, node] of nodes) {
+    for (const el of walk(toTree(node))) {
+      const href = el.attributes?.href ?? '';
+      if (!href || !href.startsWith('#')) continue;
+      if (href === '#' || href === '#main') continue;
+      if (!href.startsWith('#/')) {
+        bad.push(`${label}: bare hash link ${href}`);
+        continue;
+      }
+      const seg = href.slice(1).split('?')[0].split('/').filter(Boolean);
+      if (!seg.length) continue;
+      const [head, sub] = seg;
+      if (!HEADS.has(head)) { bad.push(`${label}: unknown route ${href}`); continue; }
+      if (head === 'tool' && sub && !TOOL_IDS.has(sub)) bad.push(`${label}: unknown tool ${href}`);
+      if (head === 'read' && sub && !ARTICLES[sub]) bad.push(`${label}: unknown article ${href}`);
+      if (head === 'glossary' && sub && !GLOSSARY[sub]) bad.push(`${label}: unknown glossary term ${href}`);
+      if (head === 'units' && sub && !FAMILIES[sub]) bad.push(`${label}: unknown unit family ${href}`);
+      if (head === 'web-tools' && sub && !WEB_SLUGS.includes(sub)) bad.push(`${label}: unknown web tool ${href}`);
+      if ((head === 'calc' || head === 'tools') && sub && !GROUP_IDS.has(sub)) bad.push(`${label}: unknown calculator group ${href}`);
+    }
+  }
+  assert.deepEqual(bad, []);
+});
+
+test('the web tools contents table links and targets line up', async () => {
+  const els = walk(toTree(CONTENT.viewWebTools(route('/web-tools'))));
+  const table = els.find((e) => e.tagName === 'TABLE');
+  assert.ok(table, 'web tools page renders a contents table');
+  const links = els.filter((e) => e.tagName === 'A' && e.parentNode?.tagName === 'TD');
+  assert.ok(links.length >= 6, `expected a contents link per subtopic, saw ${links.length}`);
+  const ids = new Set(els.filter((e) => e.attributes.id).map((e) => e.attributes.id));
+  for (const link of links) {
+    const href = link.attributes.href ?? '';
+    assert.ok(!href.startsWith('#wt-'), `contents link ${href} would change the hash route`);
+  }
+  const headings = els.filter((e) => e.tagName === 'H2').map((e) => e.textContent);
+  assert.ok(headings.includes('Contents'), 'contents heading is present');
+  for (const id of ids) assert.ok(id.startsWith('wt-'), `unexpected id ${id}`);
+  assert.ok(ids.size === links.length, 'every contents row has a matching section id');
 });

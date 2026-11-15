@@ -41,8 +41,10 @@ the first load.
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
 | **76 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, capacitor and inductor maths, battery capacity, effective interest, statistics, quadratic roots, complex numbers, decibels, mortgage, GPA, colour, photometry, room lighting, hashing, passwords and more |
-| **Reference library** | 25 formula articles (ohms-law, kirchhoff, probability distributions…), 44 glossary terms, 49 Commons-sourced SVG circuit symbols (with per-file attribution in `SYMBOLS.md`) and the resistor-colour/wire-gauge/E-series tables — every entry definition + intuition + worked formula |
-| **Static SEO pages** | 181 real URLs prerendered by `scripts/prerender.mjs` (`/tool/…`, `/read/…`, `/glossary/…`) so crawlers get indexable HTML without needing JavaScript |
+| **Reference library** | 430 articles, 44 glossary terms, 49 Commons-sourced SVG circuit symbols (with per-file attribution in `SYMBOLS.md`) and the resistor-colour/wire-gauge/E-series tables — each entry with definition, intuition and worked formula |
+| **Web tools** | Browser-based online tools (alarm clock, stopwatch, timer, calendar, notes/to-do, counters, charts, recorders and more) with local-only processing where the browser allows it and clear capability notes where it does not |
+| **Topic navigation** | RapidTables-style topics: Home, Calculators, Conversion, Web Tools, Math, Electricity and Reference, each with a Contents list and visible subtopics |
+| **Static SEO pages** | 635 real URLs prerendered by `scripts/prerender.mjs` (topic hubs, `/tool/…`, `/read/…`, `/glossary/…`, `/units/…`, `/web-tools/…`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |
 | **Zero dependencies** | No framework, no bundler, no CDN — vanilla ES modules throughout |
@@ -59,7 +61,7 @@ There is no build step. `npm start` only runs a static file server, which is nee
 service workers do not register from `file://` URLs.
 
 ```bash
-npm test           # 96 tests: engine values + view rendering
+npm test           # 98 tests: engine values + view rendering + route/link integrity
 npm run check      # tests + project validation (manifest, SW, data, syntax)
 npm run build      # regenerate icons + sitemap + prerendered pages (635 in current build)
 npm run verify     # build + everything, plus a real headless-Chrome pass

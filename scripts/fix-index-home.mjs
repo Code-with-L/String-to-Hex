@@ -149,7 +149,7 @@ s = s.replace(
           <li><a href="#/notepad">Online notepad</a></li>
           <li><a href="#/web-tools/stopwatch">Stopwatch</a></li>
           <li><a href="#/web-tools/countdown-timer">Countdown timer</a></li>
-          <li><a href="#/web-tools/online-calculator">Online calculator</a></li>
+          <li><a href="#/tool/scientific-calc">Online calculator</a></li>
           <li><a href="about/">About this site</a></li>
         </ul>
       </div>`

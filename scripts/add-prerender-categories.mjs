@@ -56,8 +56,8 @@ const WEB_TOOLS_ALL = [
   ...WEB_TOOLS.map(t => ({ title: t.title, href: \`#/web-tools/\${t.slug}\` })),
   { title: 'Online Calculator', href: '#/tool/scientific-calc' },
   { title: 'Online Notepad', href: '#/notepad' },
-  { title: 'Password generator', href: '#/tool/password-generator' },
-  { title: 'Random number generator', href: '#/tool/random-number' },
+  { title: 'Password generator', href: '#/tool/password' },
+  { title: 'Random number generator', href: '#/tool/random' },
   { title: 'Text editor', href: '#/html-editor' },
 ];
 

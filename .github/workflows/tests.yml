@@ -49,8 +49,8 @@ jobs:
           node scripts/make-og.mjs
           node scripts/prerender.mjs
           CHANGED="$(git status --porcelain --untracked-files=all -- \
-            read tool glossary units learn tools symbols tables ascii \
-            notepad html-editor entities convert about sitemap.xml robots.txt icons/og.png)"
+            read tool glossary units learn tools symbols tables ascii calc conversion \
+            web-tools math electricity notepad html-editor entities convert about sitemap.xml robots.txt icons/og.png)"
           if [ -n "$CHANGED" ]; then
             echo "::error::generated files are out of date — run 'npm run build' and commit the result"
             echo "$CHANGED"

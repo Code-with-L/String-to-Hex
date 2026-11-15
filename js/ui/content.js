@@ -657,9 +657,9 @@ export const WEB_TOOLS = [
   { title: 'Online Mirror', href: '#/web-tools/mirror' },
   { title: 'Online Notepad', href: '#/notepad' },
   { title: 'Online Notes', href: '#/web-tools/notes' },
-  { title: 'Password generator', href: '#/tool/password-generator' },
+  { title: 'Password generator', href: '#/tool/password' },
   { title: 'Pie chart maker', href: '#/web-tools/pie-chart' },
-  { title: 'Random number generator', href: '#/tool/random-number' },
+  { title: 'Random number generator', href: '#/tool/random' },
   { title: 'XY Scatter plot maker', href: '#/web-tools/scatter-plot' },
   { title: 'Scoreboard online', href: '#/web-tools/scoreboard' },
   { title: 'Screen recorder online', href: '#/web-tools/screen-recorder' },
@@ -695,12 +695,21 @@ export function viewWebTools(route) {
   const sub = route?.segments?.[1];
   if (sub) return viewWebToolPage(sub);
   const groups = WEB_TOOL_GROUPS.map(g => ({ ...g, tools: g.items.map(webToolItem).filter(Boolean) })).filter(g => g.tools.length);
+  const jump = (id) => (event) => {
+    event.preventDefault();
+    const target = document.getElementById('wt-' + id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   const node = frag(
     crumbs({ label: 'Web Tools' }),
     el('section', { class: 'page-head' }, el('h1', {}, 'Online Tools'), el('p', {}, 'Free browser-based online tools, organized by topic.')),
     el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, 'Contents')),
-      el('ul', { class: 'link-list topic-list' }, ...groups.map(g => el('li', {}, el('a', { href: '#wt-' + g.id }, g.title), ` (${g.tools.length})`))),
+      el('div', { class: 'table-scroll' }, el('table', { class: 'toc-table' },
+        el('thead', {}, el('tr', {}, el('th', {}, 'Subtopic'), el('th', {}, 'Tools'))),
+        el('tbody', {}, ...groups.map((g) => el('tr', {},
+          el('td', {}, el('a', { href: '#/web-tools', onclick: jump(g.id) }, g.title)),
+          el('td', { class: 'mono' }, String(g.tools.length))))))),
     ),
     ...groups.map(g => el('section', { class: 'section', id: 'wt-' + g.id },
       el('div', { class: 'section-head' }, el('h2', {}, g.title)),

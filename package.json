@@ -23,6 +23,7 @@
     "prerender": "node scripts/prerender.mjs",
     "build": "node scripts/make-og.mjs && node scripts/prerender.mjs",
     "check": "npm run test && node scripts/validate.mjs",
+    "audit": "node scripts/audit-links.mjs",
     "verify": "npm run build && npm run check && npm run test:browser",
     "serve": "node scripts/serve.mjs"
   },

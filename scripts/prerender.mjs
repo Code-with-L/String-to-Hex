@@ -293,21 +293,39 @@ ${GROUPS.map((g) => `        <li><strong>${esc(g.title)}:</strong> ${TOOLS.filte
     </section>`,
 });
 
-/* tool index */
-PAGES.push({
-  path: '/tools/index.html',
-  hash: '/tools',
-  title: 'Calculators - HexKit',
-  description: 'Math, electrical, financial, health, time and other calculators organized by topic.',
-  priority: '0.9',
-  jsonLd: graph([crumbsLd('/tools/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/tools/index.html' }])]),
-  body: (up) => `    ${nav(up, [{ label: 'Calculators' }])}
+/* calculator hubs: /tools/ and the /calc/ alias used by the no-JS home page */
+const calcHubBody = (up) => `    ${nav(up, [{ label: 'Calculators' }])}
     <header class="page-head"><h1>Online Calculators</h1><p>Free online calculators organized by topic. Each tool runs in your browser and works offline.</p></header>
     ${CALC_CATEGORIES.map(cat => {
       const items = TOOLS.filter(t => t.group === cat.id);
       if (!items.length) return '';
       return `<section class="section"><div class="section-head"><h2>${esc(cat.title)}</h2><a href="${up}calc/${esc(cat.id)}/" style="font-size:14px">Open category →</a></div><ul class="link-list topic-list">${items.map(t => `<li><a href="${up}tool/${esc(t.id)}/">${esc(t.title)}</a> — ${esc(t.blurb || '')}</li>`).join('')}</ul></section>`;
-    }).join('')}`,
+    }).join('')}`;
+
+for (const [path, hash] of [['/tools/index.html', '/tools'], ['/calc/index.html', '/calc']]) {
+  PAGES.push({
+    path,
+    hash,
+    title: 'Calculators - HexKit',
+    description: 'Math, electrical, financial, health, time and other calculators organized by topic.',
+    priority: '0.9',
+    jsonLd: graph([crumbsLd(path, [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/tools/index.html' }])]),
+    body: calcHubBody,
+  });
+}
+
+/* conversion hub - the no-JS home page and the nav both link to /conversion/ */
+PAGES.push({
+  path: '/conversion/index.html',
+  hash: '/conversion',
+  title: 'Conversion - HexKit',
+  description: 'Length, weight, temperature, area, volume, speed, power, energy and more unit converters.',
+  priority: '0.9',
+  jsonLd: graph([crumbsLd('/conversion/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Conversion', href: '/conversion/index.html' }])]),
+  body: (up) => `    ${nav(up, [{ label: 'Conversion' }])}
+    <header class="page-head"><h1>Unit Conversion</h1><p>Online unit converters organized by topic. Each converter runs in your browser and works offline.</p></header>
+    <section class="section"><div class="section-head"><h2>Conversion categories</h2></div><ul class="link-list topic-list">${CONVERSION_CATEGORIES.map(cat => `<li><a href="${up}#/units/${esc(cat.id)}">${esc(cat.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Number &amp; text conversion</h2></div><ul class="link-list topic-list"><li><a href="${up}#/convert">Text, hex, binary, decimal, octal, Base64 converter</a></li><li><a href="${up}#/ascii">ASCII table</a></li><li><a href="${up}#/base">Number base converter</a></li></ul></section>`,
 });
 
 /* one page per tool */
@@ -781,6 +799,26 @@ const CALC_CATEGORIES = [
   { id: 'general', title: 'Other calculators', desc: 'General purpose calculators and tools.' },
 ];
 
+/* one page per calculator category (linked from /tools/ and /calc/) */
+for (const cat of CALC_CATEGORIES) {
+  const items = TOOLS.filter((t) => t.group === cat.id);
+  if (!items.length) continue;
+  const path = `/calc/${cat.id}/index.html`;
+  PAGES.push({
+    path,
+    hash: `/calc/${cat.id}`,
+    title: `${cat.title} - HexKit`,
+    description: `${cat.desc} ${items.length} browser-based calculators that run locally and work offline.`,
+    jsonLd: graph([
+      { '@type': 'CollectionPage', '@id': `${ORIGIN}${cleanPath(path)}#page`, name: cat.title, description: cat.desc, isPartOf: { '@id': `${ORIGIN}/#website` } },
+      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Calculators', href: '/tools/' }, { name: cat.title, href: cleanPath(path) }]),
+    ]),
+    body: (up) => `    ${nav(up, [{ label: 'Calculators', href: `${up}tools/` }, { label: cat.title }])}
+    <header class="page-head"><h1>${esc(cat.title)}</h1><p>${esc(cat.desc)}</p></header>
+    <section class="section"><div class="grid grid-2">${items.map((t) => `<a class="tool-card" href="${up}tool/${esc(t.id)}/"><h3>${esc(t.title)}</h3><p>${esc(t.blurb || '')}</p></a>`).join('')}</div></section>`,
+  });
+}
+
 const CONVERSION_CATEGORIES = [
   { id: 'length', title: 'Length conversion' }, { id: 'mass', title: 'Weight conversion' }, { id: 'temperature', title: 'Temperature conversion' },
   { id: 'area', title: 'Area conversion' }, { id: 'volume', title: 'Volume conversion' }, { id: 'speed', title: 'Speed conversion' },
@@ -811,8 +849,8 @@ const WEB_TOOLS_ALL = [
   ...WEB_TOOLS.map(t => ({ title: t.title, href: `#/web-tools/${t.slug}` })),
   { title: 'Online Calculator', href: '#/tool/scientific-calc' },
   { title: 'Online Notepad', href: '#/notepad' },
-  { title: 'Password generator', href: '#/tool/password-generator' },
-  { title: 'Random number generator', href: '#/tool/random-number' },
+  { title: 'Password generator', href: '#/tool/password' },
+  { title: 'Random number generator', href: '#/tool/random' },
   { title: 'Text editor', href: '#/html-editor' },
 ];
 const WEB_TOOL_GROUPS = [
@@ -832,7 +870,9 @@ function webToolItem(title){ return WEB_TOOLS_ALL.find(t => t.title === title); 
   const body = (up) => `
     <nav class="crumbs" aria-label="Breadcrumb"><a href="${up}#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Web Tools</span></nav>
     <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools, organized by topic.</p></section>
-    <section class="section"><div class="section-head"><h2>Contents</h2></div><ul class="link-list topic-list">${groups.map(g => `<li><a href="#wt-${esc(g.id)}">${esc(g.title)}</a> (${g.tools.length})</li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Contents</h2></div>
+      <div class="table-scroll"><table class="toc-table"><thead><tr><th>Subtopic</th><th>Tools</th></tr></thead><tbody>${groups.map(g => `<tr><td><a href="${up}#/web-tools" onclick="document.getElementById('wt-${esc(g.id)}')?.scrollIntoView();return false">${esc(g.title)}</a></td><td class="mono">${g.tools.length}</td></tr>`).join('')}</tbody></table></div>
+    </section>
     ${groups.map(g => `<section class="section" id="wt-${esc(g.id)}"><div class="section-head"><h2>${esc(g.title)}</h2></div><ul class="link-list topic-list">${g.tools.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}
   `;
   PAGES.push({

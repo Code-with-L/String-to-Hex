@@ -84,8 +84,8 @@ export function viewWebTools() {
     { href:'#/convert', title:'Text/Hex/Binary Converter', desc:'Convert text and numbers between formats.' },
     { href:'#/ascii', title:'ASCII Table', desc:'View ASCII character codes.' },
     { href:'#/tool/color-convert', title:'Color Converter', desc:'Convert between RGB, HEX, HSL, HSV, CMYK.' },
-    { href:'#/tool/password-generator', title:'Password Generator', desc:'Generate secure passwords.' },
-    { href:'#/tool/random-number', title:'Random Number Generator', desc:'Generate random numbers.' },
+    { href:'#/tool/password', title:'Password Generator', desc:'Generate secure passwords.' },
+    { href:'#/tool/random', title:'Random Number Generator', desc:'Generate random numbers.' },
     { href:'#/tool/case-convert', title:'Case Converter', desc:'Convert text case.' },
     { href:'#/tool/hash', title:'Hash / Checksum Tools', desc:'Compute hashes and checksums.' },
   ];
