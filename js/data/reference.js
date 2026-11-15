@@ -15814,6 +15814,1292 @@ export const ARTICLES = {
     ]
   },
 
+  '1-amp-to-watt': {
+    "title": "1 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 1 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 1 A × 12 V = 12 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 1 A × 120 V = 120 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 1 A × 230 V = 230 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 1 A × 120 V = 96 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 1 A × 230 V = 184 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '1-cal-to-kcal': {
+    "title": "1 cal to kcal",
+    "kicker": "Energy conversion",
+    "summary": "Convert 1 thermochemical calorie to kilocalorie.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and kilocalorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = cal × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.001 kcal"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.001 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 0.01 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  '1-ghz-to-hz': {
+    "title": "1 GHz to Hz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 1 gigahertz to hertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gigahertz and hertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = GHz × 1000000000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000000000 Hz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 GHz = 10000000000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '1-ghz-to-mhz': {
+    "title": "1 GHz to MHz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 1 gigahertz to megahertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gigahertz and megahertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "MHz = GHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000 MHz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 GHz = 10000 MHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '1-kcal-to-cal': {
+    "title": "1 kcal to cal",
+    "kicker": "Energy conversion",
+    "summary": "Convert 1 kilocalorie to thermochemical calorie.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilocalorie and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = kcal × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 1000 cal"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 1000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 10000 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  '1-khz-to-hz': {
+    "title": "1 kHz to Hz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 1 kilohertz to hertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilohertz and hertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = kHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kHz = 1000 Hz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kHz = 1000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kHz = 10000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '1-kj-to-joule': {
+    "title": "1 kJ to J",
+    "kicker": "Energy conversion",
+    "summary": "Convert 1 kilojoule to joule.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  '1-mhz-to-hz': {
+    "title": "1 MHz to Hz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 1 megahertz to hertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "megahertz and hertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = MHz × 1000000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000000 Hz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 MHz = 10000000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '1-mhz-to-khz': {
+    "title": "1 MHz to kHz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 1 megahertz to kilohertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "megahertz and kilohertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kHz = MHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000 kHz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 MHz = 10000 kHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '1-watt-to-amp': {
+    "title": "1 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 1-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1 W / 12 V = 0.083 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1 W / (1 × 120 V) = 0.008 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1 W / (0.8 × 120 V) = 0.01 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1 W / (1 × 230 V) = 0.004 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1 W / (0.8 × 230 V) = 0.005 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '10-amp-to-watt': {
+    "title": "10 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 10 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 10 A × 12 V = 120 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 10 A × 120 V = 1200 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 10 A × 230 V = 2300 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 10 A × 120 V = 960 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 10 A × 230 V = 1840 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '100-amp-to-watt': {
+    "title": "100 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 100 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 100 A × 12 V = 1200 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 100 A × 120 V = 12000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 100 A × 230 V = 23000 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 100 A × 120 V = 9600 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 100 A × 230 V = 18400 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '100-mhz-to-hz': {
+    "title": "100 MHz to Hz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert 100 megahertz to hertz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "megahertz and hertz are units of frequency."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = MHz × 1000000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "100 MHz = 100000000 Hz"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 MHz = 10000000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the frequency converter for other values."
+      }
+    ]
+  },
+  '100-watt-to-amp': {
+    "title": "100 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 100-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 100 W / 12 V = 8.333 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 100 W / (1 × 120 V) = 0.833 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 100 W / (0.8 × 120 V) = 1.042 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 100 W / (1 × 230 V) = 0.435 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 100 W / (0.8 × 230 V) = 0.543 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '1000-watt-to-amp': {
+    "title": "1000 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 1000-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1000 W / 12 V = 83.333 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1000 W / (1 × 120 V) = 8.333 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1000 W / (0.8 × 120 V) = 10.417 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1000 W / (1 × 230 V) = 4.348 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1000 W / (0.8 × 230 V) = 5.435 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '1200-watt-to-amp': {
+    "title": "1200 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 1200-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1200 W / 12 V = 100 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1200 W / (1 × 120 V) = 10 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1200 W / (0.8 × 120 V) = 12.5 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1200 W / (1 × 230 V) = 5.217 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 1200 W / (0.8 × 230 V) = 6.522 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '15-amp-to-watt': {
+    "title": "15 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 15 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 15 A × 12 V = 180 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 15 A × 120 V = 1800 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 15 A × 230 V = 3450 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 15 A × 120 V = 1440 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 15 A × 230 V = 2760 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '2-amps-to-watt': {
+    "title": "2 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 2 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 2 A × 12 V = 24 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 2 A × 120 V = 240 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 2 A × 230 V = 460 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 2 A × 120 V = 192 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 2 A × 230 V = 368 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '2-kj-to-joule': {
+    "title": "2 kJ to J",
+    "kicker": "Energy conversion",
+    "summary": "Convert 2 kilojoule to joule.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "2 kJ = 2000 J"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  '2000-watt-to-amp': {
+    "title": "2000 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 2000-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 2000 W / 12 V = 166.667 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 2000 W / (1 × 120 V) = 16.667 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 2000 W / (0.8 × 120 V) = 20.833 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 2000 W / (1 × 230 V) = 8.696 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 2000 W / (0.8 × 230 V) = 10.87 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '3-amp-to-watt': {
+    "title": "3 Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate power in watts for 3 amps at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power (watts) depends on current (amps), voltage, and for AC circuits the power factor. Use P = I × V for DC and P = PF × I × V for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC / Resistive examples"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 3 A × 12 V = 36 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 3 A × 120 V = 360 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 3 A × 230 V = 690 W"
+      },
+      {
+        "k": "h3",
+        "t": "AC with power factor 0.8"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 3 A × 120 V = 288 W"
+      },
+      {
+        "k": "formula",
+        "eq": "P = 0.8 × 3 A × 230 V = 552 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '5-kj-to-joule': {
+    "title": "5 kJ to J",
+    "kicker": "Energy conversion",
+    "summary": "Convert 5 kilojoule to joule.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Result"
+      },
+      {
+        "k": "formula",
+        "eq": "5 kJ = 5000 J"
+      },
+      {
+        "k": "h3",
+        "t": "Other examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  '500-watt-to-amp': {
+    "title": "500 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 500-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 500 W / 12 V = 41.667 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 500 W / (1 × 120 V) = 4.167 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 500 W / (0.8 × 120 V) = 5.208 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 500 W / (1 × 230 V) = 2.174 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 500 W / (0.8 × 230 V) = 2.717 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '600-watt-to-amp': {
+    "title": "600 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 600-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 600 W / 12 V = 50 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 600 W / (1 × 120 V) = 5 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 600 W / (0.8 × 120 V) = 6.25 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 600 W / (1 × 230 V) = 2.609 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 600 W / (0.8 × 230 V) = 3.261 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+  '800-watt-to-amp': {
+    "title": "800 Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "How to calculate current in amperes for a 800-watt load at common voltages.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current (amps) depends on power (watts), voltage, and for AC circuits the power factor. Use I = P / V for DC and I = P / (PF × V) for AC."
+      },
+      {
+        "k": "h3",
+        "t": "DC: 12 V supply"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 800 W / 12 V = 66.667 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 120 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 800 W / (1 × 120 V) = 6.667 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 800 W / (0.8 × 120 V) = 8.333 A"
+      },
+      {
+        "k": "h3",
+        "t": "AC: 230 V supply"
+      },
+      {
+        "k": "p",
+        "t": "Resistive load (PF = 1):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 800 W / (1 × 230 V) = 3.478 A"
+      },
+      {
+        "k": "p",
+        "t": "Inductive load (example PF = 0.8):"
+      },
+      {
+        "k": "formula",
+        "eq": "I = 800 W / (0.8 × 230 V) = 4.348 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the Current / power calculator for other values."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
