@@ -183,6 +183,7 @@ export function viewConvert(route) {
   run();
 
   return frag(
+    crumbs(el('a', { href: '#/conversion' }, 'Conversion'), el('span', {}, 'Text & base converter')),
     crumbs(el('a', { href: '#/convert' }, 'Converter'), el('span', {}, `${from.toUpperCase()} to ${to.toUpperCase()}`)),
     el('section', { class: 'page-head' },
       el('h1', {}, `${FORMATS.find((f) => f.id === from).label} → ${FORMATS.find((f) => f.id === to).label}`),
@@ -494,12 +495,15 @@ export function viewUnits(route) {
   const fam = route.segments[1];
   if (!fam || !FAMILIES[fam]) {
     return frag(
-      el('section', { class: 'page-head' }, el('h1', {}, 'Unit families'),
+      crumbs(el('a', { href: '#/conversion' }, 'Conversion'), el('span', {}, 'Unit families')),
+      el('section', { class: 'page-head' },
+        el('span', { class: 'hero-eyebrow' }, 'Conversion'),
+        el('h1', {}, 'Unit families'),
         el('p', {}, 'Pick a family to see every conversion pair and reference factor.')),
       el('div', { class: 'grid grid-2' },
         ...FAMILY_IDS.map((id) => el('a', { class: 'tool-card', href: `#/units/${id}` },
           el('h3', {}, FAMILIES[id].title),
-          el('p', {}, `${Object.keys(FAMILIES[id].units).length} units · base unit ${FAMILIES[id].baseName}`)))),
+          el('p', {}, `${Object.keys(FAMILIES[id].units).length} units — base unit ${FAMILIES[id].baseName}`)))),
     );
   }
 
@@ -517,8 +521,9 @@ export function viewUnits(route) {
   }
 
   return frag(
-    crumbs(el('a', { href: '#/units' }, 'Units'), el('span', {}, F.title)),
+    crumbs(el('a', { href: '#/conversion' }, 'Conversion'), el('a', { href: '#/units' }, 'Unit families'), el('span', {}, F.title)),
     el('section', { class: 'page-head' },
+      el('span', { class: 'hero-eyebrow' }, 'Conversion'),
       el('h1', {}, `${F.title} converters`),
       el('p', {}, `All ${rows.length} ordered pairs, driven by the exact reference factors. Base unit: ${F.baseName} (${F.base}).`),
       F.note ? el('p', { style: 'color:var(--warn);font-size:14px' }, F.note) : null),
@@ -530,7 +535,7 @@ export function viewUnits(route) {
         el('tbody', {}, ...keys.map((k) => el('tr', {},
           el('td', {}, unitName(fam, k)),
           el('td', { class: 'mono' }, unitSymbol(fam, k)),
-          el('td', { class: 'mono' }, F.units[k].f === 1 ? '—' : `× ${F.units[k].f}`),
+          el('td', { class: 'mono' }, F.units[k].f === 1 ? '-' : `× ${F.units[k].f}`),
           el('td', { class: 'mono' }, fmtNum(1 / F.units[k].f, 12))))))),
       F.affineNote ? el('p', { style: 'color:var(--muted);font-size:13px' }, F.affineNote) : null,
     ),
@@ -543,6 +548,7 @@ export function viewUnits(route) {
     ),
   );
 }
+
 
 /* ── ASCII ──────────────────────────────────────────────────────────────── */
 
@@ -587,7 +593,7 @@ export function viewAscii() {
   sample.addEventListener('input', analyseNow);
 
   return frag(
-    crumbs(el('span', {}, 'ASCII')),
+    crumbs(el('a', { href: '#/conversion' }, 'Conversion'), el('span', {}, 'ASCII table')),
     el('section', { class: 'page-head' },
       el('h1', {}, 'ASCII table & byte breakdown'),
       el('p', {}, 'The full 0–127 table with positional expansions, plus a live analyser that shows exactly how each character becomes bytes.')),
@@ -612,7 +618,7 @@ export function viewAscii() {
 
 export function viewBase() {
   return frag(
-    crumbs(el('span', {}, 'Bases')),
+    crumbs(el('a', { href: '#/conversion' }, 'Conversion'), el('span', {}, 'Number bases')),
     el('section', { class: 'page-head' },
       el('h1', {}, 'Number bases'),
       el('p', {}, 'Exact arithmetic in bases 2 through 36, backed by BigInt — no rounding, no floating point surprises.')),

@@ -1,0 +1,15 @@
+import fs from 'fs';
+const path = 'scripts/prerender.mjs';
+let s = fs.readFileSync(path, 'utf8');
+const start = '\n/* category pages */\n';
+const end = '\n// sitemap.xml and robots.txt\n';
+const i = s.indexOf(start);
+const j = s.indexOf(end, i);
+if (i < 0 || j < 0) throw new Error('markers not found ' + i + ' ' + j);
+const block = s.slice(i, j);
+s = s.slice(0, i) + s.slice(j);
+const anchor = '\nlet written = 0;\nconst sitemap = [];\n';
+if (!s.includes(anchor)) throw new Error('anchor not found');
+s = s.replace(anchor, '\n' + block + '\n' + anchor);
+fs.writeFileSync(path, s);
+console.log('moved before write');

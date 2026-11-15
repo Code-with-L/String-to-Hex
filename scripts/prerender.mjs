@@ -123,14 +123,15 @@ ${JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c')}
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden>
-      <a href="${up}#/convert">Converter</a>
-      <a href="${up}#/tools">Calculators</a>
-      <a href="${up}#/units">Units</a>
-      <a href="${up}#/learn">Reference</a>
-      <a href="${up}#/notepad">Notepad</a>
-      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
-      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>⬇ Install</button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="${up}#/">Home</a>
+      <a href="${up}#/calc">Calculators</a>
+      <a href="${up}#/conversion">Conversion</a>
+      <a href="${up}#/web-tools">Web Tools</a>
+      <a href="${up}#/math">Math</a>
+      <a href="${up}#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
     </nav>
   </div>
 </header>
@@ -296,33 +297,17 @@ ${GROUPS.map((g) => `        <li><strong>${esc(g.title)}:</strong> ${TOOLS.filte
 PAGES.push({
   path: '/tools/index.html',
   hash: '/tools',
-  title: `All ${TOOLS.length} free calculators — ${SITE}`,
-  description: `${TOOLS.length} calculators across electrical, mathematical, financial, colour, text and general tools. Each shows its working and works offline.`,
-  jsonLd: graph([
-    { '@type': 'CollectionPage', '@id': `${ORIGIN}/tools#page`, name: `All ${TOOLS.length} calculators`, isPartOf: { '@id': `${ORIGIN}/#website` } },
-    {
-      '@type': 'ItemList',
-      '@id': `${ORIGIN}/tools#list`,
-      name: 'Calculators',
-      numberOfItems: TOOLS.length,
-      itemListElement: TOOLS.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.title, url: `${ORIGIN}/tool/${t.id}/` })),
-    },
-  ]),
+  title: 'Calculators - HexKit',
+  description: 'Math, electrical, financial, health, time and other calculators organized by topic.',
+  priority: '0.9',
+  jsonLd: graph([crumbsLd('/tools/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/tools/index.html' }])]),
   body: (up) => `    ${nav(up, [{ label: 'Calculators' }])}
-    <header class="page-head">
-      <h1>All ${N_TOOLS} calculators</h1>
-      <p>Every one shows its working, keeps its state in the URL, and runs with no network connection.</p>
-    </header>
-${GROUPS.map((g) => {
-    const list = TOOLS.filter((t) => t.group === g.id);
-    if (!list.length) return '';
-    return `    <section class="section">
-      <h2 class="panel-title">${esc(g.title)}</h2>
-      <ul>
-${list.map((t) => `        <li><a href="${up}tool/${t.id}/">${esc(t.title)}</a> — ${esc(t.blurb)}</li>`).join('\n')}
-      </ul>
-    </section>`;
-  }).join('\n')}`,
+    <header class="page-head"><h1>Online Calculators</h1><p>Free online calculators organized by topic. Each tool runs in your browser and works offline.</p></header>
+    ${CALC_CATEGORIES.map(cat => {
+      const items = TOOLS.filter(t => t.group === cat.id);
+      if (!items.length) return '';
+      return `<section class="section"><div class="section-head"><h2>${esc(cat.title)}</h2><a href="${up}calc/${esc(cat.id)}/" style="font-size:14px">Open category →</a></div><ul class="link-list topic-list">${items.map(t => `<li><a href="${up}tool/${esc(t.id)}/">${esc(t.title)}</a> — ${esc(t.blurb || '')}</li>`).join('')}</ul></section>`;
+    }).join('')}`,
 });
 
 /* one page per tool */
@@ -370,23 +355,28 @@ ${t.inputs.map((i) => `        <li><strong>${esc(i.label)}</strong>${i.unit ? ` 
 PAGES.push({
   path: '/learn/index.html',
   hash: '/learn',
-  title: `Electrical & computing formulas, terms and symbols — ${SITE}`,
-  description: 'A reference library: Ohm’s law, Kirchhoff’s laws, Coulomb’s law, power factor, wire gauge, number bases and ASCII — each with a definition, intuition and formula.',
-  jsonLd: graph([
-    { '@type': 'CollectionPage', '@id': `${ORIGIN}/learn#page`, name: 'Reference library', isPartOf: { '@id': `${ORIGIN}/#website` } },
-    { '@type': 'ItemList', '@id': `${ORIGIN}/learn#list`, numberOfItems: Object.keys(ARTICLES).length, itemListElement: Object.entries(ARTICLES).map(([slug, a], i) => ({ '@type': 'ListItem', position: i + 1, name: a.title, url: `${ORIGIN}/read/${slug}/` })) },
-  ]),
-  body: (up) => `    ${nav(up, [{ label: 'Reference' }])}
-    <header class="page-head">
-      <h1>Formulas, terms and symbols</h1>
-      <p>Every entry gives the definition, the intuition, the formula with each symbol defined,
-         and a calculator that solves it.</p>
-    </header>
-    <section class="panel prose">
-      <ul>
-${Object.entries(ARTICLES).map(([slug, a]) => `        <li><a href="${up}read/${slug}/">${esc(a.title)}</a> — ${esc(a.summary)}</li>`).join('\n')}
-      </ul>
-    </section>`,
+  title: 'Reference - HexKit',
+  description: 'Articles, formulas, glossary, symbols, tables and encoding reference organized by topic.',
+  priority: '0.9',
+  jsonLd: graph([crumbsLd('/learn/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Reference', href: '/learn/index.html' }])]),
+  body: (up) => {
+    const mathArticles = Object.entries(ARTICLES).filter(([slug, a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
+    const elecArticles = Object.entries(ARTICLES).filter(([slug, a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
+    const otherArticles = Object.entries(ARTICLES).filter(([slug]) => !mathArticles.some(([x]) => x === slug) && !elecArticles.some(([x]) => x === slug));
+    return `    ${nav(up, [{ label: 'Reference' }])}
+    <header class="page-head"><h1>Reference library</h1><p>Articles, formulas, glossary, symbols, tables and encoding reference — organized by topic.</p></header>
+    <section class="section"><div class="section-head"><h2>Reference topics</h2></div><div class="grid grid-2">
+      <a class="tool-card" href="${up}math/"><h3>Math</h3><p>Math calculators, formulas and reference.</p></a>
+      <a class="tool-card" href="${up}electricity/"><h3>Electricity</h3><p>Electrical calculators, formulas, symbols and reference.</p></a>
+      <a class="tool-card" href="${up}ascii/"><h3>ASCII &amp; encoding</h3><p>ASCII table, character codes and text/base conversion.</p></a>
+      <a class="tool-card" href="${up}glossary/"><h3>Glossary</h3><p>Definitions across electricity, circuits, units and computing.</p></a>
+      <a class="tool-card" href="${up}symbols/"><h3>Circuit symbols</h3><p>Electrical and electronic symbols.</p></a>
+      <a class="tool-card" href="${up}tables/"><h3>Reference tables</h3><p>Math, color, resistor, wire and other tables.</p></a>
+    </div></section>
+    <section class="section"><div class="section-head"><h2>Math articles &amp; formulas</h2><a href="${up}math/" style="font-size:14px">Math topic →</a></div><ul class="link-list topic-list">${mathArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Electrical articles &amp; formulas</h2><a href="${up}electricity/" style="font-size:14px">Electricity topic →</a></div><ul class="link-list topic-list">${elecArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>More articles</h2></div><ul class="link-list topic-list">${otherArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>`;
+  },
 });
 
 /* one page per article — full text inline so it is indexable */
@@ -462,7 +452,7 @@ for (const [key, g] of Object.entries(GLOSSARY)) {
     description: `${g.short}${g.formula ? ` ${g.formula}.` : ''}`,
     jsonLd: graph([
       { '@type': 'DefinedTerm', '@id': `${ORIGIN}${cleanPath(path)}#term`, name: g.term, description: g.def, inDefinedTermSet: { '@id': `${ORIGIN}/glossary#terms` }, termCode: g.symbol && g.symbol !== '—' ? g.symbol : undefined },
-      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Glossary', href: '/glossary/' }, { name: g.term, href: cleanPath(path) }]),
+      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Reference', href: '/learn/' }, { name: 'Glossary', href: '/glossary/' }, { name: g.term, href: cleanPath(path) }]),
     ]),
     body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Glossary', href: `${up}glossary/` }, { label: g.term }])}
     <header class="page-head">
@@ -488,7 +478,7 @@ PAGES.push({
     { '@type': 'CollectionPage', '@id': `${ORIGIN}/units#page`, name: 'Unit converters', isPartOf: { '@id': `${ORIGIN}/#website` } },
     { '@type': 'ItemList', '@id': `${ORIGIN}/units#list`, numberOfItems: N_FAMILIES, itemListElement: FAMILY_IDS.map((f, i) => ({ '@type': 'ListItem', position: i + 1, name: FAMILIES[f].title, url: `${ORIGIN}/units/${f}/` })) },
   ]),
-  body: (up) => `    ${nav(up, [{ label: 'Units' }])}
+  body: (up) => `    ${nav(up, [{ label: 'Conversion', href: `${up}conversion/` }, { label: 'Unit families' }])}
     <header class="page-head">
       <h1>Unit families</h1>
       <p>Every family is driven by exact reference factors, so results match published conversion tables.</p>
@@ -518,9 +508,9 @@ for (const f of FAMILY_IDS) {
         description: `Units of ${F.title.toLowerCase()} relative to the ${F.baseName}.`,
         hasDefinedTerm: keys.map((k) => ({ '@type': 'DefinedTerm', name: F.units[k].name, description: `${F.units[k].name} (${F.units[k].symbol}) = ${F.units[k].f} ${F.baseName}`, alternateName: F.units[k].symbol })),
       },
-      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Units', href: '/units/' }, { name: F.title, href: cleanPath(path) }]),
+      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Conversion', href: '/conversion/' }, { name: 'Units', href: '/units/' }, { name: F.title, href: cleanPath(path) }]),
     ]),
-    body: (up) => `    ${nav(up, [{ label: 'Units', href: `${up}units/` }, { label: F.title }])}
+    body: (up) => `    ${nav(up, [{ label: 'Conversion', href: `${up}conversion/` }, { label: 'Units', href: `${up}units/` }, { label: F.title }])}
     <header class="page-head">
       <h1>${esc(F.title)} converters</h1>
       <p>All ${pairs.length} ordered pairs, driven by the exact reference factor. Base unit: ${esc(F.baseName)}.</p>
@@ -730,7 +720,7 @@ PAGES.push({
   jsonLd: graph([
     { '@type': 'TechArticle', '@id': `${ORIGIN}/ascii#article`, headline: 'ASCII table', description: 'ASCII codes 0–127 with decimal, hexadecimal and binary values.', inLanguage: 'en', isAccessibleForFree: true, author: { '@id': `${ORIGIN}/#organization` } },
   ]),
-  body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'ASCII table' }])}
+  body: (up) => `    ${nav(up, [{ label: 'Conversion', href: `${up}conversion/` }, { label: 'ASCII table' }])}
     <header class="page-head">
       <h1>ASCII table</h1>
       <p>The complete 0–127 table. Click any row in the interactive version to send that byte to the converter.</p>
@@ -748,31 +738,213 @@ ${ASCII_128.map((r) => `            <tr><td class="mono">${String(r.dec).padStar
 });
 
 /* notepad + editor: thin pages, the value is in the app */
-for (const [path, hash, title, description] of [
-  ['/notepad/index.html', '/notepad', `Online notepad — private, autosaving | ${SITE}`, 'A scratchpad that autosaves to your browser only. Nothing is uploaded and no account is needed.'],
-  ['/html-editor/index.html', '/html-editor', `HTML editor & viewer with live preview | ${SITE}`, 'Write HTML with a live sandboxed preview. Nothing is fetched over the network and scripts are blocked in the preview.'],
-  ['/entities/index.html', '/entities', `HTML entities & colour code reference | ${SITE}`, 'A copyable reference of HTML entities and numeric colour code formats.'],
-  ['/convert/index.html', '/convert', `Text to hex, binary, decimal, octal & Base64 | ${SITE}`, 'Convert text to any base and back. 42 character encodings, live conversion, works offline.'],
-  ['/about/index.html', '/about', `About ${SITE} — offline converters and calculators`, 'What HexKit is, how it works, and what it does with your data: nothing.'],
+for (const page of [
+  { path: '/convert/index.html', hash: '/convert', title: `Text & base converter | ${SITE}`, description: 'Convert text to hex, binary, decimal, octal and Base64 and back. 42 character encodings, live conversion, works offline.', topic: 'Conversion', topicHref: 'conversion/' },
+  { path: '/notepad/index.html', hash: '/notepad', title: `Online Notepad | ${SITE}`, description: 'A browser-based notepad that autosaves locally. Nothing is uploaded and no account is needed.', topic: 'Web Tools', topicHref: 'web-tools/' },
+  { path: '/html-editor/index.html', hash: '/html-editor', title: `HTML editor & viewer | ${SITE}`, description: 'Write HTML with a live sandboxed preview in your browser. No network fetches and scripts are blocked in the preview.', topic: 'Web Tools', topicHref: 'web-tools/' },
+  { path: '/entities/index.html', hash: '/entities', title: `HTML entities reference | ${SITE}`, description: 'A copyable reference of HTML entities and numeric code formats.', topic: 'Web Tools', topicHref: 'web-tools/' },
+  { path: '/about/index.html', hash: '/about', title: `About ${SITE}`, description: 'What HexKit is, how it works, and what it does with your data: everything runs locally in your browser.', topic: null, topicHref: null },
 ]) {
+  const { path, hash, title, description, topic, topicHref } = page;
   PAGES.push({
     path,
     hash,
     title,
     description,
-    jsonLd: graph([{ '@type': 'WebApplication', '@id': `${ORIGIN}${cleanPath(path)}#app`, name: title.split(' — ')[0], applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', url: `${ORIGIN}${cleanPath(path)}`, description, isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }]),
-    body: (up) => `    ${nav(up, [{ label: title.split(' — ')[0] }])}
+    jsonLd: graph([{ '@type': 'WebApplication', '@id': `${ORIGIN}${cleanPath(path)}#app`, name: title.split(' | ')[0], applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', url: `${ORIGIN}${cleanPath(path)}`, description, isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }]),
+    body: (up) => `    ${nav(up, topic ? [{ label: topic, href: `${up}${topicHref}` }, { label: title.split(' | ')[0] }] : [{ label: title.split(' | ')[0] }])}
     <header class="page-head">
-      <h1>${esc(title.split(' — ')[0])}</h1>
+      <h1>${esc(title.split(' | ')[0])}</h1>
       <p>${esc(description)}</p>
     </header>
     <section class="panel prose">
-      <p>Enable JavaScript to use this page, or <a href="${up}#${hash}">open the interactive version</a>.</p>
+      <p>This is a browser-based tool that runs locally. Enable JavaScript to use it, or <a href="${up}#${hash}">open the interactive version</a>.</p>
     </section>`,
   });
 }
 
 /* ── write ─────────────────────────────────────────────────────────────── */
+
+
+/* category pages */
+
+const CALC_CATEGORIES = [
+  { id: 'math', title: 'Math calculators', desc: 'Online math calculators and solvers.' },
+  { id: 'electrical', title: 'Electrical calculators', desc: 'Electrical and electronics calculators.' },
+  { id: 'wire', title: 'Wire calculators', desc: 'Wire gauge and electrical sizing calculators.' },
+  { id: 'finance', title: 'Financial calculators', desc: 'Financial and money calculators.' },
+  { id: 'health', title: 'Health calculators', desc: 'Fitness and health calculators.' },
+  { id: 'time', title: 'Time & date calculators', desc: 'Time and date calculators.' },
+  { id: 'number', title: 'Number calculators', desc: 'Number and base conversion calculators.' },
+  { id: 'color', title: 'Color calculators', desc: 'Color conversion and code calculators.' },
+  { id: 'text', title: 'Text calculators', desc: 'Text and encoding calculators.' },
+  { id: 'general', title: 'Other calculators', desc: 'General purpose calculators and tools.' },
+];
+
+const CONVERSION_CATEGORIES = [
+  { id: 'length', title: 'Length conversion' }, { id: 'mass', title: 'Weight conversion' }, { id: 'temperature', title: 'Temperature conversion' },
+  { id: 'area', title: 'Area conversion' }, { id: 'volume', title: 'Volume conversion' }, { id: 'speed', title: 'Speed conversion' },
+  { id: 'time', title: 'Time conversion' }, { id: 'pressure', title: 'Pressure conversion' }, { id: 'energy', title: 'Energy conversion' },
+  { id: 'power', title: 'Power conversion' }, { id: 'frequency', title: 'Frequency conversion' }, { id: 'force', title: 'Force conversion' },
+  { id: 'angle', title: 'Angle conversion' }, { id: 'data', title: 'Data storage conversion' }, { id: 'voltage', title: 'Voltage conversion' },
+  { id: 'current', title: 'Current conversion' }, { id: 'resistance', title: 'Resistance conversion' }, { id: 'charge', title: 'Electric charge conversion' },
+  { id: 'capacitance', title: 'Capacitance conversion' }, { id: 'inductance', title: 'Inductance conversion' }, { id: 'concentration', title: 'Concentration conversion' },
+  { id: 'light', title: 'Light conversion' }, { id: 'illuminance', title: 'Illuminance conversion' }, { id: 'torque', title: 'Torque conversion' },
+];
+
+const WEB_TOOLS = [
+  { slug: 'alarm-clock', title: 'Alarm Clock' }, { slug: 'bar-graph', title: 'Bar graph maker' }, { slug: 'battery', title: 'Battery charge manager' },
+  { slug: 'calendar', title: 'Calendar' }, { slug: 'call-recorder', title: 'Call Recorder' }, { slug: 'camera', title: 'Camera online' },
+  { slug: 'chart-maker', title: 'Chart online maker' }, { slug: 'click-counter', title: 'Click counter online' }, { slug: 'cps-test', title: 'CPS test' },
+  { slug: 'countdown-timer', title: 'Countdown Timer' }, { slug: 'current-time', title: 'Current Time' }, { slug: 'flashlight', title: 'Flashlight online' },
+  { slug: 'line-graph', title: 'Line graph maker' }, { slug: 'grocery-list', title: 'Online grocery list' }, { slug: 'mic-test', title: 'Mic test' },
+  { slug: 'clock', title: 'Online clock' }, { slug: 'mirror', title: 'Online Mirror' }, { slug: 'notes', title: 'Online Notes' },
+  { slug: 'pie-chart', title: 'Pie chart maker' }, { slug: 'scatter-plot', title: 'XY Scatter plot maker' }, { slug: 'scoreboard', title: 'Scoreboard online' },
+  { slug: 'screen-recorder', title: 'Screen recorder online' }, { slug: 'screenshot', title: 'Online screenshot' }, { slug: 'speech-to-text', title: 'Speech to text' },
+  { slug: 'stopwatch', title: 'Stopwatch' }, { slug: 'table-chart', title: 'Table chart maker' }, { slug: 'text-to-speech', title: 'Text to speech' },
+  { slug: 'todays-date', title: "Today's Date" }, { slug: 'todo-list', title: 'To-Do List' }, { slug: 'tone-generator', title: 'Tone generator' },
+  { slug: 'ruler-cm', title: 'Ruler (cm/mm) online' }, { slug: 'ruler-inch', title: 'Ruler (inch) online' }, { slug: 'voice-recorder', title: 'Voice recorder online' },
+  { slug: 'webcam-test', title: 'Webcam test' },
+];
+
+const WEB_TOOLS_ALL = [
+  ...WEB_TOOLS.map(t => ({ title: t.title, href: `#/web-tools/${t.slug}` })),
+  { title: 'Online Calculator', href: '#/tool/scientific-calc' },
+  { title: 'Online Notepad', href: '#/notepad' },
+  { title: 'Password generator', href: '#/tool/password-generator' },
+  { title: 'Random number generator', href: '#/tool/random-number' },
+  { title: 'Text editor', href: '#/html-editor' },
+];
+
+{
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Calculators</span></nav>
+    <section class="page-head"><h1>Online Calculators</h1><p>Free online calculators organized by topic.</p></section>
+    ${CALC_CATEGORIES.map(cat => {
+      const items = TOOLS.filter(t => t.group === cat.id);
+      if (!items.length) return '';
+      return `<section class="section"><div class="section-head"><h2>${esc(cat.title)}</h2><a href="#/calc/${esc(cat.id)}" style="font-size:14px">Open category →</a></div><ul class="link-list topic-list">${items.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`;
+    }).join('')}
+  `;
+  PAGES.push({
+    path: '/calc/index.html', hash: '/calc',
+    title: 'Calculators - HexKit',
+    description: 'Math, electrical, financial, health, time and other calculators organized by topic.',
+    priority: '0.9',
+    jsonLd: graph([crumbsLd('/calc/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/calc/index.html' }])]),
+    body,
+  });
+}
+
+for (const cat of CALC_CATEGORIES) {
+  const items = TOOLS.filter(t => t.group === cat.id);
+  if (!items.length) continue;
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><a href="#/calc">Calculators</a><span class="crumb-sep">›</span><span class="crumb-current">${esc(cat.title)}</span></nav>
+    <section class="page-head"><h1>${esc(cat.title)}</h1><p>${esc(cat.desc)}</p></section>
+    <section class="section"><div class="grid grid-2">${items.map(t => `<a class="tool-card" href="#/tool/${esc(t.id)}"><span class="badge">${esc(cat.title)}</span><h3>${esc(t.title)}</h3><p>${esc(t.blurb || '')}</p></a>`).join('')}</div></section>
+  `;
+  PAGES.push({
+    path: `/calc/${cat.id}/index.html`, hash: `/calc/${cat.id}`,
+    title: `${cat.title} - HexKit`,
+    description: cat.desc,
+    priority: '0.8',
+    jsonLd: graph([crumbsLd(`/calc/${cat.id}/index.html`, [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/calc/index.html' }, { name: cat.title, href: `/calc/${cat.id}/index.html` }])]),
+    body,
+  });
+}
+
+{
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Conversion</span></nav>
+    <section class="page-head"><h1>Unit Conversion</h1><p>Online unit converters organized by topic.</p></section>
+    <section class="section"><div class="section-head"><h2>Conversion categories</h2></div><ul class="link-list topic-list">${CONVERSION_CATEGORIES.map(c => `<li><a href="#/units/${esc(c.id)}">${esc(c.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Number & text conversion</h2></div><ul class="link-list topic-list"><li><a href="#/convert">Text, hex, binary, decimal, octal, Base64 converter</a></li><li><a href="#/ascii">ASCII table</a></li><li><a href="#/base">Number base converter</a></li></ul></section>
+  `;
+  PAGES.push({
+    path: '/conversion/index.html', hash: '/conversion',
+    title: 'Conversion - HexKit',
+    description: 'Length, weight, temperature, area, volume, speed, power, energy and more unit converters.',
+    priority: '0.9',
+    jsonLd: graph([crumbsLd('/conversion/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Conversion', href: '/conversion/index.html' }])]),
+    body,
+  });
+}
+
+{
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Tools</span></nav>
+    <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools.</p></section>
+    <section class="section"><ul class="link-list topic-list">${WEB_TOOLS_ALL.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
+  `;
+  PAGES.push({
+    path: '/web-tools/index.html', hash: '/web-tools',
+    title: 'Online Tools - HexKit',
+    description: 'Alarm clock, stopwatch, timer, notepad, calculator, password generator, charts and more online tools.',
+    priority: '0.9',
+    jsonLd: graph([crumbsLd('/web-tools/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Tools', href: '/web-tools/index.html' }])]),
+    body,
+  });
+}
+
+for (const t of WEB_TOOLS) {
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><a href="#/web-tools">Tools</a><span class="crumb-sep">›</span><span class="crumb-current">${esc(t.title)}</span></nav>
+    <section class="page-head"><h1>${esc(t.title)}</h1><p>${esc(t.title)} - online tool. This browser-based tool runs locally in your browser.</p></section>
+    <section class="panel"><h2>About this tool</h2><p>Use ${esc(t.title)} in the interactive app. Some features may require browser permissions or device capabilities.</p><p><a class="btn btn-primary" href="#/web-tools/${esc(t.slug)}">Open ${esc(t.title)}</a></p></section>
+  `;
+  PAGES.push({
+    path: `/web-tools/${t.slug}/index.html`, hash: `/web-tools/${t.slug}`,
+    title: `${t.title} - Online Tools - HexKit`,
+    description: `${t.title} online tool.`,
+    priority: '0.7',
+    jsonLd: graph([crumbsLd(`/web-tools/${t.slug}/index.html`, [{ name: 'Home', href: '/index.html' }, { name: 'Tools', href: '/web-tools/index.html' }, { name: t.title, href: `/web-tools/${t.slug}/index.html` }])]),
+    body,
+  });
+}
+
+{
+  const mathTools = TOOLS.filter(t => t.group === 'math' || t.group === 'number');
+  const mathArticles = Object.entries(ARTICLES).filter(([s,a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(s + ' ' + a.title + ' ' + (a.kicker||'')));
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Math</span></nav>
+    <section class="page-head"><h1>Math</h1><p>Math calculators, formulas, and reference - organized by topic.</p></section>
+    <section class="section"><div class="section-head"><h2>Math calculators</h2></div><ul class="link-list topic-list">${mathTools.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Math reference & formulas</h2></div><ul class="link-list topic-list">${mathArticles.map(([slug,a]) => `<li><a href="#/read/${esc(slug)}">${esc(a.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Reference tables</h2></div><ul class="link-list topic-list"><li><a href="#/tables">Math and reference tables</a></li></ul></section>
+  `;
+  PAGES.push({
+    path: '/math/index.html', hash: '/math',
+    title: 'Math - HexKit',
+    description: 'Math calculators, formulas and reference.',
+    priority: '0.8',
+    jsonLd: graph([crumbsLd('/math/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Math', href: '/math/index.html' }])]),
+    body,
+  });
+}
+
+{
+  const elecTools = TOOLS.filter(t => t.group === 'electrical' || t.group === 'wire');
+  const elecArticles = Object.entries(ARTICLES).filter(([s,a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(s + ' ' + a.title + ' ' + (a.kicker||'')));
+  const elecUnits = ['voltage','current','resistance','power','energy','charge','capacitance','inductance','frequency'];
+  const body = (up) => `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Electricity</span></nav>
+    <section class="page-head"><h1>Electricity & Electronics</h1><p>Electrical calculators, formulas, symbols, and reference - organized by topic.</p></section>
+    <section class="section"><div class="section-head"><h2>Electrical calculators</h2></div><ul class="link-list topic-list">${elecTools.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Electrical unit conversions</h2></div><ul class="link-list topic-list">${elecUnits.filter(id=>FAMILIES[id]).map(id => `<li><a href="#/units/${esc(id)}">${esc(FAMILIES[id].title)} conversion</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Electrical articles & formulas</h2></div><ul class="link-list topic-list">${elecArticles.map(([slug,a]) => `<li><a href="#/read/${esc(slug)}">${esc(a.title)}</a></li>`).join('')}</ul></section>
+    <section class="section"><div class="section-head"><h2>Electrical reference</h2></div><ul class="link-list topic-list"><li><a href="#/symbols">Electrical & electronic symbols</a></li><li><a href="#/glossary">Electrical glossary & definitions</a></li><li><a href="#/tables">Reference tables (resistor colors, wire gauge, etc.)</a></li></ul></section>
+  `;
+  PAGES.push({
+    path: '/electricity/index.html', hash: '/electricity',
+    title: 'Electricity - HexKit',
+    description: 'Electrical calculators, unit conversions, formulas, symbols and reference.',
+    priority: '0.8',
+    jsonLd: graph([crumbsLd('/electricity/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Electricity', href: '/electricity/index.html' }])]),
+    body,
+  });
+}
+
 
 let written = 0;
 const sitemap = [];
@@ -806,6 +978,7 @@ for (const page of PAGES) {
 }
 
 // sitemap.xml and robots.txt
+
 const today = new Date().toISOString().slice(0, 10);
 writeFileSync(join(outRoot, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

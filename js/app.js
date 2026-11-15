@@ -7,6 +7,7 @@ import {
 } from './ui/views.js';
 import {
   viewHome, viewLearn, viewArticle, viewGlossary, viewGlossaryEntry, viewSymbols, viewTables,
+  viewCalc, viewConversion, viewWebTools, viewMathRef, viewElectricityRef,
 } from './ui/content.js';
 import { viewNotepad, viewHtmlEditor, viewEntities, viewScientific } from './ui/tools.js';
 import { FORMATS } from './data/formats.js';
@@ -102,7 +103,22 @@ function render(route) {
       node = viewConvert(route);
       break;
     case 'tools':
-      node = viewTools(route);
+      node = viewCalc(route);
+      break;
+    case 'calc':
+      node = viewCalc(route);
+      break;
+    case 'conversion':
+      node = viewConversion();
+      break;
+    case 'web-tools':
+      node = viewWebTools(route);
+      break;
+    case 'math':
+      node = viewMathRef();
+      break;
+    case 'electricity':
+      node = viewElectricityRef();
       break;
     case 'tool':
       node = route.segments[1] === 'scientific-calc' ? viewScientific() : viewTool(route);

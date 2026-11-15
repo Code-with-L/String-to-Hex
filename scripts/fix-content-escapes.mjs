@@ -1,0 +1,10 @@
+import fs from 'fs';
+let c = fs.readFileSync('js/ui/content.js', 'utf8');
+const marker = '/* == RapidTables-style category pages == */';
+const i = c.indexOf(marker);
+if (i < 0) throw new Error('no marker');
+let head = c.slice(0, i), tail = c.slice(i);
+tail = tail.split('\\`').join('`');
+tail = tail.split('\\${').join('${');
+fs.writeFileSync('js/ui/content.js', head + tail);
+console.log('fixed tail escapes');

@@ -59,9 +59,9 @@ There is no build step. `npm start` only runs a static file server, which is nee
 service workers do not register from `file://` URLs.
 
 ```bash
-npm test           # 83 tests: engine values + view rendering
+npm test           # 96 tests: engine values + view rendering
 npm run check      # tests + project validation (manifest, SW, data, syntax)
-npm run build      # regenerate icons + sitemap + 181 prerendered pages
+npm run build      # regenerate icons + sitemap + prerendered pages (635 in current build)
 npm run verify     # build + everything, plus a real headless-Chrome pass
 npm run icons      # regenerate the PNG icon set from icons/icon.svg
 ```
@@ -76,12 +76,16 @@ static URLs.
 ## Search engine visibility
 
 The app is hash-routed, so a crawler that does not run JavaScript would normally only see
-`index.html`. `npm run build` fixes that: `scripts/prerender.mjs` writes a real static HTML page
-for every route straight into the site root, e.g.
+`index.html`. `npm run build` fixes that: `scripts/prerender.mjs` writes real static HTML pages
+for routes straight into the site root, e.g.
 
 ```
+/calc/                         calculators topic hub
+/conversion/                   conversion topic hub
+/web-tools/                    web tools topic hub
+/math/ and /electricity/       topic reference hubs
 /tool/ohms-law/index.html      the calculator with its working shown inline
-/read/ohms-law/index.html      the article's full text, indexable
+/read/<slug>/index.html        article text, indexable
 /glossary/voltage/index.html   one page per glossary term
 /units/length/index.html       every ordered pair in the family
 ```

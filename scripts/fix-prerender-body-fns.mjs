@@ -1,0 +1,15 @@
+import fs from 'fs';
+const p = 'scripts/prerender.mjs';
+let s = fs.readFileSync(p, 'utf8');
+const start = '/* category pages */';
+const end = '// sitemap.xml and robots.txt';
+const i = s.indexOf(start);
+const j = s.indexOf(end, i);
+if (i < 0 || j < 0) throw new Error('markers not found');
+let pre = s.slice(0, i);
+let mid = s.slice(i, j);
+let post = s.slice(j);
+mid = mid.replace(/  const body = `\n/g, '  const body = (up) => `\n');
+s = pre + mid + post;
+fs.writeFileSync(p, s);
+console.log('patched bodies to functions');
