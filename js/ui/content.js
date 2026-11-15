@@ -678,16 +678,37 @@ export const WEB_TOOLS = [
   { title: 'Webcam test', href: '#/web-tools/webcam-test' },
 ];
 
+export const WEB_TOOL_GROUPS = [
+  { id: 'time', title: 'Time & date', items: ['Alarm Clock','Countdown Timer','Current Time','Online clock','Stopwatch',"Today's Date"] },
+  { id: 'text', title: 'Notes & text', items: ['Online Notepad','Online Notes','Online grocery list','To-Do List','Text editor'] },
+  { id: 'charts', title: 'Charts & graphs', items: ['Bar graph maker','Line graph maker','Pie chart maker','XY Scatter plot maker','Table chart maker','Chart online maker'] },
+  { id: 'counters', title: 'Counters & tests', items: ['Click counter online','CPS test','Scoreboard online'] },
+  { id: 'numbers', title: 'Calculators & generators', items: ['Online Calculator','Password generator','Random number generator'] },
+  { id: 'media', title: 'Camera, mic & recording', items: ['Camera online','Online Mirror','Webcam test','Mic test','Voice recorder online','Call Recorder','Screen recorder online','Online screenshot'] },
+  { id: 'audio', title: 'Audio & speech', items: ['Speech to text','Text to speech','Tone generator'] },
+  { id: 'device', title: 'Device & measurement', items: ['Battery charge manager','Flashlight online','Ruler (cm/mm) online','Ruler (inch) online','Calendar'] },
+];
+
+function webToolItem(title) { return WEB_TOOLS.find(t => t.title === title); }
+
 export function viewWebTools(route) {
   const sub = route?.segments?.[1];
   if (sub) return viewWebToolPage(sub);
+  const groups = WEB_TOOL_GROUPS.map(g => ({ ...g, tools: g.items.map(webToolItem).filter(Boolean) })).filter(g => g.tools.length);
   const node = frag(
     crumbs({ label: 'Web Tools' }),
-    el('section', { class: 'page-head' }, el('h1', {}, 'Online Tools'), el('p', {}, 'Free browser-based online tools.')),
-    el('section', { class: 'section' }, linkList(WEB_TOOLS))
+    el('section', { class: 'page-head' }, el('h1', {}, 'Online Tools'), el('p', {}, 'Free browser-based online tools, organized by topic.')),
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, 'Contents')),
+      el('ul', { class: 'link-list topic-list' }, ...groups.map(g => el('li', {}, el('a', { href: '#wt-' + g.id }, g.title), ` (${g.tools.length})`))),
+    ),
+    ...groups.map(g => el('section', { class: 'section', id: 'wt-' + g.id },
+      el('div', { class: 'section-head' }, el('h2', {}, g.title)),
+      linkList(g.tools)
+    )),
   );
   node.pageTitle = 'Online Tools - HexKit';
-  node.pageDescription = 'Alarm clock, stopwatch, timer, notepad, calculator, password generator, charts and more online tools.';
+  node.pageDescription = 'Alarm clock, stopwatch, timer, notepad, calculator, password generator, charts and more online tools organized by topic.';
   return node;
 }
 

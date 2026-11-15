@@ -815,74 +815,32 @@ const WEB_TOOLS_ALL = [
   { title: 'Random number generator', href: '#/tool/random-number' },
   { title: 'Text editor', href: '#/html-editor' },
 ];
+const WEB_TOOL_GROUPS = [
+  { id: 'time', title: 'Time & date', items: ['Alarm Clock','Countdown Timer','Current Time','Online clock','Stopwatch',"Today's Date"] },
+  { id: 'text', title: 'Notes & text', items: ['Online Notepad','Online Notes','Online grocery list','To-Do List','Text editor'] },
+  { id: 'charts', title: 'Charts & graphs', items: ['Bar graph maker','Line graph maker','Pie chart maker','XY Scatter plot maker','Table chart maker','Chart online maker'] },
+  { id: 'counters', title: 'Counters & tests', items: ['Click counter online','CPS test','Scoreboard online'] },
+  { id: 'numbers', title: 'Calculators & generators', items: ['Online Calculator','Password generator','Random number generator'] },
+  { id: 'media', title: 'Camera, mic & recording', items: ['Camera online','Online Mirror','Webcam test','Mic test','Voice recorder online','Call Recorder','Screen recorder online','Online screenshot'] },
+  { id: 'audio', title: 'Audio & speech', items: ['Speech to text','Text to speech','Tone generator'] },
+  { id: 'device', title: 'Device & measurement', items: ['Battery charge manager','Flashlight online','Ruler (cm/mm) online','Ruler (inch) online','Calendar'] },
+];
+function webToolItem(title){ return WEB_TOOLS_ALL.find(t => t.title === title); }
 
 {
+  const groups = WEB_TOOL_GROUPS.map(g => ({ ...g, tools: g.items.map(webToolItem).filter(Boolean) })).filter(g => g.tools.length);
   const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Calculators</span></nav>
-    <section class="page-head"><h1>Online Calculators</h1><p>Free online calculators organized by topic.</p></section>
-    ${CALC_CATEGORIES.map(cat => {
-      const items = TOOLS.filter(t => t.group === cat.id);
-      if (!items.length) return '';
-      return `<section class="section"><div class="section-head"><h2>${esc(cat.title)}</h2><a href="#/calc/${esc(cat.id)}" style="font-size:14px">Open category →</a></div><ul class="link-list topic-list">${items.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`;
-    }).join('')}
-  `;
-  PAGES.push({
-    path: '/calc/index.html', hash: '/calc',
-    title: 'Calculators - HexKit',
-    description: 'Math, electrical, financial, health, time and other calculators organized by topic.',
-    priority: '0.9',
-    jsonLd: graph([crumbsLd('/calc/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/calc/index.html' }])]),
-    body,
-  });
-}
-
-for (const cat of CALC_CATEGORIES) {
-  const items = TOOLS.filter(t => t.group === cat.id);
-  if (!items.length) continue;
-  const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><a href="#/calc">Calculators</a><span class="crumb-sep">›</span><span class="crumb-current">${esc(cat.title)}</span></nav>
-    <section class="page-head"><h1>${esc(cat.title)}</h1><p>${esc(cat.desc)}</p></section>
-    <section class="section"><div class="grid grid-2">${items.map(t => `<a class="tool-card" href="#/tool/${esc(t.id)}"><span class="badge">${esc(cat.title)}</span><h3>${esc(t.title)}</h3><p>${esc(t.blurb || '')}</p></a>`).join('')}</div></section>
-  `;
-  PAGES.push({
-    path: `/calc/${cat.id}/index.html`, hash: `/calc/${cat.id}`,
-    title: `${cat.title} - HexKit`,
-    description: cat.desc,
-    priority: '0.8',
-    jsonLd: graph([crumbsLd(`/calc/${cat.id}/index.html`, [{ name: 'Home', href: '/index.html' }, { name: 'Calculators', href: '/calc/index.html' }, { name: cat.title, href: `/calc/${cat.id}/index.html` }])]),
-    body,
-  });
-}
-
-{
-  const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Conversion</span></nav>
-    <section class="page-head"><h1>Unit Conversion</h1><p>Online unit converters organized by topic.</p></section>
-    <section class="section"><div class="section-head"><h2>Conversion categories</h2></div><ul class="link-list topic-list">${CONVERSION_CATEGORIES.map(c => `<li><a href="#/units/${esc(c.id)}">${esc(c.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Number & text conversion</h2></div><ul class="link-list topic-list"><li><a href="#/convert">Text, hex, binary, decimal, octal, Base64 converter</a></li><li><a href="#/ascii">ASCII table</a></li><li><a href="#/base">Number base converter</a></li></ul></section>
-  `;
-  PAGES.push({
-    path: '/conversion/index.html', hash: '/conversion',
-    title: 'Conversion - HexKit',
-    description: 'Length, weight, temperature, area, volume, speed, power, energy and more unit converters.',
-    priority: '0.9',
-    jsonLd: graph([crumbsLd('/conversion/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Conversion', href: '/conversion/index.html' }])]),
-    body,
-  });
-}
-
-{
-  const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Tools</span></nav>
-    <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools.</p></section>
-    <section class="section"><ul class="link-list topic-list">${WEB_TOOLS_ALL.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="${up}#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Web Tools</span></nav>
+    <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools, organized by topic.</p></section>
+    <section class="section"><div class="section-head"><h2>Contents</h2></div><ul class="link-list topic-list">${groups.map(g => `<li><a href="#wt-${esc(g.id)}">${esc(g.title)}</a> (${g.tools.length})</li>`).join('')}</ul></section>
+    ${groups.map(g => `<section class="section" id="wt-${esc(g.id)}"><div class="section-head"><h2>${esc(g.title)}</h2></div><ul class="link-list topic-list">${g.tools.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}
   `;
   PAGES.push({
     path: '/web-tools/index.html', hash: '/web-tools',
     title: 'Online Tools - HexKit',
-    description: 'Alarm clock, stopwatch, timer, notepad, calculator, password generator, charts and more online tools.',
+    description: 'Alarm clock, stopwatch, timer, notepad, calculator, password generator, charts and more online tools organized by topic.',
     priority: '0.9',
-    jsonLd: graph([crumbsLd('/web-tools/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Tools', href: '/web-tools/index.html' }])]),
+    jsonLd: graph([crumbsLd('/web-tools/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Web Tools', href: '/web-tools/index.html' }])]),
     body,
   });
 }
@@ -898,7 +856,7 @@ for (const t of WEB_TOOLS) {
     title: `${t.title} - Online Tools - HexKit`,
     description: `${t.title} online tool.`,
     priority: '0.7',
-    jsonLd: graph([crumbsLd(`/web-tools/${t.slug}/index.html`, [{ name: 'Home', href: '/index.html' }, { name: 'Tools', href: '/web-tools/index.html' }, { name: t.title, href: `/web-tools/${t.slug}/index.html` }])]),
+    jsonLd: graph([crumbsLd(`/web-tools/${t.slug}/index.html`, [{ name: 'Home', href: '/index.html' }, { name: 'Web Tools', href: '/web-tools/index.html' }, { name: t.title, href: `/web-tools/${t.slug}/index.html` }])]),
     body,
   });
 }
