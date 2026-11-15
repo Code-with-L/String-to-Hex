@@ -8145,6 +8145,6731 @@ export const ARTICLES = {
     ]
   },
 
+  'cm-to-feet_10': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_2': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_3': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_4': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_5': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_6': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_7': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_8': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-feet_9': {
+    "title": "centimeter to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = cm × 0.03280839895"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.03280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 0.3280839895 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 3.280839895 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_10': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_11': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_12': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_13': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_2': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_3': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_4': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_5': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_6': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_7': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_8': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'cm-to-inch_9': {
+    "title": "centimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = cm × 0.3937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-cm_2': {
+    "title": "foot to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = ft × 30.48"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 30.48 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 304.8 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 3048 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-cm_3': {
+    "title": "foot to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = ft × 30.48"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 30.48 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 304.8 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 3048 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-cm_4': {
+    "title": "foot to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = ft × 30.48"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 30.48 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 304.8 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 3048 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-cm_5': {
+    "title": "foot to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = ft × 30.48"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 30.48 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 304.8 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 3048 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'feet-to-cm_6': {
+    "title": "foot to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = ft × 30.48"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 30.48 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 304.8 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 3048 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-btu-to-kwh': {
+    "title": "How to Convert British thermal unit (IT) to kilowatt-hour",
+    "kicker": "Energy conversion",
+    "summary": "Convert British thermal unit (IT) (BTU) to kilowatt-hour (kWh).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "British thermal unit (IT) and kilowatt-hour are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kWh = BTU × 0.0002930710702"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 BTU = 0.0002930710702 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "10 BTU = 0.002930710702 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "100 BTU = 0.02930710702 kWh"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-cal-to-joule': {
+    "title": "How to Convert thermochemical calorie to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert thermochemical calorie (cal) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = cal × 4.184"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 4.184 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 41.84 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 418.4 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-cal-to-kcal': {
+    "title": "How to Convert thermochemical calorie to kilocalorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert thermochemical calorie (cal) to kilocalorie (kcal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and kilocalorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = cal × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.001 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 0.01 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 0.1 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-celsius-to-kelvin': {
+    "title": "How to Convert Celsius to Kelvin",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Celsius (°C) to Kelvin (K).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Celsius and Kelvin are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "K = °C + 273.15"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °C = 274.15 K"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °C = 283.15 K"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °C = 373.15 K"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'how-degrees-to-radians': {
+    "title": "How to Convert degree to radian",
+    "kicker": "Angle conversion",
+    "summary": "Convert degree (°) to radian (rad).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "degree and radian are units of angle."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "rad = ° × 0.01745329252"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ° = 0.01745329252 rad"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ° = 0.1745329252 rad"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ° = 1.745329252 rad"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the angle converter for other values."
+      }
+    ]
+  },
+  'how-fahrenheit-to-kelvin': {
+    "title": "How to Convert Fahrenheit to Kelvin",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Fahrenheit (°F) to Kelvin (K).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Fahrenheit and Kelvin are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "K = convert(°F)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 °F = 255.9277778 K"
+      },
+      {
+        "k": "formula",
+        "eq": "10 °F = 260.9277778 K"
+      },
+      {
+        "k": "formula",
+        "eq": "100 °F = 310.9277778 K"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'how-gram-to-ounce': {
+    "title": "How to Convert gram to ounce",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to ounce (oz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and ounce are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = g × 0.03527396584"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.03527396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.3527396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 3.527396584 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-hp-to-kw': {
+    "title": "How to Convert horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-hp-to-watt': {
+    "title": "How to Convert horsepower (mechanical) to watt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to watt (W).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and watt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = hp × 745.699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 745.699872 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7456.99872 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74569.9872 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-joule-to-cal': {
+    "title": "How to Convert joule to thermochemical calorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to thermochemical calorie (cal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = J × 0.2390057361"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.2390057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 2.390057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 23.90057361 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-joule-to-kj': {
+    "title": "How to Convert joule to kilojoule",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to kilojoule (kJ).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and kilojoule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = J × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.001 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.01 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.1 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-kcal-to-cal': {
+    "title": "How to Convert kilocalorie to thermochemical calorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilocalorie (kcal) to thermochemical calorie (cal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilocalorie and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = kcal × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 1000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 10000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kcal = 100000 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-kelvin-to-celsius': {
+    "title": "How to Convert Kelvin to Celsius",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Kelvin (K) to Celsius (°C).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Kelvin and Celsius are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°C = K − 273.15"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 K = -272.15 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "10 K = -263.15 °C"
+      },
+      {
+        "k": "formula",
+        "eq": "100 K = -173.15 °C"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'how-kelvin-to-fahrenheit': {
+    "title": "How to Convert Kelvin to Fahrenheit",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Kelvin (K) to Fahrenheit (°F).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Kelvin and Fahrenheit are units of temperature."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°F = convert(K)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 K = -457.87 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "10 K = -441.67 °F"
+      },
+      {
+        "k": "formula",
+        "eq": "100 K = -279.67 °F"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the temperature converter for other values."
+      }
+    ]
+  },
+  'how-kg-to-pound': {
+    "title": "How to Convert kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-kj-to-joule': {
+    "title": "How to Convert kilojoule to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilojoule (kJ) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 100000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-kw-to-hp': {
+    "title": "How to Convert kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-kw-to-watt': {
+    "title": "How to Convert kilowatt to watt",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to watt (W).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and watt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = kW × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 10000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 100000 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-kwh-to-btu': {
+    "title": "How to Convert kilowatt-hour to British thermal unit (IT)",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilowatt-hour (kWh) to British thermal unit (IT) (BTU).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt-hour and British thermal unit (IT) are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "BTU = kWh × 3412.141633"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kWh = 3412.141633 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kWh = 34121.41633 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kWh = 341214.1633 BTU"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-many-cm-in-inch': {
+    "title": "How Many inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-cm-in-meter': {
+    "title": "How Many meter to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = m × 100"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 100 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 1000 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 10000 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-feet-in-mile': {
+    "title": "How Many mile to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = mi × 5280"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 5280 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 52800 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 528000 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-feet-in-yard': {
+    "title": "How Many yard to foot",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to foot (ft).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and foot are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "ft = yd × 3"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 3 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 30 ft"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 300 ft"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-grams-in-kg': {
+    "title": "How Many kilogram to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = kg × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 1000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 10000 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 100000 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-grams-in-ounce': {
+    "title": "How Many ounce to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = oz × 28.34952"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 28.34952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 283.4952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2834.952 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-grams-in-pound': {
+    "title": "How Many pound to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = lb × 453.59237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 453.59237 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4535.9237 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45359.237 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-inch-in-foot': {
+    "title": "How Many foot to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert foot (ft) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "foot and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = ft × 12"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 ft = 12 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 ft = 120 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 ft = 1200 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-inch-in-meter': {
+    "title": "How Many meter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert meter (m) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "meter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = m × 39.37007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 m = 39.37007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 m = 393.7007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 m = 3937.007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-inch-in-yard': {
+    "title": "How Many yard to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert yard (yd) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "yard and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = yd × 36"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 yd = 36 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 yd = 360 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 yd = 3600 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-kg-in-gram': {
+    "title": "How Many gram to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = g × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.001 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.01 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 0.1 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-kg-in-pound': {
+    "title": "How Many pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-mg-in-gram': {
+    "title": "How Many gram to milligram",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to milligram (mg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and milligram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mg = g × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 1000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 10000 mg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 100000 mg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-mm-in-cm': {
+    "title": "How Many centimeter to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert centimeter (cm) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "centimeter and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = cm × 10"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 10 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 100 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 1000 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-mm-in-inch': {
+    "title": "How Many inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'how-many-ounces-in-gram': {
+    "title": "How Many gram to ounce",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to ounce (oz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and ounce are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = g × 0.03527396584"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.03527396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.3527396584 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 3.527396584 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-ounces-in-pound': {
+    "title": "How Many pound to ounce",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to ounce (oz).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and ounce are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "oz = lb × 16.00000176"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 16.00000176 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 160.0000176 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 1600.000176 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-pounds-in-gram': {
+    "title": "How Many gram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert gram (g) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "gram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = g × 0.002204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.002204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.02204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 0.2204622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-pounds-in-kg': {
+    "title": "How Many kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-pounds-in-ounce': {
+    "title": "How Many ounce to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = oz × 0.06249999311"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 0.06249999311 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 0.6249999311 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 6.249999311 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-ounce-to-gram': {
+    "title": "How to Convert ounce to gram",
+    "kicker": "Weight conversion",
+    "summary": "Convert ounce (oz) to gram (g).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ounce and gram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "g = oz × 28.34952"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 28.34952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 283.4952 g"
+      },
+      {
+        "k": "formula",
+        "eq": "100 oz = 2834.952 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-pound-to-kg': {
+    "title": "How to Convert pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-radians-to-degrees': {
+    "title": "How to Convert radian to degree",
+    "kicker": "Angle conversion",
+    "summary": "Convert radian (rad) to degree (°).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "radian and degree are units of angle."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "° = rad × 57.29577951"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 rad = 57.29577951 °"
+      },
+      {
+        "k": "formula",
+        "eq": "10 rad = 572.9577951 °"
+      },
+      {
+        "k": "formula",
+        "eq": "100 rad = 5729.577951 °"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the angle converter for other values."
+      }
+    ]
+  },
+  'how-watt-to-hp': {
+    "title": "How to Convert watt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert watt (W) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "watt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = W × 0.001341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 0.001341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 0.01341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 0.1341022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-watt-to-kw': {
+    "title": "How to Convert watt to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert watt (W) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "watt and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = W × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 0.001 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 0.01 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 0.1 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_2': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_3': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_4': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_5': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_6': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_7': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_8': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'hp-to-kw_9': {
+    "title": "horsepower (mechanical) to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert horsepower (mechanical) (hp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "horsepower (mechanical) and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = hp × 0.745699872"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hp = 0.745699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 hp = 7.45699872 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 hp = 74.5699872 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_10': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_11': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_2': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_3': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_4': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_5': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_6': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_7': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_8': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-cm_9': {
+    "title": "inch to centimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to centimeter (cm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and centimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cm = in × 2.54"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 254 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_2': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_3': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_4': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_5': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_6': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'inch-to-mm_7': {
+    "title": "inch to millimeter",
+    "kicker": "Length conversion",
+    "summary": "Convert inch (in) to millimeter (mm).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "inch and millimeter are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mm = in × 25.4"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 25.4 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 254 mm"
+      },
+      {
+        "k": "formula",
+        "eq": "100 in = 2540 mm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_10': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_11': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_12': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_13': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_14': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_15': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_16': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_17': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_18': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_19': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_2': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_3': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_4': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_5': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_6': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_7': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_8': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'kg-to-pound_9': {
+    "title": "kilogram to pound",
+    "kicker": "Weight conversion",
+    "summary": "Convert kilogram (kg) to pound (lb).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilogram and pound are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "lb = kg × 2.204622622"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kg = 2.204622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kg = 22.04622622 lb"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kg = 220.4622622 lb"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_2': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_3': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_4': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_5': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_6': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_7': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'km-to-mile_8': {
+    "title": "kilometer to mile",
+    "kicker": "Length conversion",
+    "summary": "Convert kilometer (km) to mile (mi).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilometer and mile are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mi = km × 0.6213711922"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 km = 0.6213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "10 km = 6.213711922 mi"
+      },
+      {
+        "k": "formula",
+        "eq": "100 km = 62.13711922 mi"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_10': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_11': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_2': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_3': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_4': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_5': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_6': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_7': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_8': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'kw-to-hp_9': {
+    "title": "kilowatt to horsepower (mechanical)",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to horsepower (mechanical) (hp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and horsepower (mechanical) are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "hp = kW × 1.341022089"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.341022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.41022089 hp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.1022089 hp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'mile-to-km_2': {
+    "title": "mile to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-km_3': {
+    "title": "mile to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-km_4': {
+    "title": "mile to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-km_5': {
+    "title": "mile to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mile-to-km_6': {
+    "title": "mile to kilometer",
+    "kicker": "Length conversion",
+    "summary": "Convert mile (mi) to kilometer (km).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "mile and kilometer are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "km = mi × 1.609344"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mi = 1.609344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mi = 16.09344 km"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mi = 160.9344 km"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_2': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_3': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_4': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_5': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_6': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_7': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'mm-to-inch_8': {
+    "title": "millimeter to inch",
+    "kicker": "Length conversion",
+    "summary": "Convert millimeter (mm) to inch (in).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "millimeter and inch are units of length."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "in = mm × 0.03937007874"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mm = 0.03937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mm = 0.3937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mm = 3.937007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the length converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_10': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_11': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_12': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_13': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_14': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_15': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_16': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_17': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_18': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_19': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_2': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_20': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_3': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_4': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_5': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_6': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_7': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_8': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'pound-to-kg_9': {
+    "title": "pound to kilogram",
+    "kicker": "Weight conversion",
+    "summary": "Convert pound (lb) to kilogram (kg).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "pound and kilogram are units of weight."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kg = lb × 0.45359237"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 lb = 0.45359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "10 lb = 4.5359237 kg"
+      },
+      {
+        "k": "formula",
+        "eq": "100 lb = 45.359237 kg"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the weight converter for other values."
+      }
+    ]
+  },
+  'how-many-grams-in-ounce': {
+    "title": "How Many Grams in an Ounce",
+    "kicker": "Weight conversion",
+    "summary": "How many grams are in one ounce.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "An ounce (avoirdupois) equals exactly 28.349523125 grams."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 oz = 28.349523125 g"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "2 oz = 56.69904625 g"
+      },
+      {
+        "k": "formula",
+        "eq": "0.5 oz = 14.1747615625 g"
+      },
+      {
+        "k": "formula",
+        "eq": "10 oz = 283.49523125 g"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply ounces by 28.349523125 to get grams."
+      }
+    ]
+  },
+  'how-many-ounces-in-gram': {
+    "title": "How Many Ounces in a Gram",
+    "kicker": "Weight conversion",
+    "summary": "How many ounces are in one gram.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "One gram equals approximately 0.03527396195 ounces."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 g = 0.03527396195 oz"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10 g = 0.3527396195 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 g = 3.527396195 oz"
+      },
+      {
+        "k": "formula",
+        "eq": "28.349523125 g = 1 oz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply grams by 0.03527396195 to get ounces."
+      }
+    ]
+  },
+  'how-many-cm-in-inch': {
+    "title": "How Many Centimeters in an Inch",
+    "kicker": "Length conversion",
+    "summary": "How many centimeters are in one inch.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "One inch equals exactly 2.54 centimeters."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 in = 2.54 cm"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "2 in = 5.08 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "10 in = 25.4 cm"
+      },
+      {
+        "k": "formula",
+        "eq": "0.5 in = 1.27 cm"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply inches by 2.54 to get centimeters."
+      }
+    ]
+  },
+  'how-many-inches-in-cm': {
+    "title": "How Many Inches in a Centimeter",
+    "kicker": "Length conversion",
+    "summary": "How many inches are in one centimeter.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "One centimeter equals approximately 0.3937007874 inches."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cm = 0.3937007874 in"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cm = 3.937007874 in"
+      },
+      {
+        "k": "formula",
+        "eq": "2.54 cm = 1 in"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cm = 39.37007874 in"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide centimeters by 2.54 to get inches."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
