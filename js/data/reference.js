@@ -14870,6 +14870,950 @@ export const ARTICLES = {
     ]
   },
 
+  'amp-to-ma': {
+    "title": "ampere to milliampere",
+    "kicker": "Current conversion",
+    "summary": "Convert ampere (A) to milliampere (mA).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "ampere and milliampere are units of current."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "mA = A × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 A = 1000 mA"
+      },
+      {
+        "k": "formula",
+        "eq": "10 A = 10000 mA"
+      },
+      {
+        "k": "formula",
+        "eq": "100 A = 100000 mA"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the current converter for other values."
+      }
+    ]
+  },
+  'bhp-to-kw': {
+    "title": "boiler horsepower to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert boiler horsepower (bhp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "boiler horsepower and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = bhp × 0.7456998716"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 bhp = 0.7456998716 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 bhp = 7.456998716 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 bhp = 74.56998716 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'BTU_to_Joule': {
+    "title": "British thermal unit (IT) to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert British thermal unit (IT) (BTU) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "British thermal unit (IT) and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = BTU × 1055.055853"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 BTU = 1055.055853 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 BTU = 10550.55853 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 BTU = 105505.5853 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'BTU_to_kJ': {
+    "title": "British thermal unit (IT) to kilojoule",
+    "kicker": "Energy conversion",
+    "summary": "Convert British thermal unit (IT) (BTU) to kilojoule (kJ).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "British thermal unit (IT) and kilojoule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = BTU × 1.055055853"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 BTU = 1.055055853 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 BTU = 10.55055853 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 BTU = 105.5055853 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'BTU_to_kWh': {
+    "title": "British thermal unit (IT) to kilowatt-hour",
+    "kicker": "Energy conversion",
+    "summary": "Convert British thermal unit (IT) (BTU) to kilowatt-hour (kWh).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "British thermal unit (IT) and kilowatt-hour are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kWh = BTU × 0.0002930710702"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 BTU = 0.0002930710702 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "10 BTU = 0.002930710702 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "100 BTU = 0.02930710702 kWh"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'Calorie_to_Joule': {
+    "title": "thermochemical calorie to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert thermochemical calorie (cal) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = cal × 4.184"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 4.184 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 41.84 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 418.4 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'Calorie_to_kCal': {
+    "title": "thermochemical calorie to kilocalorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert thermochemical calorie (cal) to kilocalorie (kcal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "thermochemical calorie and kilocalorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kcal = cal × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 cal = 0.001 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 cal = 0.01 kcal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 cal = 0.1 kcal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'how-bhp-to-kw': {
+    "title": "How to Convert boiler horsepower to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert boiler horsepower (bhp) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "boiler horsepower and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = bhp × 0.7456998716"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 bhp = 0.7456998716 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 bhp = 7.456998716 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 bhp = 74.56998716 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'how-kw-to-bhp': {
+    "title": "How to Convert kilowatt to boiler horsepower",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to boiler horsepower (bhp).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and boiler horsepower are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "bhp = kW × 1.34102209"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1.34102209 bhp"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 13.4102209 bhp"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 134.102209 bhp"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'Joule_to_BTU': {
+    "title": "joule to British thermal unit (IT)",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to British thermal unit (IT) (BTU).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and British thermal unit (IT) are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "BTU = J × 0.0009478171203"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.0009478171203 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.009478171203 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.09478171203 BTU"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'Joule_to_Calorie': {
+    "title": "joule to thermochemical calorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to thermochemical calorie (cal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = J × 0.2390057361"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.2390057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 2.390057361 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 23.90057361 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'Joule_to_kJ': {
+    "title": "joule to kilojoule",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to kilojoule (kJ).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and kilojoule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kJ = J × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 0.001 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.01 kJ"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.1 kJ"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'Joule_to_kWh': {
+    "title": "joule to kilowatt-hour",
+    "kicker": "Energy conversion",
+    "summary": "Convert joule (J) to kilowatt-hour (kWh).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "joule and kilowatt-hour are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kWh = J × 2.777777778e-7"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 J = 2.777777778e-7 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "10 J = 0.000002777777778 kWh"
+      },
+      {
+        "k": "formula",
+        "eq": "100 J = 0.00002777777778 kWh"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kCal_to_Calorie': {
+    "title": "kilocalorie to thermochemical calorie",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilocalorie (kcal) to thermochemical calorie (cal).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilocalorie and thermochemical calorie are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "cal = kcal × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kcal = 1000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kcal = 10000 cal"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kcal = 100000 cal"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kJ_to_BTU': {
+    "title": "kilojoule to British thermal unit (IT)",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilojoule (kJ) to British thermal unit (IT) (BTU).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and British thermal unit (IT) are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "BTU = kJ × 0.9478171203"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 0.9478171203 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 9.478171203 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 94.78171203 BTU"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kJ_to_Joule': {
+    "title": "kilojoule to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilojoule (kJ) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilojoule and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kJ × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kJ = 1000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kJ = 10000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kJ = 100000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kv-to-volt': {
+    "title": "kilovolt to volt",
+    "kicker": "Voltage conversion",
+    "summary": "Convert kilovolt (kV) to volt (V).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilovolt and volt are units of voltage."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "V = kV × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kV = 1000 V"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kV = 10000 V"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kV = 100000 V"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the voltage converter for other values."
+      }
+    ]
+  },
+  'kWh_to_BTU': {
+    "title": "kilowatt-hour to British thermal unit (IT)",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilowatt-hour (kWh) to British thermal unit (IT) (BTU).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt-hour and British thermal unit (IT) are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "BTU = kWh × 3412.141633"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kWh = 3412.141633 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kWh = 34121.41633 BTU"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kWh = 341214.1633 BTU"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kWh_to_Joule': {
+    "title": "kilowatt-hour to joule",
+    "kicker": "Energy conversion",
+    "summary": "Convert kilowatt-hour (kWh) to joule (J).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt-hour and joule are units of energy."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "J = kWh × 3600000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kWh = 3600000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kWh = 36000000 J"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kWh = 360000000 J"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the energy converter for other values."
+      }
+    ]
+  },
+  'kW_to_Watt': {
+    "title": "kilowatt to watt",
+    "kicker": "Power conversion",
+    "summary": "Convert kilowatt (kW) to watt (W).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "kilowatt and watt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = kW × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kW = 1000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kW = 10000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kW = 100000 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+  'ma-to-amp': {
+    "title": "milliampere to ampere",
+    "kicker": "Current conversion",
+    "summary": "Convert milliampere (mA) to ampere (A).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "milliampere and ampere are units of current."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "A = mA × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 mA = 0.001 A"
+      },
+      {
+        "k": "formula",
+        "eq": "10 mA = 0.01 A"
+      },
+      {
+        "k": "formula",
+        "eq": "100 mA = 0.1 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the current converter for other values."
+      }
+    ]
+  },
+  'volt-to-kv': {
+    "title": "volt to kilovolt",
+    "kicker": "Voltage conversion",
+    "summary": "Convert volt (V) to kilovolt (kV).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "volt and kilovolt are units of voltage."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kV = V × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 V = 0.001 kV"
+      },
+      {
+        "k": "formula",
+        "eq": "10 V = 0.01 kV"
+      },
+      {
+        "k": "formula",
+        "eq": "100 V = 0.1 kV"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the voltage converter for other values."
+      }
+    ]
+  },
+  'Watt_to_kW': {
+    "title": "watt to kilowatt",
+    "kicker": "Power conversion",
+    "summary": "Convert watt (W) to kilowatt (kW).",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "watt and kilowatt are units of power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = W × 0.001"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 W = 0.001 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "10 W = 0.01 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W = 0.1 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the power converter for other values."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
