@@ -5,7 +5,7 @@
  *  · versioned cache, old caches pruned on activate
  */
 
-const VERSION = 'hexkit-v3';
+const VERSION = 'hexkit-v4';
 const SHELL = `${VERSION}-shell`;
 const RUNTIME = `${VERSION}-runtime`;
 

@@ -695,10 +695,25 @@ export function viewWebTools(route) {
   const sub = route?.segments?.[1];
   if (sub) return viewWebToolPage(sub);
   const groups = WEB_TOOL_GROUPS.map(g => ({ ...g, tools: g.items.map(webToolItem).filter(Boolean) })).filter(g => g.tools.length);
+  // Jump to a subtopic without touching location.hash: a bare "#wt-time"
+  // fragment would be parsed by the hash router as a route and render 404.
+  // Smooth scrolling is skipped where the browser ignores it, so the link
+  // always moves the page.
   const jump = (id) => (event) => {
     event.preventDefault();
     const target = document.getElementById('wt-' + id);
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!target) return;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72);
+    const from = window.scrollY;
+    if (Math.abs(top - from) < 4) return;
+    window.scrollTo({ top, behavior: 'smooth' });
+    // Smooth scrolling is ignored by some browsers (reduced motion, embedded
+    // shells, background tabs) and two-argument scrollTo() inherits
+    // scroll-behavior: smooth, so verify the movement and force an instant
+    // jump if nothing happened.
+    setTimeout(() => {
+      if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top, behavior: 'instant' });
+    }, 180);
   };
   const node = frag(
     crumbs({ label: 'Web Tools' }),

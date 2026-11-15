@@ -154,6 +154,25 @@ ${body}
 
 <div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
 <input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump. A bare "#wt-time" would be parsed by the hash router as a
+   route, so scroll manually and leave the route alone. Where smooth scrolling
+   is unavailable (reduced motion, some embedded browsers) fall back to an
+   instant jump instead of doing nothing. */
+window.wtJump = function (id) {
+  var t = document.getElementById('wt-' + id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
 <script>location.hash = "#/${seg}";</script>
 <script type="module" src="${up}js/app.js"></script>
 </body>
@@ -871,7 +890,7 @@ function webToolItem(title){ return WEB_TOOLS_ALL.find(t => t.title === title); 
     <nav class="crumbs" aria-label="Breadcrumb"><a href="${up}#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Web Tools</span></nav>
     <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools, organized by topic.</p></section>
     <section class="section"><div class="section-head"><h2>Contents</h2></div>
-      <div class="table-scroll"><table class="toc-table"><thead><tr><th>Subtopic</th><th>Tools</th></tr></thead><tbody>${groups.map(g => `<tr><td><a href="${up}#/web-tools" onclick="document.getElementById('wt-${esc(g.id)}')?.scrollIntoView();return false">${esc(g.title)}</a></td><td class="mono">${g.tools.length}</td></tr>`).join('')}</tbody></table></div>
+      <div class="table-scroll"><table class="toc-table"><thead><tr><th>Subtopic</th><th>Tools</th></tr></thead><tbody>${groups.map(g => `<tr><td><a href="${up}#/web-tools" onclick="return wtJump('${esc(g.id)}')">${esc(g.title)}</a></td><td class="mono">${g.tools.length}</td></tr>`).join('')}</tbody></table></div>
     </section>
     ${groups.map(g => `<section class="section" id="wt-${esc(g.id)}"><div class="section-head"><h2>${esc(g.title)}</h2></div><ul class="link-list topic-list">${g.tools.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}
   `;

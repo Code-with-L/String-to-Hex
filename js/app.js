@@ -245,7 +245,10 @@ addEventListener('keydown', (e) => {
 /* ── service worker ─────────────────────────────────────────────────────── */
 
 if ('serviceWorker' in navigator) {
-  addEventListener('load', () => {
+  // Never register on a dev server: a stale worker hides freshly edited files
+  // behind its cache, which makes local checks lie about what is deployed.
+  const devHost = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  if (!devHost) addEventListener('load', () => {
     // Resolved against the module URL, not the document: a prerendered page at
     // /tool/ohms-law/ must still register the worker at the site root.
     const sw = new URL('../sw.js', import.meta.url);
