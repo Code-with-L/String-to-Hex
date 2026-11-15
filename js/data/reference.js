@@ -3761,6 +3761,1355 @@ export const ARTICLES = {
     ]
   },
 
+  'hz-to-khz': {
+    "title": "Hertz to Kilohertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert Hz to kHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Hertz (Hz) and kilohertz (kHz) measure frequency. 1 kHz = 1000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kHz = Hz / 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 Hz = 1 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "500 Hz = 0.5 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "20000 Hz = 20 kHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide hertz by 1000 to get kilohertz."
+      }
+    ]
+  },
+  'khz-to-hz': {
+    "title": "Kilohertz to Hertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert kHz to Hz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 kHz = 1000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = kHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 kHz = 1000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "2.5 kHz = 2500 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "20 kHz = 20000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kilohertz by 1000 to get hertz."
+      }
+    ]
+  },
+  'hz-to-mhz': {
+    "title": "Hertz to Megahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert Hz to MHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 MHz = 1,000,000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "MHz = Hz / 1,000,000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000000 Hz = 1 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "500000 Hz = 0.5 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2400000000 Hz = 2400 MHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide hertz by 1,000,000 to get megahertz."
+      }
+    ]
+  },
+  'mhz-to-hz': {
+    "title": "Megahertz to Hertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert MHz to Hz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 MHz = 1,000,000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = MHz × 1,000,000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "2.4 MHz = 2400000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "100 MHz = 100000000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply megahertz by 1,000,000 to get hertz."
+      }
+    ]
+  },
+  'khz-to-mhz': {
+    "title": "Kilohertz to Megahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert kHz to MHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 MHz = 1000 kHz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "MHz = kHz / 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 kHz = 1 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "500 kHz = 0.5 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2400 kHz = 2.4 MHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide kilohertz by 1000 to get megahertz."
+      }
+    ]
+  },
+  'mhz-to-khz': {
+    "title": "Megahertz to Kilohertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert MHz to kHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 MHz = 1000 kHz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kHz = MHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 MHz = 1000 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2.4 MHz = 2400 kHz"
+      },
+      {
+        "k": "formula",
+        "eq": "0.5 MHz = 500 kHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply megahertz by 1000 to get kilohertz."
+      }
+    ]
+  },
+  'ghz-to-hz': {
+    "title": "Gigahertz to Hertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert GHz to Hz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 GHz = 1,000,000,000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hz = GHz × 1,000,000,000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "2.4 GHz = 2400000000 Hz"
+      },
+      {
+        "k": "formula",
+        "eq": "5 GHz = 5000000000 Hz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply gigahertz by 1,000,000,000 to get hertz."
+      }
+    ]
+  },
+  'hz-to-ghz': {
+    "title": "Hertz to Gigahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert Hz to GHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 GHz = 1,000,000,000 Hz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "GHz = Hz / 1,000,000,000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000000000 Hz = 1 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2400000000 Hz = 2.4 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "5000000000 Hz = 5 GHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide hertz by 1,000,000,000 to get gigahertz."
+      }
+    ]
+  },
+  'ghz-to-mhz': {
+    "title": "Gigahertz to Megahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert GHz to MHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 GHz = 1000 MHz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "MHz = GHz × 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 GHz = 1000 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2.4 GHz = 2400 MHz"
+      },
+      {
+        "k": "formula",
+        "eq": "5 GHz = 5000 MHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply gigahertz by 1000 to get megahertz."
+      }
+    ]
+  },
+  'mhz-to-ghz': {
+    "title": "Megahertz to Gigahertz",
+    "kicker": "Frequency conversion",
+    "summary": "Convert MHz to GHz.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "1 GHz = 1000 MHz."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "GHz = MHz / 1000"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 MHz = 1 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "2400 MHz = 2.4 GHz"
+      },
+      {
+        "k": "formula",
+        "eq": "500 MHz = 0.5 GHz"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide megahertz by 1000 to get gigahertz."
+      }
+    ]
+  },
+  'amp-to-watt': {
+    "title": "Amps to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "Convert current (A) and voltage (V) to power (W).",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power depends on current and voltage (and power factor for AC)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "P(W) = I(A) × V(V) (DC)"
+      },
+      {
+        "k": "formula",
+        "eq": "P(W) = PF × I(A) × V(V) (AC)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1 A × 120 V = 120 W (DC/resistive)"
+      },
+      {
+        "k": "formula",
+        "eq": "2 A × 230 V = 460 W (PF 1)"
+      },
+      {
+        "k": "formula",
+        "eq": "5 A × 12 V = 60 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply amps by volts (and PF for AC) to get watts."
+      }
+    ]
+  },
+  'watt-to-amp': {
+    "title": "Watts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "Convert power (W) and voltage (V) to current (A).",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current depends on power, voltage, and power factor for AC."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "I(A) = P(W) / V(V) (DC)"
+      },
+      {
+        "k": "formula",
+        "eq": "I(A) = P(W) / (PF × V(V)) (AC)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "120 W / 120 V = 1 A"
+      },
+      {
+        "k": "formula",
+        "eq": "800 W / 12 V = 66.667 A"
+      },
+      {
+        "k": "formula",
+        "eq": "800 W / (0.8 × 120 V) = 8.333 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide watts by volts (and PF for AC) to get amps."
+      }
+    ]
+  },
+  'amp-to-volt': {
+    "title": "Amps to Volts",
+    "kicker": "Electrical conversion",
+    "summary": "Convert current and resistance/power to voltage.",
+    "tool": "ohms-law",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Voltage can be found from current and resistance (Ohm’s law) or from power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "V = I × R"
+      },
+      {
+        "k": "formula",
+        "eq": "V = P / I"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "2 A × 10 Ω = 20 V"
+      },
+      {
+        "k": "formula",
+        "eq": "120 W / 2 A = 60 V"
+      },
+      {
+        "k": "formula",
+        "eq": "5 A × 12 Ω = 60 V"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use V = I×R or V = P/I depending on known values."
+      }
+    ]
+  },
+  'volt-to-amp': {
+    "title": "Volts to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "Convert voltage and resistance/power to current.",
+    "tool": "ohms-law",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current can be found from voltage and resistance or from power."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "I = V / R"
+      },
+      {
+        "k": "formula",
+        "eq": "I = P / V"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "12 V / 6 Ω = 2 A"
+      },
+      {
+        "k": "formula",
+        "eq": "120 W / 120 V = 1 A"
+      },
+      {
+        "k": "formula",
+        "eq": "230 V / 46 Ω = 5 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use I = V/R or I = P/V depending on known values."
+      }
+    ]
+  },
+  'volt-to-watt': {
+    "title": "Volts to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "Convert voltage and current to power.",
+    "tool": "current-power",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Power is voltage times current (times PF for AC)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "P = V × I (DC)"
+      },
+      {
+        "k": "formula",
+        "eq": "P = PF × V × I (AC)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "120 V × 2 A = 240 W"
+      },
+      {
+        "k": "formula",
+        "eq": "230 V × 5 A = 1150 W"
+      },
+      {
+        "k": "formula",
+        "eq": "12 V × 10 A = 120 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply volts by amps to get watts."
+      }
+    ]
+  },
+  'watt-to-volt': {
+    "title": "Watts to Volts",
+    "kicker": "Electrical conversion",
+    "summary": "Convert power and current to voltage.",
+    "tool": "ohms-law",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Voltage can be found from power and current."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "V = P / I"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "120 W / 1 A = 120 V"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 W / 10 A = 100 V"
+      },
+      {
+        "k": "formula",
+        "eq": "60 W / 5 A = 12 V"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide watts by amps to get volts."
+      }
+    ]
+  },
+  'ohm-to-amp': {
+    "title": "Ohms to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "Relate resistance to current using voltage or power.",
+    "tool": "ohms-law",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current depends on voltage or power as well as resistance."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "I = V / R"
+      },
+      {
+        "k": "formula",
+        "eq": "I = √(P / R)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "12 V / 6 Ω = 2 A"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W / 25 Ω → I = 2 A"
+      },
+      {
+        "k": "formula",
+        "eq": "230 V / 46 Ω = 5 A"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use Ohm’s law: I = V/R (or I = √(P/R))."
+      }
+    ]
+  },
+  'amp-to-ohm': {
+    "title": "Amps to Ohms",
+    "kicker": "Electrical conversion",
+    "summary": "Relate current to resistance using voltage or power.",
+    "tool": "ohms-law",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Resistance can be found from voltage and current or from power and current."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "R = V / I"
+      },
+      {
+        "k": "formula",
+        "eq": "R = P / I²"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "12 V / 2 A = 6 Ω"
+      },
+      {
+        "k": "formula",
+        "eq": "100 W / (2 A)² = 25 Ω"
+      },
+      {
+        "k": "formula",
+        "eq": "230 V / 5 A = 46 Ω"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use R = V/I or R = P/I²."
+      }
+    ]
+  },
+  'va-to-watt': {
+    "title": "VA to Watts",
+    "kicker": "Electrical conversion",
+    "summary": "Convert apparent power (VA) to real power (W).",
+    "tool": "power-factor",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Real power equals apparent power times power factor."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "W = VA × PF"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 VA × 1 = 1000 W"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 VA × 0.8 = 800 W"
+      },
+      {
+        "k": "formula",
+        "eq": "500 VA × 0.9 = 450 W"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply VA by power factor to get watts."
+      }
+    ]
+  },
+  'watt-to-va': {
+    "title": "Watts to VA",
+    "kicker": "Electrical conversion",
+    "summary": "Convert real power (W) to apparent power (VA).",
+    "tool": "power-factor",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Apparent power equals real power divided by power factor."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "VA = W / PF"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "800 W / 0.8 = 1000 VA"
+      },
+      {
+        "k": "formula",
+        "eq": "1000 W / 1 = 1000 VA"
+      },
+      {
+        "k": "formula",
+        "eq": "450 W / 0.9 = 500 VA"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide watts by power factor to get VA."
+      }
+    ]
+  },
+  'kva-to-kw': {
+    "title": "kVA to kW",
+    "kicker": "Electrical conversion",
+    "summary": "Convert apparent power (kVA) to real power (kW).",
+    "tool": "power-factor",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Real power equals apparent power times power factor."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kW = kVA × PF"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kVA × 0.8 = 8 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "5 kVA × 1 = 5 kW"
+      },
+      {
+        "k": "formula",
+        "eq": "100 kVA × 0.9 = 90 kW"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Multiply kVA by power factor to get kW."
+      }
+    ]
+  },
+  'kw-to-kva': {
+    "title": "kW to kVA",
+    "kicker": "Electrical conversion",
+    "summary": "Convert real power (kW) to apparent power (kVA).",
+    "tool": "power-factor",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Apparent power equals real power divided by power factor."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kVA = kW / PF"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "8 kW / 0.8 = 10 kVA"
+      },
+      {
+        "k": "formula",
+        "eq": "5 kW / 1 = 5 kVA"
+      },
+      {
+        "k": "formula",
+        "eq": "90 kW / 0.9 = 100 kVA"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide kW by power factor to get kVA."
+      }
+    ]
+  },
+  'kva-to-amp': {
+    "title": "kVA to Amps",
+    "kicker": "Electrical conversion",
+    "summary": "Convert kVA to amps given voltage and phase.",
+    "tool": "three-phase",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Current depends on kVA, voltage, and whether the system is single-phase or three-phase."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "I = (kVA × 1000) / V (single-phase)"
+      },
+      {
+        "k": "formula",
+        "eq": "I = (kVA × 1000) / (√3 × V) (three-phase)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kVA / 230 V ≈ 43.478 A (1φ)"
+      },
+      {
+        "k": "formula",
+        "eq": "10 kVA / (1.732 × 400 V) ≈ 14.434 A (3φ)"
+      },
+      {
+        "k": "formula",
+        "eq": "5 kVA / 120 V ≈ 41.667 A (1φ)"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the appropriate formula for single-phase or three-phase systems."
+      }
+    ]
+  },
+  'amp-to-kva': {
+    "title": "Amps to kVA",
+    "kicker": "Electrical conversion",
+    "summary": "Convert amps to kVA given voltage and phase.",
+    "tool": "three-phase",
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Apparent power depends on current, voltage, and phase configuration."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "kVA = (I × V) / 1000 (single-phase)"
+      },
+      {
+        "k": "formula",
+        "eq": "kVA = (√3 × I × V) / 1000 (three-phase)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "43.478 A × 230 V / 1000 ≈ 10 kVA (1φ)"
+      },
+      {
+        "k": "formula",
+        "eq": "14.434 A × 1.732 × 400 V / 1000 ≈ 10 kVA (3φ)"
+      },
+      {
+        "k": "formula",
+        "eq": "10 A × 120 V / 1000 = 1.2 kVA (1φ)"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use the appropriate formula for single-phase or three-phase systems."
+      }
+    ]
+  },
+  'how-binary-to-decimal': {
+    "title": "How to Convert Binary to Decimal",
+    "kicker": "Number conversion",
+    "summary": "Convert binary numbers to decimal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Binary is base 2; each digit represents a power of two."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Decimal = Σ (bit × 2^position)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1010₂ = 10₁₀"
+      },
+      {
+        "k": "formula",
+        "eq": "1111₂ = 15₁₀"
+      },
+      {
+        "k": "formula",
+        "eq": "10000000₂ = 128₁₀"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Sum the powers of two for each 1 bit."
+      }
+    ]
+  },
+  'how-decimal-to-binary': {
+    "title": "How to Convert Decimal to Binary",
+    "kicker": "Number conversion",
+    "summary": "Convert decimal numbers to binary.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Divide the number by 2 repeatedly and read remainders in reverse order."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Binary = remainders of successive division by 2 (reverse order)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "10₁₀ = 1010₂"
+      },
+      {
+        "k": "formula",
+        "eq": "15₁₀ = 1111₂"
+      },
+      {
+        "k": "formula",
+        "eq": "255₁₀ = 11111111₂"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use repeated division by 2."
+      }
+    ]
+  },
+  'how-decimal-to-hex': {
+    "title": "How to Convert Decimal to Hexadecimal",
+    "kicker": "Number conversion",
+    "summary": "Convert decimal numbers to hexadecimal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Hexadecimal is base 16 (digits 0-9 and A-F)."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Hex = remainders of successive division by 16 (reverse order)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "255₁₀ = FF₁₆"
+      },
+      {
+        "k": "formula",
+        "eq": "4096₁₀ = 1000₁₆"
+      },
+      {
+        "k": "formula",
+        "eq": "26₁₀ = 1A₁₆"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Divide by 16 repeatedly and map remainders 10-15 to A-F."
+      }
+    ]
+  },
+  'how-hex-to-decimal': {
+    "title": "How to Convert Hexadecimal to Decimal",
+    "kicker": "Number conversion",
+    "summary": "Convert hexadecimal numbers to decimal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Each hex digit represents a power of 16."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "Decimal = Σ (digit × 16^position)"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "FF₁₆ = 255₁₀"
+      },
+      {
+        "k": "formula",
+        "eq": "1A₁₆ = 26₁₀"
+      },
+      {
+        "k": "formula",
+        "eq": "100₁₆ = 256₁₀"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Sum digit values times powers of 16."
+      }
+    ]
+  },
+  'how-binary-to-hex': {
+    "title": "How to Convert Binary to Hexadecimal",
+    "kicker": "Number conversion",
+    "summary": "Convert binary to hexadecimal.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Group binary bits in sets of four (from right) and map each group to a hex digit."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hex digit = 4 binary bits"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "1010₂ = A₁₆"
+      },
+      {
+        "k": "formula",
+        "eq": "11111111₂ = FF₁₆"
+      },
+      {
+        "k": "formula",
+        "eq": "11010110₂ = D6₁₆"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Group bits into nibbles and convert each nibble."
+      }
+    ]
+  },
+  'how-hex-to-binary': {
+    "title": "How to Convert Hexadecimal to Binary",
+    "kicker": "Number conversion",
+    "summary": "Convert hexadecimal to binary.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Convert each hex digit to a 4-bit binary group."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "1 hex digit = 4 binary bits"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "A₁₆ = 1010₂"
+      },
+      {
+        "k": "formula",
+        "eq": "FF₁₆ = 11111111₂"
+      },
+      {
+        "k": "formula",
+        "eq": "2F₁₆ = 00101111₂"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Expand each hex digit into four bits."
+      }
+    ]
+  },
+  'how-celsius-to-fahrenheit': {
+    "title": "How to Convert Celsius to Fahrenheit",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Celsius to Fahrenheit.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Multiply Celsius by 9/5 and add 32."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°F = °C × 9/5 + 32"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "0°C = 32°F"
+      },
+      {
+        "k": "formula",
+        "eq": "100°C = 212°F"
+      },
+      {
+        "k": "formula",
+        "eq": "25°C = 77°F"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use °F = °C × 1.8 + 32."
+      }
+    ]
+  },
+  'how-fahrenheit-to-celsius': {
+    "title": "How to Convert Fahrenheit to Celsius",
+    "kicker": "Temperature conversion",
+    "summary": "Convert Fahrenheit to Celsius.",
+    "tool": null,
+    "blocks": [
+      {
+        "k": "definition",
+        "t": "Subtract 32 from Fahrenheit and multiply by 5/9."
+      },
+      {
+        "k": "h3",
+        "t": "Conversion formula"
+      },
+      {
+        "k": "formula",
+        "eq": "°C = (°F − 32) × 5/9"
+      },
+      {
+        "k": "h3",
+        "t": "Examples"
+      },
+      {
+        "k": "formula",
+        "eq": "32°F = 0°C"
+      },
+      {
+        "k": "formula",
+        "eq": "212°F = 100°C"
+      },
+      {
+        "k": "formula",
+        "eq": "77°F = 25°C"
+      },
+      {
+        "k": "callout",
+        "icon": "info",
+        "t": "Use °C = (°F − 32) / 1.8."
+      }
+    ]
+  },
+
 };
 
 export const ARTICLE_SLUGS = Object.keys(ARTICLES);
