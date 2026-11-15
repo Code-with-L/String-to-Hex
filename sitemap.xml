@@ -2,1093 +2,1153 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tools/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/ohms-law/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/voltage-divider/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/power-factor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/three-phase/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/voltage-drop/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/dbm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/decibel/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/ev/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/power-efficiency/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/energy-bill/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/photometry/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/lighting/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/kirchhoff/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/coulomb/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/capacitor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/inductor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/battery/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/led-resistor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/pcb-trace/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/pcb-resistance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/capacitor-code/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/current-power/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/effective-rate/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/complex/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/right-triangle/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/antilog/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/stddev/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/weighted-average/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/quadratic/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/root/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/factorial/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/percentage/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/percent-error/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/gcf-lcm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/fraction/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/decimal-fraction/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/ratio/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/divmod/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/scientific/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/scientific-calc/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/pythagorean/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/convolution/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/log/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/exponential-growth/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/trig/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/ppm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/aqueous/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/color-convert/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/radix-calc/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/roman/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/number-words/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/case-convert/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/url/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/counters/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/hash/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/mortgage/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/compound/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/simple-interest/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/vat/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/discount/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/gpa/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/final-grade/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/letter-grade/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/bmi/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/duration/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/date-diff/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/age/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/world-clock/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/growth-decay/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/custom/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/random/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/password/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/batch/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/custom-convert/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/wire-gauge/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tool/resistor-color/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/learn/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/electrical-voltage/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/electrical-current/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/electrical-resistance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/ohms-law/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/kirchhoff-laws/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/coulombs-law/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/power-factor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/wire-gauge-awg/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/exponent-rules/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/logarithms/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/algebra/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/trigonometry/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/calculus/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/capacitor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/inductor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/electronic-components/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/probability-distributions/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/electrical-units/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/dc-circuit-rules/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/kilowatt-hour/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/parts-per-million/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/number-bases/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/ascii-encoding/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/save-electricity/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/read/save-energy/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/800-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/cm-to-feet/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/1-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/100-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/500-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/600-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/1000-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/1200-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/2000-watts-to-amps/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://code-with-l.github.io/String-to-Hex/read/feet-to-cm/</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/voltage/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/current/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/resistance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/power/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/charge/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/capacitance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/inductance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/impedance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/conductance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/powerFactor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/apparentPower/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/reactance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/rms/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/efficiency/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/seriesCircuit/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/parallelCircuit/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/voltageDivider/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/kvl/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/kcl/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/coulombsLaw/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/superconductivity/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/ohm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/watt/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/volt/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/ampere/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/farad/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/henry/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/decibel/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/dbm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/dbw/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/kilowatt/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/kwh/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/kva/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/logarithm/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/exponential/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/radix/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/bit/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/byte/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/hexadecimal/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/utf8/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/ascii/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/checksum/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/endianness/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/glossary/crc/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/length/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/mass/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/temperature/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/area/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/volume/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/speed/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/pressure/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/force/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/torque/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/time/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/energy/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/power/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/frequency/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/voltage/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/current/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/charge/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/resistance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/capacitance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/inductance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/angle/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/data/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/concentration/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/light/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/units/illuminance/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/symbols/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/tables/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/ascii/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/notepad/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/html-editor/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/entities/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/convert/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://code-with-l.github.io/String-to-Hex/about/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
