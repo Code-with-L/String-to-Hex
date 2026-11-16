@@ -5,6 +5,7 @@ import { icon, SYMBOLS, SYMBOL_GROUPS } from './icons.js';
 import { GLOSSARY, GLOSSARY_GROUPS, ARTICLES, TABLES, COMPONENTS } from '../data/reference.js';
 import { TOOLS, TOOL_BY_ID, toolsInGroup } from '../data/tools.js';
 import { FAMILIES, FAMILY_IDS } from '../data/units.js';
+import { TOPIC_SETS } from '../data/topics.js';
 import { bytesToHex, textToBytes, FORMATS, ENCODINGS } from '../data/formats.js';
 
 /* ── block renderer — one function turns data into nodes ───────────────── */
@@ -206,43 +207,30 @@ export function viewArticle(slug) {
 /* ── reference index ─────────────────────────────────────────────────── */
 
 export function viewLearn() {
-  const mathArticles = Object.entries(ARTICLES).filter(([slug, a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
-  const elecArticles = Object.entries(ARTICLES).filter(([slug, a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
-  const otherArticles = Object.entries(ARTICLES).filter(([slug]) => !mathArticles.some(([x]) => x === slug) && !elecArticles.some(([x]) => x === slug));
-
+  const groups = TOPIC_SETS.reference;
   const node = frag(
     crumbs(el('span', {}, 'Reference')),
     el('section', { class: 'page-head' },
       el('span', { class: 'hero-eyebrow' }, 'Reference'),
       el('h1', {}, 'Reference library'),
-      el('p', {}, 'Articles, formulas, glossary, symbols, tables and encoding reference — organized by topic.'),
+      el('p', {}, 'Articles, formulas, glossary, symbols, tables and encoding reference, arranged by subtopic.'),
     ),
     el('section', { class: 'section' },
       el('div', { class: 'section-head' }, el('h2', {}, 'Reference topics')),
       el('div', { class: 'grid grid-2' },
-        el('a', { class: 'tool-card', href: '#/math' }, el('h3', {}, 'Math'), el('p', {}, `Math calculators, formulas and reference (${mathArticles.length} articles).`)),
-        el('a', { class: 'tool-card', href: '#/electricity' }, el('h3', {}, 'Electricity'), el('p', {}, `Electrical calculators, formulas, symbols and reference (${elecArticles.length} articles).`)),
+        el('a', { class: 'tool-card', href: '#/math' }, el('h3', {}, 'Math'), el('p', {}, 'Math calculators, formulas and reference.')),
+        el('a', { class: 'tool-card', href: '#/electricity' }, el('h3', {}, 'Electricity'), el('p', {}, 'Electrical calculators, formulas, symbols and reference.')),
         el('a', { class: 'tool-card', href: '#/ascii' }, el('h3', {}, 'ASCII & encoding'), el('p', {}, 'ASCII table, character codes, byte breakdown and text/base conversion.')),
         el('a', { class: 'tool-card', href: '#/glossary' }, el('h3', {}, 'Glossary'), el('p', {}, `${Object.keys(GLOSSARY).length} terms across electricity, circuits, units and computing.`)),
         el('a', { class: 'tool-card', href: '#/symbols' }, el('h3', {}, 'Circuit symbols'), el('p', {}, `${Object.keys(SYMBOLS).length} electrical and electronic symbols.`)),
         el('a', { class: 'tool-card', href: '#/tables' }, el('h3', {}, 'Reference tables'), el('p', {}, 'Math, color, resistor, wire and other reference tables.')),
       ),
     ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Math articles & formulas'), el('a', { href: '#/math', style: 'font-size:14px' }, 'Math topic →')),
-      el('ul', { class: 'link-list topic-list' }, ...mathArticles.map(([slug, a]) => el('li', {}, el('a', { href: `#/read/${slug}` }, a.title)))),
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Electrical articles & formulas'), el('a', { href: '#/electricity', style: 'font-size:14px' }, 'Electricity topic →')),
-      el('ul', { class: 'link-list topic-list' }, ...elecArticles.map(([slug, a]) => el('li', {}, el('a', { href: `#/read/${slug}` }, a.title)))),
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'More articles')),
-      el('ul', { class: 'link-list topic-list' }, ...otherArticles.map(([slug, a]) => el('li', {}, el('a', { href: `#/read/${slug}` }, a.title)))),
-    ),
+    topicContents(groups, '#/learn'),
+    ...groups.map(topicSection),
   );
   node.pageTitle = 'Reference - HexKit';
-  node.pageDescription = 'Articles, formulas, glossary, symbols, tables and encoding reference organized by topic.';
+  node.pageDescription = 'Articles, formulas, glossary, symbols, tables and encoding reference, arranged by subtopic.';
   return node;
 }
 
@@ -313,7 +301,30 @@ export function viewGlossaryEntry(key) {
 
 /* ── symbols ────────────────────────────────────────────────────────────── */
 
-export function viewSymbols() {
+export function viewSymbols(route) {
+  const sub = route?.segments?.[1];
+  const only = sub ? SYMBOL_GROUPS.find((g) => g.id === sub) : null;
+  if (sub && !only) return notFoundRef(`Symbol group "${sub}" not found.`);
+
+  if (only) {
+    const node = frag(
+      crumbs(
+        el('a', { href: '#/learn' }, 'Reference'),
+        el('a', { href: '#/symbols' }, 'Circuit symbols'),
+        el('span', {}, only.title),
+      ),
+      el('section', { class: 'page-head' },
+        el('h1', {}, `${only.title} symbols`),
+        el('p', {}, `${only.blurb} ${only.keys.length} symbols, sourced as SVG files from Wikimedia Commons.`),
+      ),
+      symbolGrid([only]),
+      el('p', { style: 'margin-top:20px' }, el('a', { href: '#/symbols' }, '← All circuit symbols')),
+    );
+    node.pageTitle = `${only.title} symbols - HexKit Reference`;
+    node.pageDescription = `${only.title} circuit symbols drawn as SVG, with per-file attribution.`;
+    return node;
+  }
+
   const node = frag(
     crumbs(el('a', { href: '#/learn' }, 'Reference'), el('span', {}, 'Circuit symbols')),
     el('section', { class: 'page-head' },
@@ -571,6 +582,51 @@ function linkList(items) {
   return el('ul', { class: 'link-list topic-list' }, ...items.map((it) => el('li', {}, el('a', { href: it.href }, it.title))));
 }
 
+/* ── topic layout: contents table + one section per subtopic ───────────── */
+
+/**
+ * Scroll to a subtopic without touching location.hash: a bare "#el-terms"
+ * fragment would be parsed by the hash router as a route and render 404.
+ * Smooth scrolling is ignored by some browsers (reduced motion, embedded
+ * shells) and two-argument scrollTo() inherits scroll-behavior: smooth, so
+ * verify the movement and force an instant jump if nothing happened.
+ */
+export function jumpToSection(id) {
+  return (event) => {
+    event.preventDefault();
+    const target = document.getElementById(id);
+    if (!target) return;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72);
+    const from = window.scrollY;
+    if (Math.abs(top - from) < 4) return;
+    window.scrollTo({ top, behavior: 'smooth' });
+    setTimeout(() => {
+      if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top, behavior: 'instant' });
+    }, 180);
+  };
+}
+
+/** The Contents table that sits above a grouped topic page. */
+function topicContents(groups, routeHref) {
+  return el('section', { class: 'section' },
+    el('div', { class: 'section-head' }, el('h2', {}, 'Contents')),
+    el('div', { class: 'table-scroll' }, el('table', { class: 'toc-table' },
+      el('thead', {}, el('tr', {}, el('th', {}, 'Subtopic'), el('th', {}, 'Links'))),
+      el('tbody', {}, ...groups.map((g) => el('tr', {},
+        el('td', {}, el('a', { href: routeHref, onclick: jumpToSection(g.id) }, g.title)),
+        el('td', { class: 'mono' }, String(g.items.length))))))),
+  );
+}
+
+/** One subtopic section, matching the id used by the Contents table. */
+function topicSection(g) {
+  return el('section', { class: 'section', id: g.id },
+    el('div', { class: 'section-head' },
+      el('h2', {}, g.title),
+      g.blurb ? el('span', { style: 'color:var(--ink-faint);font-size:14px' }, g.blurb) : null),
+    linkList(g.items));
+}
+
 export function viewCalc(route) {
   const sub = route?.segments?.[1];
   if (sub) {
@@ -695,26 +751,6 @@ export function viewWebTools(route) {
   const sub = route?.segments?.[1];
   if (sub) return viewWebToolPage(sub);
   const groups = WEB_TOOL_GROUPS.map(g => ({ ...g, tools: g.items.map(webToolItem).filter(Boolean) })).filter(g => g.tools.length);
-  // Jump to a subtopic without touching location.hash: a bare "#wt-time"
-  // fragment would be parsed by the hash router as a route and render 404.
-  // Smooth scrolling is skipped where the browser ignores it, so the link
-  // always moves the page.
-  const jump = (id) => (event) => {
-    event.preventDefault();
-    const target = document.getElementById('wt-' + id);
-    if (!target) return;
-    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72);
-    const from = window.scrollY;
-    if (Math.abs(top - from) < 4) return;
-    window.scrollTo({ top, behavior: 'smooth' });
-    // Smooth scrolling is ignored by some browsers (reduced motion, embedded
-    // shells, background tabs) and two-argument scrollTo() inherits
-    // scroll-behavior: smooth, so verify the movement and force an instant
-    // jump if nothing happened.
-    setTimeout(() => {
-      if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top, behavior: 'instant' });
-    }, 180);
-  };
   const node = frag(
     crumbs({ label: 'Web Tools' }),
     el('section', { class: 'page-head' }, el('h1', {}, 'Online Tools'), el('p', {}, 'Free browser-based online tools, organized by topic.')),
@@ -723,7 +759,7 @@ export function viewWebTools(route) {
       el('div', { class: 'table-scroll' }, el('table', { class: 'toc-table' },
         el('thead', {}, el('tr', {}, el('th', {}, 'Subtopic'), el('th', {}, 'Tools'))),
         el('tbody', {}, ...groups.map((g) => el('tr', {},
-          el('td', {}, el('a', { href: '#/web-tools', onclick: jump(g.id) }, g.title)),
+          el('td', {}, el('a', { href: '#/web-tools', onclick: jumpToSection('wt-' + g.id) }, g.title)),
           el('td', { class: 'mono' }, String(g.tools.length))))))),
     ),
     ...groups.map(g => el('section', { class: 'section', id: 'wt-' + g.id },
@@ -984,59 +1020,32 @@ function webRuler(title, unit) {
 }
 
 export function viewMathRef() {
-  const mathTools = TOOLS.filter((t) => t.group === 'math' || t.group === 'number');
-  const mathArticles = Object.entries(ARTICLES).filter(([s, a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(s + ' ' + a.title + ' ' + (a.kicker || '')));
+  const groups = TOPIC_SETS.math;
   const node = frag(
     crumbs({ label: 'Math' }),
-    el('section', { class: 'page-head' }, el('h1', {}, 'Math'), el('p', {}, 'Math calculators, formulas, and reference - organized by topic.')),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Math calculators')),
-      linkList(mathTools.map((t) => ({ href: `#/tool/${t.id}`, title: t.title })))
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Math reference & formulas')),
-      linkList(mathArticles.map(([slug, a]) => ({ href: `#/read/${slug}`, title: a.title })))
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Reference tables')),
-      linkList([{ href: '#/tables', title: 'Math and reference tables' }])
-    )
+    el('section', { class: 'page-head' },
+      el('h1', {}, 'Math'),
+      el('p', {}, 'Math calculators, formulas and reference, arranged by subtopic.')),
+    topicContents(groups, '#/math'),
+    ...groups.map(topicSection),
   );
   node.pageTitle = 'Math - HexKit';
-  node.pageDescription = 'Math calculators, formulas and reference.';
+  node.pageDescription = 'Math calculators, formulas and reference, grouped into algebra, geometry, calculus, statistics and numbers.';
   return node;
 }
 
 export function viewElectricityRef() {
-  const elecTools = TOOLS.filter((t) => t.group === 'electrical' || t.group === 'wire');
-  const elecArticles = Object.entries(ARTICLES).filter(([s, a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(s + ' ' + a.title + ' ' + (a.kicker || '')));
-  const elecUnits = ['voltage', 'current', 'resistance', 'power', 'energy', 'charge', 'capacitance', 'inductance', 'frequency'];
+  const groups = TOPIC_SETS.electricity;
   const node = frag(
     crumbs({ label: 'Electricity' }),
-    el('section', { class: 'page-head' }, el('h1', {}, 'Electricity & Electronics'), el('p', {}, 'Electrical calculators, formulas, symbols, and reference - organized by topic.')),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Electrical calculators')),
-      linkList(elecTools.map((t) => ({ href: `#/tool/${t.id}`, title: t.title })))
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Electrical unit conversions')),
-      linkList(elecUnits.filter((id) => FAMILIES[id]).map((id) => ({ href: `#/units/${id}`, title: FAMILIES[id].title + ' conversion' })))
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Electrical articles & formulas')),
-      linkList(elecArticles.map(([slug, a]) => ({ href: `#/read/${slug}`, title: a.title })))
-    ),
-    el('section', { class: 'section' },
-      el('div', { class: 'section-head' }, el('h2', {}, 'Electrical reference')),
-      linkList([
-        { href: '#/symbols', title: 'Electrical & electronic symbols' },
-        { href: '#/glossary', title: 'Electrical glossary & definitions' },
-        { href: '#/tables', title: 'Reference tables (resistor colors, wire gauge, etc.)' },
-      ])
-    )
+    el('section', { class: 'page-head' },
+      el('h1', {}, 'Electricity & Electronics'),
+      el('p', {}, 'Electrical calculators, formulas, symbols and reference, arranged by subtopic.')),
+    topicContents(groups, '#/electricity'),
+    ...groups.map(topicSection),
   );
   node.pageTitle = 'Electricity - HexKit';
-  node.pageDescription = 'Electrical calculators, unit conversions, formulas, symbols and reference.';
+  node.pageDescription = 'Electrical calculators, unit conversions, circuit laws, components, symbols and reference, arranged by subtopic.';
   return node;
 }
 

@@ -142,7 +142,7 @@ function render(route) {
       node = route.segments[1] ? viewGlossaryEntry(route.segments[1]) : viewGlossary();
       break;
     case 'symbols':
-      node = viewSymbols();
+      node = viewSymbols(route);
       break;
     case 'tables':
     case 'resistor-colours':

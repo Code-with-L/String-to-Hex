@@ -35,6 +35,7 @@ import { TOOLS, TOOL_BY_ID, GROUPS } from '../js/data/tools.js';
 import { FAMILIES, FAMILY_IDS } from '../js/data/units.js';
 import { FORMATS, ENCODINGS } from '../js/data/formats.js';
 import { ARTICLES, GLOSSARY, GLOSSARY_GROUPS, TABLES, COMPONENTS } from '../js/data/reference.js';
+import { TOPIC_SETS } from '../js/data/topics.js';
 import { SYMBOLS, SYMBOL_GROUPS } from '../js/data/symbols.js';
 import { symbolMarkup } from '../js/ui/icons.js';
 import { ASCII_128 } from '../js/data/ascii.js';
@@ -155,12 +156,12 @@ ${body}
 <div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
 <input type="file" id="filePicker" hidden>
 <script>
-/* Contents jump. A bare "#wt-time" would be parsed by the hash router as a
-   route, so scroll manually and leave the route alone. Where smooth scrolling
-   is unavailable (reduced motion, some embedded browsers) fall back to an
-   instant jump instead of doing nothing. */
-window.wtJump = function (id) {
-  var t = document.getElementById('wt-' + id);
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
   if (!t) return false;
   var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
   var from = window.scrollY;
@@ -187,6 +188,24 @@ const nav = (up, crumbs) => `<nav class="crumbs" aria-label="Breadcrumb">
 ${crumbs.map((c) => `  <span aria-hidden="true">/</span>
   ${c.href ? `<a href="${attr(c.href)}">${esc(c.label)}</a>` : `<span>${esc(c.label)}</span>`}`).join('\n')}
 </nav>`;
+
+/**
+ * Topic pages mirror the app: a Contents table with per-subtopic link counts,
+ * then one section per subtopic. Rows scroll with jumpTo() so the hash route
+ * stays put (a bare "#el-terms" would be parsed as a route and 404).
+ */
+const topicContentsHtml = (groups, href) => `    <section class="section">
+      <div class="section-head"><h2>Contents</h2></div>
+      <div class="table-scroll"><table class="toc-table">
+        <thead><tr><th>Subtopic</th><th>Links</th></tr></thead>
+        <tbody>${groups.map((g) => `<tr><td><a href="${attr(href)}" onclick="return jumpTo('${esc(g.id)}')">${esc(g.title)}</a></td><td class="mono">${g.items.length}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </section>`;
+
+const topicSectionsHtml = (groups, up) => groups.map((g) => `    <section class="section" id="${esc(g.id)}">
+      <div class="section-head"><h2>${esc(g.title)}</h2>${g.blurb ? `<span style="color:var(--ink-faint);font-size:14px">${esc(g.blurb)}</span>` : ''}</div>
+      <ul class="link-list topic-list">${g.items.map((it) => `<li><a href="${esc(it.href)}">${esc(it.title)}</a></li>`).join('')}</ul>
+    </section>`).join('\n');
 
 const articleBlocks = (blocks) => blocks.map((b) => {
   switch (b.k) {
@@ -388,20 +407,16 @@ ${t.inputs.map((i) => `        <li><strong>${esc(i.label)}</strong>${i.unit ? ` 
   });
 }
 
-/* reference index */
+/* reference index - the same subtopic grouping the app renders */
 PAGES.push({
   path: '/learn/index.html',
   hash: '/learn',
   title: 'Reference - HexKit',
-  description: 'Articles, formulas, glossary, symbols, tables and encoding reference organized by topic.',
+  description: 'Articles, formulas, glossary, symbols, tables and encoding reference, arranged by subtopic.',
   priority: '0.9',
   jsonLd: graph([crumbsLd('/learn/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Reference', href: '/learn/index.html' }])]),
-  body: (up) => {
-    const mathArticles = Object.entries(ARTICLES).filter(([slug, a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
-    const elecArticles = Object.entries(ARTICLES).filter(([slug, a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(slug + ' ' + a.title + ' ' + (a.kicker || '')));
-    const otherArticles = Object.entries(ARTICLES).filter(([slug]) => !mathArticles.some(([x]) => x === slug) && !elecArticles.some(([x]) => x === slug));
-    return `    ${nav(up, [{ label: 'Reference' }])}
-    <header class="page-head"><h1>Reference library</h1><p>Articles, formulas, glossary, symbols, tables and encoding reference — organized by topic.</p></header>
+  body: (up) => `    ${nav(up, [{ label: 'Reference' }])}
+    <header class="page-head"><h1>Reference library</h1><p>Articles, formulas, glossary, symbols, tables and encoding reference, arranged by subtopic.</p></header>
     <section class="section"><div class="section-head"><h2>Reference topics</h2></div><div class="grid grid-2">
       <a class="tool-card" href="${up}math/"><h3>Math</h3><p>Math calculators, formulas and reference.</p></a>
       <a class="tool-card" href="${up}electricity/"><h3>Electricity</h3><p>Electrical calculators, formulas, symbols and reference.</p></a>
@@ -410,10 +425,8 @@ PAGES.push({
       <a class="tool-card" href="${up}symbols/"><h3>Circuit symbols</h3><p>Electrical and electronic symbols.</p></a>
       <a class="tool-card" href="${up}tables/"><h3>Reference tables</h3><p>Math, color, resistor, wire and other tables.</p></a>
     </div></section>
-    <section class="section"><div class="section-head"><h2>Math articles &amp; formulas</h2><a href="${up}math/" style="font-size:14px">Math topic →</a></div><ul class="link-list topic-list">${mathArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Electrical articles &amp; formulas</h2><a href="${up}electricity/" style="font-size:14px">Electricity topic →</a></div><ul class="link-list topic-list">${elecArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>More articles</h2></div><ul class="link-list topic-list">${otherArticles.map(([slug,a]) => `<li><a href="${up}read/${esc(slug)}/">${esc(a.title)}</a></li>`).join('')}</ul></section>`;
-  },
+${topicContentsHtml(TOPIC_SETS.reference, `${up}#/learn`)}
+${topicSectionsHtml(TOPIC_SETS.reference, up)}`,
 });
 
 /* one page per article — full text inline so it is indexable */
@@ -597,6 +610,34 @@ ${Object.entries(SYMBOLS).map(([k,s]) => `          <tr><td>${esc(s.label)}</td>
     </section>
     <p style="margin-top:22px"><a href="${up}#/symbols">See the interactive symbol browser →</a></p>`,
 });
+
+/* one page per symbol group, so /electricity/ can link to a specific set */
+for (const grp of SYMBOL_GROUPS) {
+  PAGES.push({
+    path: `/symbols/${grp.id}/index.html`,
+    hash: `/symbols/${grp.id}`,
+    title: `${grp.title} symbols — SVG reference | ${SITE}`,
+    description: `${grp.blurb} ${grp.keys.length} circuit symbols with per-file attribution.`,
+    priority: '0.7',
+    jsonLd: graph([crumbsLd(`/symbols/${grp.id}/index.html`, [
+      { name: 'Home', href: '/index.html' },
+      { name: 'Reference', href: '/learn/index.html' },
+      { name: 'Circuit symbols', href: '/symbols/index.html' },
+      { name: grp.title, href: `/symbols/${grp.id}/index.html` },
+    ])]),
+    body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: 'Circuit symbols', href: `${up}symbols/` }, { label: grp.title }])}
+    <header class="page-head">
+      <h1>${esc(grp.title)} symbols</h1>
+      <p>${esc(grp.blurb)} ${grp.keys.length} symbols, sourced as SVG files from Wikimedia Commons (IEC/ANSI conventions).</p>
+    </header>
+    <section class="section">
+      <div class="symbol-grid">
+${grp.keys.map((k) => { const s = SYMBOLS[k]; if (!s) return ''; return `        <div class="symbol-card">${symbolMarkup(k, up)}<b>${esc(s.label)}</b><small>${esc(s.note || '')}</small></div>`; }).join('\n')}
+      </div>
+    </section>
+    <p style="margin-top:22px"><a href="${up}symbols/">← All circuit symbols</a></p>`,
+  });
+}
 
 /* reference tables */
 PAGES.push({
@@ -890,7 +931,7 @@ function webToolItem(title){ return WEB_TOOLS_ALL.find(t => t.title === title); 
     <nav class="crumbs" aria-label="Breadcrumb"><a href="${up}#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Web Tools</span></nav>
     <section class="page-head"><h1>Online Tools</h1><p>Free browser-based online tools, organized by topic.</p></section>
     <section class="section"><div class="section-head"><h2>Contents</h2></div>
-      <div class="table-scroll"><table class="toc-table"><thead><tr><th>Subtopic</th><th>Tools</th></tr></thead><tbody>${groups.map(g => `<tr><td><a href="${up}#/web-tools" onclick="return wtJump('${esc(g.id)}')">${esc(g.title)}</a></td><td class="mono">${g.tools.length}</td></tr>`).join('')}</tbody></table></div>
+      <div class="table-scroll"><table class="toc-table"><thead><tr><th>Subtopic</th><th>Tools</th></tr></thead><tbody>${groups.map(g => `<tr><td><a href="${up}#/web-tools" onclick="return jumpTo('wt-${esc(g.id)}')">${esc(g.title)}</a></td><td class="mono">${g.tools.length}</td></tr>`).join('')}</tbody></table></div>
     </section>
     ${groups.map(g => `<section class="section" id="wt-${esc(g.id)}"><div class="section-head"><h2>${esc(g.title)}</h2></div><ul class="link-list topic-list">${g.tools.map(t => `<li><a href="${esc(t.href)}">${esc(t.title)}</a></li>`).join('')}</ul></section>`).join('')}
   `;
@@ -921,19 +962,16 @@ for (const t of WEB_TOOLS) {
 }
 
 {
-  const mathTools = TOOLS.filter(t => t.group === 'math' || t.group === 'number');
-  const mathArticles = Object.entries(ARTICLES).filter(([s,a]) => /math|algebra|calculus|exponent|log|quadratic|trig|number|fraction|percent|ratio|root|factor|prime|geometry|arithmetic/i.test(s + ' ' + a.title + ' ' + (a.kicker||'')));
   const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Math</span></nav>
-    <section class="page-head"><h1>Math</h1><p>Math calculators, formulas, and reference - organized by topic.</p></section>
-    <section class="section"><div class="section-head"><h2>Math calculators</h2></div><ul class="link-list topic-list">${mathTools.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Math reference & formulas</h2></div><ul class="link-list topic-list">${mathArticles.map(([slug,a]) => `<li><a href="#/read/${esc(slug)}">${esc(a.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Reference tables</h2></div><ul class="link-list topic-list"><li><a href="#/tables">Math and reference tables</a></li></ul></section>
+    ${nav(up, [{ label: 'Math' }])}
+    <header class="page-head"><h1>Math</h1><p>Math calculators, formulas and reference, arranged by subtopic.</p></header>
+${topicContentsHtml(TOPIC_SETS.math, `${up}#/math`)}
+${topicSectionsHtml(TOPIC_SETS.math, up)}
   `;
   PAGES.push({
     path: '/math/index.html', hash: '/math',
     title: 'Math - HexKit',
-    description: 'Math calculators, formulas and reference.',
+    description: 'Math calculators, formulas and reference, grouped into algebra, geometry, calculus, statistics and numbers.',
     priority: '0.8',
     jsonLd: graph([crumbsLd('/math/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Math', href: '/math/index.html' }])]),
     body,
@@ -941,21 +979,16 @@ for (const t of WEB_TOOLS) {
 }
 
 {
-  const elecTools = TOOLS.filter(t => t.group === 'electrical' || t.group === 'wire');
-  const elecArticles = Object.entries(ARTICLES).filter(([s,a]) => /electric|volt|current|ohm|amp|watt|circuit|resist|capacitor|inductor|power|kirchhoff|coulomb|kva|kwh|joule/i.test(s + ' ' + a.title + ' ' + (a.kicker||'')));
-  const elecUnits = ['voltage','current','resistance','power','energy','charge','capacitance','inductance','frequency'];
   const body = (up) => `
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span class="crumb-sep">›</span><span class="crumb-current">Electricity</span></nav>
-    <section class="page-head"><h1>Electricity & Electronics</h1><p>Electrical calculators, formulas, symbols, and reference - organized by topic.</p></section>
-    <section class="section"><div class="section-head"><h2>Electrical calculators</h2></div><ul class="link-list topic-list">${elecTools.map(t => `<li><a href="#/tool/${esc(t.id)}">${esc(t.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Electrical unit conversions</h2></div><ul class="link-list topic-list">${elecUnits.filter(id=>FAMILIES[id]).map(id => `<li><a href="#/units/${esc(id)}">${esc(FAMILIES[id].title)} conversion</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Electrical articles & formulas</h2></div><ul class="link-list topic-list">${elecArticles.map(([slug,a]) => `<li><a href="#/read/${esc(slug)}">${esc(a.title)}</a></li>`).join('')}</ul></section>
-    <section class="section"><div class="section-head"><h2>Electrical reference</h2></div><ul class="link-list topic-list"><li><a href="#/symbols">Electrical & electronic symbols</a></li><li><a href="#/glossary">Electrical glossary & definitions</a></li><li><a href="#/tables">Reference tables (resistor colors, wire gauge, etc.)</a></li></ul></section>
+    ${nav(up, [{ label: 'Electricity' }])}
+    <header class="page-head"><h1>Electricity &amp; Electronics</h1><p>Electrical calculators, formulas, symbols and reference, arranged by subtopic.</p></header>
+${topicContentsHtml(TOPIC_SETS.electricity, `${up}#/electricity`)}
+${topicSectionsHtml(TOPIC_SETS.electricity, up)}
   `;
   PAGES.push({
     path: '/electricity/index.html', hash: '/electricity',
     title: 'Electricity - HexKit',
-    description: 'Electrical calculators, unit conversions, formulas, symbols and reference.',
+    description: 'Electrical calculators, unit conversions, circuit laws, components, symbols and reference, arranged by subtopic.',
     priority: '0.8',
     jsonLd: graph([crumbsLd('/electricity/index.html', [{ name: 'Home', href: '/index.html' }, { name: 'Electricity', href: '/electricity/index.html' }])]),
     body,

@@ -244,8 +244,10 @@ test('the ASCII analyser feeds the converter byte inspector', () => {
 
 test('every internal link resolves to a route or record that exists', async () => {
   const { GROUPS } = await import('../js/data/tools.js');
+  const { SYMBOL_GROUPS } = await import('../js/data/symbols.js');
   const TOOL_IDS = new Set(TOOLS.map((t) => t.id));
   const GROUP_IDS = new Set(GROUPS.map((g) => g.id));
+  const SYMBOL_IDS = new Set(SYMBOL_GROUPS.map((g) => g.id));
   const WEB_SLUGS = CONTENT.WEB_TOOLS
     .map((t) => t.href)
     .filter((h) => h.startsWith('#/web-tools/'))
@@ -268,6 +270,7 @@ test('every internal link resolves to a route or record that exists', async () =
     ['electricity', CONTENT.viewElectricityRef()],
     ['glossary', CONTENT.viewGlossary()],
     ['symbols', CONTENT.viewSymbols()],
+    ...SYMBOL_GROUPS.map((g) => [`symbols/${g.id}`, CONTENT.viewSymbols(route(`/symbols/${g.id}`))]),
     ['tables', CONTENT.viewTables()],
     ['units', VIEWS.viewUnits(route('/units'))],
     ['units/length', VIEWS.viewUnits(route('/units/length'))],
@@ -304,6 +307,7 @@ test('every internal link resolves to a route or record that exists', async () =
       if (head === 'units' && sub && !FAMILIES[sub]) bad.push(`${label}: unknown unit family ${href}`);
       if (head === 'web-tools' && sub && !WEB_SLUGS.includes(sub)) bad.push(`${label}: unknown web tool ${href}`);
       if ((head === 'calc' || head === 'tools') && sub && !GROUP_IDS.has(sub)) bad.push(`${label}: unknown calculator group ${href}`);
+      if (head === 'symbols' && sub && !SYMBOL_IDS.has(sub)) bad.push(`${label}: unknown symbol group ${href}`);
     }
   }
   assert.deepEqual(bad, []);
@@ -324,4 +328,45 @@ test('the web tools contents table links and targets line up', async () => {
   assert.ok(headings.includes('Contents'), 'contents heading is present');
   for (const id of ids) assert.ok(id.startsWith('wt-'), `unexpected id ${id}`);
   assert.ok(ids.size === links.length, 'every contents row has a matching section id');
+});
+
+test('topic pages split their notes into subtopics with a matching contents table', async () => {
+  const { TOPIC_SETS } = await import('../js/data/topics.js');
+  const pages = [
+    ['math', CONTENT.viewMathRef(), TOPIC_SETS.math],
+    ['electricity', CONTENT.viewElectricityRef(), TOPIC_SETS.electricity],
+    ['reference', CONTENT.viewLearn(), TOPIC_SETS.reference],
+  ];
+
+  for (const [label, node, groups] of pages) {
+    const els = walk(toTree(node));
+    const ids = new Set(els.filter((e) => e.attributes?.id).map((e) => e.attributes.id));
+    const headings = els.filter((e) => e.tagName === 'H2').map((e) => e.textContent);
+    const rows = els.filter((e) => e.tagName === 'A' && e.parentNode?.tagName === 'TD');
+
+    assert.ok(headings.includes('Contents'), `${label}: contents heading is present`);
+    assert.equal(rows.length, groups.length, `${label}: one contents row per subtopic`);
+
+    for (const g of groups) {
+      assert.ok(g.items.length > 0, `${label}: subtopic "${g.title}" has no links`);
+      assert.ok(ids.has(g.id), `${label}: section #${g.id} is missing`);
+      assert.ok(headings.includes(g.title), `${label}: heading "${g.title}" is missing`);
+      for (const item of g.items) {
+        assert.ok(item.title && item.href.startsWith('#/'), `${label}: bad link ${JSON.stringify(item)}`);
+      }
+    }
+
+    for (const row of rows) {
+      const href = row.attributes.href ?? '';
+      assert.ok(!href.startsWith('#el-') && !href.startsWith('#conv-') && !href.startsWith('#ref-'),
+        `${label}: contents link ${href} would change the hash route`);
+    }
+  }
+
+  // the reference index must account for every article exactly once
+  const listed = TOPIC_SETS.reference.flatMap((g) => g.items.map((i) => i.href));
+  const { ARTICLES } = await import('../js/data/reference.js');
+  for (const slug of Object.keys(ARTICLES)) {
+    assert.ok(listed.includes(`#/read/${slug}`), `reference index does not list ${slug}`);
+  }
 });

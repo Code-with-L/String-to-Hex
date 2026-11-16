@@ -160,12 +160,12 @@
 <div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
 <input type="file" id="filePicker" hidden>
 <script>
-/* Contents jump. A bare "#wt-time" would be parsed by the hash router as a
-   route, so scroll manually and leave the route alone. Where smooth scrolling
-   is unavailable (reduced motion, some embedded browsers) fall back to an
-   instant jump instead of doing nothing. */
-window.wtJump = function (id) {
-  var t = document.getElementById('wt-' + id);
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
   if (!t) return false;
   var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
   var from = window.scrollY;
