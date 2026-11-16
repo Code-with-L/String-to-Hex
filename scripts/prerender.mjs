@@ -1028,13 +1028,14 @@ for (const page of PAGES) {
 }
 
 // sitemap.xml and robots.txt
-
-const today = new Date().toISOString().slice(0, 10);
+//
+// No <lastmod> on purpose: a build-date stamp changes on every rebuild, which
+// makes the "static pages are up to date" CI check fail on any other day and
+// teaches crawlers to ignore the field. changefreq/priority carry the signal.
 writeFileSync(join(outRoot, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemap.map((u) => `  <url>
     <loc>${u.loc}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${u.priority}</priority>
   </url>`).join('\n')}
