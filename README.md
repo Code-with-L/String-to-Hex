@@ -41,10 +41,11 @@ the first load.
 | **Mathematical working** | Every result shows its derivation: `65 = 4·16¹ + 1·16⁰` |
 | **Exact integer maths** | Base arithmetic runs on `BigInt`, so 64-bit and larger values are never rounded |
 | **76 calculators** | Ohm's law, Kirchhoff's laws, voltage divider, three-phase power, AWG, Coulomb's law, capacitor and inductor maths, battery capacity, effective interest, statistics, quadratic roots, complex numbers, decibels, mortgage, GPA, colour, photometry, room lighting, hashing, passwords and more |
-| **Reference library** | 430 articles, 44 glossary terms, 49 Commons-sourced SVG circuit symbols (with per-file attribution in `SYMBOLS.md`) and the resistor-colour/wire-gauge/E-series tables — each entry with definition, intuition and worked formula |
+| **Reference library** | 451 articles, 44 glossary terms, 49 Commons-sourced SVG circuit symbols (with per-file attribution in `SYMBOLS.md`) and the resistor-colour/wire-gauge/E-series tables — each entry with definition, intuition and worked formula |
+| **Calculation notes** | 21 worked "how to calculate" notes filed under Electricity & Electronics: resistor values and power, series/parallel, voltage dividers, LED resistors, transistor biasing, MOSFET gates, diode drop and PIV, Zener regulators, capacitor codes and RC timing, inductor saturation, battery runtime, op-amp gain, regulator dissipation, PCB trace width, wire ampacity, three-phase power, power-factor correction and energy cost |
 | **Web tools** | Browser-based online tools (alarm clock, stopwatch, timer, calendar, notes/to-do, counters, charts, recorders and more) with local-only processing where the browser allows it and clear capability notes where it does not |
 | **Topic navigation** | RapidTables-style topics: Home, Calculators, Conversion, Web Tools, Math, Electricity and Reference. Each topic page opens with a Contents table (subtopic + link count) and then one section per subtopic — basic terms, units, components, symbols, laws, how-to, calculators, conversion — instead of one long list |
-| **Static SEO pages** | 640 real URLs prerendered by `scripts/prerender.mjs` (topic hubs, `/tool/…`, `/read/…`, `/glossary/…`, `/units/…`, `/web-tools/…`, `/symbols/<group>/`) so crawlers get indexable HTML without needing JavaScript |
+| **Static SEO pages** | 661 real URLs prerendered by `scripts/prerender.mjs` (topic hubs, `/tool/…`, `/read/…`, `/glossary/…`, `/units/…`, `/web-tools/…`, `/symbols/<group>/`) so crawlers get indexable HTML without needing JavaScript |
 | **24 unit families, 202 units** | Length, mass, temperature, area, volume, speed, pressure, force, torque, time, energy, power, frequency, V/I/R/C/L, angle, data, concentration, illuminance |
 | **PWA** | Installable on phone and laptop, works with no connection |
 | **Zero dependencies** | No framework, no bundler, no CDN — vanilla ES modules throughout |
@@ -63,7 +64,7 @@ service workers do not register from `file://` URLs.
 ```bash
 npm test           # 99 tests: engine values + view rendering + route/link integrity
 npm run check      # tests + project validation (manifest, SW, data, syntax)
-npm run build      # regenerate icons + sitemap + prerendered pages (640 in current build)
+npm run build      # regenerate icons + sitemap + prerendered pages (661 in current build)
 npm run verify     # build + everything, plus a real headless-Chrome pass
 npm run icons      # regenerate the PNG icon set from icons/icon.svg
 ```

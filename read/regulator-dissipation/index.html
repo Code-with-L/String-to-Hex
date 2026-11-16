@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate Linear Regulator Power Dissipation — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Work out how much heat a linear regulator produces, and whether it needs a heatsink.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate Linear Regulator Power Dissipation — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Work out how much heat a linear regulator produces, and whether it needs a heatsink.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Linear Regulator Power Dissipation — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Work out how much heat a linear regulator produces, and whether it needs a heatsink.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/#article",
+      "headline": "How to Calculate Linear Regulator Power Dissipation",
+      "description": "Work out how much heat a linear regulator produces, and whether it needs a heatsink.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate Linear Regulator Power Dissipation",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/regulator-dissipation/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate Linear Regulator Power Dissipation</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate Linear Regulator Power Dissipation</h1>
+      <p>Work out how much heat a linear regulator produces, and whether it needs a heatsink.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A linear regulator passes the excess voltage to ground as heat. The drop across the device multiplied by the current is the power it has to shed.</p>
+    <div class="formula"><span class="eq">P = (V_in − V_out) × I_out + V_out × I_quiescent
+η = V_out ÷ V_in</span>
+      <span class="note">The second term is the regulator own quiescent current, usually a few milliamps - negligible on a 1 A load, but it dominates on a 10 mA load.</span></div>
+    <h2>Worked example</h2>
+    <p>A 12 V supply feeds a 5 V regulator that delivers 1 A.</p>
+    <div class="formula"><span class="eq">P = (12 − 5) × 1 = 7 W
+η = 5 ÷ 12 = 42%</span>
+      <span class="note">Seven watts in a SOT-223 package is impossible; in a TO-252 with a copper area it needs a heatsink.</span></div>
+    <h2>Heatsink sizing</h2>
+    <div class="formula"><span class="eq">θ_total ≤ (T_j,max − T_ambient) ÷ P
+θ_total = θ_jc + θ_cs + θ_sa</span>
+      <span class="note">θ_jc is the junction-to-case resistance of the device (about 5 °C/W for a TO-252), θ_cs the case-to-sink interface (about 1 °C/W with thermal paste) and θ_sa the sink-to-air resistance of the heatsink.</span></div>
+    <p>With a 100 °C junction limit, 40 °C ambient and 7 W, the total thermal resistance must be 8.6 °C/W, so the heatsink must supply about 2.6 °C/W on its own. A small 10 °C/W clip-on heatsink is plenty; a 1 °C/W extrusion is overkill.</p>
+    <h2>When to switch instead</h2>
+    <p>A buck converter moves the same power at 90% efficiency, so the heat drops from 7 W to 0.8 W and no heatsink is needed. The trade-off is added complexity, ripple on the output, and switching noise.</p>
+    <div class="callout"><div><strong>Note</strong> Watch the maximum input voltage as well as the dissipation. Many 5 V regulators are only rated to 15 V, so a 12 V automotive supply that spikes to 24 V needs a regulator with a higher rating or a pre-regulator.</div></div>
+    </div>
+    
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/regulator-dissipation";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

@@ -17,6 +17,31 @@ import { TOOLS, TOOL_BY_ID } from './tools.js';
 import { FAMILIES } from './units.js';
 import { SYMBOL_GROUPS } from './symbols.js';
 
+/** The calculation notes, in the order they are taught on the topic page. */
+export const CALCULATION_NOTES = [
+  'resistor-value',
+  'resistor-power',
+  'series-parallel-resistors',
+  'voltage-divider',
+  'led-resistor',
+  'resistor-colour-code',
+  'transistor-biasing',
+  'mosfet-gate-resistor',
+  'diode-calculation',
+  'zener-regulator',
+  'capacitor-code',
+  'capacitor-time-constant',
+  'inductor-calculation',
+  'battery-runtime',
+  'op-amp-gain',
+  'regulator-dissipation',
+  'pcb-trace-width',
+  'wire-ampacity',
+  'three-phase-power',
+  'power-factor-correction',
+  'energy-cost',
+];
+
 /** Resolve one cross-reference into a link item, or null if it does not exist. */
 const lookup = {
   read: (slug) => (ARTICLES[slug] ? { title: ARTICLES[slug].title, href: `#/read/${slug}` } : null),
@@ -83,6 +108,10 @@ export const ELECTRICITY_TOPICS = [
     ...SYMBOL_GROUPS.map((g) => ({ title: `${g.title} symbols`, href: `#/symbols/${g.id}` })),
     { title: 'All circuit symbols', href: '#/symbols' },
   ], 'IEC/ANSI symbol artwork with per-file attribution.'),
+
+  topic('el-calc', 'How to calculate', pick(
+    ...CALCULATION_NOTES.map((slug) => ['read', slug]),
+  ), 'Worked calculations: resistors, transistors, diodes, capacitors, batteries and more.'),
 
   topic('el-laws', 'Electronic circuit laws', [
     ...pick(
@@ -219,16 +248,6 @@ export const CONVERSION_TOPICS = (() => {
 })();
 
 export const REFERENCE_TOPICS = [
-  topic('ref-math', 'Math & numbers', pick(
-    ['read', 'algebra'],
-    ['read', 'exponent-rules'],
-    ['read', 'logarithms'],
-    ['read', 'trigonometry'],
-    ['read', 'calculus'],
-    ['read', 'probability-distributions'],
-    ['read', 'number-bases'],
-  ), 'Formulas and cheat sheets.'),
-
   topic('ref-electricity', 'Electricity & electronics', pick(
     ['read', 'electrical-voltage'],
     ['read', 'electrical-current'],
@@ -245,12 +264,30 @@ export const REFERENCE_TOPICS = [
     ['read', 'wire-gauge-awg'],
   ), 'Definitions, laws and component guides.'),
 
+  topic('ref-calc', 'How to calculate', pick(
+    ...CALCULATION_NOTES.map((slug) => ['read', slug]),
+  ), 'Worked calculations for the values you have to design with.'),
+
+  topic('ref-math', 'Math & numbers', pick(
+    ['read', 'algebra'],
+    ['read', 'exponent-rules'],
+    ['read', 'logarithms'],
+    ['read', 'trigonometry'],
+    ['read', 'calculus'],
+    ['read', 'probability-distributions'],
+    ['read', 'number-bases'],
+  ), 'Formulas and cheat sheets.'),
+
+  topic('ref-computing', 'Computing & data', pick(
+    ['read', 'number-bases'],
+    ['read', 'ascii-encoding'],
+    ['read', 'parts-per-million'],
+  ), 'Encodings, radix and data units.'),
+
   topic('ref-howto', 'Everyday energy & how-to', pick(
     ['read', 'kilowatt-hour'],
     ['read', 'save-electricity'],
     ['read', 'save-energy'],
-    ['read', 'parts-per-million'],
-    ['read', 'ascii-encoding'],
   ), 'Practical guides and day-to-day reference.'),
 
   ...CONVERSION_TOPICS,
@@ -261,3 +298,59 @@ export const TOPIC_SETS = {
   math: MATH_TOPICS,
   reference: REFERENCE_TOPICS,
 };
+
+/* ── where does an article belong? ─────────────────────────────────────── */
+
+const TOPIC_LABELS = {
+  electricity: { label: 'Electricity & Electronics', href: '#/electricity' },
+  math: { label: 'Mathematics', href: '#/math' },
+  reference: { label: 'Reference', href: '#/learn' },
+};
+
+/**
+ * slug -> the topic and subtopic it is filed under. Used for breadcrumbs and
+ * for the "keep reading" list, so every note points at its neighbours rather
+ * than at whatever happens to be first in the list.
+ */
+export const ARTICLE_TOPIC = (() => {
+  const map = new Map();
+  for (const [key, groups] of Object.entries(TOPIC_SETS)) {
+    for (const g of groups) {
+      for (const item of g.items) {
+        const m = /^#\/read\/(.+)$/.exec(item.href);
+        if (!m || map.has(m[1])) continue;
+        map.set(m[1], {
+          topic: key,
+          groupId: g.id,
+          groupTitle: g.title,
+          label: TOPIC_LABELS[key].label,
+          href: TOPIC_LABELS[key].href,
+        });
+      }
+    }
+  }
+  return map;
+})();
+
+/** The topic an article belongs to (falls back to the reference index). */
+export function articleTopic(slug) {
+  return ARTICLE_TOPIC.get(slug) ?? {
+    topic: 'reference',
+    groupId: 'ref-misc',
+    groupTitle: 'Reference',
+    label: 'Reference',
+    href: '#/learn',
+  };
+}
+
+/** The other articles in the same subtopic, for the "keep reading" list. */
+export function articleSiblings(slug, limit = 3) {
+  const info = articleTopic(slug);
+  const groups = TOPIC_SETS[info.topic] ?? [];
+  const group = groups.find((g) => g.id === info.groupId);
+  if (!group) return [];
+  return group.items
+    .map((i) => /^#\/read\/(.+)$/.exec(i.href)?.[1])
+    .filter((s) => s && s !== slug)
+    .slice(0, limit);
+}

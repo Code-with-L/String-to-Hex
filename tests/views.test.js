@@ -370,3 +370,29 @@ test('topic pages split their notes into subtopics with a matching contents tabl
     assert.ok(listed.includes(`#/read/${slug}`), `reference index does not list ${slug}`);
   }
 });
+
+test('the calculation notes are filed under Electricity & Electronics', async () => {
+  const { TOPIC_SETS, CALCULATION_NOTES, articleTopic, articleSiblings } = await import('../js/data/topics.js');
+  const { ARTICLES } = await import('../js/data/reference.js');
+
+  assert.ok(CALCULATION_NOTES.length >= 20, 'expected a full set of calculation notes');
+
+  const group = TOPIC_SETS.electricity.find((g) => g.id === 'el-calc');
+  assert.ok(group, 'the electricity topic has a "how to calculate" subtopic');
+
+  for (const slug of CALCULATION_NOTES) {
+    const note = ARTICLES[slug];
+    assert.ok(note, `note ${slug} exists`);
+    assert.ok(note.blocks.length >= 6, `note ${slug} has enough content`);
+    assert.ok(note.blocks.some((b) => b.k === 'formula'), `note ${slug} shows a formula`);
+    assert.ok(group.items.some((i) => i.href === `#/read/${slug}`), `${slug} is listed in "How to calculate"`);
+
+    const topic = articleTopic(slug);
+    assert.equal(topic.topic, 'electricity', `${slug} belongs to the electricity topic`);
+    assert.equal(topic.href, '#/electricity', `${slug} breadcrumb points at electricity`);
+
+    const siblings = articleSiblings(slug, 3);
+    assert.ok(siblings.length > 0, `${slug} has neighbours in its subtopic`);
+    assert.ok(!siblings.includes(slug), `${slug} is not its own neighbour`);
+  }
+});

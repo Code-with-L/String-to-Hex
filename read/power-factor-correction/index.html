@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate Power Factor Correction — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Size the capacitor that brings a motor or a supply back towards a power factor of one.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate Power Factor Correction — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Size the capacitor that brings a motor or a supply back towards a power factor of one.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Power Factor Correction — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Size the capacitor that brings a motor or a supply back towards a power factor of one.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/#article",
+      "headline": "How to Calculate Power Factor Correction",
+      "description": "Size the capacitor that brings a motor or a supply back towards a power factor of one.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate Power Factor Correction",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/power-factor-correction/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate Power Factor Correction</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate Power Factor Correction</h1>
+      <p>Size the capacitor that brings a motor or a supply back towards a power factor of one.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">Power factor is real power divided by apparent power. A low power factor means the supply carries current that does no useful work, which costs money on bills that bill by kVA and stresses the supply.</p>
+    <div class="formula"><span class="eq">PF = P ÷ S
+S = √(P² + Q²)
+cos φ = P ÷ S</span>
+      <span class="note">For a single phase: S = V × I. For three phase: S = √3 × V_L × I_L.</span></div>
+    <h2>Capacitor size</h2>
+    <div class="formula"><span class="eq">Q_c = P × (tan φ₁ − tan φ₂)
+C = Q_c ÷ (2πf × V²)   for a capacitor across the supply</span>
+      <span class="note">φ₁ is the angle of the original power factor and φ₂ the target. For three phase, C is the per-phase value for a star connection.</span></div>
+    <h2>Worked example</h2>
+    <p>A 10 kW load at 400 V three phase runs at 0.7 power factor and should be corrected to 0.95.</p>
+    <div class="formula"><span class="eq">tan φ₁ = 1.02   (0.7 pf)
+tan φ₂ = 0.33   (0.95 pf)
+Q_c = 10 000 × (1.02 − 0.33) = 6.9 kVAr
+C = 6 900 ÷ (2π × 50 × 400²) = 137 µF per phase in star</span>
+      <span class="note">The current falls from S = √3 × 400 × (10 000 ÷ (400 × √3 × 0.7)) = 20.6 A to 14.4 A - a 30% reduction in cable losses, which are proportional to current squared.</span></div>
+    <div class="callout"><div><strong>Note</strong> Capacitors are voltage sensitive. A capacitor corrected for 400 V will be over-stressed on an 415 V or 440 V supply, so always re-check the capacitor rating against the highest system voltage, not the nominal one.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/power-factor/">Put it into practice → Power factor &amp; three-phase kVA</a></p>
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/power-factor-correction";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

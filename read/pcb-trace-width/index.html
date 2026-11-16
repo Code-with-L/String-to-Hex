@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate PCB Trace Width — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Size a copper trace for the current it carries, its temperature rise, and the voltage it must survive.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate PCB Trace Width — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Size a copper trace for the current it carries, its temperature rise, and the voltage it must survive.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate PCB Trace Width — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Size a copper trace for the current it carries, its temperature rise, and the voltage it must survive.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/#article",
+      "headline": "How to Calculate PCB Trace Width",
+      "description": "Size a copper trace for the current it carries, its temperature rise, and the voltage it must survive.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate PCB Trace Width",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/pcb-trace-width/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate PCB Trace Width</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate PCB Trace Width</h1>
+      <p>Size a copper trace for the current it carries, its temperature rise, and the voltage it must survive.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">Trace width is set by two independent limits: how much current the copper can carry before it gets too hot, and how much voltage it can hold before the insulation under it breaks down.</p>
+    <h2>Current and temperature</h2>
+    <div class="formula"><span class="eq">I ≈ k × ΔT^0.44 × A^0.725</span>
+      <span class="note">k = 0.048 for external layers and 0.024 for inner layers, A is the copper cross-section area in mil², and ΔT is the allowed temperature rise. This is the IPC-2221 external-layer relationship.</span></div>
+    <p>Copper area is width times thickness: 1 oz copper is 1.37 mil (35 µm) thick, 2 oz is 2.74 mil. A 20 mil wide trace on 1 oz copper has an area of 27 mil².</p>
+    <h2>Worked example</h2>
+    <div class="formula"><span class="eq">ΔT = 20 °C, 1 oz copper, external layer, 20 mil wide:
+A = 20 × 1.37 = 27.4 mil²
+I = 0.048 × 20^0.44 × 27.4^0.725 ≈ 2.7 A</span>
+      <span class="note">That is with a 20 °C temperature rise. A 10 mil trace on 1 oz copper manages roughly 1.6 A at the same rise.</span></div>
+    <h2>Voltage and creepage</h2>
+    <p>The voltage limit is a dielectric one, and it depends on the distance across the board, not just the trace width. On ordinary FR-4 with a 0.1 mm ground plane underneath, a 0.25 mm trace spacing is good to about 50 V; higher voltages need wider spacing, slots in the board, or a coating.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Voltage</th><th>Minimum spacing (FR-4, coated)</th></tr></thead>
+      <tbody>
+        <tr><td>&lt; 50 V</td><td>0.25 mm</td></tr>
+        <tr><td>50–150 V</td><td>0.8 mm</td></tr>
+        <tr><td>150–300 V</td><td>1.6 mm</td></tr>
+        <tr><td>300–600 V</td><td>3.2 mm</td></tr>
+      </tbody>
+    </table></div>
+    <h2>Practical advice</h2>
+    <ul>
+      <li>Copper pours on both sides of a board count as parallel conductors if they are stitched - put vias every few millimetres to join them.</li>
+      <li>A narrow neck in a trace counts as the whole trace for current purposes. Avoid necks near pads.</li>
+      <li>Thick copper (2 oz) halves the width needed for the same current and temperature rise.</li>
+    </ul>
+    <div class="callout"><div><strong>Note</strong> Keep power loops small. In switching converters the loop formed by the high-current path and its return path radiates and couples into nearby signals; overlapping the two paths on adjacent layers is the usual fix.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/pcb-trace/">Put it into practice → PCB trace width</a></p>
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/pcb-trace-width";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate a Voltage Divider — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Split a supply voltage between two resistors, and check what the load does to the answer.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/voltage-divider/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/voltage-divider/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate a Voltage Divider — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Split a supply voltage between two resistors, and check what the load does to the answer.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/voltage-divider/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate a Voltage Divider — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Split a supply voltage between two resistors, and check what the load does to the answer.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/voltage-divider/#article",
+      "headline": "How to Calculate a Voltage Divider",
+      "description": "Split a supply voltage between two resistors, and check what the load does to the answer.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/voltage-divider/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/voltage-divider/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate a Voltage Divider",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/voltage-divider/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate a Voltage Divider</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate a Voltage Divider</h1>
+      <p>Split a supply voltage between two resistors, and check what the load does to the answer.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A voltage divider is two resistors in series across a supply. The voltage across the bottom resistor is a fixed fraction of the supply, set by the ratio of the two resistances.</p>
+    <div class="formula"><span class="eq">V_out = V_in × R₂ ÷ (R₁ + R₂)</span>
+      <span class="note">R₁ is the top resistor (supply side), R₂ the bottom resistor (output side). The output is always measured relative to ground.</span></div>
+    <h2>Choosing the total resistance</h2>
+    <p>The formula works for any values, but the divider draws current continuously and that current loads the supply. A good default is to make the total between 10 kΩ and 100 kΩ: low enough to be immune to leakage, high enough not to waste power.</p>
+    <h2>Worked example</h2>
+    <p>You need 3.3 V from a 12 V rail.</p>
+    <div class="formula"><span class="eq">R₂ ÷ (R₁ + R₂) = 3.3 ÷ 12 = 0.275
+With R₁ = 27 kΩ:  R₂ = 0.275 ÷ 0.725 × 27 kΩ = 10.2 kΩ → choose 10 kΩ
+V_out = 12 × 10 ÷ 37 = 3.24 V</span>
+      <span class="note">The 0.06 V error is well inside the tolerance of both 5% resistors.</span></div>
+    <h2>The load changes the output</h2>
+    <p>Anything you connect to the output is in parallel with R₂ and pulls the voltage down. The loaded divider is simply a three-resistor parallel network.</p>
+    <div class="formula"><span class="eq">V_out_loaded = V_in × (R₂ ∥ R_load) ÷ (R₁ + (R₂ ∥ R_load))</span>
+      <span class="note">If the load is more than about ten times R₂, the error stays below 10% and the divider can be treated as unloaded.</span></div>
+    <div class="callout"><div><strong>Note</strong> Dividers are used for biasing transistor bases, scaling sensor outputs into an ADC range, and generating a reference from a higher supply. For a precision reference use a regulator or a dedicated reference IC instead - a divider drifts with temperature and with the supply it is fed from.</div></div>
+    </div>
+    <p style="margin-top:22px"><a href="../../tool/voltage-divider/">Put it into practice → Voltage divider</a></p>
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/voltage-divider";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

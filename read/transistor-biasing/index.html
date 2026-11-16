@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate a Transistor Base Resistor — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Set the operating point of a bipolar transistor with two resistors, and allow for the fact that gain is not a fixed number.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate a Transistor Base Resistor — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Set the operating point of a bipolar transistor with two resistors, and allow for the fact that gain is not a fixed number.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate a Transistor Base Resistor — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Set the operating point of a bipolar transistor with two resistors, and allow for the fact that gain is not a fixed number.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/#article",
+      "headline": "How to Calculate a Transistor Base Resistor",
+      "description": "Set the operating point of a bipolar transistor with two resistors, and allow for the fact that gain is not a fixed number.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate a Transistor Base Resistor",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/transistor-biasing/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate a Transistor Base Resistor</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate a Transistor Base Resistor</h1>
+      <p>Set the operating point of a bipolar transistor with two resistors, and allow for the fact that gain is not a fixed number.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A bipolar junction transistor (BJT) in common-emitter mode is biased by a base resistor that sets the base current, and a collector resistor that converts that current into a voltage drop.</p>
+    <h2>Fixed bias</h2>
+    <div class="formula"><span class="eq">I_B = (V_B − V_BE) ÷ R_B
+I_C = β × I_B
+R_C = (V_CC − V_CE) ÷ I_C</span>
+      <span class="note">V_BE ≈ 0.7 V for a silicon transistor. β (h_FE) is the current gain, typically 100 to 300 but never guaranteed.</span></div>
+    <h2>Worked example</h2>
+    <p>Target: 10 mA collector current, 5 V across the collector-emitter junction, from a 12 V supply. Use a collector resistance of 680 Ω and a base resistance of 110 kΩ.</p>
+    <div class="formula"><span class="eq">I_C = (12 − 5) ÷ 680 = 10.3 mA
+I_B = 10.3 mA ÷ 100 = 103 µA
+R_B = (12 − 0.7) ÷ 0.000103 = 110 kΩ</span>
+      <span class="note">The base resistor is the smaller of the two currents by the gain, which is why biasing is sensitive to β.</span></div>
+    <h2>Why β makes it unreliable</h2>
+    <p>The same transistor can have h_FE of 80 in one batch and 250 in the next. The collector current would swing from 7 mA to 22 mA for the identical circuit. Three fixes are used in practice:</p>
+    <ul>
+      <li>Design with the minimum h_FE from the datasheet, so the worst-case transistor still stays in the active region.</li>
+      <li>Add an emitter resistor and split the bias between two resistors - this makes the operating point depend on resistor ratios rather than on β.</li>
+      <li>Use negative feedback by putting part of the emitter resistor in the emitter leg, or bias the transistor from a stable divider.</li>
+    </ul>
+    <h2>The two-resistor divider bias</h2>
+    <div class="formula"><span class="eq">V_B = V_CC × R₂ ÷ (R₁ + R₂)
+R_E = (V_B − 0.7) ÷ I_E
+V_CE = V_CC − I_C × R_C − I_E × R_E</span>
+      <span class="note">With R_E in the emitter, the transistor tends to hold I_E roughly constant, so β stops mattering much.</span></div>
+    <div class="callout"><div><strong>Note</strong> Keep the transistor in the active region: V_CE should sit near half the supply (about 2–3 V for a small-signal stage) so the output can swing both ways without clipping.</div></div>
+    </div>
+    
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/transistor-biasing";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate Op-Amp Amplifier Gain — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Set the gain of an inverting or non-inverting amplifier and check the bandwidth and swing limits.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate Op-Amp Amplifier Gain — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Set the gain of an inverting or non-inverting amplifier and check the bandwidth and swing limits.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Op-Amp Amplifier Gain — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Set the gain of an inverting or non-inverting amplifier and check the bandwidth and swing limits.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/#article",
+      "headline": "How to Calculate Op-Amp Amplifier Gain",
+      "description": "Set the gain of an inverting or non-inverting amplifier and check the bandwidth and swing limits.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate Op-Amp Amplifier Gain",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/op-amp-gain/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate Op-Amp Amplifier Gain</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate Op-Amp Amplifier Gain</h1>
+      <p>Set the gain of an inverting or non-inverting amplifier and check the bandwidth and swing limits.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">An op-amp has very high open-loop gain, so the closed-loop gain is set almost entirely by the feedback network around it. Two topologies cover most uses.</p>
+    <h2>Non-inverting amplifier</h2>
+    <div class="formula"><span class="eq">Gain = 1 + R_f ÷ R₁</span>
+      <span class="note">The input impedance is very high, so the source is barely loaded. Gain cannot go below 1.</span></div>
+    <h2>Inverting amplifier</h2>
+    <div class="formula"><span class="eq">Gain = −R_f ÷ R_in</span>
+      <span class="note">The input impedance is R_in, so pick it large enough not to load the source - 10 kΩ is a common starting point for audio.</span></div>
+    <h2>Worked example</h2>
+    <p>A non-inverting stage with R₁ = 1 kΩ and R_f = 9 kΩ has a gain of 10. A 50 mV signal becomes 500 mV.</p>
+    <div class="formula"><span class="eq">Gain = 1 + 9 000 ÷ 1 000 = 10</span>
+      <span class="note">The equivalent inverting version is R_f = 9 kΩ and R_in = 1 kΩ, but its input impedance is only 1 kΩ.</span></div>
+    <h2>Bandwidth and slew rate</h2>
+    <div class="formula"><span class="eq">bandwidth = GBW ÷ noise gain
+slew rate needed = 2π × f × V_peak</span>
+      <span class="note">With a gain of 10 and a 1 MHz gain-bandwidth product, the closed-loop bandwidth is 100 kHz. A 100 kHz sine at 5 V peak needs 3.1 V/µs of slew rate.</span></div>
+    <h2>Output swing and headroom</h2>
+    <p>The output cannot quite reach the rails: budget a few hundred millivolts of headroom at light loads, more at heavy ones. The input common-mode range must also include the signal, which rules out many single-supply designs unless the signal is biased around mid-supply.</p>
+    <div class="callout"><div><strong>Note</strong> Keep the feedback resistors below about 100 kΩ. Op-amp input bias current flowing through very large resistors creates offset error and noise, and the noise contribution grows with resistance.</div></div>
+    </div>
+    
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/op-amp-gain";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>

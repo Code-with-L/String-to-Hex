@@ -9,6 +9,8 @@
  * same content can be prerendered to static HTML for search engines.
  */
 
+import { NOTES } from './notes.js';
+
 /* ── glossary ──────────────────────────────────────────────────────────── */
 
 export const GLOSSARY = {
@@ -277,6 +279,9 @@ export const GLOSSARY_GROUPS = ['Electrical', 'Circuits', 'Units', 'Mathematics'
  *   | 'table' | 'symbols' | 'links' | 'fig'
  */
 export const ARTICLES = {
+  // The "how do I calculate this?" notes live in their own module so the file
+  // stays readable; they are ordinary articles everywhere else.
+  ...NOTES,
   'electrical-voltage': {
     title: 'Electrical Voltage',
     kicker: 'Fundamentals',

@@ -5,7 +5,7 @@ import { icon, SYMBOLS, SYMBOL_GROUPS } from './icons.js';
 import { GLOSSARY, GLOSSARY_GROUPS, ARTICLES, TABLES, COMPONENTS } from '../data/reference.js';
 import { TOOLS, TOOL_BY_ID, toolsInGroup } from '../data/tools.js';
 import { FAMILIES, FAMILY_IDS } from '../data/units.js';
-import { TOPIC_SETS } from '../data/topics.js';
+import { TOPIC_SETS, articleTopic, articleSiblings } from '../data/topics.js';
 import { bytesToHex, textToBytes, FORMATS, ENCODINGS } from '../data/formats.js';
 
 /* ── block renderer — one function turns data into nodes ───────────────── */
@@ -77,6 +77,27 @@ export function viewHome() {
   const nUnits = FAMILY_IDS.reduce((a, f) => a + Object.keys(FAMILIES[f].units).length, 0);
   const nPairs = FORMATS.length ** 2;
   const nEncodings = ENCODINGS.length;
+  const nArticles = Object.keys(ARTICLES).length;
+
+  // The topic index: every section of the site, in the order a visitor
+  // meets it. Clicking one lands on a page with its own Contents table.
+  const contentTopics = [
+    { icon: 'calc', label: 'Calculators', href: '#/calc', desc: `${nTools} calculators` },
+    { icon: 'swap', label: 'Conversion', href: '#/conversion', desc: `${nFamilies} unit families` },
+    { icon: 'grid', label: 'Web Tools', href: '#/web-tools', desc: 'browser-based tools' },
+    { icon: 'bolt', label: 'Electricity & Electronics', href: '#/electricity', desc: 'formulas, notes & calculators' },
+    { icon: 'sigma', label: 'Mathematics', href: '#/math', desc: 'calculators & formulas' },
+    { icon: 'hash', label: 'Text & Encoding', href: '#/ascii', desc: 'ASCII, radix, Base64' },
+    { icon: 'book', label: 'Reference', href: '#/learn', desc: `${nArticles} notes` },
+  ];
+
+  // A short, hand-picked set of notes. The full library lives under
+  // Reference - listing all of it here would bury the rest of the page.
+  const startNotes = [
+    'resistor-value', 'led-resistor', 'transistor-biasing', 'diode-calculation',
+    'voltage-divider', 'capacitor-time-constant', 'ohms-law', 'kirchhoff-laws',
+    'three-phase-power', 'energy-cost', 'exponent-rules', 'probability-distributions',
+  ].map((slug) => [slug, ARTICLES[slug]]).filter(([, a]) => a);
 
   return frag(
     /* ── hero ── */
@@ -125,13 +146,23 @@ export function viewHome() {
         ...featured.map((id) => toolCard(TOOL_BY_ID[id])).filter(Boolean)),
     ),
 
+    /* ── content: the topic index ── */
+    el('section', { class: 'section' },
+      el('div', { class: 'section-head' }, el('h2', {}, 'Content')),
+      el('ul', { class: 'content-list' },
+        ...contentTopics.map((t) => el('li', {}, el('a', { href: t.href },
+          el('span', { class: 'content-icon' }, icon(t.icon, { size: 17 })),
+          el('span', { class: 'content-label' }, t.label),
+          el('span', { class: 'content-desc' }, t.desc))))),
+    ),
+
     /* ── learn ── */
     el('section', { class: 'section' },
       el('div', { class: 'section-head' },
-        el('h2', {}, 'Reference library'),
-        el('a', { href: '#/learn', style: 'font-size:14px' }, 'Everything →')),
+        el('h2', {}, 'Reference notes'),
+        el('a', { href: '#/learn', style: 'font-size:14px' }, `All ${nArticles} notes →`)),
       el('div', { class: 'rail-list' },
-        ...Object.entries(ARTICLES).map(([slug, a], i) => el('a', { class: 'rail-row', href: `#/read/${slug}` },
+        ...startNotes.map(([slug, a], i) => el('a', { class: 'rail-row', href: `#/read/${slug}` },
           el('span', { class: 'n' }, String(i + 1).padStart(2, '0')),
           el('span', {}, el('b', {}, a.title), el('small', {}, a.summary)),
           el('span', { class: 'arrow' }, '→'))),
@@ -162,15 +193,16 @@ export function viewArticle(slug) {
   const a = ARTICLES[slug];
   if (!a) return notFoundRef(`No article called “${slug}”.`);
 
-  const related = Object.entries(ARTICLES)
-    .filter(([s]) => s !== slug)
-    .slice(0, 3);
+  // Breadcrumb and neighbours follow the topic the note is filed under, so
+  // every note points at the subtopic it belongs to instead of a flat list.
+  const topic = articleTopic(slug);
+  const related = articleSiblings(slug, 3).map((s) => [s, ARTICLES[s]]).filter(([, r]) => r);
 
   const node = frag(
     el('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' },
       el('a', { href: '#/' }, 'Home'),
       el('span', { 'aria-hidden': 'true' }, '/'),
-      el('a', { href: '#/learn' }, 'Reference'),
+      el('a', { href: topic.href }, topic.label),
       el('span', { 'aria-hidden': 'true' }, '/'),
       el('span', {}, a.title),
     ),

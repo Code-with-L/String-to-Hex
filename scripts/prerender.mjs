@@ -35,7 +35,7 @@ import { TOOLS, TOOL_BY_ID, GROUPS } from '../js/data/tools.js';
 import { FAMILIES, FAMILY_IDS } from '../js/data/units.js';
 import { FORMATS, ENCODINGS } from '../js/data/formats.js';
 import { ARTICLES, GLOSSARY, GLOSSARY_GROUPS, TABLES, COMPONENTS } from '../js/data/reference.js';
-import { TOPIC_SETS } from '../js/data/topics.js';
+import { TOPIC_SETS, articleTopic, articleSiblings } from '../js/data/topics.js';
 import { SYMBOLS, SYMBOL_GROUPS } from '../js/data/symbols.js';
 import { symbolMarkup } from '../js/ui/icons.js';
 import { ASCII_128 } from '../js/data/ascii.js';
@@ -432,6 +432,11 @@ ${topicSectionsHtml(TOPIC_SETS.reference, up)}`,
 /* one page per article — full text inline so it is indexable */
 for (const [slug, a] of Object.entries(ARTICLES)) {
   const path = `/read/${slug}/index.html`;
+  // Articles are filed under the topic they belong to, so the breadcrumb and
+  // the JSON-LD trail point at that topic rather than at a flat "Reference".
+  const topic = articleTopic(slug);
+  const topicPath = topic.topic === 'electricity' ? '/electricity/' : topic.topic === 'math' ? '/math/' : '/learn/';
+  const siblings = articleSiblings(slug, 3);
   PAGES.push({
     path,
     hash: `/read/${slug}`,
@@ -450,9 +455,9 @@ for (const [slug, a] of Object.entries(ARTICLES)) {
         publisher: { '@id': `${ORIGIN}/#organization` },
         mainEntityOfPage: `${ORIGIN}${cleanPath(path)}`,
       },
-      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: 'Reference', href: '/learn/' }, { name: a.title, href: cleanPath(path) }]),
+      crumbsLd(cleanPath(path), [{ name: 'Home', href: '/' }, { name: topic.label, href: topicPath }, { name: a.title, href: cleanPath(path) }]),
     ]),
-    body: (up) => `    ${nav(up, [{ label: 'Reference', href: `${up}learn/` }, { label: a.title }])}
+    body: (up) => `    ${nav(up, [{ label: topic.label, href: `${up}${topicPath.replace(/^\//, '')}` }, { label: a.title }])}
     <header class="page-head">
       <span class="hero-eyebrow">${esc(a.kicker)}</span>
       <h1>${esc(a.title)}</h1>
@@ -461,7 +466,8 @@ for (const [slug, a] of Object.entries(ARTICLES)) {
     <div class="panel prose">
 ${articleBlocks(a.blocks)}
     </div>
-    ${a.tool && TOOL_BY_ID[a.tool] ? `<p style="margin-top:22px"><a href="${up}tool/${a.tool}/">Put it into practice → ${esc(TOOL_BY_ID[a.tool].title)}</a></p>` : ''}`,
+    ${a.tool && TOOL_BY_ID[a.tool] ? `<p style="margin-top:22px"><a href="${up}tool/${a.tool}/">Put it into practice → ${esc(TOOL_BY_ID[a.tool].title)}</a></p>` : ''}
+    ${siblings.length ? `<section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list">${siblings.map((s) => `<li><a href="${up}read/${esc(s)}/">${esc(ARTICLES[s]?.title ?? s)}</a></li>`).join('')}</ul></section>` : ''}`,
   });
 }
 

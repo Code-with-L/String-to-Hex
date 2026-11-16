@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Calculate MOSFET Gate Resistor and Losses — formula, definition &amp; symbols | HexKit</title>
+<meta name="description" content="Turn a gate charge figure into a peak gate current, a switching time and a dissipation number.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/">
+<link rel="stylesheet" href="../../css/app.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HexKit">
+<meta property="og:title" content="How to Calculate MOSFET Gate Resistor and Losses — formula, definition &amp; symbols | HexKit">
+<meta property="og:description" content="Turn a gate charge figure into a peak gate current, a switching time and a dissipation number.">
+<meta property="og:url" content="https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/">
+<meta property="og:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate MOSFET Gate Resistor and Losses — formula, definition &amp; symbols | HexKit">
+<meta name="twitter:description" content="Turn a gate charge figure into a peak gate current, a switching time and a dissipation number.">
+<meta name="twitter:image" content="https://code-with-l.github.io/String-to-Hex/icons/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#organization",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "logo": "https://code-with-l.github.io/String-to-Hex/icons/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://code-with-l.github.io/String-to-Hex/#website",
+      "name": "HexKit",
+      "url": "https://code-with-l.github.io/String-to-Hex",
+      "description": "Convert text to hex, binary, decimal, octal and Base64. 76 calculators, 24 unit families and a reference library. Offline-first and free.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/#article",
+      "headline": "How to Calculate MOSFET Gate Resistor and Losses",
+      "description": "Turn a gate charge figure into a peak gate current, a switching time and a dissipation number.",
+      "articleSection": "Component calculations",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "publisher": {
+        "@id": "https://code-with-l.github.io/String-to-Hex/#organization"
+      },
+      "mainEntityOfPage": "https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://code-with-l.github.io/String-to-Hex/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Electricity & Electronics",
+          "item": "https://code-with-l.github.io/String-to-Hex/electricity/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Calculate MOSFET Gate Resistor and Losses",
+          "item": "https://code-with-l.github.io/String-to-Hex/read/mosfet-gate-resistor/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../#">
+      <span class="brand-mark" aria-hidden="true">0x</span>
+      <span class="brand-name">HexKit<small>converters &amp; calculators</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary" hidden">
+      <a href="../../#/">Home</a>
+      <a href="../../#/calc">Calculators</a>
+      <a href="../../#/conversion">Conversion</a>
+      <a href="../../#/web-tools">Web Tools</a>
+      <a href="../../#/math">Math</a>
+      <a href="../../#/electricity">Electricity</a>
+      <button class="btn btn-sm btn-ghost" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="btn btn-sm btn-ghost" id="installBtn" type="button" hidden>Install</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="view" aria-live="polite">
+    <article class="prerendered">
+    <nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="../../electricity/">Electricity &amp; Electronics</a>
+  <span aria-hidden="true">/</span>
+  <span>How to Calculate MOSFET Gate Resistor and Losses</span>
+</nav>
+    <header class="page-head">
+      <span class="hero-eyebrow">Component calculations</span>
+      <h1>How to Calculate MOSFET Gate Resistor and Losses</h1>
+      <p>Turn a gate charge figure into a peak gate current, a switching time and a dissipation number.</p>
+    </header>
+    <div class="panel prose">
+    <p class="definition">A MOSFET gate behaves like a small capacitor. The charge needed to move it from off to fully on, divided by the time you allow for that move, sets the peak gate current - and that current is what the driver has to supply and the gate resistor has to limit.</p>
+    <h2>The numbers you need</h2>
+    <ul>
+      <li>Q_g - total gate charge in nanocoulombs, from the datasheet.</li>
+      <li>V_GS(th) - threshold voltage, and the plateau voltage at which the MOSFET is fully enhanced.</li>
+      <li>C_iss - input capacitance, used for the initial turn-on step before the device starts conducting.</li>
+      <li>R_DS(on) - on-state resistance at the gate voltage you will actually drive.</li>
+    </ul>
+    <h2>Gate resistor</h2>
+    <div class="formula"><span class="eq">I_peak = (V_drive − V_plateau) ÷ (R_g + R_internal)
+t_switch ≈ Q_g ÷ I_peak</span>
+      <span class="note">R_internal is the driver output resistance. The plateau voltage is usually 4–6 V for a logic-level MOSFET.</span></div>
+    <h2>Conduction loss</h2>
+    <div class="formula"><span class="eq">P_on = I_D² × R_DS(on) × duty cycle
+P_sw = V_DS × I_D × t_rise × f_sw</span>
+      <span class="note">P_on is the loss while the device is on; P_sw is the loss during the switching transitions.</span></div>
+    <h2>Worked example</h2>
+    <p>A logic-level N-MOSFET with Q_g = 12 nC and R_DS(on) = 40 mΩ switches 8 A from a 24 V rail at 20 kHz, driven from a 5 V gate driver through a 10 Ω resistor.</p>
+    <div class="formula"><span class="eq">I_peak ≈ (5 − 4.5) ÷ 10 = 0.05 A  (gate current is small for a logic-level part)
+t_switch ≈ 12 nC ÷ 0.05 A = 240 ns
+P_on = 8² × 0.04 × 0.5 = 1.28 W</span>
+      <span class="note">A 1.28 W loss at 20 kHz switching needs a copper-pad or small heatsink; the transition loss adds roughly V_DS × I_D × t_sw × f_sw = 24 × 8 × 240 ns × 20 kHz ≈ 0.9 W.</span></div>
+    <div class="callout"><div><strong>Note</strong> A gate resistor that is too small makes the switching edge fast enough to ring on the layout and to couple noise into the source. 4.7 Ω to 33 Ω is typical; go lower only when the driver is strong and the layout is tight.</div></div>
+    </div>
+    
+    <section class="section"><div class="section-head"><h2>Keep reading</h2></div><ul class="link-list topic-list"><li><a href="../../read/resistor-value/">How to Calculate Resistor Values</a></li><li><a href="../../read/resistor-power/">How to Calculate Resistor Power Dissipation</a></li><li><a href="../../read/series-parallel-resistors/">How to Calculate Series and Parallel Resistors</a></li></ul></section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>HexKit — every calculation runs in your browser. Nothing is uploaded, nothing is stored on a server. MIT licensed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+<input type="file" id="filePicker" hidden>
+<script>
+/* Contents jump for topic pages. A bare "#el-terms" would be parsed by the
+   hash router as a route, so scroll manually and leave the route alone. Where
+   smooth scrolling is unavailable (reduced motion, some embedded browsers)
+   fall back to an instant jump instead of doing nothing. */
+window.jumpTo = function (id) {
+  var t = document.getElementById(id);
+  if (!t) return false;
+  var top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 72);
+  var from = window.scrollY;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  /* two-argument scrollTo() inherits scroll-behavior: smooth, which some
+     browsers ignore, so verify and force the instant form if nothing moved */
+  setTimeout(function () {
+    if (Math.abs(window.scrollY - from) < 2) window.scrollTo({ top: top, behavior: 'instant' });
+  }, 180);
+  return false;
+};
+</script>
+<script>location.hash = "#/read/mosfet-gate-resistor";</script>
+<script type="module" src="../../js/app.js"></script>
+</body>
+</html>
